@@ -158,7 +158,7 @@ generate_dynamic_reconfigure_options(cfg/Camera.cfg)
 ## ros的具体配置  ##
 ##################
 
-# 
+# 查看是否安装了一下的内容，如果安装了，就添加到依赖中
 SET(optional_dependencies "")
 IF(costmap_2d_FOUND)
    SET(optional_dependencies ${optional_dependencies} costmap_2d)
@@ -188,9 +188,7 @@ catkin_package(
 ##  构建  ##
 ###########
 
-## Specify additional locations of header files
-## Your package locations should be listed before other locations
-# include_directories(include)
+## 指定头文件的位置，添加到编译器中用于搜索
 include_directories(
   ${CMAKE_CURRENT_SOURCE_DIR}/include
   ${RTABMap_INCLUDE_DIRS}
@@ -199,7 +197,7 @@ include_directories(
   ${catkin_INCLUDE_DIRS}
 )
 
-# 所有库文件
+# 包含所有库文件
 SET(Libraries
    ${OpenCV_LIBRARIES}
    ${PCL_LIBRARIES}
@@ -207,7 +205,7 @@ SET(Libraries
    ${RTABMap_LIBRARIES}
 )
  
-# 传感器信息同步
+# 传感器信息同步模块集合
 SET(rtabmap_sync_lib_src
    src/CommonDataSubscriber.cpp
    src/impl/CommonDataSubscriberDepth.cpp
@@ -231,7 +229,7 @@ IF(RTABMAP_SYNC_MULTI_RGBD)
   )
 ENDIF(RTABMAP_SYNC_MULTI_RGBD)
   
-# 功能模块
+# 功能模块集合
 SET(rtabmap_ros_lib_src
    src/MsgConversion.cpp
    src/MapsManager.cpp
@@ -239,7 +237,7 @@ SET(rtabmap_ros_lib_src
    src/PluginInterface.cpp
 )
   
-# 插件模块
+# 插件模块集合
 SET(rtabmap_plugins_lib_src
    src/nodelets/rgbd_odometry.cpp
    src/nodelets/stereo_odometry.cpp
@@ -267,7 +265,7 @@ ELSE()
    ADD_DEFINITIONS("-DCV_BRIDGE_HYDRO")
 ENDIF()   
 
-# If octomap is found, add definition
+# 如果找到 octomap，则添加定义
 IF(octomap_msgs_FOUND)
 MESSAGE(STATUS "WITH octomap_msgs")
 include_directories(
@@ -280,7 +278,7 @@ SET(Libraries
 ADD_DEFINITIONS("-DWITH_OCTOMAP_MSGS")
 ENDIF(octomap_msgs_FOUND)
 
-# If apriltag_ros is found, add definition
+# 如果找到 apriltag_ros，则添加定义
 IF(apriltag_ros_FOUND)
 MESSAGE(STATUS "WITH apriltag_ros")
 include_directories(
@@ -293,7 +291,7 @@ SET(Libraries
 ADD_DEFINITIONS("-DWITH_APRILTAG_ROS")
 ENDIF(apriltag_ros_FOUND)
 
-# If fiducial_msgs is found, add definition
+# 如果找到 fiducial_msgs，则添加定义
 IF(fiducial_msgs_FOUND)
 MESSAGE(STATUS "WITH fiducial_msgs")
 include_directories(
@@ -309,6 +307,7 @@ ENDIF(fiducial_msgs_FOUND)
 ############################
 ## 声明 cpp 库
 ############################
+# 构建共享库，为librtabmap_sync.so librtabmap_ros.so librtabmap_plugins.so 
 add_library(rtabmap_sync
    ${rtabmap_sync_lib_src}
 )
@@ -319,6 +318,7 @@ add_library(rtabmap_plugins
    ${rtabmap_plugins_lib_src}
 )
 
+# 指定可执行目标的链接库
 target_link_libraries(rtabmap_sync
   rtabmap_ros
 )
@@ -331,9 +331,12 @@ target_link_libraries(rtabmap_plugins
 add_dependencies(rtabmap_ros ${${PROJECT_NAME}_EXPORTED_TARGETS})
 add_dependencies(rtabmap_plugins ${${PROJECT_NAME}_EXPORTED_TARGETS})
 
+
+# 构建可执行文件：rtabmap
 add_executable(rtabmap src/CoreNode.cpp)
 target_link_libraries(rtabmap ${Libraries})
 
+# 构建可执行文件：rtabmap_rgbd_odometry，并重命名为 rgbd_odometry
 add_executable(rtabmap_rgbd_odometry src/RGBDOdometryNode.cpp)
 target_link_libraries(rtabmap_rgbd_odometry ${Libraries})
 set_target_properties(rtabmap_rgbd_odometry PROPERTIES OUTPUT_NAME "rgbd_odometry")
