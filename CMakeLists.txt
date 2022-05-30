@@ -581,7 +581,7 @@ catkin_install_python(PROGRAMS
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
 
-## 可执行文件或库进行安装
+## 可执行文件进行安装
 install(TARGETS 
    rtabmap_sync
    rtabmap_ros
