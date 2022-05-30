@@ -446,7 +446,7 @@ add_executable(rtabmap_point_cloud_assembler src/PointCloudAssemblerNode.cpp)
 target_link_libraries(rtabmap_point_cloud_assembler ${Libraries})
 set_target_properties(rtabmap_point_cloud_assembler PROPERTIES OUTPUT_NAME "point_cloud_assembler")
 
-# If rviz is found, add plugins
+# 如果安装了rviz，则安装插件
 IF(rviz_FOUND)
 
     ## We also use Ogre for rviz plugins
