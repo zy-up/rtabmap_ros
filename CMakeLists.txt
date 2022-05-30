@@ -44,7 +44,7 @@ IF(WIN32)
 add_compile_options(-bigobj)
 ENDIF(WIN32)
 
-# kinetic issue, rtabmap now requires at least c++11
+# 限制内核从c++版本大于11
 if("$ENV{ROS_DISTRO}" STREQUAL "kinetic")
 include(CheckCXXCompilerFlag)
 CHECK_CXX_COMPILER_FLAG("-std=c++14" COMPILER_SUPPORTS_CXX14)
@@ -56,7 +56,7 @@ ELSEIF(COMPILER_SUPPORTS_CXX11)
 ENDIF()
 endif()
 
-
+# 是否选择编译多相机与用户信息
 option(RTABMAP_SYNC_MULTI_RGBD "Build with multi RGBD camera synchronization support"  OFF)
 option(RTABMAP_SYNC_USER_DATA "Build with input user data support"  OFF)
 MESSAGE(STATUS "RTABMAP_SYNC_MULTI_RGBD = ${RTABMAP_SYNC_MULTI_RGBD}")
@@ -68,6 +68,7 @@ IF(RTABMAP_SYNC_USER_DATA)
 add_definitions("-DRTABMAP_SYNC_USER_DATA")
 ENDIF(RTABMAP_SYNC_USER_DATA)
 
+# 编译 rtabmapviz 和 rviz 插件
 #Qt stuff
 # If librtabmap_gui.so is found, rtabmapviz will be built
 # If rviz is found, plugins will be built
@@ -90,15 +91,15 @@ IF(RTABMAP_GUI OR rviz_FOUND)
 ENDIF(RTABMAP_GUI OR rviz_FOUND)
 
 ## Uncomment this if the package has a setup.py. This macro ensures
-## modules and global scripts declared therein get installed
-## See http://ros.org/doc/api/catkin/html/user_guide/setup_dot_py.html
+## modulesand global scripts declared therein get installed
+## See http://ros.org/doc/api/catkin/html/user_guide/setup_d ot_py.html
 catkin_python_setup()
 
-#######################################
-## Declare ROS messages and services ##
-#######################################
+###########################
+## 加载自定义的 msg 和 svr ##
+###########################
 
-## Generate messages in the 'msg' folder
+## 加载在msg文件夹中的自定义msg
 add_message_files(
    FILES
    Info.msg
@@ -121,7 +122,7 @@ add_message_files(
    EnvSensor.msg
 )
 
-## Generate services in the 'srv' folder
+## 加载在svr文件夹中的自定义svr
  add_service_files(
    FILES
    GetMap.srv
@@ -142,7 +143,7 @@ add_message_files(
    CleanupLocalGrids.srv
  )
 
-## Generate added messages and services with any dependencies listed here
+## 加载ros自带的消息格式文件，std_msgs：单位定义文件、geometry_msgs：几何消息定义文件、sensor_msgs：传感器定义文件
 generate_messages(
    DEPENDENCIES
    std_msgs
@@ -150,19 +151,14 @@ generate_messages(
    sensor_msgs
 )
 
-#add dynamic reconfigure api
+# 动态重载文件，主要用于GUi的设置与ROS之间的通信
 generate_dynamic_reconfigure_options(cfg/Camera.cfg)
 
-###################################
-## catkin specific configuration ##
-###################################
-## The catkin_package macro generates cmake config files for your package
-## Declare things to be passed to dependent projects
-## INCLUDE_DIRS: uncomment this if you package contains header files
-## LIBRARIES: libraries you create in this project that dependent projects also need
-## CATKIN_DEPENDS: catkin_packages dependent projects also need
-## DEPENDS: system dependencies of this project that dependent projects also need
+##################
+## ros的具体配置  ##
+##################
 
+# 
 SET(optional_dependencies "")
 IF(costmap_2d_FOUND)
    SET(optional_dependencies ${optional_dependencies} costmap_2d)
@@ -177,6 +173,7 @@ IF(find_object_2d_FOUND)
    SET(optional_dependencies ${optional_dependencies} find_object_2d)
 ENDIF(find_object_2d_FOUND)
 
+# CATKIN_DEPENDS:依赖的其他catkin项目   DEPENDS：外部项目
 catkin_package(
   INCLUDE_DIRS include
   LIBRARIES rtabmap_ros
@@ -188,7 +185,7 @@ catkin_package(
 )
 
 ###########
-## Build ##
+##  构建  ##
 ###########
 
 ## Specify additional locations of header files
@@ -202,7 +199,7 @@ include_directories(
   ${catkin_INCLUDE_DIRS}
 )
 
-# libraries
+# 所有库文件
 SET(Libraries
    ${OpenCV_LIBRARIES}
    ${PCL_LIBRARIES}
@@ -210,6 +207,7 @@ SET(Libraries
    ${RTABMap_LIBRARIES}
 )
  
+# 传感器信息同步
 SET(rtabmap_sync_lib_src
    src/CommonDataSubscriber.cpp
    src/impl/CommonDataSubscriberDepth.cpp
@@ -221,6 +219,7 @@ SET(rtabmap_sync_lib_src
    src/impl/CommonDataSubscriberOdom.cpp
    src/CoreWrapper.cpp # we put CoreWrapper here instead of plugins lib to avoid long compilation time on plugins lib
 )
+# 多RGBD相机的同步
 IF(RTABMAP_SYNC_MULTI_RGBD)
   SET(rtabmap_sync_lib_src
     ${rtabmap_sync_lib_src}
@@ -232,6 +231,7 @@ IF(RTABMAP_SYNC_MULTI_RGBD)
   )
 ENDIF(RTABMAP_SYNC_MULTI_RGBD)
   
+# 功能模块
 SET(rtabmap_ros_lib_src
    src/MsgConversion.cpp
    src/MapsManager.cpp
@@ -239,6 +239,7 @@ SET(rtabmap_ros_lib_src
    src/PluginInterface.cpp
 )
   
+# 插件模块
 SET(rtabmap_plugins_lib_src
    src/nodelets/rgbd_odometry.cpp
    src/nodelets/stereo_odometry.cpp
@@ -306,7 +307,7 @@ ADD_DEFINITIONS("-DWITH_FIDUCIAL_MSGS")
 ENDIF(fiducial_msgs_FOUND)
 
 ############################
-## Declare a cpp library
+## 声明 cpp 库
 ############################
 add_library(rtabmap_sync
    ${rtabmap_sync_lib_src}
@@ -559,12 +560,9 @@ IF(costmap_2d_FOUND)
     set_target_properties(rtabmap_costmap_voxel_markers PROPERTIES OUTPUT_NAME "voxel_markers")
 ENDIF(costmap_2d_FOUND)
 
-#############
-## Install ##
-#############
-
-# all install targets should use catkin DESTINATION variables
-# See http://ros.org/doc/api/catkin/html/adv_user_guide/variables.html
+#################
+## 可执行文件安装 ##
+#################
 
 ## Mark executable scripts (Python etc.) for installation
 ## in contrast to setup.py, you can choose the destination
@@ -580,7 +578,7 @@ catkin_install_python(PROGRAMS
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
 
-## Mark executables and/or libraries for installation
+## 可执行文件或库进行安装
 install(TARGETS 
    rtabmap_sync
    rtabmap_ros
