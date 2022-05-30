@@ -1,17 +1,15 @@
 cmake_minimum_required(VERSION 2.8.3)
 project(rtabmap_ros)
 
-# Policy CMP0043 introduced in cmake version 3.0 IGNORES the use of COMPILE_DEFINITIONS suffixed variables, e.g. COMPILE_DEFINITIONS_DEBUG
-# Set to OLD behavior until minimum cmake version >= 2.8.10 (version that COMPILE_DEFINITIONS can be set by generator expressions instead)
+# 申明cmake编译器版本
 if (POLICY CMP0043)
     cmake_policy(SET CMP0043 OLD)
 endif (POLICY CMP0043)
-# Policy CMP0042 introduced in cmake version 3.0 enables the use of @rpath in an install name via MACOSX_RPATH by default
-# Set to OLD behavior so that all versions use the same behavior, or until minimum cmake version >= 2.8.12 (version where @rpath is available)
 if (POLICY CMP0042)
     cmake_policy(SET CMP0042 OLD)
 endif (POLICY CMP0042)
 
+# 加载ROS自带的必须库
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
@@ -22,7 +20,7 @@ find_package(catkin REQUIRED COMPONENTS
              genmsg stereo_msgs move_base_msgs image_geometry pluginlib
 )
 
-# Optional components
+# 加载可选库
 find_package(costmap_2d)
 find_package(octomap_msgs)
 find_package(apriltag_ros)
@@ -30,8 +28,7 @@ find_package(rviz)
 find_package(find_object_2d)
 find_package(fiducial_msgs)
 
-## System dependencies are found with CMake's conventions
-# find_package(Boost REQUIRED COMPONENTS system)
+## 加载外部库文件
 find_package(RTABMap 0.20.18 REQUIRED)
 
 find_package(OpenCV REQUIRED QUIET COMPONENTS core calib3d imgproc highgui stitching optflow photo video OPTIONAL_COMPONENTS aruco xfeatures2d nonfree gpu cudafeatures2d)
