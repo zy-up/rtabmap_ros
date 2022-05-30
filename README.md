@@ -1,52 +1,5 @@
-rtabmap_ros [![Build Status](https://github.com/introlab/rtabmap_ros/actions/workflows/ros1.yml/badge.svg)](https://github.com/introlab/rtabmap_ros/actions/workflows/ros1.yml) [![docker](https://github.com/introlab/rtabmap_ros/actions/workflows/docker.yml/badge.svg)](https://github.com/introlab/rtabmap_ros/actions/workflows/docker.yml)
+rtabmap_ros 中文注释
 =======
-
-RTAB-Map's ROS package.
-
-For more information, demos and tutorials about this package, visit [rtabmap_ros](http://wiki.ros.org/rtabmap_ros) page on ROS wiki.
-
-For the RTAB-Map libraries and standalone application, visit [RTAB-Map's home page](http://introlab.github.io/rtabmap) or [RTAB-Map's wiki](https://github.com/introlab/rtabmap/wiki).
-
-# Installation 
-
-## ROS2 distribution
-**Under construction**: see [ros2 branch](https://github.com/introlab/rtabmap_ros/tree/ros2#rtabmap_ros).
-
-## ROS distribution 
-RTAB-Map is released as binaries in the ROS distribution.
-* Noetic
-    ```
-    $ sudo apt install ros-noetic-rtabmap-ros
-    ```
-* Melodic
-    ```
-    $ sudo apt install ros-melodic-rtabmap-ros
-    ```
-* Kinetic
-    ```
-    $ sudo apt-get install ros-kinetic-rtabmap-ros
-    ```
-* Indigo
-    ```
-    $ sudo apt-get install ros-indigo-rtabmap-ros
-    ```
-    * For armhf architecture, `ros-indigo-rtabmap-ros` is not available. Install `ros-indigo-rtabmap` and build from source `rtabmap_ros` using the `indigo-devel` branch.
-        ```
-        $ cd catkin_ws
-        $ git clone -b indigo-devel https://github.com/introlab/rtabmap_ros.git src/rtabmap_ros
-        $ catkin_make -j1
-        ```
-
-When launching `rtabmap_ros`'s nodes, if you have the error `error while loading shared libraries...`, try `ldconfig` or add the next line at the end of your `~/.bashrc` to fix it:
-    
-```bash
-$ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/opt/ros/noetic/lib/x86_64-linux-gnu
-```
-
-### Docker
-
-* Go to [docker](https://github.com/introlab/rtabmap_ros/tree/master/docker) directory for an example.
-
 
 ## Build from source
 This section shows how to install RTAB-Map ros-pkg on **ROS Hydro/Indigo/Jade/Kinetic/Lunar/Melodic/Noetic** (Catkin build). RTAB-Map works only with the PCL >=1.7, which is the default version installed with ROS Hydro/Indigo/Jade/Kinetic/Lunar/Melodic/Noetic (**Fuerte and Groovy are not supported**).
@@ -97,33 +50,3 @@ This section shows how to install RTAB-Map ros-pkg on **ROS Hydro/Indigo/Jade/Ki
     * Options:
         * Add `-DRTABMAP_SYNC_MULTI_RGBD=ON` to `catkin_make` if you plan to use multiple cameras.
         * Add `-DRTABMAP_SYNC_USER_DATA=ON` to `catkin_make` if you plan to use user data synchronized topics.
-
-## Build from source for Nvidia Jetson
- * For **Jetpack 4** (Ubuntu 18.04 with ROS Melodic), see this [post](https://github.com/introlab/rtabmap/issues/427#issuecomment-608052821).
- * For **Jetpack 3** (Ubuntu 16.04 with ROS Kinetic), see this [post](https://github.com/introlab/rtabmap_ros/issues/655).
-
-
-### Update to new version 
-
-```bash
-###########
-# rtabmap
-###########
-$ cd rtabmap
-$ git pull origin master
-$ cd build
-$ make
-$ make install
-# Do "sudo make install" if you installed rtabmap in "/usr/local"
-
-###########
-# rtabmap_ros
-###########
-$ roscd rtabmap_ros
-$ git pull origin master
-$ roscd
-$ cd ..
-$ catkin_make -j1 --pkg rtabmap_ros
-```
-
-
