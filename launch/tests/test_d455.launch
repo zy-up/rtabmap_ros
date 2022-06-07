@@ -7,7 +7,6 @@
 <arg name="rtabmapviz" default="true"/>
 <arg name="rviz"       default="false"/>
 <arg name="depth_mode" default="true"/>
-<arg name="odom_strategy" default="9"/> <!-- default VINS -->
 <arg name="unite_imu_method" default="copy"/> <!-- "copy" or "linear_interpolation" -->
 
 <include file="$(find realsense2_camera)/launch/rs_camera.launch">
