@@ -4,7 +4,11 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
+<<<<<<< HEAD
   "/home/zy/Code/catkin_rtab/src/rtabmap_ros/src/StereoOdometryNode.cpp" "/home/zy/Code/catkin_rtab/src/rtabmap_ros/build/CMakeFiles/rtabmap_stereo_odometry.dir/src/StereoOdometryNode.cpp.o"
+=======
+  "/home/exdx/codes/catkin_rtab/src/rtabmap_ros/src/StereoOdometryNode.cpp" "/home/exdx/codes/catkin_rtab/src/rtabmap_ros/build/CMakeFiles/rtabmap_stereo_odometry.dir/src/StereoOdometryNode.cpp.o"
+>>>>>>> 8dcec0a9a1f95d57487b09c6cec170bd6adbd4be
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

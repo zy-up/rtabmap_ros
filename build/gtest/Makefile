@@ -48,10 +48,17 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
+<<<<<<< HEAD
 CMAKE_SOURCE_DIR = /home/zy/Code/catkin_rtab/src/rtabmap_ros
 
 # The top-level build directory on which CMake was run.
 CMAKE_BINARY_DIR = /home/zy/Code/catkin_rtab/src/rtabmap_ros/build
+=======
+CMAKE_SOURCE_DIR = /home/exdx/codes/catkin_rtab/src/rtabmap_ros
+
+# The top-level build directory on which CMake was run.
+CMAKE_BINARY_DIR = /home/exdx/codes/catkin_rtab/src/rtabmap_ros/build
+>>>>>>> 8dcec0a9a1f95d57487b09c6cec170bd6adbd4be
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -137,14 +144,24 @@ test/fast: test
 
 # The main all target
 all: cmake_check_build_system
+<<<<<<< HEAD
 	cd /home/zy/Code/catkin_rtab/src/rtabmap_ros/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/zy/Code/catkin_rtab/src/rtabmap_ros/build/CMakeFiles /home/zy/Code/catkin_rtab/src/rtabmap_ros/build/gtest/CMakeFiles/progress.marks
 	cd /home/zy/Code/catkin_rtab/src/rtabmap_ros/build && $(MAKE) -f CMakeFiles/Makefile2 gtest/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/zy/Code/catkin_rtab/src/rtabmap_ros/build/CMakeFiles 0
+=======
+	cd /home/exdx/codes/catkin_rtab/src/rtabmap_ros/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/exdx/codes/catkin_rtab/src/rtabmap_ros/build/CMakeFiles /home/exdx/codes/catkin_rtab/src/rtabmap_ros/build/gtest/CMakeFiles/progress.marks
+	cd /home/exdx/codes/catkin_rtab/src/rtabmap_ros/build && $(MAKE) -f CMakeFiles/Makefile2 gtest/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/exdx/codes/catkin_rtab/src/rtabmap_ros/build/CMakeFiles 0
+>>>>>>> 8dcec0a9a1f95d57487b09c6cec170bd6adbd4be
 .PHONY : all
 
 # The main clean target
 clean:
+<<<<<<< HEAD
 	cd /home/zy/Code/catkin_rtab/src/rtabmap_ros/build && $(MAKE) -f CMakeFiles/Makefile2 gtest/clean
+=======
+	cd /home/exdx/codes/catkin_rtab/src/rtabmap_ros/build && $(MAKE) -f CMakeFiles/Makefile2 gtest/clean
+>>>>>>> 8dcec0a9a1f95d57487b09c6cec170bd6adbd4be
 .PHONY : clean
 
 # The main clean target
@@ -154,17 +171,29 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
+<<<<<<< HEAD
 	cd /home/zy/Code/catkin_rtab/src/rtabmap_ros/build && $(MAKE) -f CMakeFiles/Makefile2 gtest/preinstall
+=======
+	cd /home/exdx/codes/catkin_rtab/src/rtabmap_ros/build && $(MAKE) -f CMakeFiles/Makefile2 gtest/preinstall
+>>>>>>> 8dcec0a9a1f95d57487b09c6cec170bd6adbd4be
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
+<<<<<<< HEAD
 	cd /home/zy/Code/catkin_rtab/src/rtabmap_ros/build && $(MAKE) -f CMakeFiles/Makefile2 gtest/preinstall
+=======
+	cd /home/exdx/codes/catkin_rtab/src/rtabmap_ros/build && $(MAKE) -f CMakeFiles/Makefile2 gtest/preinstall
+>>>>>>> 8dcec0a9a1f95d57487b09c6cec170bd6adbd4be
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
+<<<<<<< HEAD
 	cd /home/zy/Code/catkin_rtab/src/rtabmap_ros/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+=======
+	cd /home/exdx/codes/catkin_rtab/src/rtabmap_ros/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+>>>>>>> 8dcec0a9a1f95d57487b09c6cec170bd6adbd4be
 .PHONY : depend
 
 # Help Target
@@ -191,6 +220,10 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
+<<<<<<< HEAD
 	cd /home/zy/Code/catkin_rtab/src/rtabmap_ros/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+=======
+	cd /home/exdx/codes/catkin_rtab/src/rtabmap_ros/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+>>>>>>> 8dcec0a9a1f95d57487b09c6cec170bd6adbd4be
 .PHONY : cmake_check_build_system
 

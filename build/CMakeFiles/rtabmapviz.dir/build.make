@@ -43,10 +43,17 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
+<<<<<<< HEAD
 CMAKE_SOURCE_DIR = /home/zy/Code/catkin_rtab/src/rtabmap_ros
 
 # The top-level build directory on which CMake was run.
 CMAKE_BINARY_DIR = /home/zy/Code/catkin_rtab/src/rtabmap_ros/build
+=======
+CMAKE_SOURCE_DIR = /home/exdx/codes/catkin_rtab/src/rtabmap_ros
+
+# The top-level build directory on which CMake was run.
+CMAKE_BINARY_DIR = /home/exdx/codes/catkin_rtab/src/rtabmap_ros/build
+>>>>>>> 8dcec0a9a1f95d57487b09c6cec170bd6adbd4be
 
 # Include any dependencies generated for this target.
 include CMakeFiles/rtabmapviz.dir/depend.make
@@ -59,6 +66,7 @@ include CMakeFiles/rtabmapviz.dir/flags.make
 
 CMakeFiles/rtabmapviz.dir/src/GuiNode.cpp.o: CMakeFiles/rtabmapviz.dir/flags.make
 CMakeFiles/rtabmapviz.dir/src/GuiNode.cpp.o: ../src/GuiNode.cpp
+<<<<<<< HEAD
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zy/Code/catkin_rtab/src/rtabmap_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/rtabmapviz.dir/src/GuiNode.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/rtabmapviz.dir/src/GuiNode.cpp.o -c /home/zy/Code/catkin_rtab/src/rtabmap_ros/src/GuiNode.cpp
 
@@ -95,6 +103,44 @@ CMakeFiles/rtabmapviz.dir/src/PreferencesDialogROS.cpp.i: cmake_force
 CMakeFiles/rtabmapviz.dir/src/PreferencesDialogROS.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/rtabmapviz.dir/src/PreferencesDialogROS.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zy/Code/catkin_rtab/src/rtabmap_ros/src/PreferencesDialogROS.cpp -o CMakeFiles/rtabmapviz.dir/src/PreferencesDialogROS.cpp.s
+=======
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/exdx/codes/catkin_rtab/src/rtabmap_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/rtabmapviz.dir/src/GuiNode.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/rtabmapviz.dir/src/GuiNode.cpp.o -c /home/exdx/codes/catkin_rtab/src/rtabmap_ros/src/GuiNode.cpp
+
+CMakeFiles/rtabmapviz.dir/src/GuiNode.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/rtabmapviz.dir/src/GuiNode.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/exdx/codes/catkin_rtab/src/rtabmap_ros/src/GuiNode.cpp > CMakeFiles/rtabmapviz.dir/src/GuiNode.cpp.i
+
+CMakeFiles/rtabmapviz.dir/src/GuiNode.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/rtabmapviz.dir/src/GuiNode.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/exdx/codes/catkin_rtab/src/rtabmap_ros/src/GuiNode.cpp -o CMakeFiles/rtabmapviz.dir/src/GuiNode.cpp.s
+
+CMakeFiles/rtabmapviz.dir/src/GuiWrapper.cpp.o: CMakeFiles/rtabmapviz.dir/flags.make
+CMakeFiles/rtabmapviz.dir/src/GuiWrapper.cpp.o: ../src/GuiWrapper.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/exdx/codes/catkin_rtab/src/rtabmap_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/rtabmapviz.dir/src/GuiWrapper.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/rtabmapviz.dir/src/GuiWrapper.cpp.o -c /home/exdx/codes/catkin_rtab/src/rtabmap_ros/src/GuiWrapper.cpp
+
+CMakeFiles/rtabmapviz.dir/src/GuiWrapper.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/rtabmapviz.dir/src/GuiWrapper.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/exdx/codes/catkin_rtab/src/rtabmap_ros/src/GuiWrapper.cpp > CMakeFiles/rtabmapviz.dir/src/GuiWrapper.cpp.i
+
+CMakeFiles/rtabmapviz.dir/src/GuiWrapper.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/rtabmapviz.dir/src/GuiWrapper.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/exdx/codes/catkin_rtab/src/rtabmap_ros/src/GuiWrapper.cpp -o CMakeFiles/rtabmapviz.dir/src/GuiWrapper.cpp.s
+
+CMakeFiles/rtabmapviz.dir/src/PreferencesDialogROS.cpp.o: CMakeFiles/rtabmapviz.dir/flags.make
+CMakeFiles/rtabmapviz.dir/src/PreferencesDialogROS.cpp.o: ../src/PreferencesDialogROS.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/exdx/codes/catkin_rtab/src/rtabmap_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/rtabmapviz.dir/src/PreferencesDialogROS.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/rtabmapviz.dir/src/PreferencesDialogROS.cpp.o -c /home/exdx/codes/catkin_rtab/src/rtabmap_ros/src/PreferencesDialogROS.cpp
+
+CMakeFiles/rtabmapviz.dir/src/PreferencesDialogROS.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/rtabmapviz.dir/src/PreferencesDialogROS.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/exdx/codes/catkin_rtab/src/rtabmap_ros/src/PreferencesDialogROS.cpp > CMakeFiles/rtabmapviz.dir/src/PreferencesDialogROS.cpp.i
+
+CMakeFiles/rtabmapviz.dir/src/PreferencesDialogROS.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/rtabmapviz.dir/src/PreferencesDialogROS.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/exdx/codes/catkin_rtab/src/rtabmap_ros/src/PreferencesDialogROS.cpp -o CMakeFiles/rtabmapviz.dir/src/PreferencesDialogROS.cpp.s
+>>>>>>> 8dcec0a9a1f95d57487b09c6cec170bd6adbd4be
 
 # Object files for target rtabmapviz
 rtabmapviz_OBJECTS = \
@@ -562,7 +608,11 @@ devel/lib/rtabmap_ros/rtabmapviz: /usr/lib/x86_64-linux-gnu/libX11.so
 devel/lib/rtabmap_ros/rtabmapviz: /usr/lib/x86_64-linux-gnu/libXext.so
 devel/lib/rtabmap_ros/rtabmapviz: /usr/lib/x86_64-linux-gnu/libXt.so
 devel/lib/rtabmap_ros/rtabmapviz: CMakeFiles/rtabmapviz.dir/link.txt
+<<<<<<< HEAD
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/zy/Code/catkin_rtab/src/rtabmap_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable devel/lib/rtabmap_ros/rtabmapviz"
+=======
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/exdx/codes/catkin_rtab/src/rtabmap_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable devel/lib/rtabmap_ros/rtabmapviz"
+>>>>>>> 8dcec0a9a1f95d57487b09c6cec170bd6adbd4be
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/rtabmapviz.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -575,6 +625,10 @@ CMakeFiles/rtabmapviz.dir/clean:
 .PHONY : CMakeFiles/rtabmapviz.dir/clean
 
 CMakeFiles/rtabmapviz.dir/depend:
+<<<<<<< HEAD
 	cd /home/zy/Code/catkin_rtab/src/rtabmap_ros/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/zy/Code/catkin_rtab/src/rtabmap_ros /home/zy/Code/catkin_rtab/src/rtabmap_ros /home/zy/Code/catkin_rtab/src/rtabmap_ros/build /home/zy/Code/catkin_rtab/src/rtabmap_ros/build /home/zy/Code/catkin_rtab/src/rtabmap_ros/build/CMakeFiles/rtabmapviz.dir/DependInfo.cmake --color=$(COLOR)
+=======
+	cd /home/exdx/codes/catkin_rtab/src/rtabmap_ros/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/exdx/codes/catkin_rtab/src/rtabmap_ros /home/exdx/codes/catkin_rtab/src/rtabmap_ros /home/exdx/codes/catkin_rtab/src/rtabmap_ros/build /home/exdx/codes/catkin_rtab/src/rtabmap_ros/build /home/exdx/codes/catkin_rtab/src/rtabmap_ros/build/CMakeFiles/rtabmapviz.dir/DependInfo.cmake --color=$(COLOR)
+>>>>>>> 8dcec0a9a1f95d57487b09c6cec170bd6adbd4be
 .PHONY : CMakeFiles/rtabmapviz.dir/depend
 

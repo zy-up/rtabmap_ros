@@ -43,10 +43,17 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
+<<<<<<< HEAD
 CMAKE_SOURCE_DIR = /home/zy/Code/catkin_rtab/src/rtabmap_ros
 
 # The top-level build directory on which CMake was run.
 CMAKE_BINARY_DIR = /home/zy/Code/catkin_rtab/src/rtabmap_ros/build
+=======
+CMAKE_SOURCE_DIR = /home/exdx/codes/catkin_rtab/src/rtabmap_ros
+
+# The top-level build directory on which CMake was run.
+CMAKE_BINARY_DIR = /home/exdx/codes/catkin_rtab/src/rtabmap_ros/build
+>>>>>>> 8dcec0a9a1f95d57487b09c6cec170bd6adbd4be
 
 # Utility rule file for apriltag_ros_generate_messages_nodejs.
 
@@ -67,6 +74,10 @@ CMakeFiles/apriltag_ros_generate_messages_nodejs.dir/clean:
 .PHONY : CMakeFiles/apriltag_ros_generate_messages_nodejs.dir/clean
 
 CMakeFiles/apriltag_ros_generate_messages_nodejs.dir/depend:
+<<<<<<< HEAD
 	cd /home/zy/Code/catkin_rtab/src/rtabmap_ros/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/zy/Code/catkin_rtab/src/rtabmap_ros /home/zy/Code/catkin_rtab/src/rtabmap_ros /home/zy/Code/catkin_rtab/src/rtabmap_ros/build /home/zy/Code/catkin_rtab/src/rtabmap_ros/build /home/zy/Code/catkin_rtab/src/rtabmap_ros/build/CMakeFiles/apriltag_ros_generate_messages_nodejs.dir/DependInfo.cmake --color=$(COLOR)
+=======
+	cd /home/exdx/codes/catkin_rtab/src/rtabmap_ros/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/exdx/codes/catkin_rtab/src/rtabmap_ros /home/exdx/codes/catkin_rtab/src/rtabmap_ros /home/exdx/codes/catkin_rtab/src/rtabmap_ros/build /home/exdx/codes/catkin_rtab/src/rtabmap_ros/build /home/exdx/codes/catkin_rtab/src/rtabmap_ros/build/CMakeFiles/apriltag_ros_generate_messages_nodejs.dir/DependInfo.cmake --color=$(COLOR)
+>>>>>>> 8dcec0a9a1f95d57487b09c6cec170bd6adbd4be
 .PHONY : CMakeFiles/apriltag_ros_generate_messages_nodejs.dir/depend
 

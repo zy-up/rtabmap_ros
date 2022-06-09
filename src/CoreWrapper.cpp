@@ -83,6 +83,7 @@ using namespace rtabmap;
 
 namespace rtabmap_ros {
 
+// 核心包装器
 CoreWrapper::CoreWrapper() :
 		CommonDataSubscriber(false),
 		paused_(false),
@@ -134,6 +135,7 @@ CoreWrapper::CoreWrapper() :
 	globalPose_.header.stamp = ros::Time(0);
 }
 
+// 初始化函数
 void CoreWrapper::onInit()
 {
 	ros::NodeHandle & nh = getNodeHandle();
@@ -834,6 +836,7 @@ void CoreWrapper::onInit()
 	republishNodeDataSub_ = nh.subscribe("republish_node_data", 100, &CoreWrapper::republishNodeDataCallback, this);
 }
 
+// 析构函数
 CoreWrapper::~CoreWrapper()
 {
 	if(transformThread_)
@@ -865,6 +868,7 @@ CoreWrapper::~CoreWrapper()
 	delete mbClient_;
 }
 
+// 读取设置的参数
 void CoreWrapper::loadParameters(const std::string & configFile, ParametersMap & parameters)
 {
 	if(!configFile.empty())
@@ -878,6 +882,7 @@ void CoreWrapper::loadParameters(const std::string & configFile, ParametersMap &
 	}
 }
 
+// 保存当前设置的参数
 void CoreWrapper::saveParameters(const std::string & configFile)
 {
 	if(!configFile.empty())
@@ -896,6 +901,7 @@ void CoreWrapper::saveParameters(const std::string & configFile)
 	}
 }
 
+// 消息发布器
 void CoreWrapper::publishLoop(double tfDelay, double tfTolerance)
 {
 	if(tfDelay == 0)
@@ -919,6 +925,7 @@ void CoreWrapper::publishLoop(double tfDelay, double tfTolerance)
 	}
 }
 
+// 订阅反馈函数
 void CoreWrapper::defaultCallback(const sensor_msgs::ImageConstPtr & imageMsg)
 {
 	if(!paused_)
@@ -988,6 +995,7 @@ void CoreWrapper::defaultCallback(const sensor_msgs::ImageConstPtr & imageMsg)
 	}
 }
 
+// 里程计更新
 bool CoreWrapper::odomUpdate(const nav_msgs::OdometryConstPtr & odomMsg, ros::Time stamp)
 {
 	if(!paused_)
@@ -1099,6 +1107,7 @@ bool CoreWrapper::odomUpdate(const nav_msgs::OdometryConstPtr & odomMsg, ros::Ti
 	return false;
 }
 
+// 里程计TF更新
 bool CoreWrapper::odomTFUpdate(const ros::Time & stamp)
 {
 	if(!paused_)
@@ -1156,6 +1165,7 @@ bool CoreWrapper::odomTFUpdate(const ros::Time & stamp)
 	return false;
 }
 
+// 深度相机的订阅接口
 void CoreWrapper::commonDepthCallback(
 		const nav_msgs::OdometryConstPtr & odomMsg,
 		const rtabmap_ros::UserDataConstPtr & userDataMsg,
@@ -1226,6 +1236,7 @@ void CoreWrapper::commonDepthCallback(
 			localDescriptors);
 }
 
+// 深度相机订阅的实际接口
 void CoreWrapper::commonDepthCallbackImpl(
 		const std::string & odomFrameId,
 		const rtabmap_ros::UserDataConstPtr & userDataMsg,
@@ -1436,6 +1447,7 @@ void CoreWrapper::commonDepthCallbackImpl(
 	covariance_ = cv::Mat();
 }
 
+// 双目相机订阅接口
 void CoreWrapper::commonStereoCallback(
 		const nav_msgs::OdometryConstPtr & odomMsg,
 		const rtabmap_ros::UserDataConstPtr & userDataMsg,
@@ -1686,6 +1698,7 @@ void CoreWrapper::commonStereoCallback(
 	covariance_ = cv::Mat();
 }
 
+// lidar订阅接口
 void CoreWrapper::commonLaserScanCallback(
 		const nav_msgs::OdometryConstPtr & odomMsg,
 		const rtabmap_ros::UserDataConstPtr & userDataMsg,
@@ -1822,6 +1835,7 @@ void CoreWrapper::commonLaserScanCallback(
 	covariance_ = cv::Mat();
 }
 
+// 里程计订阅接口
 void CoreWrapper::commonOdomCallback(
 		const nav_msgs::OdometryConstPtr & odomMsg,
 		const rtabmap_ros::UserDataConstPtr & userDataMsg,
@@ -1881,6 +1895,7 @@ void CoreWrapper::commonOdomCallback(
 	covariance_ = cv::Mat();
 }
 
+// 
 void CoreWrapper::process(
 		const ros::Time & stamp,
 		SensorData & data,
@@ -2453,6 +2468,7 @@ void CoreWrapper::gpsFixAsyncCallback(const sensor_msgs::NavSatFixConstPtr & gps
 	}
 }
 
+// apriltag的订阅反馈函数
 #ifdef WITH_APRILTAG_ROS
 void CoreWrapper::tagDetectionsAsyncCallback(const apriltag_ros::AprilTagDetectionArray & tagDetections)
 {
@@ -2524,6 +2540,7 @@ void CoreWrapper::fiducialDetectionsAsyncCallback(const fiducial_msgs::FiducialT
 }
 #endif
 
+// imu的同步订阅反馈函数
 void CoreWrapper::imuAsyncCallback(const sensor_msgs::ImuConstPtr & msg)
 {
 	if(!paused_)
@@ -2895,6 +2912,7 @@ bool CoreWrapper::resetRtabmapCallback(std_srvs::Empty::Request&, std_srvs::Empt
 	return true;
 }
 
+// 暂停反馈函数
 bool CoreWrapper::pauseRtabmapCallback(std_srvs::Empty::Request&, std_srvs::Empty::Response&)
 {
 	if(paused_)
@@ -2911,6 +2929,7 @@ bool CoreWrapper::pauseRtabmapCallback(std_srvs::Empty::Request&, std_srvs::Empt
 	return true;
 }
 
+// 继续运行反馈函数
 bool CoreWrapper::resumeRtabmapCallback(std_srvs::Empty::Request&, std_srvs::Empty::Response&)
 {
 	if(!paused_)

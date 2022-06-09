@@ -43,10 +43,17 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
+<<<<<<< HEAD
 CMAKE_SOURCE_DIR = /home/zy/Code/catkin_rtab/src/rtabmap_ros
 
 # The top-level build directory on which CMake was run.
 CMAKE_BINARY_DIR = /home/zy/Code/catkin_rtab/src/rtabmap_ros/build
+=======
+CMAKE_SOURCE_DIR = /home/exdx/codes/catkin_rtab/src/rtabmap_ros
+
+# The top-level build directory on which CMake was run.
+CMAKE_BINARY_DIR = /home/exdx/codes/catkin_rtab/src/rtabmap_ros/build
+>>>>>>> 8dcec0a9a1f95d57487b09c6cec170bd6adbd4be
 
 # Include any dependencies generated for this target.
 include CMakeFiles/rtabmap_plugins.dir/depend.make
@@ -59,6 +66,7 @@ include CMakeFiles/rtabmap_plugins.dir/flags.make
 
 CMakeFiles/rtabmap_plugins.dir/src/nodelets/rgbd_odometry.cpp.o: CMakeFiles/rtabmap_plugins.dir/flags.make
 CMakeFiles/rtabmap_plugins.dir/src/nodelets/rgbd_odometry.cpp.o: ../src/nodelets/rgbd_odometry.cpp
+<<<<<<< HEAD
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zy/Code/catkin_rtab/src/rtabmap_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/rtabmap_plugins.dir/src/nodelets/rgbd_odometry.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/rtabmap_plugins.dir/src/nodelets/rgbd_odometry.cpp.o -c /home/zy/Code/catkin_rtab/src/rtabmap_ros/src/nodelets/rgbd_odometry.cpp
 
@@ -342,6 +350,291 @@ CMakeFiles/rtabmap_plugins.dir/src/nodelets/rgbd_relay.cpp.i: cmake_force
 CMakeFiles/rtabmap_plugins.dir/src/nodelets/rgbd_relay.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/rtabmap_plugins.dir/src/nodelets/rgbd_relay.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zy/Code/catkin_rtab/src/rtabmap_ros/src/nodelets/rgbd_relay.cpp -o CMakeFiles/rtabmap_plugins.dir/src/nodelets/rgbd_relay.cpp.s
+=======
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/exdx/codes/catkin_rtab/src/rtabmap_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/rtabmap_plugins.dir/src/nodelets/rgbd_odometry.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/rtabmap_plugins.dir/src/nodelets/rgbd_odometry.cpp.o -c /home/exdx/codes/catkin_rtab/src/rtabmap_ros/src/nodelets/rgbd_odometry.cpp
+
+CMakeFiles/rtabmap_plugins.dir/src/nodelets/rgbd_odometry.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/rtabmap_plugins.dir/src/nodelets/rgbd_odometry.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/exdx/codes/catkin_rtab/src/rtabmap_ros/src/nodelets/rgbd_odometry.cpp > CMakeFiles/rtabmap_plugins.dir/src/nodelets/rgbd_odometry.cpp.i
+
+CMakeFiles/rtabmap_plugins.dir/src/nodelets/rgbd_odometry.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/rtabmap_plugins.dir/src/nodelets/rgbd_odometry.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/exdx/codes/catkin_rtab/src/rtabmap_ros/src/nodelets/rgbd_odometry.cpp -o CMakeFiles/rtabmap_plugins.dir/src/nodelets/rgbd_odometry.cpp.s
+
+CMakeFiles/rtabmap_plugins.dir/src/nodelets/stereo_odometry.cpp.o: CMakeFiles/rtabmap_plugins.dir/flags.make
+CMakeFiles/rtabmap_plugins.dir/src/nodelets/stereo_odometry.cpp.o: ../src/nodelets/stereo_odometry.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/exdx/codes/catkin_rtab/src/rtabmap_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/rtabmap_plugins.dir/src/nodelets/stereo_odometry.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/rtabmap_plugins.dir/src/nodelets/stereo_odometry.cpp.o -c /home/exdx/codes/catkin_rtab/src/rtabmap_ros/src/nodelets/stereo_odometry.cpp
+
+CMakeFiles/rtabmap_plugins.dir/src/nodelets/stereo_odometry.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/rtabmap_plugins.dir/src/nodelets/stereo_odometry.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/exdx/codes/catkin_rtab/src/rtabmap_ros/src/nodelets/stereo_odometry.cpp > CMakeFiles/rtabmap_plugins.dir/src/nodelets/stereo_odometry.cpp.i
+
+CMakeFiles/rtabmap_plugins.dir/src/nodelets/stereo_odometry.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/rtabmap_plugins.dir/src/nodelets/stereo_odometry.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/exdx/codes/catkin_rtab/src/rtabmap_ros/src/nodelets/stereo_odometry.cpp -o CMakeFiles/rtabmap_plugins.dir/src/nodelets/stereo_odometry.cpp.s
+
+CMakeFiles/rtabmap_plugins.dir/src/nodelets/rgbdicp_odometry.cpp.o: CMakeFiles/rtabmap_plugins.dir/flags.make
+CMakeFiles/rtabmap_plugins.dir/src/nodelets/rgbdicp_odometry.cpp.o: ../src/nodelets/rgbdicp_odometry.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/exdx/codes/catkin_rtab/src/rtabmap_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/rtabmap_plugins.dir/src/nodelets/rgbdicp_odometry.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/rtabmap_plugins.dir/src/nodelets/rgbdicp_odometry.cpp.o -c /home/exdx/codes/catkin_rtab/src/rtabmap_ros/src/nodelets/rgbdicp_odometry.cpp
+
+CMakeFiles/rtabmap_plugins.dir/src/nodelets/rgbdicp_odometry.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/rtabmap_plugins.dir/src/nodelets/rgbdicp_odometry.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/exdx/codes/catkin_rtab/src/rtabmap_ros/src/nodelets/rgbdicp_odometry.cpp > CMakeFiles/rtabmap_plugins.dir/src/nodelets/rgbdicp_odometry.cpp.i
+
+CMakeFiles/rtabmap_plugins.dir/src/nodelets/rgbdicp_odometry.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/rtabmap_plugins.dir/src/nodelets/rgbdicp_odometry.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/exdx/codes/catkin_rtab/src/rtabmap_ros/src/nodelets/rgbdicp_odometry.cpp -o CMakeFiles/rtabmap_plugins.dir/src/nodelets/rgbdicp_odometry.cpp.s
+
+CMakeFiles/rtabmap_plugins.dir/src/nodelets/icp_odometry.cpp.o: CMakeFiles/rtabmap_plugins.dir/flags.make
+CMakeFiles/rtabmap_plugins.dir/src/nodelets/icp_odometry.cpp.o: ../src/nodelets/icp_odometry.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/exdx/codes/catkin_rtab/src/rtabmap_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/rtabmap_plugins.dir/src/nodelets/icp_odometry.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/rtabmap_plugins.dir/src/nodelets/icp_odometry.cpp.o -c /home/exdx/codes/catkin_rtab/src/rtabmap_ros/src/nodelets/icp_odometry.cpp
+
+CMakeFiles/rtabmap_plugins.dir/src/nodelets/icp_odometry.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/rtabmap_plugins.dir/src/nodelets/icp_odometry.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/exdx/codes/catkin_rtab/src/rtabmap_ros/src/nodelets/icp_odometry.cpp > CMakeFiles/rtabmap_plugins.dir/src/nodelets/icp_odometry.cpp.i
+
+CMakeFiles/rtabmap_plugins.dir/src/nodelets/icp_odometry.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/rtabmap_plugins.dir/src/nodelets/icp_odometry.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/exdx/codes/catkin_rtab/src/rtabmap_ros/src/nodelets/icp_odometry.cpp -o CMakeFiles/rtabmap_plugins.dir/src/nodelets/icp_odometry.cpp.s
+
+CMakeFiles/rtabmap_plugins.dir/src/nodelets/data_throttle.cpp.o: CMakeFiles/rtabmap_plugins.dir/flags.make
+CMakeFiles/rtabmap_plugins.dir/src/nodelets/data_throttle.cpp.o: ../src/nodelets/data_throttle.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/exdx/codes/catkin_rtab/src/rtabmap_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/rtabmap_plugins.dir/src/nodelets/data_throttle.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/rtabmap_plugins.dir/src/nodelets/data_throttle.cpp.o -c /home/exdx/codes/catkin_rtab/src/rtabmap_ros/src/nodelets/data_throttle.cpp
+
+CMakeFiles/rtabmap_plugins.dir/src/nodelets/data_throttle.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/rtabmap_plugins.dir/src/nodelets/data_throttle.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/exdx/codes/catkin_rtab/src/rtabmap_ros/src/nodelets/data_throttle.cpp > CMakeFiles/rtabmap_plugins.dir/src/nodelets/data_throttle.cpp.i
+
+CMakeFiles/rtabmap_plugins.dir/src/nodelets/data_throttle.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/rtabmap_plugins.dir/src/nodelets/data_throttle.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/exdx/codes/catkin_rtab/src/rtabmap_ros/src/nodelets/data_throttle.cpp -o CMakeFiles/rtabmap_plugins.dir/src/nodelets/data_throttle.cpp.s
+
+CMakeFiles/rtabmap_plugins.dir/src/nodelets/stereo_throttle.cpp.o: CMakeFiles/rtabmap_plugins.dir/flags.make
+CMakeFiles/rtabmap_plugins.dir/src/nodelets/stereo_throttle.cpp.o: ../src/nodelets/stereo_throttle.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/exdx/codes/catkin_rtab/src/rtabmap_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/rtabmap_plugins.dir/src/nodelets/stereo_throttle.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/rtabmap_plugins.dir/src/nodelets/stereo_throttle.cpp.o -c /home/exdx/codes/catkin_rtab/src/rtabmap_ros/src/nodelets/stereo_throttle.cpp
+
+CMakeFiles/rtabmap_plugins.dir/src/nodelets/stereo_throttle.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/rtabmap_plugins.dir/src/nodelets/stereo_throttle.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/exdx/codes/catkin_rtab/src/rtabmap_ros/src/nodelets/stereo_throttle.cpp > CMakeFiles/rtabmap_plugins.dir/src/nodelets/stereo_throttle.cpp.i
+
+CMakeFiles/rtabmap_plugins.dir/src/nodelets/stereo_throttle.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/rtabmap_plugins.dir/src/nodelets/stereo_throttle.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/exdx/codes/catkin_rtab/src/rtabmap_ros/src/nodelets/stereo_throttle.cpp -o CMakeFiles/rtabmap_plugins.dir/src/nodelets/stereo_throttle.cpp.s
+
+CMakeFiles/rtabmap_plugins.dir/src/nodelets/data_odom_sync.cpp.o: CMakeFiles/rtabmap_plugins.dir/flags.make
+CMakeFiles/rtabmap_plugins.dir/src/nodelets/data_odom_sync.cpp.o: ../src/nodelets/data_odom_sync.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/exdx/codes/catkin_rtab/src/rtabmap_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/rtabmap_plugins.dir/src/nodelets/data_odom_sync.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/rtabmap_plugins.dir/src/nodelets/data_odom_sync.cpp.o -c /home/exdx/codes/catkin_rtab/src/rtabmap_ros/src/nodelets/data_odom_sync.cpp
+
+CMakeFiles/rtabmap_plugins.dir/src/nodelets/data_odom_sync.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/rtabmap_plugins.dir/src/nodelets/data_odom_sync.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/exdx/codes/catkin_rtab/src/rtabmap_ros/src/nodelets/data_odom_sync.cpp > CMakeFiles/rtabmap_plugins.dir/src/nodelets/data_odom_sync.cpp.i
+
+CMakeFiles/rtabmap_plugins.dir/src/nodelets/data_odom_sync.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/rtabmap_plugins.dir/src/nodelets/data_odom_sync.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/exdx/codes/catkin_rtab/src/rtabmap_ros/src/nodelets/data_odom_sync.cpp -o CMakeFiles/rtabmap_plugins.dir/src/nodelets/data_odom_sync.cpp.s
+
+CMakeFiles/rtabmap_plugins.dir/src/nodelets/point_cloud_xyzrgb.cpp.o: CMakeFiles/rtabmap_plugins.dir/flags.make
+CMakeFiles/rtabmap_plugins.dir/src/nodelets/point_cloud_xyzrgb.cpp.o: ../src/nodelets/point_cloud_xyzrgb.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/exdx/codes/catkin_rtab/src/rtabmap_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/rtabmap_plugins.dir/src/nodelets/point_cloud_xyzrgb.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/rtabmap_plugins.dir/src/nodelets/point_cloud_xyzrgb.cpp.o -c /home/exdx/codes/catkin_rtab/src/rtabmap_ros/src/nodelets/point_cloud_xyzrgb.cpp
+
+CMakeFiles/rtabmap_plugins.dir/src/nodelets/point_cloud_xyzrgb.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/rtabmap_plugins.dir/src/nodelets/point_cloud_xyzrgb.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/exdx/codes/catkin_rtab/src/rtabmap_ros/src/nodelets/point_cloud_xyzrgb.cpp > CMakeFiles/rtabmap_plugins.dir/src/nodelets/point_cloud_xyzrgb.cpp.i
+
+CMakeFiles/rtabmap_plugins.dir/src/nodelets/point_cloud_xyzrgb.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/rtabmap_plugins.dir/src/nodelets/point_cloud_xyzrgb.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/exdx/codes/catkin_rtab/src/rtabmap_ros/src/nodelets/point_cloud_xyzrgb.cpp -o CMakeFiles/rtabmap_plugins.dir/src/nodelets/point_cloud_xyzrgb.cpp.s
+
+CMakeFiles/rtabmap_plugins.dir/src/nodelets/point_cloud_xyz.cpp.o: CMakeFiles/rtabmap_plugins.dir/flags.make
+CMakeFiles/rtabmap_plugins.dir/src/nodelets/point_cloud_xyz.cpp.o: ../src/nodelets/point_cloud_xyz.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/exdx/codes/catkin_rtab/src/rtabmap_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/rtabmap_plugins.dir/src/nodelets/point_cloud_xyz.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/rtabmap_plugins.dir/src/nodelets/point_cloud_xyz.cpp.o -c /home/exdx/codes/catkin_rtab/src/rtabmap_ros/src/nodelets/point_cloud_xyz.cpp
+
+CMakeFiles/rtabmap_plugins.dir/src/nodelets/point_cloud_xyz.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/rtabmap_plugins.dir/src/nodelets/point_cloud_xyz.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/exdx/codes/catkin_rtab/src/rtabmap_ros/src/nodelets/point_cloud_xyz.cpp > CMakeFiles/rtabmap_plugins.dir/src/nodelets/point_cloud_xyz.cpp.i
+
+CMakeFiles/rtabmap_plugins.dir/src/nodelets/point_cloud_xyz.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/rtabmap_plugins.dir/src/nodelets/point_cloud_xyz.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/exdx/codes/catkin_rtab/src/rtabmap_ros/src/nodelets/point_cloud_xyz.cpp -o CMakeFiles/rtabmap_plugins.dir/src/nodelets/point_cloud_xyz.cpp.s
+
+CMakeFiles/rtabmap_plugins.dir/src/nodelets/disparity_to_depth.cpp.o: CMakeFiles/rtabmap_plugins.dir/flags.make
+CMakeFiles/rtabmap_plugins.dir/src/nodelets/disparity_to_depth.cpp.o: ../src/nodelets/disparity_to_depth.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/exdx/codes/catkin_rtab/src/rtabmap_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/rtabmap_plugins.dir/src/nodelets/disparity_to_depth.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/rtabmap_plugins.dir/src/nodelets/disparity_to_depth.cpp.o -c /home/exdx/codes/catkin_rtab/src/rtabmap_ros/src/nodelets/disparity_to_depth.cpp
+
+CMakeFiles/rtabmap_plugins.dir/src/nodelets/disparity_to_depth.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/rtabmap_plugins.dir/src/nodelets/disparity_to_depth.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/exdx/codes/catkin_rtab/src/rtabmap_ros/src/nodelets/disparity_to_depth.cpp > CMakeFiles/rtabmap_plugins.dir/src/nodelets/disparity_to_depth.cpp.i
+
+CMakeFiles/rtabmap_plugins.dir/src/nodelets/disparity_to_depth.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/rtabmap_plugins.dir/src/nodelets/disparity_to_depth.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/exdx/codes/catkin_rtab/src/rtabmap_ros/src/nodelets/disparity_to_depth.cpp -o CMakeFiles/rtabmap_plugins.dir/src/nodelets/disparity_to_depth.cpp.s
+
+CMakeFiles/rtabmap_plugins.dir/src/nodelets/pointcloud_to_depthimage.cpp.o: CMakeFiles/rtabmap_plugins.dir/flags.make
+CMakeFiles/rtabmap_plugins.dir/src/nodelets/pointcloud_to_depthimage.cpp.o: ../src/nodelets/pointcloud_to_depthimage.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/exdx/codes/catkin_rtab/src/rtabmap_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/rtabmap_plugins.dir/src/nodelets/pointcloud_to_depthimage.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/rtabmap_plugins.dir/src/nodelets/pointcloud_to_depthimage.cpp.o -c /home/exdx/codes/catkin_rtab/src/rtabmap_ros/src/nodelets/pointcloud_to_depthimage.cpp
+
+CMakeFiles/rtabmap_plugins.dir/src/nodelets/pointcloud_to_depthimage.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/rtabmap_plugins.dir/src/nodelets/pointcloud_to_depthimage.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/exdx/codes/catkin_rtab/src/rtabmap_ros/src/nodelets/pointcloud_to_depthimage.cpp > CMakeFiles/rtabmap_plugins.dir/src/nodelets/pointcloud_to_depthimage.cpp.i
+
+CMakeFiles/rtabmap_plugins.dir/src/nodelets/pointcloud_to_depthimage.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/rtabmap_plugins.dir/src/nodelets/pointcloud_to_depthimage.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/exdx/codes/catkin_rtab/src/rtabmap_ros/src/nodelets/pointcloud_to_depthimage.cpp -o CMakeFiles/rtabmap_plugins.dir/src/nodelets/pointcloud_to_depthimage.cpp.s
+
+CMakeFiles/rtabmap_plugins.dir/src/nodelets/obstacles_detection.cpp.o: CMakeFiles/rtabmap_plugins.dir/flags.make
+CMakeFiles/rtabmap_plugins.dir/src/nodelets/obstacles_detection.cpp.o: ../src/nodelets/obstacles_detection.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/exdx/codes/catkin_rtab/src/rtabmap_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/rtabmap_plugins.dir/src/nodelets/obstacles_detection.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/rtabmap_plugins.dir/src/nodelets/obstacles_detection.cpp.o -c /home/exdx/codes/catkin_rtab/src/rtabmap_ros/src/nodelets/obstacles_detection.cpp
+
+CMakeFiles/rtabmap_plugins.dir/src/nodelets/obstacles_detection.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/rtabmap_plugins.dir/src/nodelets/obstacles_detection.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/exdx/codes/catkin_rtab/src/rtabmap_ros/src/nodelets/obstacles_detection.cpp > CMakeFiles/rtabmap_plugins.dir/src/nodelets/obstacles_detection.cpp.i
+
+CMakeFiles/rtabmap_plugins.dir/src/nodelets/obstacles_detection.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/rtabmap_plugins.dir/src/nodelets/obstacles_detection.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/exdx/codes/catkin_rtab/src/rtabmap_ros/src/nodelets/obstacles_detection.cpp -o CMakeFiles/rtabmap_plugins.dir/src/nodelets/obstacles_detection.cpp.s
+
+CMakeFiles/rtabmap_plugins.dir/src/nodelets/obstacles_detection_old.cpp.o: CMakeFiles/rtabmap_plugins.dir/flags.make
+CMakeFiles/rtabmap_plugins.dir/src/nodelets/obstacles_detection_old.cpp.o: ../src/nodelets/obstacles_detection_old.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/exdx/codes/catkin_rtab/src/rtabmap_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/rtabmap_plugins.dir/src/nodelets/obstacles_detection_old.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/rtabmap_plugins.dir/src/nodelets/obstacles_detection_old.cpp.o -c /home/exdx/codes/catkin_rtab/src/rtabmap_ros/src/nodelets/obstacles_detection_old.cpp
+
+CMakeFiles/rtabmap_plugins.dir/src/nodelets/obstacles_detection_old.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/rtabmap_plugins.dir/src/nodelets/obstacles_detection_old.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/exdx/codes/catkin_rtab/src/rtabmap_ros/src/nodelets/obstacles_detection_old.cpp > CMakeFiles/rtabmap_plugins.dir/src/nodelets/obstacles_detection_old.cpp.i
+
+CMakeFiles/rtabmap_plugins.dir/src/nodelets/obstacles_detection_old.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/rtabmap_plugins.dir/src/nodelets/obstacles_detection_old.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/exdx/codes/catkin_rtab/src/rtabmap_ros/src/nodelets/obstacles_detection_old.cpp -o CMakeFiles/rtabmap_plugins.dir/src/nodelets/obstacles_detection_old.cpp.s
+
+CMakeFiles/rtabmap_plugins.dir/src/nodelets/point_cloud_aggregator.cpp.o: CMakeFiles/rtabmap_plugins.dir/flags.make
+CMakeFiles/rtabmap_plugins.dir/src/nodelets/point_cloud_aggregator.cpp.o: ../src/nodelets/point_cloud_aggregator.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/exdx/codes/catkin_rtab/src/rtabmap_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/rtabmap_plugins.dir/src/nodelets/point_cloud_aggregator.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/rtabmap_plugins.dir/src/nodelets/point_cloud_aggregator.cpp.o -c /home/exdx/codes/catkin_rtab/src/rtabmap_ros/src/nodelets/point_cloud_aggregator.cpp
+
+CMakeFiles/rtabmap_plugins.dir/src/nodelets/point_cloud_aggregator.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/rtabmap_plugins.dir/src/nodelets/point_cloud_aggregator.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/exdx/codes/catkin_rtab/src/rtabmap_ros/src/nodelets/point_cloud_aggregator.cpp > CMakeFiles/rtabmap_plugins.dir/src/nodelets/point_cloud_aggregator.cpp.i
+
+CMakeFiles/rtabmap_plugins.dir/src/nodelets/point_cloud_aggregator.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/rtabmap_plugins.dir/src/nodelets/point_cloud_aggregator.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/exdx/codes/catkin_rtab/src/rtabmap_ros/src/nodelets/point_cloud_aggregator.cpp -o CMakeFiles/rtabmap_plugins.dir/src/nodelets/point_cloud_aggregator.cpp.s
+
+CMakeFiles/rtabmap_plugins.dir/src/nodelets/point_cloud_assembler.cpp.o: CMakeFiles/rtabmap_plugins.dir/flags.make
+CMakeFiles/rtabmap_plugins.dir/src/nodelets/point_cloud_assembler.cpp.o: ../src/nodelets/point_cloud_assembler.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/exdx/codes/catkin_rtab/src/rtabmap_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/rtabmap_plugins.dir/src/nodelets/point_cloud_assembler.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/rtabmap_plugins.dir/src/nodelets/point_cloud_assembler.cpp.o -c /home/exdx/codes/catkin_rtab/src/rtabmap_ros/src/nodelets/point_cloud_assembler.cpp
+
+CMakeFiles/rtabmap_plugins.dir/src/nodelets/point_cloud_assembler.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/rtabmap_plugins.dir/src/nodelets/point_cloud_assembler.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/exdx/codes/catkin_rtab/src/rtabmap_ros/src/nodelets/point_cloud_assembler.cpp > CMakeFiles/rtabmap_plugins.dir/src/nodelets/point_cloud_assembler.cpp.i
+
+CMakeFiles/rtabmap_plugins.dir/src/nodelets/point_cloud_assembler.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/rtabmap_plugins.dir/src/nodelets/point_cloud_assembler.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/exdx/codes/catkin_rtab/src/rtabmap_ros/src/nodelets/point_cloud_assembler.cpp -o CMakeFiles/rtabmap_plugins.dir/src/nodelets/point_cloud_assembler.cpp.s
+
+CMakeFiles/rtabmap_plugins.dir/src/nodelets/undistort_depth.cpp.o: CMakeFiles/rtabmap_plugins.dir/flags.make
+CMakeFiles/rtabmap_plugins.dir/src/nodelets/undistort_depth.cpp.o: ../src/nodelets/undistort_depth.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/exdx/codes/catkin_rtab/src/rtabmap_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/rtabmap_plugins.dir/src/nodelets/undistort_depth.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/rtabmap_plugins.dir/src/nodelets/undistort_depth.cpp.o -c /home/exdx/codes/catkin_rtab/src/rtabmap_ros/src/nodelets/undistort_depth.cpp
+
+CMakeFiles/rtabmap_plugins.dir/src/nodelets/undistort_depth.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/rtabmap_plugins.dir/src/nodelets/undistort_depth.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/exdx/codes/catkin_rtab/src/rtabmap_ros/src/nodelets/undistort_depth.cpp > CMakeFiles/rtabmap_plugins.dir/src/nodelets/undistort_depth.cpp.i
+
+CMakeFiles/rtabmap_plugins.dir/src/nodelets/undistort_depth.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/rtabmap_plugins.dir/src/nodelets/undistort_depth.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/exdx/codes/catkin_rtab/src/rtabmap_ros/src/nodelets/undistort_depth.cpp -o CMakeFiles/rtabmap_plugins.dir/src/nodelets/undistort_depth.cpp.s
+
+CMakeFiles/rtabmap_plugins.dir/src/nodelets/imu_to_tf.cpp.o: CMakeFiles/rtabmap_plugins.dir/flags.make
+CMakeFiles/rtabmap_plugins.dir/src/nodelets/imu_to_tf.cpp.o: ../src/nodelets/imu_to_tf.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/exdx/codes/catkin_rtab/src/rtabmap_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/rtabmap_plugins.dir/src/nodelets/imu_to_tf.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/rtabmap_plugins.dir/src/nodelets/imu_to_tf.cpp.o -c /home/exdx/codes/catkin_rtab/src/rtabmap_ros/src/nodelets/imu_to_tf.cpp
+
+CMakeFiles/rtabmap_plugins.dir/src/nodelets/imu_to_tf.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/rtabmap_plugins.dir/src/nodelets/imu_to_tf.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/exdx/codes/catkin_rtab/src/rtabmap_ros/src/nodelets/imu_to_tf.cpp > CMakeFiles/rtabmap_plugins.dir/src/nodelets/imu_to_tf.cpp.i
+
+CMakeFiles/rtabmap_plugins.dir/src/nodelets/imu_to_tf.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/rtabmap_plugins.dir/src/nodelets/imu_to_tf.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/exdx/codes/catkin_rtab/src/rtabmap_ros/src/nodelets/imu_to_tf.cpp -o CMakeFiles/rtabmap_plugins.dir/src/nodelets/imu_to_tf.cpp.s
+
+CMakeFiles/rtabmap_plugins.dir/src/nodelets/rgbdx_sync.cpp.o: CMakeFiles/rtabmap_plugins.dir/flags.make
+CMakeFiles/rtabmap_plugins.dir/src/nodelets/rgbdx_sync.cpp.o: ../src/nodelets/rgbdx_sync.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/exdx/codes/catkin_rtab/src/rtabmap_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/rtabmap_plugins.dir/src/nodelets/rgbdx_sync.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/rtabmap_plugins.dir/src/nodelets/rgbdx_sync.cpp.o -c /home/exdx/codes/catkin_rtab/src/rtabmap_ros/src/nodelets/rgbdx_sync.cpp
+
+CMakeFiles/rtabmap_plugins.dir/src/nodelets/rgbdx_sync.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/rtabmap_plugins.dir/src/nodelets/rgbdx_sync.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/exdx/codes/catkin_rtab/src/rtabmap_ros/src/nodelets/rgbdx_sync.cpp > CMakeFiles/rtabmap_plugins.dir/src/nodelets/rgbdx_sync.cpp.i
+
+CMakeFiles/rtabmap_plugins.dir/src/nodelets/rgbdx_sync.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/rtabmap_plugins.dir/src/nodelets/rgbdx_sync.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/exdx/codes/catkin_rtab/src/rtabmap_ros/src/nodelets/rgbdx_sync.cpp -o CMakeFiles/rtabmap_plugins.dir/src/nodelets/rgbdx_sync.cpp.s
+
+CMakeFiles/rtabmap_plugins.dir/src/nodelets/rgbd_sync.cpp.o: CMakeFiles/rtabmap_plugins.dir/flags.make
+CMakeFiles/rtabmap_plugins.dir/src/nodelets/rgbd_sync.cpp.o: ../src/nodelets/rgbd_sync.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/exdx/codes/catkin_rtab/src/rtabmap_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/rtabmap_plugins.dir/src/nodelets/rgbd_sync.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/rtabmap_plugins.dir/src/nodelets/rgbd_sync.cpp.o -c /home/exdx/codes/catkin_rtab/src/rtabmap_ros/src/nodelets/rgbd_sync.cpp
+
+CMakeFiles/rtabmap_plugins.dir/src/nodelets/rgbd_sync.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/rtabmap_plugins.dir/src/nodelets/rgbd_sync.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/exdx/codes/catkin_rtab/src/rtabmap_ros/src/nodelets/rgbd_sync.cpp > CMakeFiles/rtabmap_plugins.dir/src/nodelets/rgbd_sync.cpp.i
+
+CMakeFiles/rtabmap_plugins.dir/src/nodelets/rgbd_sync.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/rtabmap_plugins.dir/src/nodelets/rgbd_sync.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/exdx/codes/catkin_rtab/src/rtabmap_ros/src/nodelets/rgbd_sync.cpp -o CMakeFiles/rtabmap_plugins.dir/src/nodelets/rgbd_sync.cpp.s
+
+CMakeFiles/rtabmap_plugins.dir/src/nodelets/stereo_sync.cpp.o: CMakeFiles/rtabmap_plugins.dir/flags.make
+CMakeFiles/rtabmap_plugins.dir/src/nodelets/stereo_sync.cpp.o: ../src/nodelets/stereo_sync.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/exdx/codes/catkin_rtab/src/rtabmap_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/rtabmap_plugins.dir/src/nodelets/stereo_sync.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/rtabmap_plugins.dir/src/nodelets/stereo_sync.cpp.o -c /home/exdx/codes/catkin_rtab/src/rtabmap_ros/src/nodelets/stereo_sync.cpp
+
+CMakeFiles/rtabmap_plugins.dir/src/nodelets/stereo_sync.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/rtabmap_plugins.dir/src/nodelets/stereo_sync.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/exdx/codes/catkin_rtab/src/rtabmap_ros/src/nodelets/stereo_sync.cpp > CMakeFiles/rtabmap_plugins.dir/src/nodelets/stereo_sync.cpp.i
+
+CMakeFiles/rtabmap_plugins.dir/src/nodelets/stereo_sync.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/rtabmap_plugins.dir/src/nodelets/stereo_sync.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/exdx/codes/catkin_rtab/src/rtabmap_ros/src/nodelets/stereo_sync.cpp -o CMakeFiles/rtabmap_plugins.dir/src/nodelets/stereo_sync.cpp.s
+
+CMakeFiles/rtabmap_plugins.dir/src/nodelets/rgb_sync.cpp.o: CMakeFiles/rtabmap_plugins.dir/flags.make
+CMakeFiles/rtabmap_plugins.dir/src/nodelets/rgb_sync.cpp.o: ../src/nodelets/rgb_sync.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/exdx/codes/catkin_rtab/src/rtabmap_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/rtabmap_plugins.dir/src/nodelets/rgb_sync.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/rtabmap_plugins.dir/src/nodelets/rgb_sync.cpp.o -c /home/exdx/codes/catkin_rtab/src/rtabmap_ros/src/nodelets/rgb_sync.cpp
+
+CMakeFiles/rtabmap_plugins.dir/src/nodelets/rgb_sync.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/rtabmap_plugins.dir/src/nodelets/rgb_sync.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/exdx/codes/catkin_rtab/src/rtabmap_ros/src/nodelets/rgb_sync.cpp > CMakeFiles/rtabmap_plugins.dir/src/nodelets/rgb_sync.cpp.i
+
+CMakeFiles/rtabmap_plugins.dir/src/nodelets/rgb_sync.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/rtabmap_plugins.dir/src/nodelets/rgb_sync.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/exdx/codes/catkin_rtab/src/rtabmap_ros/src/nodelets/rgb_sync.cpp -o CMakeFiles/rtabmap_plugins.dir/src/nodelets/rgb_sync.cpp.s
+
+CMakeFiles/rtabmap_plugins.dir/src/nodelets/rgbd_relay.cpp.o: CMakeFiles/rtabmap_plugins.dir/flags.make
+CMakeFiles/rtabmap_plugins.dir/src/nodelets/rgbd_relay.cpp.o: ../src/nodelets/rgbd_relay.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/exdx/codes/catkin_rtab/src/rtabmap_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/rtabmap_plugins.dir/src/nodelets/rgbd_relay.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/rtabmap_plugins.dir/src/nodelets/rgbd_relay.cpp.o -c /home/exdx/codes/catkin_rtab/src/rtabmap_ros/src/nodelets/rgbd_relay.cpp
+
+CMakeFiles/rtabmap_plugins.dir/src/nodelets/rgbd_relay.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/rtabmap_plugins.dir/src/nodelets/rgbd_relay.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/exdx/codes/catkin_rtab/src/rtabmap_ros/src/nodelets/rgbd_relay.cpp > CMakeFiles/rtabmap_plugins.dir/src/nodelets/rgbd_relay.cpp.i
+
+CMakeFiles/rtabmap_plugins.dir/src/nodelets/rgbd_relay.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/rtabmap_plugins.dir/src/nodelets/rgbd_relay.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/exdx/codes/catkin_rtab/src/rtabmap_ros/src/nodelets/rgbd_relay.cpp -o CMakeFiles/rtabmap_plugins.dir/src/nodelets/rgbd_relay.cpp.s
+>>>>>>> 8dcec0a9a1f95d57487b09c6cec170bd6adbd4be
 
 # Object files for target rtabmap_plugins
 rtabmap_plugins_OBJECTS = \
@@ -846,7 +1139,11 @@ devel/lib/librtabmap_plugins.so: /usr/lib/x86_64-linux-gnu/libQt5Widgets.so.5.12
 devel/lib/librtabmap_plugins.so: /usr/lib/x86_64-linux-gnu/libQt5Gui.so.5.12.8
 devel/lib/librtabmap_plugins.so: /usr/lib/x86_64-linux-gnu/libQt5Core.so.5.12.8
 devel/lib/librtabmap_plugins.so: CMakeFiles/rtabmap_plugins.dir/link.txt
+<<<<<<< HEAD
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/zy/Code/catkin_rtab/src/rtabmap_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Linking CXX shared library devel/lib/librtabmap_plugins.so"
+=======
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/exdx/codes/catkin_rtab/src/rtabmap_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Linking CXX shared library devel/lib/librtabmap_plugins.so"
+>>>>>>> 8dcec0a9a1f95d57487b09c6cec170bd6adbd4be
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/rtabmap_plugins.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -859,6 +1156,10 @@ CMakeFiles/rtabmap_plugins.dir/clean:
 .PHONY : CMakeFiles/rtabmap_plugins.dir/clean
 
 CMakeFiles/rtabmap_plugins.dir/depend:
+<<<<<<< HEAD
 	cd /home/zy/Code/catkin_rtab/src/rtabmap_ros/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/zy/Code/catkin_rtab/src/rtabmap_ros /home/zy/Code/catkin_rtab/src/rtabmap_ros /home/zy/Code/catkin_rtab/src/rtabmap_ros/build /home/zy/Code/catkin_rtab/src/rtabmap_ros/build /home/zy/Code/catkin_rtab/src/rtabmap_ros/build/CMakeFiles/rtabmap_plugins.dir/DependInfo.cmake --color=$(COLOR)
+=======
+	cd /home/exdx/codes/catkin_rtab/src/rtabmap_ros/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/exdx/codes/catkin_rtab/src/rtabmap_ros /home/exdx/codes/catkin_rtab/src/rtabmap_ros /home/exdx/codes/catkin_rtab/src/rtabmap_ros/build /home/exdx/codes/catkin_rtab/src/rtabmap_ros/build /home/exdx/codes/catkin_rtab/src/rtabmap_ros/build/CMakeFiles/rtabmap_plugins.dir/DependInfo.cmake --color=$(COLOR)
+>>>>>>> 8dcec0a9a1f95d57487b09c6cec170bd6adbd4be
 .PHONY : CMakeFiles/rtabmap_plugins.dir/depend
 

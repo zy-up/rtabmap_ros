@@ -1,5 +1,10 @@
+<<<<<<< HEAD
 -I/home/zy/Code/catkin_rtab/src/rtabmap_ros/build/devel/include
 -I/home/zy/Code/catkin_rtab/src/rtabmap_ros/build/devel/include
+=======
+-I/home/exdx/codes/catkin_rtab/src/rtabmap_ros/build/devel/include
+-I/home/exdx/codes/catkin_rtab/src/rtabmap_ros/build/devel/include
+>>>>>>> 8dcec0a9a1f95d57487b09c6cec170bd6adbd4be
 -I/usr/include
 -I/usr/include
 -I/usr/include/vtk-7.1
@@ -8,7 +13,11 @@
 -I/usr/include/x86_64-linux-gnu
 -I/usr/include
 -I/usr/include
+<<<<<<< HEAD
 -I/home/zy/Code/catkin_rtab/src/rtabmap_ros/include
+=======
+-I/home/exdx/codes/catkin_rtab/src/rtabmap_ros/include
+>>>>>>> 8dcec0a9a1f95d57487b09c6cec170bd6adbd4be
 -I/usr/local/lib/rtabmap-0.20/../../include/rtabmap-0.20
 -I/usr/include/opencv4
 -I/usr/include/pcl-1.10
@@ -60,5 +69,10 @@
 -DWITH_OCTOMAP_MSGS
 -DWITH_APRILTAG_ROS
 -o
+<<<<<<< HEAD
 /home/zy/Code/catkin_rtab/src/rtabmap_ros/build/src/rviz/moc_OrbitOrientedViewController.cpp
 /home/zy/Code/catkin_rtab/src/rtabmap_ros/src/rviz/OrbitOrientedViewController.h
+=======
+/home/exdx/codes/catkin_rtab/src/rtabmap_ros/build/src/rviz/moc_OrbitOrientedViewController.cpp
+/home/exdx/codes/catkin_rtab/src/rtabmap_ros/src/rviz/OrbitOrientedViewController.h
+>>>>>>> 8dcec0a9a1f95d57487b09c6cec170bd6adbd4be
