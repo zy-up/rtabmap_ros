@@ -65,9 +65,11 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 namespace rtabmap_ros
 {
 
+// 从RGBD中返回RGB点云
 class PointCloudXYZRGB : public nodelet::Nodelet
 {
 public:
+	// 类定义与参数初始化
 	PointCloudXYZRGB() :
 		maxDepth_(0.0),
 		minDepth_(0.0),
@@ -86,6 +88,7 @@ public:
 		exactSyncStereo_(0)
 	{}
 
+	// 析构函数
 	virtual ~PointCloudXYZRGB()
 	{
 		if(approxSyncDepth_)
@@ -103,14 +106,20 @@ public:
 	}
 
 private:
+	// 初始函数
 	virtual void onInit()
 	{
+		// 获取共有、私有句柄
 		ros::NodeHandle & nh = getNodeHandle();
 		ros::NodeHandle & pnh = getPrivateNodeHandle();
 
+		// 队列大小
 		int queueSize = 10;
+		// 消息同步
 		bool approxSync = true;
+		// 设置兴趣区域
 		std::string roiStr;
+		// 消息同步时的最大时间间隔
 		double approxSyncMaxInterval = 0.0;
 		pnh.param("approx_sync", approxSync, approxSync);
 		pnh.param("approx_sync_max_interval", approxSyncMaxInterval, approxSyncMaxInterval);
@@ -126,7 +135,7 @@ private:
 		pnh.param("filter_nans", filterNaNs_, filterNaNs_);
 		pnh.param("roi_ratios", roiStr, roiStr);
 
-		//parse roi (region of interest)
+		//parse roi (region of interest) 
 		roiRatios_.resize(4, 0);
 		if(!roiStr.empty())
 		{
@@ -159,7 +168,7 @@ private:
 			}
 		}
 
-		// StereoBM parameters
+		// StereoBM parameters 双目相机参数读取
 		stereoBMParameters_ = rtabmap::Parameters::getDefaultParameters("StereoBM");
 		for(rtabmap::ParametersMap::iterator iter=stereoBMParameters_.begin(); iter!=stereoBMParameters_.end(); ++iter)
 		{
@@ -191,8 +200,9 @@ private:
 
 		NODELET_INFO("Approximate time sync = %s", approxSync?"true":"false");
 
+		// 设置点云的发布参数，消息名为cloud，不排队
 		cloudPub_ = nh.advertise<sensor_msgs::PointCloud2>("cloud", 1);
-
+		// 订阅RGBD图像
 		rgbdImageSub_ = nh.subscribe("rgbd_image", 1, &PointCloudXYZRGB::rgbdImageCallback, this);
 
 		if(approxSync)
@@ -224,6 +234,7 @@ private:
 			exactSyncStereo_->registerCallback(boost::bind(&PointCloudXYZRGB::stereoCallback, this, boost::placeholders::_1, boost::placeholders::_2, boost::placeholders::_3, boost::placeholders::_4));
 		}
 
+		// RGBD相机部分
 		ros::NodeHandle rgb_nh(nh, "rgb");
 		ros::NodeHandle depth_nh(nh, "depth");
 		ros::NodeHandle rgb_pnh(pnh, "rgb");
@@ -233,10 +244,12 @@ private:
 		image_transport::TransportHints hintsRgb("raw", ros::TransportHints(), rgb_pnh);
 		image_transport::TransportHints hintsDepth("raw", ros::TransportHints(), depth_pnh);
 
+		// 图片订阅、深度图、相机内参
 		imageSub_.subscribe(rgb_it, rgb_nh.resolveName("image"), 1, hintsRgb);
 		imageDepthSub_.subscribe(depth_it, depth_nh.resolveName("image"), 1, hintsDepth);
 		cameraInfoSub_.subscribe(rgb_nh, "camera_info", 1);
 
+		// 双目相机部分
 		ros::NodeHandle left_nh(nh, "left");
 		ros::NodeHandle right_nh(nh, "right");
 		ros::NodeHandle left_pnh(pnh, "left");
@@ -246,14 +259,15 @@ private:
 		image_transport::TransportHints hintsLeft("raw", ros::TransportHints(), left_pnh);
 		image_transport::TransportHints hintsRight("raw", ros::TransportHints(), right_pnh);
 
+		// 视差图、左右目相机、以及双目相机信息
 		imageDisparitySub_.subscribe(nh, "disparity", 1);
-
 		imageLeft_.subscribe(left_it, left_nh.resolveName("image"), 1, hintsLeft);
 		imageRight_.subscribe(right_it, right_nh.resolveName("image"), 1, hintsRight);
 		cameraInfoLeft_.subscribe(left_nh, "camera_info", 1);
 		cameraInfoRight_.subscribe(right_nh, "camera_info", 1);
 	}
 
+	// 深度图订阅反馈函数
 	void depthCallback(
 			  const sensor_msgs::ImageConstPtr& image,
 			  const sensor_msgs::ImageConstPtr& imageDepth,
@@ -353,6 +367,7 @@ private:
 		}
 	}
 
+	// 视差图订阅反馈函数
 	void disparityCallback(
 			const sensor_msgs::ImageConstPtr& image,
 			const stereo_msgs::DisparityImageConstPtr& imageDisparity,
@@ -417,6 +432,7 @@ private:
 		}
 	}
 
+	// 双目相机订阅反馈函数
 	void stereoCallback(const sensor_msgs::ImageConstPtr& imageLeft,
 			const sensor_msgs::ImageConstPtr& imageRight,
 			const sensor_msgs::CameraInfoConstPtr& camInfoLeft,
@@ -478,13 +494,17 @@ private:
 		}
 	}
 
+	// RGBD相机订阅反馈函数
 	void rgbdImageCallback(const rtabmap_ros::RGBDImageConstPtr & image)
-	{
+	{	
+		// 如果没有订阅者，就不会产生点云
 		if(cloudPub_.getNumSubscribers())
 		{
+			// 获取当前墙上时间（即当前时间）
 			ros::WallTime time = ros::WallTime::now();
-
+			// 将ROS中的RGBD图像，转化为rtabmap所需格式
 			rtabmap::SensorData data = rtabmap_ros::rgbdImageFromROS(image);
+
 			pcl::PointCloud<pcl::PointXYZRGB>::Ptr pclCloud;
 			pcl::IndicesPtr indices(new std::vector<int>);
 			if(data.isValid())
@@ -505,6 +525,7 @@ private:
 		}
 	}
 
+	// 在以上的反馈函数收到图像后，调用当前函数，利用PCL生成RGB点云（包含法向量）并发布
 	void processAndPublish(pcl::PointCloud<pcl::PointXYZRGB>::Ptr & pclCloud, pcl::IndicesPtr & indices, const std_msgs::Header & header)
 	{
 		if(indices->size() && voxelSize_ > 0.0)
