@@ -202,9 +202,10 @@ private:
 
 		// 设置点云的发布参数，消息名为cloud，不排队
 		cloudPub_ = nh.advertise<sensor_msgs::PointCloud2>("cloud", 1);
-		// 订阅RGBD图像
+		// 如果订阅RGBD图像，因为时间戳已经对齐了，所以不用管同步的事
 		rgbdImageSub_ = nh.subscribe("rgbd_image", 1, &PointCloudXYZRGB::rgbdImageCallback, this);
 
+		// 如果开启同步检测，则需要对时间戳进行检查时间同步性
 		if(approxSync)
 		{
 			approxSyncDepth_ = new message_filters::Synchronizer<MyApproxSyncDepthPolicy>(MyApproxSyncDepthPolicy(queueSize), imageSub_, imageDepthSub_, cameraInfoSub_);
