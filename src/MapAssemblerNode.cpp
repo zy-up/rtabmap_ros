@@ -365,6 +365,7 @@ int main(int argc, char** argv)
 	ULogger::setLevel(ULogger::kError);
 	ULogger::setType(ULogger::kTypeConsole);
 
+	// 地图组装器
 	ros::init(argc, argv, "map_assembler");
 
 	// process "--params" argument

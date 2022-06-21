@@ -49,6 +49,7 @@ int main(int argc, char** argv)
 	ULogger::setType(ULogger::kTypeConsole);
 	ULogger::setLevel(ULogger::kWarning);
 
+	// 开启可视化界面
 	ros::init(argc, argv, "rtabmapviz");
 
 	app = new QApplication(argc, argv);

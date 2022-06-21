@@ -67,13 +67,8 @@ set(rtabmap_ros_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("FALSE" STREQUAL "TRUE")
-<<<<<<< HEAD
-  set(rtabmap_ros_SOURCE_PREFIX /home/zy/Code/catkin_rtab/src/rtabmap_ros)
-  set(rtabmap_ros_DEVEL_PREFIX /home/zy/Code/catkin_rtab/src/rtabmap_ros/build/devel)
-=======
   set(rtabmap_ros_SOURCE_PREFIX /home/exdx/codes/catkin_rtab/src/rtabmap_ros)
   set(rtabmap_ros_DEVEL_PREFIX /home/exdx/codes/catkin_rtab/src/rtabmap_ros/build/devel)
->>>>>>> 8dcec0a9a1f95d57487b09c6cec170bd6adbd4be
   set(rtabmap_ros_INSTALL_PREFIX "")
   set(rtabmap_ros_PREFIX ${rtabmap_ros_DEVEL_PREFIX})
 else()
@@ -159,11 +154,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-<<<<<<< HEAD
-    foreach(path /usr/local/lib;/home/zy/Code/catkin_rtab/devel/lib;/opt/ros/noetic/lib)
-=======
     foreach(path /usr/local/lib;/home/exdx/codes/catkin_realsense/devel/lib;/home/exdx/codes/catkin_rtab/devel/lib;/opt/ros/noetic/lib)
->>>>>>> 8dcec0a9a1f95d57487b09c6cec170bd6adbd4be
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

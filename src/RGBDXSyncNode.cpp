@@ -30,6 +30,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 int main(int argc, char **argv)
 {
+	// RGBX 的同步
 	ros::init(argc, argv, "rgbdx_sync");
 
 	nodelet::V_string nargv;

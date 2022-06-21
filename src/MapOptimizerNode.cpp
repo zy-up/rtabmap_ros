@@ -338,6 +338,7 @@ private:
 
 int main(int argc, char** argv)
 {
+	// 地图优化器
 	ros::init(argc, argv, "map_optimizer");
 	MapOptimizer optimizer;
 	ros::spin();

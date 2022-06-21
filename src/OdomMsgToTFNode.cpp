@@ -85,6 +85,7 @@ private:
 
 int main(int argc, char** argv)
 {
+	// 将里程计转为TF信息
 	ros::init(argc, argv, "odom_msg_to_tf");
 	OdomMsgToTF odomToTf;
 	ros::spin();

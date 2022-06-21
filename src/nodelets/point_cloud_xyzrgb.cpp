@@ -65,11 +65,11 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 namespace rtabmap_ros
 {
 
-// 从RGBD中返回RGB点云
+// 从RGBD中返回RGB点云  创建类，并继承Nodelet类
 class PointCloudXYZRGB : public nodelet::Nodelet
 {
 public:
-	// 类定义与参数初始化
+	// 构造函数，参数初始化
 	PointCloudXYZRGB() :
 		maxDepth_(0.0),
 		minDepth_(0.0),
@@ -106,7 +106,7 @@ public:
 	}
 
 private:
-	// 初始函数
+	// 加载nodelet的初始函数
 	virtual void onInit()
 	{
 		// 获取共有、私有句柄
@@ -626,7 +626,7 @@ private:
 	typedef message_filters::sync_policies::ExactTime<sensor_msgs::Image, sensor_msgs::Image, sensor_msgs::CameraInfo, sensor_msgs::CameraInfo> MyExactSyncStereoPolicy;
 	message_filters::Synchronizer<MyExactSyncStereoPolicy> * exactSyncStereo_;
 };
-
+// 提示编译器 PointCloudXYZRGB 是一个插件
 PLUGINLIB_EXPORT_CLASS(rtabmap_ros::PointCloudXYZRGB, nodelet::Nodelet);
 }
 

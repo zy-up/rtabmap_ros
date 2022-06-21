@@ -270,6 +270,7 @@ int main(int argc, char** argv)
 	//ULogger::setLevel(ULogger::kDebug);
 	ULogger::setEventLevel(ULogger::kWarning);
 
+	// 开启相机节点
 	ros::init(argc, argv, "camera");
 
 	ros::NodeHandle nh("~");

@@ -41,6 +41,7 @@ int main(int argc, char** argv)
 	ULogger::setType(ULogger::kTypeConsole);
 	ULogger::setLevel(ULogger::kWarning);
 
+	// 开总节点
 	ros::init(argc, argv, "rtabmap");
 
 	nodelet::V_string nargv;

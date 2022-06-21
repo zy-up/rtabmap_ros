@@ -34,6 +34,8 @@ int main(int argc, char **argv)
 {
 	ULogger::setType(ULogger::kTypeConsole);
 	ULogger::setLevel(ULogger::kWarning);
+
+	// RGBD特征点里程计
 	ros::init(argc, argv, "rgbd_odometry");
 
 	// process "--params" argument

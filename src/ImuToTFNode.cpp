@@ -30,6 +30,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 int main(int argc, char **argv)
 {
+	// 将IMU转化为TF信息
 	ros::init(argc, argv, "imu_to_tf");
 
 	nodelet::V_string nargv;

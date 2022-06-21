@@ -30,6 +30,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 int main(int argc, char **argv)
 {
+  // 开启点云组装
 	ros::init(argc, argv, "point_cloud_assembler");
 
 	nodelet::Loader nodelet;

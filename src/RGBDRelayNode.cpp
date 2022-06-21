@@ -30,6 +30,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 int main(int argc, char **argv)
 {
+	// RGBD 消息中继
 	ros::init(argc, argv, "rgbd_relay");
 
 	nodelet::V_string nargv;

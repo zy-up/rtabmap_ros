@@ -30,6 +30,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 int main(int argc, char **argv)
 {
+	// RGBD消息同步
 	ros::init(argc, argv, "rgbd_sync");
 
 	nodelet::V_string nargv;

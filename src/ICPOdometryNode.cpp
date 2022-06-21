@@ -34,6 +34,7 @@ int main(int argc, char **argv)
 {
 	ULogger::setType(ULogger::kTypeConsole);
 	ULogger::setLevel(ULogger::kWarning);
+	// 开启点云ICP里程计
 	ros::init(argc, argv, "icp_odometry");
 
 	// process "--params" argument

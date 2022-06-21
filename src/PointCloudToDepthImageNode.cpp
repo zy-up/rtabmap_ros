@@ -30,6 +30,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 int main(int argc, char **argv)
 {
+  // 将点云转化为深度图
 	ros::init(argc, argv, "pointcloud_to_depthimage");
 
 	nodelet::Loader nodelet;

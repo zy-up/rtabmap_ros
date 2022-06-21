@@ -34,6 +34,7 @@ int main(int argc, char **argv)
 {
 	ULogger::setType(ULogger::kTypeConsole);
 	ULogger::setLevel(ULogger::kWarning);
+	// RGBD 点云ICP里程计
 	ros::init(argc, argv, "rgbdicp_odometry");
 
 	// process "--params" argument
