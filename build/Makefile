@@ -48,10 +48,17 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
+<<<<<<< HEAD
+CMAKE_SOURCE_DIR = /home/zy/Code/catkin_rtab/src/rtabmap_ros
+
+# The top-level build directory on which CMake was run.
+CMAKE_BINARY_DIR = /home/zy/Code/catkin_rtab/src/rtabmap_ros/build
+=======
 CMAKE_SOURCE_DIR = /home/exdx/codes/catkin_rtab/src/rtabmap_ros
 
 # The top-level build directory on which CMake was run.
 CMAKE_BINARY_DIR = /home/exdx/codes/catkin_rtab/src/rtabmap_ros/build
+>>>>>>> 8dcec0a9a1f95d57487b09c6cec170bd6adbd4be
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -137,9 +144,15 @@ test/fast: test
 
 # The main all target
 all: cmake_check_build_system
+<<<<<<< HEAD
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/zy/Code/catkin_rtab/src/rtabmap_ros/build/CMakeFiles /home/zy/Code/catkin_rtab/src/rtabmap_ros/build/CMakeFiles/progress.marks
+	$(MAKE) -f CMakeFiles/Makefile2 all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/zy/Code/catkin_rtab/src/rtabmap_ros/build/CMakeFiles 0
+=======
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/exdx/codes/catkin_rtab/src/rtabmap_ros/build/CMakeFiles /home/exdx/codes/catkin_rtab/src/rtabmap_ros/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/exdx/codes/catkin_rtab/src/rtabmap_ros/build/CMakeFiles 0
+>>>>>>> 8dcec0a9a1f95d57487b09c6cec170bd6adbd4be
 .PHONY : all
 
 # The main clean target

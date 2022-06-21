@@ -43,10 +43,17 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
+<<<<<<< HEAD
+CMAKE_SOURCE_DIR = /home/zy/Code/catkin_rtab/src/rtabmap_ros
+
+# The top-level build directory on which CMake was run.
+CMAKE_BINARY_DIR = /home/zy/Code/catkin_rtab/src/rtabmap_ros/build
+=======
 CMAKE_SOURCE_DIR = /home/exdx/codes/catkin_rtab/src/rtabmap_ros
 
 # The top-level build directory on which CMake was run.
 CMAKE_BINARY_DIR = /home/exdx/codes/catkin_rtab/src/rtabmap_ros/build
+>>>>>>> 8dcec0a9a1f95d57487b09c6cec170bd6adbd4be
 
 # Utility rule file for rtabmap_ros_generate_messages_py.
 
@@ -93,6 +100,25 @@ CMakeFiles/rtabmap_ros_generate_messages_py: devel/lib/python3/dist-packages/rta
 
 devel/lib/python3/dist-packages/rtabmap_ros/msg/_Info.py: /opt/ros/noetic/lib/genpy/genmsg_py.py
 devel/lib/python3/dist-packages/rtabmap_ros/msg/_Info.py: ../msg/Info.msg
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+devel/lib/python3/dist-packages/rtabmap_ros/msg/_Info.py: /opt/ros/noetic/share/geometry_msgs/msg/Point.msg
+devel/lib/python3/dist-packages/rtabmap_ros/msg/_Info.py: /opt/ros/noetic/share/geometry_msgs/msg/Transform.msg
+devel/lib/python3/dist-packages/rtabmap_ros/msg/_Info.py: ../msg/MapGraph.msg
+devel/lib/python3/dist-packages/rtabmap_ros/msg/_Info.py: /opt/ros/noetic/share/std_msgs/msg/Header.msg
+devel/lib/python3/dist-packages/rtabmap_ros/msg/_Info.py: /opt/ros/noetic/share/geometry_msgs/msg/Pose.msg
+devel/lib/python3/dist-packages/rtabmap_ros/msg/_Info.py: ../msg/Link.msg
+devel/lib/python3/dist-packages/rtabmap_ros/msg/_Info.py: /opt/ros/noetic/share/geometry_msgs/msg/Vector3.msg
+devel/lib/python3/dist-packages/rtabmap_ros/msg/_Info.py: /opt/ros/noetic/share/geometry_msgs/msg/Quaternion.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/zy/Code/catkin_rtab/src/rtabmap_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Python from MSG rtabmap_ros/Info"
+	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/zy/Code/catkin_rtab/src/rtabmap_ros/msg/Info.msg -Irtabmap_ros:/home/zy/Code/catkin_rtab/src/rtabmap_ros/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -p rtabmap_ros -o /home/zy/Code/catkin_rtab/src/rtabmap_ros/build/devel/lib/python3/dist-packages/rtabmap_ros/msg
+=======
+devel/lib/python3/dist-packages/rtabmap_ros/msg/_Info.py: /opt/ros/noetic/share/geometry_msgs/msg/Transform.msg
+devel/lib/python3/dist-packages/rtabmap_ros/msg/_Info.py: /opt/ros/noetic/share/std_msgs/msg/Header.msg
+devel/lib/python3/dist-packages/rtabmap_ros/msg/_Info.py: /opt/ros/noetic/share/geometry_msgs/msg/Vector3.msg
+devel/lib/python3/dist-packages/rtabmap_ros/msg/_Info.py: /opt/ros/noetic/share/geometry_msgs/msg/Quaternion.msg
+>>>>>>> 6d303045d3e51c2847e167c0708e9a1766c153df
 devel/lib/python3/dist-packages/rtabmap_ros/msg/_Info.py: ../msg/MapGraph.msg
 devel/lib/python3/dist-packages/rtabmap_ros/msg/_Info.py: /opt/ros/noetic/share/geometry_msgs/msg/Pose.msg
 devel/lib/python3/dist-packages/rtabmap_ros/msg/_Info.py: ../msg/Link.msg
@@ -103,16 +129,121 @@ devel/lib/python3/dist-packages/rtabmap_ros/msg/_Info.py: /opt/ros/noetic/share/
 devel/lib/python3/dist-packages/rtabmap_ros/msg/_Info.py: /opt/ros/noetic/share/std_msgs/msg/Header.msg
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/exdx/codes/catkin_rtab/src/rtabmap_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Python from MSG rtabmap_ros/Info"
 	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/exdx/codes/catkin_rtab/src/rtabmap_ros/msg/Info.msg -Irtabmap_ros:/home/exdx/codes/catkin_rtab/src/rtabmap_ros/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -p rtabmap_ros -o /home/exdx/codes/catkin_rtab/src/rtabmap_ros/build/devel/lib/python3/dist-packages/rtabmap_ros/msg
+>>>>>>> 8dcec0a9a1f95d57487b09c6cec170bd6adbd4be
 
 devel/lib/python3/dist-packages/rtabmap_ros/msg/_KeyPoint.py: /opt/ros/noetic/lib/genpy/genmsg_py.py
 devel/lib/python3/dist-packages/rtabmap_ros/msg/_KeyPoint.py: ../msg/KeyPoint.msg
 devel/lib/python3/dist-packages/rtabmap_ros/msg/_KeyPoint.py: ../msg/Point2f.msg
+<<<<<<< HEAD
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/zy/Code/catkin_rtab/src/rtabmap_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Python from MSG rtabmap_ros/KeyPoint"
+	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/zy/Code/catkin_rtab/src/rtabmap_ros/msg/KeyPoint.msg -Irtabmap_ros:/home/zy/Code/catkin_rtab/src/rtabmap_ros/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -p rtabmap_ros -o /home/zy/Code/catkin_rtab/src/rtabmap_ros/build/devel/lib/python3/dist-packages/rtabmap_ros/msg
+=======
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/exdx/codes/catkin_rtab/src/rtabmap_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Python from MSG rtabmap_ros/KeyPoint"
 	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/exdx/codes/catkin_rtab/src/rtabmap_ros/msg/KeyPoint.msg -Irtabmap_ros:/home/exdx/codes/catkin_rtab/src/rtabmap_ros/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -p rtabmap_ros -o /home/exdx/codes/catkin_rtab/src/rtabmap_ros/build/devel/lib/python3/dist-packages/rtabmap_ros/msg
+>>>>>>> 8dcec0a9a1f95d57487b09c6cec170bd6adbd4be
 
 devel/lib/python3/dist-packages/rtabmap_ros/msg/_GlobalDescriptor.py: /opt/ros/noetic/lib/genpy/genmsg_py.py
 devel/lib/python3/dist-packages/rtabmap_ros/msg/_GlobalDescriptor.py: ../msg/GlobalDescriptor.msg
 devel/lib/python3/dist-packages/rtabmap_ros/msg/_GlobalDescriptor.py: /opt/ros/noetic/share/std_msgs/msg/Header.msg
+<<<<<<< HEAD
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/zy/Code/catkin_rtab/src/rtabmap_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating Python from MSG rtabmap_ros/GlobalDescriptor"
+	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/zy/Code/catkin_rtab/src/rtabmap_ros/msg/GlobalDescriptor.msg -Irtabmap_ros:/home/zy/Code/catkin_rtab/src/rtabmap_ros/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -p rtabmap_ros -o /home/zy/Code/catkin_rtab/src/rtabmap_ros/build/devel/lib/python3/dist-packages/rtabmap_ros/msg
+
+devel/lib/python3/dist-packages/rtabmap_ros/msg/_ScanDescriptor.py: /opt/ros/noetic/lib/genpy/genmsg_py.py
+devel/lib/python3/dist-packages/rtabmap_ros/msg/_ScanDescriptor.py: ../msg/ScanDescriptor.msg
+devel/lib/python3/dist-packages/rtabmap_ros/msg/_ScanDescriptor.py: ../msg/GlobalDescriptor.msg
+devel/lib/python3/dist-packages/rtabmap_ros/msg/_ScanDescriptor.py: /opt/ros/noetic/share/sensor_msgs/msg/PointCloud2.msg
+devel/lib/python3/dist-packages/rtabmap_ros/msg/_ScanDescriptor.py: /opt/ros/noetic/share/sensor_msgs/msg/PointField.msg
+devel/lib/python3/dist-packages/rtabmap_ros/msg/_ScanDescriptor.py: /opt/ros/noetic/share/std_msgs/msg/Header.msg
+devel/lib/python3/dist-packages/rtabmap_ros/msg/_ScanDescriptor.py: /opt/ros/noetic/share/sensor_msgs/msg/LaserScan.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/zy/Code/catkin_rtab/src/rtabmap_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating Python from MSG rtabmap_ros/ScanDescriptor"
+	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/zy/Code/catkin_rtab/src/rtabmap_ros/msg/ScanDescriptor.msg -Irtabmap_ros:/home/zy/Code/catkin_rtab/src/rtabmap_ros/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -p rtabmap_ros -o /home/zy/Code/catkin_rtab/src/rtabmap_ros/build/devel/lib/python3/dist-packages/rtabmap_ros/msg
+
+devel/lib/python3/dist-packages/rtabmap_ros/msg/_MapData.py: /opt/ros/noetic/lib/genpy/genmsg_py.py
+devel/lib/python3/dist-packages/rtabmap_ros/msg/_MapData.py: ../msg/MapData.msg
+devel/lib/python3/dist-packages/rtabmap_ros/msg/_MapData.py: ../msg/GlobalDescriptor.msg
+devel/lib/python3/dist-packages/rtabmap_ros/msg/_MapData.py: ../msg/EnvSensor.msg
+devel/lib/python3/dist-packages/rtabmap_ros/msg/_MapData.py: /opt/ros/noetic/share/geometry_msgs/msg/Point.msg
+devel/lib/python3/dist-packages/rtabmap_ros/msg/_MapData.py: ../msg/Point3f.msg
+devel/lib/python3/dist-packages/rtabmap_ros/msg/_MapData.py: /opt/ros/noetic/share/geometry_msgs/msg/Transform.msg
+devel/lib/python3/dist-packages/rtabmap_ros/msg/_MapData.py: ../msg/MapGraph.msg
+devel/lib/python3/dist-packages/rtabmap_ros/msg/_MapData.py: ../msg/NodeData.msg
+devel/lib/python3/dist-packages/rtabmap_ros/msg/_MapData.py: ../msg/KeyPoint.msg
+devel/lib/python3/dist-packages/rtabmap_ros/msg/_MapData.py: ../msg/Point2f.msg
+devel/lib/python3/dist-packages/rtabmap_ros/msg/_MapData.py: ../msg/GPS.msg
+devel/lib/python3/dist-packages/rtabmap_ros/msg/_MapData.py: /opt/ros/noetic/share/std_msgs/msg/Header.msg
+devel/lib/python3/dist-packages/rtabmap_ros/msg/_MapData.py: /opt/ros/noetic/share/geometry_msgs/msg/Pose.msg
+devel/lib/python3/dist-packages/rtabmap_ros/msg/_MapData.py: ../msg/Link.msg
+devel/lib/python3/dist-packages/rtabmap_ros/msg/_MapData.py: /opt/ros/noetic/share/geometry_msgs/msg/Vector3.msg
+devel/lib/python3/dist-packages/rtabmap_ros/msg/_MapData.py: /opt/ros/noetic/share/geometry_msgs/msg/Quaternion.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/zy/Code/catkin_rtab/src/rtabmap_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Generating Python from MSG rtabmap_ros/MapData"
+	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/zy/Code/catkin_rtab/src/rtabmap_ros/msg/MapData.msg -Irtabmap_ros:/home/zy/Code/catkin_rtab/src/rtabmap_ros/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -p rtabmap_ros -o /home/zy/Code/catkin_rtab/src/rtabmap_ros/build/devel/lib/python3/dist-packages/rtabmap_ros/msg
+
+devel/lib/python3/dist-packages/rtabmap_ros/msg/_MapGraph.py: /opt/ros/noetic/lib/genpy/genmsg_py.py
+devel/lib/python3/dist-packages/rtabmap_ros/msg/_MapGraph.py: ../msg/MapGraph.msg
+devel/lib/python3/dist-packages/rtabmap_ros/msg/_MapGraph.py: /opt/ros/noetic/share/geometry_msgs/msg/Point.msg
+devel/lib/python3/dist-packages/rtabmap_ros/msg/_MapGraph.py: /opt/ros/noetic/share/geometry_msgs/msg/Transform.msg
+devel/lib/python3/dist-packages/rtabmap_ros/msg/_MapGraph.py: /opt/ros/noetic/share/std_msgs/msg/Header.msg
+devel/lib/python3/dist-packages/rtabmap_ros/msg/_MapGraph.py: /opt/ros/noetic/share/geometry_msgs/msg/Pose.msg
+devel/lib/python3/dist-packages/rtabmap_ros/msg/_MapGraph.py: ../msg/Link.msg
+devel/lib/python3/dist-packages/rtabmap_ros/msg/_MapGraph.py: /opt/ros/noetic/share/geometry_msgs/msg/Vector3.msg
+devel/lib/python3/dist-packages/rtabmap_ros/msg/_MapGraph.py: /opt/ros/noetic/share/geometry_msgs/msg/Quaternion.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/zy/Code/catkin_rtab/src/rtabmap_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Generating Python from MSG rtabmap_ros/MapGraph"
+	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/zy/Code/catkin_rtab/src/rtabmap_ros/msg/MapGraph.msg -Irtabmap_ros:/home/zy/Code/catkin_rtab/src/rtabmap_ros/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -p rtabmap_ros -o /home/zy/Code/catkin_rtab/src/rtabmap_ros/build/devel/lib/python3/dist-packages/rtabmap_ros/msg
+
+devel/lib/python3/dist-packages/rtabmap_ros/msg/_NodeData.py: /opt/ros/noetic/lib/genpy/genmsg_py.py
+devel/lib/python3/dist-packages/rtabmap_ros/msg/_NodeData.py: ../msg/NodeData.msg
+devel/lib/python3/dist-packages/rtabmap_ros/msg/_NodeData.py: ../msg/GlobalDescriptor.msg
+devel/lib/python3/dist-packages/rtabmap_ros/msg/_NodeData.py: ../msg/EnvSensor.msg
+devel/lib/python3/dist-packages/rtabmap_ros/msg/_NodeData.py: /opt/ros/noetic/share/geometry_msgs/msg/Point.msg
+devel/lib/python3/dist-packages/rtabmap_ros/msg/_NodeData.py: ../msg/Point3f.msg
+devel/lib/python3/dist-packages/rtabmap_ros/msg/_NodeData.py: /opt/ros/noetic/share/geometry_msgs/msg/Transform.msg
+devel/lib/python3/dist-packages/rtabmap_ros/msg/_NodeData.py: ../msg/Point2f.msg
+devel/lib/python3/dist-packages/rtabmap_ros/msg/_NodeData.py: ../msg/KeyPoint.msg
+devel/lib/python3/dist-packages/rtabmap_ros/msg/_NodeData.py: ../msg/GPS.msg
+devel/lib/python3/dist-packages/rtabmap_ros/msg/_NodeData.py: /opt/ros/noetic/share/std_msgs/msg/Header.msg
+devel/lib/python3/dist-packages/rtabmap_ros/msg/_NodeData.py: /opt/ros/noetic/share/geometry_msgs/msg/Pose.msg
+devel/lib/python3/dist-packages/rtabmap_ros/msg/_NodeData.py: /opt/ros/noetic/share/geometry_msgs/msg/Vector3.msg
+devel/lib/python3/dist-packages/rtabmap_ros/msg/_NodeData.py: /opt/ros/noetic/share/geometry_msgs/msg/Quaternion.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/zy/Code/catkin_rtab/src/rtabmap_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Generating Python from MSG rtabmap_ros/NodeData"
+	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/zy/Code/catkin_rtab/src/rtabmap_ros/msg/NodeData.msg -Irtabmap_ros:/home/zy/Code/catkin_rtab/src/rtabmap_ros/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -p rtabmap_ros -o /home/zy/Code/catkin_rtab/src/rtabmap_ros/build/devel/lib/python3/dist-packages/rtabmap_ros/msg
+
+devel/lib/python3/dist-packages/rtabmap_ros/msg/_Link.py: /opt/ros/noetic/lib/genpy/genmsg_py.py
+devel/lib/python3/dist-packages/rtabmap_ros/msg/_Link.py: ../msg/Link.msg
+devel/lib/python3/dist-packages/rtabmap_ros/msg/_Link.py: /opt/ros/noetic/share/geometry_msgs/msg/Transform.msg
+devel/lib/python3/dist-packages/rtabmap_ros/msg/_Link.py: /opt/ros/noetic/share/geometry_msgs/msg/Vector3.msg
+devel/lib/python3/dist-packages/rtabmap_ros/msg/_Link.py: /opt/ros/noetic/share/geometry_msgs/msg/Quaternion.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/zy/Code/catkin_rtab/src/rtabmap_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Generating Python from MSG rtabmap_ros/Link"
+	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/zy/Code/catkin_rtab/src/rtabmap_ros/msg/Link.msg -Irtabmap_ros:/home/zy/Code/catkin_rtab/src/rtabmap_ros/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -p rtabmap_ros -o /home/zy/Code/catkin_rtab/src/rtabmap_ros/build/devel/lib/python3/dist-packages/rtabmap_ros/msg
+
+devel/lib/python3/dist-packages/rtabmap_ros/msg/_OdomInfo.py: /opt/ros/noetic/lib/genpy/genmsg_py.py
+devel/lib/python3/dist-packages/rtabmap_ros/msg/_OdomInfo.py: ../msg/OdomInfo.msg
+devel/lib/python3/dist-packages/rtabmap_ros/msg/_OdomInfo.py: /opt/ros/noetic/share/geometry_msgs/msg/Point.msg
+devel/lib/python3/dist-packages/rtabmap_ros/msg/_OdomInfo.py: ../msg/Point3f.msg
+devel/lib/python3/dist-packages/rtabmap_ros/msg/_OdomInfo.py: /opt/ros/noetic/share/geometry_msgs/msg/Transform.msg
+devel/lib/python3/dist-packages/rtabmap_ros/msg/_OdomInfo.py: /opt/ros/noetic/share/sensor_msgs/msg/CameraInfo.msg
+devel/lib/python3/dist-packages/rtabmap_ros/msg/_OdomInfo.py: ../msg/Point2f.msg
+devel/lib/python3/dist-packages/rtabmap_ros/msg/_OdomInfo.py: ../msg/KeyPoint.msg
+devel/lib/python3/dist-packages/rtabmap_ros/msg/_OdomInfo.py: /opt/ros/noetic/share/sensor_msgs/msg/PointCloud2.msg
+devel/lib/python3/dist-packages/rtabmap_ros/msg/_OdomInfo.py: /opt/ros/noetic/share/sensor_msgs/msg/PointField.msg
+devel/lib/python3/dist-packages/rtabmap_ros/msg/_OdomInfo.py: /opt/ros/noetic/share/std_msgs/msg/Header.msg
+devel/lib/python3/dist-packages/rtabmap_ros/msg/_OdomInfo.py: /opt/ros/noetic/share/geometry_msgs/msg/Pose.msg
+devel/lib/python3/dist-packages/rtabmap_ros/msg/_OdomInfo.py: /opt/ros/noetic/share/geometry_msgs/msg/Quaternion.msg
+devel/lib/python3/dist-packages/rtabmap_ros/msg/_OdomInfo.py: /opt/ros/noetic/share/geometry_msgs/msg/Vector3.msg
+devel/lib/python3/dist-packages/rtabmap_ros/msg/_OdomInfo.py: /opt/ros/noetic/share/sensor_msgs/msg/RegionOfInterest.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/zy/Code/catkin_rtab/src/rtabmap_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Generating Python from MSG rtabmap_ros/OdomInfo"
+	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/zy/Code/catkin_rtab/src/rtabmap_ros/msg/OdomInfo.msg -Irtabmap_ros:/home/zy/Code/catkin_rtab/src/rtabmap_ros/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -p rtabmap_ros -o /home/zy/Code/catkin_rtab/src/rtabmap_ros/build/devel/lib/python3/dist-packages/rtabmap_ros/msg
+
+devel/lib/python3/dist-packages/rtabmap_ros/msg/_Point2f.py: /opt/ros/noetic/lib/genpy/genmsg_py.py
+devel/lib/python3/dist-packages/rtabmap_ros/msg/_Point2f.py: ../msg/Point2f.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/zy/Code/catkin_rtab/src/rtabmap_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Generating Python from MSG rtabmap_ros/Point2f"
+	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/zy/Code/catkin_rtab/src/rtabmap_ros/msg/Point2f.msg -Irtabmap_ros:/home/zy/Code/catkin_rtab/src/rtabmap_ros/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -p rtabmap_ros -o /home/zy/Code/catkin_rtab/src/rtabmap_ros/build/devel/lib/python3/dist-packages/rtabmap_ros/msg
+
+devel/lib/python3/dist-packages/rtabmap_ros/msg/_Point3f.py: /opt/ros/noetic/lib/genpy/genmsg_py.py
+devel/lib/python3/dist-packages/rtabmap_ros/msg/_Point3f.py: ../msg/Point3f.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/zy/Code/catkin_rtab/src/rtabmap_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Generating Python from MSG rtabmap_ros/Point3f"
+	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/zy/Code/catkin_rtab/src/rtabmap_ros/msg/Point3f.msg -Irtabmap_ros:/home/zy/Code/catkin_rtab/src/rtabmap_ros/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -p rtabmap_ros -o /home/zy/Code/catkin_rtab/src/rtabmap_ros/build/devel/lib/python3/dist-packages/rtabmap_ros/msg
+=======
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/exdx/codes/catkin_rtab/src/rtabmap_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating Python from MSG rtabmap_ros/GlobalDescriptor"
 	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/exdx/codes/catkin_rtab/src/rtabmap_ros/msg/GlobalDescriptor.msg -Irtabmap_ros:/home/exdx/codes/catkin_rtab/src/rtabmap_ros/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -p rtabmap_ros -o /home/exdx/codes/catkin_rtab/src/rtabmap_ros/build/devel/lib/python3/dist-packages/rtabmap_ros/msg
 
@@ -210,17 +341,42 @@ devel/lib/python3/dist-packages/rtabmap_ros/msg/_Point3f.py: /opt/ros/noetic/lib
 devel/lib/python3/dist-packages/rtabmap_ros/msg/_Point3f.py: ../msg/Point3f.msg
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/exdx/codes/catkin_rtab/src/rtabmap_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Generating Python from MSG rtabmap_ros/Point3f"
 	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/exdx/codes/catkin_rtab/src/rtabmap_ros/msg/Point3f.msg -Irtabmap_ros:/home/exdx/codes/catkin_rtab/src/rtabmap_ros/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -p rtabmap_ros -o /home/exdx/codes/catkin_rtab/src/rtabmap_ros/build/devel/lib/python3/dist-packages/rtabmap_ros/msg
+>>>>>>> 8dcec0a9a1f95d57487b09c6cec170bd6adbd4be
 
 devel/lib/python3/dist-packages/rtabmap_ros/msg/_Goal.py: /opt/ros/noetic/lib/genpy/genmsg_py.py
 devel/lib/python3/dist-packages/rtabmap_ros/msg/_Goal.py: ../msg/Goal.msg
 devel/lib/python3/dist-packages/rtabmap_ros/msg/_Goal.py: /opt/ros/noetic/share/std_msgs/msg/Header.msg
+<<<<<<< HEAD
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/zy/Code/catkin_rtab/src/rtabmap_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Generating Python from MSG rtabmap_ros/Goal"
+	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/zy/Code/catkin_rtab/src/rtabmap_ros/msg/Goal.msg -Irtabmap_ros:/home/zy/Code/catkin_rtab/src/rtabmap_ros/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -p rtabmap_ros -o /home/zy/Code/catkin_rtab/src/rtabmap_ros/build/devel/lib/python3/dist-packages/rtabmap_ros/msg
+=======
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/exdx/codes/catkin_rtab/src/rtabmap_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Generating Python from MSG rtabmap_ros/Goal"
 	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/exdx/codes/catkin_rtab/src/rtabmap_ros/msg/Goal.msg -Irtabmap_ros:/home/exdx/codes/catkin_rtab/src/rtabmap_ros/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -p rtabmap_ros -o /home/exdx/codes/catkin_rtab/src/rtabmap_ros/build/devel/lib/python3/dist-packages/rtabmap_ros/msg
+>>>>>>> 8dcec0a9a1f95d57487b09c6cec170bd6adbd4be
 
 devel/lib/python3/dist-packages/rtabmap_ros/msg/_RGBDImage.py: /opt/ros/noetic/lib/genpy/genmsg_py.py
 devel/lib/python3/dist-packages/rtabmap_ros/msg/_RGBDImage.py: ../msg/RGBDImage.msg
+<<<<<<< HEAD
 devel/lib/python3/dist-packages/rtabmap_ros/msg/_RGBDImage.py: /opt/ros/noetic/share/sensor_msgs/msg/CompressedImage.msg
 devel/lib/python3/dist-packages/rtabmap_ros/msg/_RGBDImage.py: ../msg/KeyPoint.msg
+=======
+devel/lib/python3/dist-packages/rtabmap_ros/msg/_RGBDImage.py: ../msg/GlobalDescriptor.msg
+<<<<<<< HEAD
+devel/lib/python3/dist-packages/rtabmap_ros/msg/_RGBDImage.py: ../msg/Point3f.msg
+devel/lib/python3/dist-packages/rtabmap_ros/msg/_RGBDImage.py: /opt/ros/noetic/share/sensor_msgs/msg/CameraInfo.msg
+devel/lib/python3/dist-packages/rtabmap_ros/msg/_RGBDImage.py: ../msg/Point2f.msg
+devel/lib/python3/dist-packages/rtabmap_ros/msg/_RGBDImage.py: ../msg/KeyPoint.msg
+devel/lib/python3/dist-packages/rtabmap_ros/msg/_RGBDImage.py: /opt/ros/noetic/share/sensor_msgs/msg/Image.msg
+devel/lib/python3/dist-packages/rtabmap_ros/msg/_RGBDImage.py: /opt/ros/noetic/share/std_msgs/msg/Header.msg
+devel/lib/python3/dist-packages/rtabmap_ros/msg/_RGBDImage.py: /opt/ros/noetic/share/sensor_msgs/msg/CompressedImage.msg
+devel/lib/python3/dist-packages/rtabmap_ros/msg/_RGBDImage.py: /opt/ros/noetic/share/sensor_msgs/msg/RegionOfInterest.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/zy/Code/catkin_rtab/src/rtabmap_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Generating Python from MSG rtabmap_ros/RGBDImage"
+	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/zy/Code/catkin_rtab/src/rtabmap_ros/msg/RGBDImage.msg -Irtabmap_ros:/home/zy/Code/catkin_rtab/src/rtabmap_ros/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -p rtabmap_ros -o /home/zy/Code/catkin_rtab/src/rtabmap_ros/build/devel/lib/python3/dist-packages/rtabmap_ros/msg
+=======
+devel/lib/python3/dist-packages/rtabmap_ros/msg/_RGBDImage.py: ../msg/Point2f.msg
+devel/lib/python3/dist-packages/rtabmap_ros/msg/_RGBDImage.py: /opt/ros/noetic/share/sensor_msgs/msg/RegionOfInterest.msg
+devel/lib/python3/dist-packages/rtabmap_ros/msg/_RGBDImage.py: /opt/ros/noetic/share/std_msgs/msg/Header.msg
+>>>>>>> 6d303045d3e51c2847e167c0708e9a1766c153df
 devel/lib/python3/dist-packages/rtabmap_ros/msg/_RGBDImage.py: ../msg/Point3f.msg
 devel/lib/python3/dist-packages/rtabmap_ros/msg/_RGBDImage.py: /opt/ros/noetic/share/sensor_msgs/msg/Image.msg
 devel/lib/python3/dist-packages/rtabmap_ros/msg/_RGBDImage.py: /opt/ros/noetic/share/sensor_msgs/msg/RegionOfInterest.msg
@@ -230,11 +386,33 @@ devel/lib/python3/dist-packages/rtabmap_ros/msg/_RGBDImage.py: ../msg/GlobalDesc
 devel/lib/python3/dist-packages/rtabmap_ros/msg/_RGBDImage.py: /opt/ros/noetic/share/std_msgs/msg/Header.msg
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/exdx/codes/catkin_rtab/src/rtabmap_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Generating Python from MSG rtabmap_ros/RGBDImage"
 	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/exdx/codes/catkin_rtab/src/rtabmap_ros/msg/RGBDImage.msg -Irtabmap_ros:/home/exdx/codes/catkin_rtab/src/rtabmap_ros/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -p rtabmap_ros -o /home/exdx/codes/catkin_rtab/src/rtabmap_ros/build/devel/lib/python3/dist-packages/rtabmap_ros/msg
+>>>>>>> 8dcec0a9a1f95d57487b09c6cec170bd6adbd4be
 
 devel/lib/python3/dist-packages/rtabmap_ros/msg/_RGBDImages.py: /opt/ros/noetic/lib/genpy/genmsg_py.py
 devel/lib/python3/dist-packages/rtabmap_ros/msg/_RGBDImages.py: ../msg/RGBDImages.msg
+<<<<<<< HEAD
 devel/lib/python3/dist-packages/rtabmap_ros/msg/_RGBDImages.py: /opt/ros/noetic/share/sensor_msgs/msg/CompressedImage.msg
 devel/lib/python3/dist-packages/rtabmap_ros/msg/_RGBDImages.py: ../msg/KeyPoint.msg
+=======
+devel/lib/python3/dist-packages/rtabmap_ros/msg/_RGBDImages.py: ../msg/GlobalDescriptor.msg
+<<<<<<< HEAD
+devel/lib/python3/dist-packages/rtabmap_ros/msg/_RGBDImages.py: ../msg/Point3f.msg
+devel/lib/python3/dist-packages/rtabmap_ros/msg/_RGBDImages.py: ../msg/RGBDImage.msg
+devel/lib/python3/dist-packages/rtabmap_ros/msg/_RGBDImages.py: /opt/ros/noetic/share/sensor_msgs/msg/CameraInfo.msg
+devel/lib/python3/dist-packages/rtabmap_ros/msg/_RGBDImages.py: ../msg/Point2f.msg
+devel/lib/python3/dist-packages/rtabmap_ros/msg/_RGBDImages.py: ../msg/KeyPoint.msg
+devel/lib/python3/dist-packages/rtabmap_ros/msg/_RGBDImages.py: /opt/ros/noetic/share/sensor_msgs/msg/Image.msg
+devel/lib/python3/dist-packages/rtabmap_ros/msg/_RGBDImages.py: /opt/ros/noetic/share/std_msgs/msg/Header.msg
+devel/lib/python3/dist-packages/rtabmap_ros/msg/_RGBDImages.py: /opt/ros/noetic/share/sensor_msgs/msg/CompressedImage.msg
+devel/lib/python3/dist-packages/rtabmap_ros/msg/_RGBDImages.py: /opt/ros/noetic/share/sensor_msgs/msg/RegionOfInterest.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/zy/Code/catkin_rtab/src/rtabmap_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Generating Python from MSG rtabmap_ros/RGBDImages"
+	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/zy/Code/catkin_rtab/src/rtabmap_ros/msg/RGBDImages.msg -Irtabmap_ros:/home/zy/Code/catkin_rtab/src/rtabmap_ros/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -p rtabmap_ros -o /home/zy/Code/catkin_rtab/src/rtabmap_ros/build/devel/lib/python3/dist-packages/rtabmap_ros/msg
+=======
+devel/lib/python3/dist-packages/rtabmap_ros/msg/_RGBDImages.py: ../msg/Point2f.msg
+devel/lib/python3/dist-packages/rtabmap_ros/msg/_RGBDImages.py: ../msg/RGBDImage.msg
+devel/lib/python3/dist-packages/rtabmap_ros/msg/_RGBDImages.py: /opt/ros/noetic/share/sensor_msgs/msg/RegionOfInterest.msg
+devel/lib/python3/dist-packages/rtabmap_ros/msg/_RGBDImages.py: /opt/ros/noetic/share/std_msgs/msg/Header.msg
+>>>>>>> 6d303045d3e51c2847e167c0708e9a1766c153df
 devel/lib/python3/dist-packages/rtabmap_ros/msg/_RGBDImages.py: ../msg/Point3f.msg
 devel/lib/python3/dist-packages/rtabmap_ros/msg/_RGBDImages.py: /opt/ros/noetic/share/sensor_msgs/msg/Image.msg
 devel/lib/python3/dist-packages/rtabmap_ros/msg/_RGBDImages.py: /opt/ros/noetic/share/sensor_msgs/msg/RegionOfInterest.msg
@@ -245,10 +423,29 @@ devel/lib/python3/dist-packages/rtabmap_ros/msg/_RGBDImages.py: ../msg/GlobalDes
 devel/lib/python3/dist-packages/rtabmap_ros/msg/_RGBDImages.py: /opt/ros/noetic/share/std_msgs/msg/Header.msg
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/exdx/codes/catkin_rtab/src/rtabmap_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Generating Python from MSG rtabmap_ros/RGBDImages"
 	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/exdx/codes/catkin_rtab/src/rtabmap_ros/msg/RGBDImages.msg -Irtabmap_ros:/home/exdx/codes/catkin_rtab/src/rtabmap_ros/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -p rtabmap_ros -o /home/exdx/codes/catkin_rtab/src/rtabmap_ros/build/devel/lib/python3/dist-packages/rtabmap_ros/msg
+>>>>>>> 8dcec0a9a1f95d57487b09c6cec170bd6adbd4be
 
 devel/lib/python3/dist-packages/rtabmap_ros/msg/_UserData.py: /opt/ros/noetic/lib/genpy/genmsg_py.py
 devel/lib/python3/dist-packages/rtabmap_ros/msg/_UserData.py: ../msg/UserData.msg
 devel/lib/python3/dist-packages/rtabmap_ros/msg/_UserData.py: /opt/ros/noetic/share/std_msgs/msg/Header.msg
+<<<<<<< HEAD
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/zy/Code/catkin_rtab/src/rtabmap_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Generating Python from MSG rtabmap_ros/UserData"
+	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/zy/Code/catkin_rtab/src/rtabmap_ros/msg/UserData.msg -Irtabmap_ros:/home/zy/Code/catkin_rtab/src/rtabmap_ros/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -p rtabmap_ros -o /home/zy/Code/catkin_rtab/src/rtabmap_ros/build/devel/lib/python3/dist-packages/rtabmap_ros/msg
+
+devel/lib/python3/dist-packages/rtabmap_ros/msg/_GPS.py: /opt/ros/noetic/lib/genpy/genmsg_py.py
+devel/lib/python3/dist-packages/rtabmap_ros/msg/_GPS.py: ../msg/GPS.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/zy/Code/catkin_rtab/src/rtabmap_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Generating Python from MSG rtabmap_ros/GPS"
+	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/zy/Code/catkin_rtab/src/rtabmap_ros/msg/GPS.msg -Irtabmap_ros:/home/zy/Code/catkin_rtab/src/rtabmap_ros/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -p rtabmap_ros -o /home/zy/Code/catkin_rtab/src/rtabmap_ros/build/devel/lib/python3/dist-packages/rtabmap_ros/msg
+
+devel/lib/python3/dist-packages/rtabmap_ros/msg/_Path.py: /opt/ros/noetic/lib/genpy/genmsg_py.py
+devel/lib/python3/dist-packages/rtabmap_ros/msg/_Path.py: ../msg/Path.msg
+devel/lib/python3/dist-packages/rtabmap_ros/msg/_Path.py: /opt/ros/noetic/share/std_msgs/msg/Header.msg
+devel/lib/python3/dist-packages/rtabmap_ros/msg/_Path.py: /opt/ros/noetic/share/geometry_msgs/msg/Pose.msg
+devel/lib/python3/dist-packages/rtabmap_ros/msg/_Path.py: /opt/ros/noetic/share/geometry_msgs/msg/Point.msg
+devel/lib/python3/dist-packages/rtabmap_ros/msg/_Path.py: /opt/ros/noetic/share/geometry_msgs/msg/Quaternion.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/zy/Code/catkin_rtab/src/rtabmap_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Generating Python from MSG rtabmap_ros/Path"
+	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/zy/Code/catkin_rtab/src/rtabmap_ros/msg/Path.msg -Irtabmap_ros:/home/zy/Code/catkin_rtab/src/rtabmap_ros/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -p rtabmap_ros -o /home/zy/Code/catkin_rtab/src/rtabmap_ros/build/devel/lib/python3/dist-packages/rtabmap_ros/msg
+=======
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/exdx/codes/catkin_rtab/src/rtabmap_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Generating Python from MSG rtabmap_ros/UserData"
 	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/exdx/codes/catkin_rtab/src/rtabmap_ros/msg/UserData.msg -Irtabmap_ros:/home/exdx/codes/catkin_rtab/src/rtabmap_ros/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -p rtabmap_ros -o /home/exdx/codes/catkin_rtab/src/rtabmap_ros/build/devel/lib/python3/dist-packages/rtabmap_ros/msg
 
@@ -265,10 +462,156 @@ devel/lib/python3/dist-packages/rtabmap_ros/msg/_Path.py: /opt/ros/noetic/share/
 devel/lib/python3/dist-packages/rtabmap_ros/msg/_Path.py: /opt/ros/noetic/share/geometry_msgs/msg/Pose.msg
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/exdx/codes/catkin_rtab/src/rtabmap_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Generating Python from MSG rtabmap_ros/Path"
 	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/exdx/codes/catkin_rtab/src/rtabmap_ros/msg/Path.msg -Irtabmap_ros:/home/exdx/codes/catkin_rtab/src/rtabmap_ros/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -p rtabmap_ros -o /home/exdx/codes/catkin_rtab/src/rtabmap_ros/build/devel/lib/python3/dist-packages/rtabmap_ros/msg
+>>>>>>> 8dcec0a9a1f95d57487b09c6cec170bd6adbd4be
 
 devel/lib/python3/dist-packages/rtabmap_ros/msg/_EnvSensor.py: /opt/ros/noetic/lib/genpy/genmsg_py.py
 devel/lib/python3/dist-packages/rtabmap_ros/msg/_EnvSensor.py: ../msg/EnvSensor.msg
 devel/lib/python3/dist-packages/rtabmap_ros/msg/_EnvSensor.py: /opt/ros/noetic/share/std_msgs/msg/Header.msg
+<<<<<<< HEAD
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/zy/Code/catkin_rtab/src/rtabmap_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Generating Python from MSG rtabmap_ros/EnvSensor"
+	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/zy/Code/catkin_rtab/src/rtabmap_ros/msg/EnvSensor.msg -Irtabmap_ros:/home/zy/Code/catkin_rtab/src/rtabmap_ros/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -p rtabmap_ros -o /home/zy/Code/catkin_rtab/src/rtabmap_ros/build/devel/lib/python3/dist-packages/rtabmap_ros/msg
+
+devel/lib/python3/dist-packages/rtabmap_ros/srv/_GetMap.py: /opt/ros/noetic/lib/genpy/gensrv_py.py
+devel/lib/python3/dist-packages/rtabmap_ros/srv/_GetMap.py: ../srv/GetMap.srv
+devel/lib/python3/dist-packages/rtabmap_ros/srv/_GetMap.py: ../msg/GlobalDescriptor.msg
+devel/lib/python3/dist-packages/rtabmap_ros/srv/_GetMap.py: ../msg/EnvSensor.msg
+devel/lib/python3/dist-packages/rtabmap_ros/srv/_GetMap.py: /opt/ros/noetic/share/geometry_msgs/msg/Point.msg
+devel/lib/python3/dist-packages/rtabmap_ros/srv/_GetMap.py: ../msg/Point3f.msg
+devel/lib/python3/dist-packages/rtabmap_ros/srv/_GetMap.py: /opt/ros/noetic/share/geometry_msgs/msg/Transform.msg
+devel/lib/python3/dist-packages/rtabmap_ros/srv/_GetMap.py: ../msg/MapGraph.msg
+devel/lib/python3/dist-packages/rtabmap_ros/srv/_GetMap.py: ../msg/NodeData.msg
+devel/lib/python3/dist-packages/rtabmap_ros/srv/_GetMap.py: ../msg/KeyPoint.msg
+devel/lib/python3/dist-packages/rtabmap_ros/srv/_GetMap.py: ../msg/Point2f.msg
+devel/lib/python3/dist-packages/rtabmap_ros/srv/_GetMap.py: ../msg/GPS.msg
+devel/lib/python3/dist-packages/rtabmap_ros/srv/_GetMap.py: /opt/ros/noetic/share/std_msgs/msg/Header.msg
+devel/lib/python3/dist-packages/rtabmap_ros/srv/_GetMap.py: /opt/ros/noetic/share/geometry_msgs/msg/Pose.msg
+devel/lib/python3/dist-packages/rtabmap_ros/srv/_GetMap.py: ../msg/MapData.msg
+devel/lib/python3/dist-packages/rtabmap_ros/srv/_GetMap.py: ../msg/Link.msg
+devel/lib/python3/dist-packages/rtabmap_ros/srv/_GetMap.py: /opt/ros/noetic/share/geometry_msgs/msg/Vector3.msg
+devel/lib/python3/dist-packages/rtabmap_ros/srv/_GetMap.py: /opt/ros/noetic/share/geometry_msgs/msg/Quaternion.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/zy/Code/catkin_rtab/src/rtabmap_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Generating Python code from SRV rtabmap_ros/GetMap"
+	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/gensrv_py.py /home/zy/Code/catkin_rtab/src/rtabmap_ros/srv/GetMap.srv -Irtabmap_ros:/home/zy/Code/catkin_rtab/src/rtabmap_ros/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -p rtabmap_ros -o /home/zy/Code/catkin_rtab/src/rtabmap_ros/build/devel/lib/python3/dist-packages/rtabmap_ros/srv
+
+devel/lib/python3/dist-packages/rtabmap_ros/srv/_GetMap2.py: /opt/ros/noetic/lib/genpy/gensrv_py.py
+devel/lib/python3/dist-packages/rtabmap_ros/srv/_GetMap2.py: ../srv/GetMap2.srv
+devel/lib/python3/dist-packages/rtabmap_ros/srv/_GetMap2.py: ../msg/GlobalDescriptor.msg
+devel/lib/python3/dist-packages/rtabmap_ros/srv/_GetMap2.py: ../msg/EnvSensor.msg
+devel/lib/python3/dist-packages/rtabmap_ros/srv/_GetMap2.py: /opt/ros/noetic/share/geometry_msgs/msg/Point.msg
+devel/lib/python3/dist-packages/rtabmap_ros/srv/_GetMap2.py: ../msg/Point3f.msg
+devel/lib/python3/dist-packages/rtabmap_ros/srv/_GetMap2.py: /opt/ros/noetic/share/geometry_msgs/msg/Transform.msg
+devel/lib/python3/dist-packages/rtabmap_ros/srv/_GetMap2.py: ../msg/MapGraph.msg
+devel/lib/python3/dist-packages/rtabmap_ros/srv/_GetMap2.py: ../msg/NodeData.msg
+devel/lib/python3/dist-packages/rtabmap_ros/srv/_GetMap2.py: ../msg/KeyPoint.msg
+devel/lib/python3/dist-packages/rtabmap_ros/srv/_GetMap2.py: ../msg/Point2f.msg
+devel/lib/python3/dist-packages/rtabmap_ros/srv/_GetMap2.py: ../msg/GPS.msg
+devel/lib/python3/dist-packages/rtabmap_ros/srv/_GetMap2.py: /opt/ros/noetic/share/std_msgs/msg/Header.msg
+devel/lib/python3/dist-packages/rtabmap_ros/srv/_GetMap2.py: /opt/ros/noetic/share/geometry_msgs/msg/Pose.msg
+devel/lib/python3/dist-packages/rtabmap_ros/srv/_GetMap2.py: ../msg/MapData.msg
+devel/lib/python3/dist-packages/rtabmap_ros/srv/_GetMap2.py: ../msg/Link.msg
+devel/lib/python3/dist-packages/rtabmap_ros/srv/_GetMap2.py: /opt/ros/noetic/share/geometry_msgs/msg/Vector3.msg
+devel/lib/python3/dist-packages/rtabmap_ros/srv/_GetMap2.py: /opt/ros/noetic/share/geometry_msgs/msg/Quaternion.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/zy/Code/catkin_rtab/src/rtabmap_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Generating Python code from SRV rtabmap_ros/GetMap2"
+	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/gensrv_py.py /home/zy/Code/catkin_rtab/src/rtabmap_ros/srv/GetMap2.srv -Irtabmap_ros:/home/zy/Code/catkin_rtab/src/rtabmap_ros/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -p rtabmap_ros -o /home/zy/Code/catkin_rtab/src/rtabmap_ros/build/devel/lib/python3/dist-packages/rtabmap_ros/srv
+
+devel/lib/python3/dist-packages/rtabmap_ros/srv/_ListLabels.py: /opt/ros/noetic/lib/genpy/gensrv_py.py
+devel/lib/python3/dist-packages/rtabmap_ros/srv/_ListLabels.py: ../srv/ListLabels.srv
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/zy/Code/catkin_rtab/src/rtabmap_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Generating Python code from SRV rtabmap_ros/ListLabels"
+	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/gensrv_py.py /home/zy/Code/catkin_rtab/src/rtabmap_ros/srv/ListLabels.srv -Irtabmap_ros:/home/zy/Code/catkin_rtab/src/rtabmap_ros/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -p rtabmap_ros -o /home/zy/Code/catkin_rtab/src/rtabmap_ros/build/devel/lib/python3/dist-packages/rtabmap_ros/srv
+
+devel/lib/python3/dist-packages/rtabmap_ros/srv/_PublishMap.py: /opt/ros/noetic/lib/genpy/gensrv_py.py
+devel/lib/python3/dist-packages/rtabmap_ros/srv/_PublishMap.py: ../srv/PublishMap.srv
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/zy/Code/catkin_rtab/src/rtabmap_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Generating Python code from SRV rtabmap_ros/PublishMap"
+	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/gensrv_py.py /home/zy/Code/catkin_rtab/src/rtabmap_ros/srv/PublishMap.srv -Irtabmap_ros:/home/zy/Code/catkin_rtab/src/rtabmap_ros/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -p rtabmap_ros -o /home/zy/Code/catkin_rtab/src/rtabmap_ros/build/devel/lib/python3/dist-packages/rtabmap_ros/srv
+
+devel/lib/python3/dist-packages/rtabmap_ros/srv/_ResetPose.py: /opt/ros/noetic/lib/genpy/gensrv_py.py
+devel/lib/python3/dist-packages/rtabmap_ros/srv/_ResetPose.py: ../srv/ResetPose.srv
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/zy/Code/catkin_rtab/src/rtabmap_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Generating Python code from SRV rtabmap_ros/ResetPose"
+	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/gensrv_py.py /home/zy/Code/catkin_rtab/src/rtabmap_ros/srv/ResetPose.srv -Irtabmap_ros:/home/zy/Code/catkin_rtab/src/rtabmap_ros/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -p rtabmap_ros -o /home/zy/Code/catkin_rtab/src/rtabmap_ros/build/devel/lib/python3/dist-packages/rtabmap_ros/srv
+
+devel/lib/python3/dist-packages/rtabmap_ros/srv/_SetGoal.py: /opt/ros/noetic/lib/genpy/gensrv_py.py
+devel/lib/python3/dist-packages/rtabmap_ros/srv/_SetGoal.py: ../srv/SetGoal.srv
+devel/lib/python3/dist-packages/rtabmap_ros/srv/_SetGoal.py: /opt/ros/noetic/share/geometry_msgs/msg/Pose.msg
+devel/lib/python3/dist-packages/rtabmap_ros/srv/_SetGoal.py: /opt/ros/noetic/share/geometry_msgs/msg/Point.msg
+devel/lib/python3/dist-packages/rtabmap_ros/srv/_SetGoal.py: /opt/ros/noetic/share/geometry_msgs/msg/Quaternion.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/zy/Code/catkin_rtab/src/rtabmap_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Generating Python code from SRV rtabmap_ros/SetGoal"
+	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/gensrv_py.py /home/zy/Code/catkin_rtab/src/rtabmap_ros/srv/SetGoal.srv -Irtabmap_ros:/home/zy/Code/catkin_rtab/src/rtabmap_ros/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -p rtabmap_ros -o /home/zy/Code/catkin_rtab/src/rtabmap_ros/build/devel/lib/python3/dist-packages/rtabmap_ros/srv
+
+devel/lib/python3/dist-packages/rtabmap_ros/srv/_SetLabel.py: /opt/ros/noetic/lib/genpy/gensrv_py.py
+devel/lib/python3/dist-packages/rtabmap_ros/srv/_SetLabel.py: ../srv/SetLabel.srv
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/zy/Code/catkin_rtab/src/rtabmap_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Generating Python code from SRV rtabmap_ros/SetLabel"
+	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/gensrv_py.py /home/zy/Code/catkin_rtab/src/rtabmap_ros/srv/SetLabel.srv -Irtabmap_ros:/home/zy/Code/catkin_rtab/src/rtabmap_ros/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -p rtabmap_ros -o /home/zy/Code/catkin_rtab/src/rtabmap_ros/build/devel/lib/python3/dist-packages/rtabmap_ros/srv
+
+devel/lib/python3/dist-packages/rtabmap_ros/srv/_RemoveLabel.py: /opt/ros/noetic/lib/genpy/gensrv_py.py
+devel/lib/python3/dist-packages/rtabmap_ros/srv/_RemoveLabel.py: ../srv/RemoveLabel.srv
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/zy/Code/catkin_rtab/src/rtabmap_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Generating Python code from SRV rtabmap_ros/RemoveLabel"
+	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/gensrv_py.py /home/zy/Code/catkin_rtab/src/rtabmap_ros/srv/RemoveLabel.srv -Irtabmap_ros:/home/zy/Code/catkin_rtab/src/rtabmap_ros/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -p rtabmap_ros -o /home/zy/Code/catkin_rtab/src/rtabmap_ros/build/devel/lib/python3/dist-packages/rtabmap_ros/srv
+
+devel/lib/python3/dist-packages/rtabmap_ros/srv/_GetPlan.py: /opt/ros/noetic/lib/genpy/gensrv_py.py
+devel/lib/python3/dist-packages/rtabmap_ros/srv/_GetPlan.py: ../srv/GetPlan.srv
+devel/lib/python3/dist-packages/rtabmap_ros/srv/_GetPlan.py: /opt/ros/noetic/share/geometry_msgs/msg/Point.msg
+devel/lib/python3/dist-packages/rtabmap_ros/srv/_GetPlan.py: ../msg/Path.msg
+devel/lib/python3/dist-packages/rtabmap_ros/srv/_GetPlan.py: /opt/ros/noetic/share/geometry_msgs/msg/PoseStamped.msg
+devel/lib/python3/dist-packages/rtabmap_ros/srv/_GetPlan.py: /opt/ros/noetic/share/std_msgs/msg/Header.msg
+devel/lib/python3/dist-packages/rtabmap_ros/srv/_GetPlan.py: /opt/ros/noetic/share/geometry_msgs/msg/Pose.msg
+devel/lib/python3/dist-packages/rtabmap_ros/srv/_GetPlan.py: /opt/ros/noetic/share/geometry_msgs/msg/Quaternion.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/zy/Code/catkin_rtab/src/rtabmap_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Generating Python code from SRV rtabmap_ros/GetPlan"
+	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/gensrv_py.py /home/zy/Code/catkin_rtab/src/rtabmap_ros/srv/GetPlan.srv -Irtabmap_ros:/home/zy/Code/catkin_rtab/src/rtabmap_ros/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -p rtabmap_ros -o /home/zy/Code/catkin_rtab/src/rtabmap_ros/build/devel/lib/python3/dist-packages/rtabmap_ros/srv
+
+devel/lib/python3/dist-packages/rtabmap_ros/srv/_AddLink.py: /opt/ros/noetic/lib/genpy/gensrv_py.py
+devel/lib/python3/dist-packages/rtabmap_ros/srv/_AddLink.py: ../srv/AddLink.srv
+devel/lib/python3/dist-packages/rtabmap_ros/srv/_AddLink.py: /opt/ros/noetic/share/geometry_msgs/msg/Vector3.msg
+devel/lib/python3/dist-packages/rtabmap_ros/srv/_AddLink.py: /opt/ros/noetic/share/geometry_msgs/msg/Transform.msg
+devel/lib/python3/dist-packages/rtabmap_ros/srv/_AddLink.py: ../msg/Link.msg
+devel/lib/python3/dist-packages/rtabmap_ros/srv/_AddLink.py: /opt/ros/noetic/share/geometry_msgs/msg/Quaternion.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/zy/Code/catkin_rtab/src/rtabmap_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Generating Python code from SRV rtabmap_ros/AddLink"
+	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/gensrv_py.py /home/zy/Code/catkin_rtab/src/rtabmap_ros/srv/AddLink.srv -Irtabmap_ros:/home/zy/Code/catkin_rtab/src/rtabmap_ros/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -p rtabmap_ros -o /home/zy/Code/catkin_rtab/src/rtabmap_ros/build/devel/lib/python3/dist-packages/rtabmap_ros/srv
+
+devel/lib/python3/dist-packages/rtabmap_ros/srv/_GetNodeData.py: /opt/ros/noetic/lib/genpy/gensrv_py.py
+devel/lib/python3/dist-packages/rtabmap_ros/srv/_GetNodeData.py: ../srv/GetNodeData.srv
+devel/lib/python3/dist-packages/rtabmap_ros/srv/_GetNodeData.py: ../msg/GlobalDescriptor.msg
+devel/lib/python3/dist-packages/rtabmap_ros/srv/_GetNodeData.py: ../msg/EnvSensor.msg
+devel/lib/python3/dist-packages/rtabmap_ros/srv/_GetNodeData.py: /opt/ros/noetic/share/geometry_msgs/msg/Point.msg
+devel/lib/python3/dist-packages/rtabmap_ros/srv/_GetNodeData.py: ../msg/Point3f.msg
+devel/lib/python3/dist-packages/rtabmap_ros/srv/_GetNodeData.py: /opt/ros/noetic/share/geometry_msgs/msg/Transform.msg
+devel/lib/python3/dist-packages/rtabmap_ros/srv/_GetNodeData.py: ../msg/NodeData.msg
+devel/lib/python3/dist-packages/rtabmap_ros/srv/_GetNodeData.py: ../msg/KeyPoint.msg
+devel/lib/python3/dist-packages/rtabmap_ros/srv/_GetNodeData.py: ../msg/Point2f.msg
+devel/lib/python3/dist-packages/rtabmap_ros/srv/_GetNodeData.py: ../msg/GPS.msg
+devel/lib/python3/dist-packages/rtabmap_ros/srv/_GetNodeData.py: /opt/ros/noetic/share/std_msgs/msg/Header.msg
+devel/lib/python3/dist-packages/rtabmap_ros/srv/_GetNodeData.py: /opt/ros/noetic/share/geometry_msgs/msg/Pose.msg
+devel/lib/python3/dist-packages/rtabmap_ros/srv/_GetNodeData.py: /opt/ros/noetic/share/geometry_msgs/msg/Vector3.msg
+devel/lib/python3/dist-packages/rtabmap_ros/srv/_GetNodeData.py: /opt/ros/noetic/share/geometry_msgs/msg/Quaternion.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/zy/Code/catkin_rtab/src/rtabmap_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Generating Python code from SRV rtabmap_ros/GetNodeData"
+	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/gensrv_py.py /home/zy/Code/catkin_rtab/src/rtabmap_ros/srv/GetNodeData.srv -Irtabmap_ros:/home/zy/Code/catkin_rtab/src/rtabmap_ros/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -p rtabmap_ros -o /home/zy/Code/catkin_rtab/src/rtabmap_ros/build/devel/lib/python3/dist-packages/rtabmap_ros/srv
+
+devel/lib/python3/dist-packages/rtabmap_ros/srv/_GetNodesInRadius.py: /opt/ros/noetic/lib/genpy/gensrv_py.py
+devel/lib/python3/dist-packages/rtabmap_ros/srv/_GetNodesInRadius.py: ../srv/GetNodesInRadius.srv
+devel/lib/python3/dist-packages/rtabmap_ros/srv/_GetNodesInRadius.py: /opt/ros/noetic/share/geometry_msgs/msg/Pose.msg
+devel/lib/python3/dist-packages/rtabmap_ros/srv/_GetNodesInRadius.py: /opt/ros/noetic/share/geometry_msgs/msg/Point.msg
+devel/lib/python3/dist-packages/rtabmap_ros/srv/_GetNodesInRadius.py: /opt/ros/noetic/share/geometry_msgs/msg/Quaternion.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/zy/Code/catkin_rtab/src/rtabmap_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Generating Python code from SRV rtabmap_ros/GetNodesInRadius"
+	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/gensrv_py.py /home/zy/Code/catkin_rtab/src/rtabmap_ros/srv/GetNodesInRadius.srv -Irtabmap_ros:/home/zy/Code/catkin_rtab/src/rtabmap_ros/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -p rtabmap_ros -o /home/zy/Code/catkin_rtab/src/rtabmap_ros/build/devel/lib/python3/dist-packages/rtabmap_ros/srv
+
+devel/lib/python3/dist-packages/rtabmap_ros/srv/_LoadDatabase.py: /opt/ros/noetic/lib/genpy/gensrv_py.py
+devel/lib/python3/dist-packages/rtabmap_ros/srv/_LoadDatabase.py: ../srv/LoadDatabase.srv
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/zy/Code/catkin_rtab/src/rtabmap_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Generating Python code from SRV rtabmap_ros/LoadDatabase"
+	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/gensrv_py.py /home/zy/Code/catkin_rtab/src/rtabmap_ros/srv/LoadDatabase.srv -Irtabmap_ros:/home/zy/Code/catkin_rtab/src/rtabmap_ros/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -p rtabmap_ros -o /home/zy/Code/catkin_rtab/src/rtabmap_ros/build/devel/lib/python3/dist-packages/rtabmap_ros/srv
+
+devel/lib/python3/dist-packages/rtabmap_ros/srv/_DetectMoreLoopClosures.py: /opt/ros/noetic/lib/genpy/gensrv_py.py
+devel/lib/python3/dist-packages/rtabmap_ros/srv/_DetectMoreLoopClosures.py: ../srv/DetectMoreLoopClosures.srv
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/zy/Code/catkin_rtab/src/rtabmap_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Generating Python code from SRV rtabmap_ros/DetectMoreLoopClosures"
+	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/gensrv_py.py /home/zy/Code/catkin_rtab/src/rtabmap_ros/srv/DetectMoreLoopClosures.srv -Irtabmap_ros:/home/zy/Code/catkin_rtab/src/rtabmap_ros/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -p rtabmap_ros -o /home/zy/Code/catkin_rtab/src/rtabmap_ros/build/devel/lib/python3/dist-packages/rtabmap_ros/srv
+
+devel/lib/python3/dist-packages/rtabmap_ros/srv/_GlobalBundleAdjustment.py: /opt/ros/noetic/lib/genpy/gensrv_py.py
+devel/lib/python3/dist-packages/rtabmap_ros/srv/_GlobalBundleAdjustment.py: ../srv/GlobalBundleAdjustment.srv
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/zy/Code/catkin_rtab/src/rtabmap_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Generating Python code from SRV rtabmap_ros/GlobalBundleAdjustment"
+	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/gensrv_py.py /home/zy/Code/catkin_rtab/src/rtabmap_ros/srv/GlobalBundleAdjustment.srv -Irtabmap_ros:/home/zy/Code/catkin_rtab/src/rtabmap_ros/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -p rtabmap_ros -o /home/zy/Code/catkin_rtab/src/rtabmap_ros/build/devel/lib/python3/dist-packages/rtabmap_ros/srv
+
+devel/lib/python3/dist-packages/rtabmap_ros/srv/_CleanupLocalGrids.py: /opt/ros/noetic/lib/genpy/gensrv_py.py
+devel/lib/python3/dist-packages/rtabmap_ros/srv/_CleanupLocalGrids.py: ../srv/CleanupLocalGrids.srv
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/zy/Code/catkin_rtab/src/rtabmap_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Generating Python code from SRV rtabmap_ros/CleanupLocalGrids"
+	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/gensrv_py.py /home/zy/Code/catkin_rtab/src/rtabmap_ros/srv/CleanupLocalGrids.srv -Irtabmap_ros:/home/zy/Code/catkin_rtab/src/rtabmap_ros/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -p rtabmap_ros -o /home/zy/Code/catkin_rtab/src/rtabmap_ros/build/devel/lib/python3/dist-packages/rtabmap_ros/srv
+=======
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/exdx/codes/catkin_rtab/src/rtabmap_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Generating Python from MSG rtabmap_ros/EnvSensor"
 	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/exdx/codes/catkin_rtab/src/rtabmap_ros/msg/EnvSensor.msg -Irtabmap_ros:/home/exdx/codes/catkin_rtab/src/rtabmap_ros/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -p rtabmap_ros -o /home/exdx/codes/catkin_rtab/src/rtabmap_ros/build/devel/lib/python3/dist-packages/rtabmap_ros/msg
 
@@ -412,6 +755,7 @@ devel/lib/python3/dist-packages/rtabmap_ros/srv/_CleanupLocalGrids.py: /opt/ros/
 devel/lib/python3/dist-packages/rtabmap_ros/srv/_CleanupLocalGrids.py: ../srv/CleanupLocalGrids.srv
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/exdx/codes/catkin_rtab/src/rtabmap_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Generating Python code from SRV rtabmap_ros/CleanupLocalGrids"
 	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/gensrv_py.py /home/exdx/codes/catkin_rtab/src/rtabmap_ros/srv/CleanupLocalGrids.srv -Irtabmap_ros:/home/exdx/codes/catkin_rtab/src/rtabmap_ros/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -p rtabmap_ros -o /home/exdx/codes/catkin_rtab/src/rtabmap_ros/build/devel/lib/python3/dist-packages/rtabmap_ros/srv
+>>>>>>> 8dcec0a9a1f95d57487b09c6cec170bd6adbd4be
 
 devel/lib/python3/dist-packages/rtabmap_ros/msg/__init__.py: /opt/ros/noetic/lib/genpy/genmsg_py.py
 devel/lib/python3/dist-packages/rtabmap_ros/msg/__init__.py: devel/lib/python3/dist-packages/rtabmap_ros/msg/_Info.py
@@ -448,8 +792,13 @@ devel/lib/python3/dist-packages/rtabmap_ros/msg/__init__.py: devel/lib/python3/d
 devel/lib/python3/dist-packages/rtabmap_ros/msg/__init__.py: devel/lib/python3/dist-packages/rtabmap_ros/srv/_DetectMoreLoopClosures.py
 devel/lib/python3/dist-packages/rtabmap_ros/msg/__init__.py: devel/lib/python3/dist-packages/rtabmap_ros/srv/_GlobalBundleAdjustment.py
 devel/lib/python3/dist-packages/rtabmap_ros/msg/__init__.py: devel/lib/python3/dist-packages/rtabmap_ros/srv/_CleanupLocalGrids.py
+<<<<<<< HEAD
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/zy/Code/catkin_rtab/src/rtabmap_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Generating Python msg __init__.py for rtabmap_ros"
+	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py -o /home/zy/Code/catkin_rtab/src/rtabmap_ros/build/devel/lib/python3/dist-packages/rtabmap_ros/msg --initpy
+=======
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/exdx/codes/catkin_rtab/src/rtabmap_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Generating Python msg __init__.py for rtabmap_ros"
 	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py -o /home/exdx/codes/catkin_rtab/src/rtabmap_ros/build/devel/lib/python3/dist-packages/rtabmap_ros/msg --initpy
+>>>>>>> 8dcec0a9a1f95d57487b09c6cec170bd6adbd4be
 
 devel/lib/python3/dist-packages/rtabmap_ros/srv/__init__.py: /opt/ros/noetic/lib/genpy/genmsg_py.py
 devel/lib/python3/dist-packages/rtabmap_ros/srv/__init__.py: devel/lib/python3/dist-packages/rtabmap_ros/msg/_Info.py
@@ -486,8 +835,13 @@ devel/lib/python3/dist-packages/rtabmap_ros/srv/__init__.py: devel/lib/python3/d
 devel/lib/python3/dist-packages/rtabmap_ros/srv/__init__.py: devel/lib/python3/dist-packages/rtabmap_ros/srv/_DetectMoreLoopClosures.py
 devel/lib/python3/dist-packages/rtabmap_ros/srv/__init__.py: devel/lib/python3/dist-packages/rtabmap_ros/srv/_GlobalBundleAdjustment.py
 devel/lib/python3/dist-packages/rtabmap_ros/srv/__init__.py: devel/lib/python3/dist-packages/rtabmap_ros/srv/_CleanupLocalGrids.py
+<<<<<<< HEAD
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/zy/Code/catkin_rtab/src/rtabmap_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Generating Python srv __init__.py for rtabmap_ros"
+	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py -o /home/zy/Code/catkin_rtab/src/rtabmap_ros/build/devel/lib/python3/dist-packages/rtabmap_ros/srv --initpy
+=======
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/exdx/codes/catkin_rtab/src/rtabmap_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Generating Python srv __init__.py for rtabmap_ros"
 	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py -o /home/exdx/codes/catkin_rtab/src/rtabmap_ros/build/devel/lib/python3/dist-packages/rtabmap_ros/srv --initpy
+>>>>>>> 8dcec0a9a1f95d57487b09c6cec170bd6adbd4be
 
 rtabmap_ros_generate_messages_py: CMakeFiles/rtabmap_ros_generate_messages_py
 rtabmap_ros_generate_messages_py: devel/lib/python3/dist-packages/rtabmap_ros/msg/_Info.py
@@ -540,6 +894,10 @@ CMakeFiles/rtabmap_ros_generate_messages_py.dir/clean:
 .PHONY : CMakeFiles/rtabmap_ros_generate_messages_py.dir/clean
 
 CMakeFiles/rtabmap_ros_generate_messages_py.dir/depend:
+<<<<<<< HEAD
+	cd /home/zy/Code/catkin_rtab/src/rtabmap_ros/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/zy/Code/catkin_rtab/src/rtabmap_ros /home/zy/Code/catkin_rtab/src/rtabmap_ros /home/zy/Code/catkin_rtab/src/rtabmap_ros/build /home/zy/Code/catkin_rtab/src/rtabmap_ros/build /home/zy/Code/catkin_rtab/src/rtabmap_ros/build/CMakeFiles/rtabmap_ros_generate_messages_py.dir/DependInfo.cmake --color=$(COLOR)
+=======
 	cd /home/exdx/codes/catkin_rtab/src/rtabmap_ros/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/exdx/codes/catkin_rtab/src/rtabmap_ros /home/exdx/codes/catkin_rtab/src/rtabmap_ros /home/exdx/codes/catkin_rtab/src/rtabmap_ros/build /home/exdx/codes/catkin_rtab/src/rtabmap_ros/build /home/exdx/codes/catkin_rtab/src/rtabmap_ros/build/CMakeFiles/rtabmap_ros_generate_messages_py.dir/DependInfo.cmake --color=$(COLOR)
+>>>>>>> 8dcec0a9a1f95d57487b09c6cec170bd6adbd4be
 .PHONY : CMakeFiles/rtabmap_ros_generate_messages_py.dir/depend
 

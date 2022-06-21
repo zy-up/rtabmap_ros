@@ -67,8 +67,13 @@ set(rtabmap_ros_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("TRUE" STREQUAL "TRUE")
+<<<<<<< HEAD
+  set(rtabmap_ros_SOURCE_PREFIX /home/zy/Code/catkin_rtab/src/rtabmap_ros)
+  set(rtabmap_ros_DEVEL_PREFIX /home/zy/Code/catkin_rtab/src/rtabmap_ros/build/devel)
+=======
   set(rtabmap_ros_SOURCE_PREFIX /home/exdx/codes/catkin_rtab/src/rtabmap_ros)
   set(rtabmap_ros_DEVEL_PREFIX /home/exdx/codes/catkin_rtab/src/rtabmap_ros/build/devel)
+>>>>>>> 8dcec0a9a1f95d57487b09c6cec170bd6adbd4be
   set(rtabmap_ros_INSTALL_PREFIX "")
   set(rtabmap_ros_PREFIX ${rtabmap_ros_DEVEL_PREFIX})
 else()
@@ -91,9 +96,15 @@ endif()
 # flag project as catkin-based to distinguish if a find_package()-ed project is a catkin project
 set(rtabmap_ros_FOUND_CATKIN_PROJECT TRUE)
 
+<<<<<<< HEAD
+if(NOT "/home/zy/Code/catkin_rtab/src/rtabmap_ros/build/devel/include;/home/zy/Code/catkin_rtab/src/rtabmap_ros/include;/usr/local/lib/rtabmap-0.20/../../include/rtabmap-0.20;/usr/include/opencv4 " STREQUAL " ")
+  set(rtabmap_ros_INCLUDE_DIRS "")
+  set(_include_dirs "/home/zy/Code/catkin_rtab/src/rtabmap_ros/build/devel/include;/home/zy/Code/catkin_rtab/src/rtabmap_ros/include;/usr/local/lib/rtabmap-0.20/../../include/rtabmap-0.20;/usr/include/opencv4")
+=======
 if(NOT "/home/exdx/codes/catkin_rtab/src/rtabmap_ros/build/devel/include;/home/exdx/codes/catkin_rtab/src/rtabmap_ros/include;/usr/local/lib/rtabmap-0.20/../../include/rtabmap-0.20;/usr/include/opencv4 " STREQUAL " ")
   set(rtabmap_ros_INCLUDE_DIRS "")
   set(_include_dirs "/home/exdx/codes/catkin_rtab/src/rtabmap_ros/build/devel/include;/home/exdx/codes/catkin_rtab/src/rtabmap_ros/include;/usr/local/lib/rtabmap-0.20/../../include/rtabmap-0.20;/usr/include/opencv4")
+>>>>>>> 8dcec0a9a1f95d57487b09c6cec170bd6adbd4be
   if(NOT "https://github.com/introlab/rtabmap_ros/issues " STREQUAL " ")
     set(_report "Check the issue tracker 'https://github.com/introlab/rtabmap_ros/issues' and consider creating a ticket if the problem has not been reported yet.")
   elseif(NOT " " STREQUAL " ")
@@ -110,7 +121,11 @@ if(NOT "/home/exdx/codes/catkin_rtab/src/rtabmap_ros/build/devel/include;/home/e
         message(FATAL_ERROR "Project 'rtabmap_ros' specifies '${idir}' as an include dir, which is not found.  It does not exist in '${include}'.  ${_report}")
       endif()
     else()
+<<<<<<< HEAD
+      message(FATAL_ERROR "Project 'rtabmap_ros' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/zy/Code/catkin_rtab/src/rtabmap_ros/${idir}'.  ${_report}")
+=======
       message(FATAL_ERROR "Project 'rtabmap_ros' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/exdx/codes/catkin_rtab/src/rtabmap_ros/${idir}'.  ${_report}")
+>>>>>>> 8dcec0a9a1f95d57487b09c6cec170bd6adbd4be
     endif()
     _list_append_unique(rtabmap_ros_INCLUDE_DIRS ${include})
   endforeach()
@@ -154,7 +169,11 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
+<<<<<<< HEAD
+    foreach(path /home/zy/Code/catkin_rtab/src/rtabmap_ros/build/devel/lib;/home/zy/Code/catkin_rtab/devel/lib;/opt/ros/noetic/lib)
+=======
     foreach(path /home/exdx/codes/catkin_rtab/src/rtabmap_ros/build/devel/lib;/home/exdx/codes/catkin_realsense/devel/lib;/home/exdx/codes/catkin_rtab/devel/lib;/opt/ros/noetic/lib)
+>>>>>>> 8dcec0a9a1f95d57487b09c6cec170bd6adbd4be
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

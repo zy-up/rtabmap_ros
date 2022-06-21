@@ -43,10 +43,17 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
+<<<<<<< HEAD
+CMAKE_SOURCE_DIR = /home/zy/Code/catkin_rtab/src/rtabmap_ros
+
+# The top-level build directory on which CMake was run.
+CMAKE_BINARY_DIR = /home/zy/Code/catkin_rtab/src/rtabmap_ros/build
+=======
 CMAKE_SOURCE_DIR = /home/exdx/codes/catkin_rtab/src/rtabmap_ros
 
 # The top-level build directory on which CMake was run.
 CMAKE_BINARY_DIR = /home/exdx/codes/catkin_rtab/src/rtabmap_ros/build
+>>>>>>> 8dcec0a9a1f95d57487b09c6cec170bd6adbd4be
 
 # Utility rule file for rtabmap_ros_generate_messages_nodejs.
 
@@ -91,6 +98,25 @@ CMakeFiles/rtabmap_ros_generate_messages_nodejs: devel/share/gennodejs/ros/rtabm
 
 devel/share/gennodejs/ros/rtabmap_ros/msg/Info.js: /opt/ros/noetic/lib/gennodejs/gen_nodejs.py
 devel/share/gennodejs/ros/rtabmap_ros/msg/Info.js: ../msg/Info.msg
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+devel/share/gennodejs/ros/rtabmap_ros/msg/Info.js: /opt/ros/noetic/share/geometry_msgs/msg/Point.msg
+devel/share/gennodejs/ros/rtabmap_ros/msg/Info.js: /opt/ros/noetic/share/geometry_msgs/msg/Transform.msg
+devel/share/gennodejs/ros/rtabmap_ros/msg/Info.js: ../msg/MapGraph.msg
+devel/share/gennodejs/ros/rtabmap_ros/msg/Info.js: /opt/ros/noetic/share/std_msgs/msg/Header.msg
+devel/share/gennodejs/ros/rtabmap_ros/msg/Info.js: /opt/ros/noetic/share/geometry_msgs/msg/Pose.msg
+devel/share/gennodejs/ros/rtabmap_ros/msg/Info.js: ../msg/Link.msg
+devel/share/gennodejs/ros/rtabmap_ros/msg/Info.js: /opt/ros/noetic/share/geometry_msgs/msg/Vector3.msg
+devel/share/gennodejs/ros/rtabmap_ros/msg/Info.js: /opt/ros/noetic/share/geometry_msgs/msg/Quaternion.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/zy/Code/catkin_rtab/src/rtabmap_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Javascript code from rtabmap_ros/Info.msg"
+	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/zy/Code/catkin_rtab/src/rtabmap_ros/msg/Info.msg -Irtabmap_ros:/home/zy/Code/catkin_rtab/src/rtabmap_ros/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -p rtabmap_ros -o /home/zy/Code/catkin_rtab/src/rtabmap_ros/build/devel/share/gennodejs/ros/rtabmap_ros/msg
+=======
+devel/share/gennodejs/ros/rtabmap_ros/msg/Info.js: /opt/ros/noetic/share/geometry_msgs/msg/Transform.msg
+devel/share/gennodejs/ros/rtabmap_ros/msg/Info.js: /opt/ros/noetic/share/std_msgs/msg/Header.msg
+devel/share/gennodejs/ros/rtabmap_ros/msg/Info.js: /opt/ros/noetic/share/geometry_msgs/msg/Vector3.msg
+devel/share/gennodejs/ros/rtabmap_ros/msg/Info.js: /opt/ros/noetic/share/geometry_msgs/msg/Quaternion.msg
+>>>>>>> 6d303045d3e51c2847e167c0708e9a1766c153df
 devel/share/gennodejs/ros/rtabmap_ros/msg/Info.js: ../msg/MapGraph.msg
 devel/share/gennodejs/ros/rtabmap_ros/msg/Info.js: /opt/ros/noetic/share/geometry_msgs/msg/Pose.msg
 devel/share/gennodejs/ros/rtabmap_ros/msg/Info.js: ../msg/Link.msg
@@ -101,16 +127,121 @@ devel/share/gennodejs/ros/rtabmap_ros/msg/Info.js: /opt/ros/noetic/share/geometr
 devel/share/gennodejs/ros/rtabmap_ros/msg/Info.js: /opt/ros/noetic/share/std_msgs/msg/Header.msg
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/exdx/codes/catkin_rtab/src/rtabmap_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Javascript code from rtabmap_ros/Info.msg"
 	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/exdx/codes/catkin_rtab/src/rtabmap_ros/msg/Info.msg -Irtabmap_ros:/home/exdx/codes/catkin_rtab/src/rtabmap_ros/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -p rtabmap_ros -o /home/exdx/codes/catkin_rtab/src/rtabmap_ros/build/devel/share/gennodejs/ros/rtabmap_ros/msg
+>>>>>>> 8dcec0a9a1f95d57487b09c6cec170bd6adbd4be
 
 devel/share/gennodejs/ros/rtabmap_ros/msg/KeyPoint.js: /opt/ros/noetic/lib/gennodejs/gen_nodejs.py
 devel/share/gennodejs/ros/rtabmap_ros/msg/KeyPoint.js: ../msg/KeyPoint.msg
 devel/share/gennodejs/ros/rtabmap_ros/msg/KeyPoint.js: ../msg/Point2f.msg
+<<<<<<< HEAD
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/zy/Code/catkin_rtab/src/rtabmap_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Javascript code from rtabmap_ros/KeyPoint.msg"
+	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/zy/Code/catkin_rtab/src/rtabmap_ros/msg/KeyPoint.msg -Irtabmap_ros:/home/zy/Code/catkin_rtab/src/rtabmap_ros/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -p rtabmap_ros -o /home/zy/Code/catkin_rtab/src/rtabmap_ros/build/devel/share/gennodejs/ros/rtabmap_ros/msg
+=======
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/exdx/codes/catkin_rtab/src/rtabmap_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Javascript code from rtabmap_ros/KeyPoint.msg"
 	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/exdx/codes/catkin_rtab/src/rtabmap_ros/msg/KeyPoint.msg -Irtabmap_ros:/home/exdx/codes/catkin_rtab/src/rtabmap_ros/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -p rtabmap_ros -o /home/exdx/codes/catkin_rtab/src/rtabmap_ros/build/devel/share/gennodejs/ros/rtabmap_ros/msg
+>>>>>>> 8dcec0a9a1f95d57487b09c6cec170bd6adbd4be
 
 devel/share/gennodejs/ros/rtabmap_ros/msg/GlobalDescriptor.js: /opt/ros/noetic/lib/gennodejs/gen_nodejs.py
 devel/share/gennodejs/ros/rtabmap_ros/msg/GlobalDescriptor.js: ../msg/GlobalDescriptor.msg
 devel/share/gennodejs/ros/rtabmap_ros/msg/GlobalDescriptor.js: /opt/ros/noetic/share/std_msgs/msg/Header.msg
+<<<<<<< HEAD
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/zy/Code/catkin_rtab/src/rtabmap_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating Javascript code from rtabmap_ros/GlobalDescriptor.msg"
+	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/zy/Code/catkin_rtab/src/rtabmap_ros/msg/GlobalDescriptor.msg -Irtabmap_ros:/home/zy/Code/catkin_rtab/src/rtabmap_ros/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -p rtabmap_ros -o /home/zy/Code/catkin_rtab/src/rtabmap_ros/build/devel/share/gennodejs/ros/rtabmap_ros/msg
+
+devel/share/gennodejs/ros/rtabmap_ros/msg/ScanDescriptor.js: /opt/ros/noetic/lib/gennodejs/gen_nodejs.py
+devel/share/gennodejs/ros/rtabmap_ros/msg/ScanDescriptor.js: ../msg/ScanDescriptor.msg
+devel/share/gennodejs/ros/rtabmap_ros/msg/ScanDescriptor.js: ../msg/GlobalDescriptor.msg
+devel/share/gennodejs/ros/rtabmap_ros/msg/ScanDescriptor.js: /opt/ros/noetic/share/sensor_msgs/msg/PointCloud2.msg
+devel/share/gennodejs/ros/rtabmap_ros/msg/ScanDescriptor.js: /opt/ros/noetic/share/sensor_msgs/msg/PointField.msg
+devel/share/gennodejs/ros/rtabmap_ros/msg/ScanDescriptor.js: /opt/ros/noetic/share/std_msgs/msg/Header.msg
+devel/share/gennodejs/ros/rtabmap_ros/msg/ScanDescriptor.js: /opt/ros/noetic/share/sensor_msgs/msg/LaserScan.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/zy/Code/catkin_rtab/src/rtabmap_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating Javascript code from rtabmap_ros/ScanDescriptor.msg"
+	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/zy/Code/catkin_rtab/src/rtabmap_ros/msg/ScanDescriptor.msg -Irtabmap_ros:/home/zy/Code/catkin_rtab/src/rtabmap_ros/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -p rtabmap_ros -o /home/zy/Code/catkin_rtab/src/rtabmap_ros/build/devel/share/gennodejs/ros/rtabmap_ros/msg
+
+devel/share/gennodejs/ros/rtabmap_ros/msg/MapData.js: /opt/ros/noetic/lib/gennodejs/gen_nodejs.py
+devel/share/gennodejs/ros/rtabmap_ros/msg/MapData.js: ../msg/MapData.msg
+devel/share/gennodejs/ros/rtabmap_ros/msg/MapData.js: ../msg/GlobalDescriptor.msg
+devel/share/gennodejs/ros/rtabmap_ros/msg/MapData.js: ../msg/EnvSensor.msg
+devel/share/gennodejs/ros/rtabmap_ros/msg/MapData.js: /opt/ros/noetic/share/geometry_msgs/msg/Point.msg
+devel/share/gennodejs/ros/rtabmap_ros/msg/MapData.js: ../msg/Point3f.msg
+devel/share/gennodejs/ros/rtabmap_ros/msg/MapData.js: /opt/ros/noetic/share/geometry_msgs/msg/Transform.msg
+devel/share/gennodejs/ros/rtabmap_ros/msg/MapData.js: ../msg/MapGraph.msg
+devel/share/gennodejs/ros/rtabmap_ros/msg/MapData.js: ../msg/NodeData.msg
+devel/share/gennodejs/ros/rtabmap_ros/msg/MapData.js: ../msg/KeyPoint.msg
+devel/share/gennodejs/ros/rtabmap_ros/msg/MapData.js: ../msg/Point2f.msg
+devel/share/gennodejs/ros/rtabmap_ros/msg/MapData.js: ../msg/GPS.msg
+devel/share/gennodejs/ros/rtabmap_ros/msg/MapData.js: /opt/ros/noetic/share/std_msgs/msg/Header.msg
+devel/share/gennodejs/ros/rtabmap_ros/msg/MapData.js: /opt/ros/noetic/share/geometry_msgs/msg/Pose.msg
+devel/share/gennodejs/ros/rtabmap_ros/msg/MapData.js: ../msg/Link.msg
+devel/share/gennodejs/ros/rtabmap_ros/msg/MapData.js: /opt/ros/noetic/share/geometry_msgs/msg/Vector3.msg
+devel/share/gennodejs/ros/rtabmap_ros/msg/MapData.js: /opt/ros/noetic/share/geometry_msgs/msg/Quaternion.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/zy/Code/catkin_rtab/src/rtabmap_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Generating Javascript code from rtabmap_ros/MapData.msg"
+	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/zy/Code/catkin_rtab/src/rtabmap_ros/msg/MapData.msg -Irtabmap_ros:/home/zy/Code/catkin_rtab/src/rtabmap_ros/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -p rtabmap_ros -o /home/zy/Code/catkin_rtab/src/rtabmap_ros/build/devel/share/gennodejs/ros/rtabmap_ros/msg
+
+devel/share/gennodejs/ros/rtabmap_ros/msg/MapGraph.js: /opt/ros/noetic/lib/gennodejs/gen_nodejs.py
+devel/share/gennodejs/ros/rtabmap_ros/msg/MapGraph.js: ../msg/MapGraph.msg
+devel/share/gennodejs/ros/rtabmap_ros/msg/MapGraph.js: /opt/ros/noetic/share/geometry_msgs/msg/Point.msg
+devel/share/gennodejs/ros/rtabmap_ros/msg/MapGraph.js: /opt/ros/noetic/share/geometry_msgs/msg/Transform.msg
+devel/share/gennodejs/ros/rtabmap_ros/msg/MapGraph.js: /opt/ros/noetic/share/std_msgs/msg/Header.msg
+devel/share/gennodejs/ros/rtabmap_ros/msg/MapGraph.js: /opt/ros/noetic/share/geometry_msgs/msg/Pose.msg
+devel/share/gennodejs/ros/rtabmap_ros/msg/MapGraph.js: ../msg/Link.msg
+devel/share/gennodejs/ros/rtabmap_ros/msg/MapGraph.js: /opt/ros/noetic/share/geometry_msgs/msg/Vector3.msg
+devel/share/gennodejs/ros/rtabmap_ros/msg/MapGraph.js: /opt/ros/noetic/share/geometry_msgs/msg/Quaternion.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/zy/Code/catkin_rtab/src/rtabmap_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Generating Javascript code from rtabmap_ros/MapGraph.msg"
+	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/zy/Code/catkin_rtab/src/rtabmap_ros/msg/MapGraph.msg -Irtabmap_ros:/home/zy/Code/catkin_rtab/src/rtabmap_ros/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -p rtabmap_ros -o /home/zy/Code/catkin_rtab/src/rtabmap_ros/build/devel/share/gennodejs/ros/rtabmap_ros/msg
+
+devel/share/gennodejs/ros/rtabmap_ros/msg/NodeData.js: /opt/ros/noetic/lib/gennodejs/gen_nodejs.py
+devel/share/gennodejs/ros/rtabmap_ros/msg/NodeData.js: ../msg/NodeData.msg
+devel/share/gennodejs/ros/rtabmap_ros/msg/NodeData.js: ../msg/GlobalDescriptor.msg
+devel/share/gennodejs/ros/rtabmap_ros/msg/NodeData.js: ../msg/EnvSensor.msg
+devel/share/gennodejs/ros/rtabmap_ros/msg/NodeData.js: /opt/ros/noetic/share/geometry_msgs/msg/Point.msg
+devel/share/gennodejs/ros/rtabmap_ros/msg/NodeData.js: ../msg/Point3f.msg
+devel/share/gennodejs/ros/rtabmap_ros/msg/NodeData.js: /opt/ros/noetic/share/geometry_msgs/msg/Transform.msg
+devel/share/gennodejs/ros/rtabmap_ros/msg/NodeData.js: ../msg/Point2f.msg
+devel/share/gennodejs/ros/rtabmap_ros/msg/NodeData.js: ../msg/KeyPoint.msg
+devel/share/gennodejs/ros/rtabmap_ros/msg/NodeData.js: ../msg/GPS.msg
+devel/share/gennodejs/ros/rtabmap_ros/msg/NodeData.js: /opt/ros/noetic/share/std_msgs/msg/Header.msg
+devel/share/gennodejs/ros/rtabmap_ros/msg/NodeData.js: /opt/ros/noetic/share/geometry_msgs/msg/Pose.msg
+devel/share/gennodejs/ros/rtabmap_ros/msg/NodeData.js: /opt/ros/noetic/share/geometry_msgs/msg/Vector3.msg
+devel/share/gennodejs/ros/rtabmap_ros/msg/NodeData.js: /opt/ros/noetic/share/geometry_msgs/msg/Quaternion.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/zy/Code/catkin_rtab/src/rtabmap_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Generating Javascript code from rtabmap_ros/NodeData.msg"
+	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/zy/Code/catkin_rtab/src/rtabmap_ros/msg/NodeData.msg -Irtabmap_ros:/home/zy/Code/catkin_rtab/src/rtabmap_ros/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -p rtabmap_ros -o /home/zy/Code/catkin_rtab/src/rtabmap_ros/build/devel/share/gennodejs/ros/rtabmap_ros/msg
+
+devel/share/gennodejs/ros/rtabmap_ros/msg/Link.js: /opt/ros/noetic/lib/gennodejs/gen_nodejs.py
+devel/share/gennodejs/ros/rtabmap_ros/msg/Link.js: ../msg/Link.msg
+devel/share/gennodejs/ros/rtabmap_ros/msg/Link.js: /opt/ros/noetic/share/geometry_msgs/msg/Transform.msg
+devel/share/gennodejs/ros/rtabmap_ros/msg/Link.js: /opt/ros/noetic/share/geometry_msgs/msg/Vector3.msg
+devel/share/gennodejs/ros/rtabmap_ros/msg/Link.js: /opt/ros/noetic/share/geometry_msgs/msg/Quaternion.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/zy/Code/catkin_rtab/src/rtabmap_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Generating Javascript code from rtabmap_ros/Link.msg"
+	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/zy/Code/catkin_rtab/src/rtabmap_ros/msg/Link.msg -Irtabmap_ros:/home/zy/Code/catkin_rtab/src/rtabmap_ros/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -p rtabmap_ros -o /home/zy/Code/catkin_rtab/src/rtabmap_ros/build/devel/share/gennodejs/ros/rtabmap_ros/msg
+
+devel/share/gennodejs/ros/rtabmap_ros/msg/OdomInfo.js: /opt/ros/noetic/lib/gennodejs/gen_nodejs.py
+devel/share/gennodejs/ros/rtabmap_ros/msg/OdomInfo.js: ../msg/OdomInfo.msg
+devel/share/gennodejs/ros/rtabmap_ros/msg/OdomInfo.js: /opt/ros/noetic/share/geometry_msgs/msg/Point.msg
+devel/share/gennodejs/ros/rtabmap_ros/msg/OdomInfo.js: ../msg/Point3f.msg
+devel/share/gennodejs/ros/rtabmap_ros/msg/OdomInfo.js: /opt/ros/noetic/share/geometry_msgs/msg/Transform.msg
+devel/share/gennodejs/ros/rtabmap_ros/msg/OdomInfo.js: /opt/ros/noetic/share/sensor_msgs/msg/CameraInfo.msg
+devel/share/gennodejs/ros/rtabmap_ros/msg/OdomInfo.js: ../msg/Point2f.msg
+devel/share/gennodejs/ros/rtabmap_ros/msg/OdomInfo.js: ../msg/KeyPoint.msg
+devel/share/gennodejs/ros/rtabmap_ros/msg/OdomInfo.js: /opt/ros/noetic/share/sensor_msgs/msg/PointCloud2.msg
+devel/share/gennodejs/ros/rtabmap_ros/msg/OdomInfo.js: /opt/ros/noetic/share/sensor_msgs/msg/PointField.msg
+devel/share/gennodejs/ros/rtabmap_ros/msg/OdomInfo.js: /opt/ros/noetic/share/std_msgs/msg/Header.msg
+devel/share/gennodejs/ros/rtabmap_ros/msg/OdomInfo.js: /opt/ros/noetic/share/geometry_msgs/msg/Pose.msg
+devel/share/gennodejs/ros/rtabmap_ros/msg/OdomInfo.js: /opt/ros/noetic/share/geometry_msgs/msg/Quaternion.msg
+devel/share/gennodejs/ros/rtabmap_ros/msg/OdomInfo.js: /opt/ros/noetic/share/geometry_msgs/msg/Vector3.msg
+devel/share/gennodejs/ros/rtabmap_ros/msg/OdomInfo.js: /opt/ros/noetic/share/sensor_msgs/msg/RegionOfInterest.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/zy/Code/catkin_rtab/src/rtabmap_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Generating Javascript code from rtabmap_ros/OdomInfo.msg"
+	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/zy/Code/catkin_rtab/src/rtabmap_ros/msg/OdomInfo.msg -Irtabmap_ros:/home/zy/Code/catkin_rtab/src/rtabmap_ros/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -p rtabmap_ros -o /home/zy/Code/catkin_rtab/src/rtabmap_ros/build/devel/share/gennodejs/ros/rtabmap_ros/msg
+
+devel/share/gennodejs/ros/rtabmap_ros/msg/Point2f.js: /opt/ros/noetic/lib/gennodejs/gen_nodejs.py
+devel/share/gennodejs/ros/rtabmap_ros/msg/Point2f.js: ../msg/Point2f.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/zy/Code/catkin_rtab/src/rtabmap_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Generating Javascript code from rtabmap_ros/Point2f.msg"
+	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/zy/Code/catkin_rtab/src/rtabmap_ros/msg/Point2f.msg -Irtabmap_ros:/home/zy/Code/catkin_rtab/src/rtabmap_ros/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -p rtabmap_ros -o /home/zy/Code/catkin_rtab/src/rtabmap_ros/build/devel/share/gennodejs/ros/rtabmap_ros/msg
+
+devel/share/gennodejs/ros/rtabmap_ros/msg/Point3f.js: /opt/ros/noetic/lib/gennodejs/gen_nodejs.py
+devel/share/gennodejs/ros/rtabmap_ros/msg/Point3f.js: ../msg/Point3f.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/zy/Code/catkin_rtab/src/rtabmap_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Generating Javascript code from rtabmap_ros/Point3f.msg"
+	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/zy/Code/catkin_rtab/src/rtabmap_ros/msg/Point3f.msg -Irtabmap_ros:/home/zy/Code/catkin_rtab/src/rtabmap_ros/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -p rtabmap_ros -o /home/zy/Code/catkin_rtab/src/rtabmap_ros/build/devel/share/gennodejs/ros/rtabmap_ros/msg
+=======
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/exdx/codes/catkin_rtab/src/rtabmap_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating Javascript code from rtabmap_ros/GlobalDescriptor.msg"
 	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/exdx/codes/catkin_rtab/src/rtabmap_ros/msg/GlobalDescriptor.msg -Irtabmap_ros:/home/exdx/codes/catkin_rtab/src/rtabmap_ros/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -p rtabmap_ros -o /home/exdx/codes/catkin_rtab/src/rtabmap_ros/build/devel/share/gennodejs/ros/rtabmap_ros/msg
 
@@ -208,17 +339,42 @@ devel/share/gennodejs/ros/rtabmap_ros/msg/Point3f.js: /opt/ros/noetic/lib/gennod
 devel/share/gennodejs/ros/rtabmap_ros/msg/Point3f.js: ../msg/Point3f.msg
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/exdx/codes/catkin_rtab/src/rtabmap_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Generating Javascript code from rtabmap_ros/Point3f.msg"
 	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/exdx/codes/catkin_rtab/src/rtabmap_ros/msg/Point3f.msg -Irtabmap_ros:/home/exdx/codes/catkin_rtab/src/rtabmap_ros/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -p rtabmap_ros -o /home/exdx/codes/catkin_rtab/src/rtabmap_ros/build/devel/share/gennodejs/ros/rtabmap_ros/msg
+>>>>>>> 8dcec0a9a1f95d57487b09c6cec170bd6adbd4be
 
 devel/share/gennodejs/ros/rtabmap_ros/msg/Goal.js: /opt/ros/noetic/lib/gennodejs/gen_nodejs.py
 devel/share/gennodejs/ros/rtabmap_ros/msg/Goal.js: ../msg/Goal.msg
 devel/share/gennodejs/ros/rtabmap_ros/msg/Goal.js: /opt/ros/noetic/share/std_msgs/msg/Header.msg
+<<<<<<< HEAD
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/zy/Code/catkin_rtab/src/rtabmap_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Generating Javascript code from rtabmap_ros/Goal.msg"
+	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/zy/Code/catkin_rtab/src/rtabmap_ros/msg/Goal.msg -Irtabmap_ros:/home/zy/Code/catkin_rtab/src/rtabmap_ros/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -p rtabmap_ros -o /home/zy/Code/catkin_rtab/src/rtabmap_ros/build/devel/share/gennodejs/ros/rtabmap_ros/msg
+=======
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/exdx/codes/catkin_rtab/src/rtabmap_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Generating Javascript code from rtabmap_ros/Goal.msg"
 	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/exdx/codes/catkin_rtab/src/rtabmap_ros/msg/Goal.msg -Irtabmap_ros:/home/exdx/codes/catkin_rtab/src/rtabmap_ros/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -p rtabmap_ros -o /home/exdx/codes/catkin_rtab/src/rtabmap_ros/build/devel/share/gennodejs/ros/rtabmap_ros/msg
+>>>>>>> 8dcec0a9a1f95d57487b09c6cec170bd6adbd4be
 
 devel/share/gennodejs/ros/rtabmap_ros/msg/RGBDImage.js: /opt/ros/noetic/lib/gennodejs/gen_nodejs.py
 devel/share/gennodejs/ros/rtabmap_ros/msg/RGBDImage.js: ../msg/RGBDImage.msg
+<<<<<<< HEAD
 devel/share/gennodejs/ros/rtabmap_ros/msg/RGBDImage.js: /opt/ros/noetic/share/sensor_msgs/msg/CompressedImage.msg
 devel/share/gennodejs/ros/rtabmap_ros/msg/RGBDImage.js: ../msg/KeyPoint.msg
+=======
+devel/share/gennodejs/ros/rtabmap_ros/msg/RGBDImage.js: ../msg/GlobalDescriptor.msg
+<<<<<<< HEAD
+devel/share/gennodejs/ros/rtabmap_ros/msg/RGBDImage.js: ../msg/Point3f.msg
+devel/share/gennodejs/ros/rtabmap_ros/msg/RGBDImage.js: /opt/ros/noetic/share/sensor_msgs/msg/CameraInfo.msg
+devel/share/gennodejs/ros/rtabmap_ros/msg/RGBDImage.js: ../msg/Point2f.msg
+devel/share/gennodejs/ros/rtabmap_ros/msg/RGBDImage.js: ../msg/KeyPoint.msg
+devel/share/gennodejs/ros/rtabmap_ros/msg/RGBDImage.js: /opt/ros/noetic/share/sensor_msgs/msg/Image.msg
+devel/share/gennodejs/ros/rtabmap_ros/msg/RGBDImage.js: /opt/ros/noetic/share/std_msgs/msg/Header.msg
+devel/share/gennodejs/ros/rtabmap_ros/msg/RGBDImage.js: /opt/ros/noetic/share/sensor_msgs/msg/CompressedImage.msg
+devel/share/gennodejs/ros/rtabmap_ros/msg/RGBDImage.js: /opt/ros/noetic/share/sensor_msgs/msg/RegionOfInterest.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/zy/Code/catkin_rtab/src/rtabmap_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Generating Javascript code from rtabmap_ros/RGBDImage.msg"
+	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/zy/Code/catkin_rtab/src/rtabmap_ros/msg/RGBDImage.msg -Irtabmap_ros:/home/zy/Code/catkin_rtab/src/rtabmap_ros/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -p rtabmap_ros -o /home/zy/Code/catkin_rtab/src/rtabmap_ros/build/devel/share/gennodejs/ros/rtabmap_ros/msg
+=======
+devel/share/gennodejs/ros/rtabmap_ros/msg/RGBDImage.js: ../msg/Point2f.msg
+devel/share/gennodejs/ros/rtabmap_ros/msg/RGBDImage.js: /opt/ros/noetic/share/sensor_msgs/msg/RegionOfInterest.msg
+devel/share/gennodejs/ros/rtabmap_ros/msg/RGBDImage.js: /opt/ros/noetic/share/std_msgs/msg/Header.msg
+>>>>>>> 6d303045d3e51c2847e167c0708e9a1766c153df
 devel/share/gennodejs/ros/rtabmap_ros/msg/RGBDImage.js: ../msg/Point3f.msg
 devel/share/gennodejs/ros/rtabmap_ros/msg/RGBDImage.js: /opt/ros/noetic/share/sensor_msgs/msg/Image.msg
 devel/share/gennodejs/ros/rtabmap_ros/msg/RGBDImage.js: /opt/ros/noetic/share/sensor_msgs/msg/RegionOfInterest.msg
@@ -228,11 +384,33 @@ devel/share/gennodejs/ros/rtabmap_ros/msg/RGBDImage.js: ../msg/GlobalDescriptor.
 devel/share/gennodejs/ros/rtabmap_ros/msg/RGBDImage.js: /opt/ros/noetic/share/std_msgs/msg/Header.msg
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/exdx/codes/catkin_rtab/src/rtabmap_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Generating Javascript code from rtabmap_ros/RGBDImage.msg"
 	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/exdx/codes/catkin_rtab/src/rtabmap_ros/msg/RGBDImage.msg -Irtabmap_ros:/home/exdx/codes/catkin_rtab/src/rtabmap_ros/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -p rtabmap_ros -o /home/exdx/codes/catkin_rtab/src/rtabmap_ros/build/devel/share/gennodejs/ros/rtabmap_ros/msg
+>>>>>>> 8dcec0a9a1f95d57487b09c6cec170bd6adbd4be
 
 devel/share/gennodejs/ros/rtabmap_ros/msg/RGBDImages.js: /opt/ros/noetic/lib/gennodejs/gen_nodejs.py
 devel/share/gennodejs/ros/rtabmap_ros/msg/RGBDImages.js: ../msg/RGBDImages.msg
+<<<<<<< HEAD
 devel/share/gennodejs/ros/rtabmap_ros/msg/RGBDImages.js: /opt/ros/noetic/share/sensor_msgs/msg/CompressedImage.msg
 devel/share/gennodejs/ros/rtabmap_ros/msg/RGBDImages.js: ../msg/KeyPoint.msg
+=======
+devel/share/gennodejs/ros/rtabmap_ros/msg/RGBDImages.js: ../msg/GlobalDescriptor.msg
+<<<<<<< HEAD
+devel/share/gennodejs/ros/rtabmap_ros/msg/RGBDImages.js: ../msg/Point3f.msg
+devel/share/gennodejs/ros/rtabmap_ros/msg/RGBDImages.js: ../msg/RGBDImage.msg
+devel/share/gennodejs/ros/rtabmap_ros/msg/RGBDImages.js: /opt/ros/noetic/share/sensor_msgs/msg/CameraInfo.msg
+devel/share/gennodejs/ros/rtabmap_ros/msg/RGBDImages.js: ../msg/Point2f.msg
+devel/share/gennodejs/ros/rtabmap_ros/msg/RGBDImages.js: ../msg/KeyPoint.msg
+devel/share/gennodejs/ros/rtabmap_ros/msg/RGBDImages.js: /opt/ros/noetic/share/sensor_msgs/msg/Image.msg
+devel/share/gennodejs/ros/rtabmap_ros/msg/RGBDImages.js: /opt/ros/noetic/share/std_msgs/msg/Header.msg
+devel/share/gennodejs/ros/rtabmap_ros/msg/RGBDImages.js: /opt/ros/noetic/share/sensor_msgs/msg/CompressedImage.msg
+devel/share/gennodejs/ros/rtabmap_ros/msg/RGBDImages.js: /opt/ros/noetic/share/sensor_msgs/msg/RegionOfInterest.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/zy/Code/catkin_rtab/src/rtabmap_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Generating Javascript code from rtabmap_ros/RGBDImages.msg"
+	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/zy/Code/catkin_rtab/src/rtabmap_ros/msg/RGBDImages.msg -Irtabmap_ros:/home/zy/Code/catkin_rtab/src/rtabmap_ros/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -p rtabmap_ros -o /home/zy/Code/catkin_rtab/src/rtabmap_ros/build/devel/share/gennodejs/ros/rtabmap_ros/msg
+=======
+devel/share/gennodejs/ros/rtabmap_ros/msg/RGBDImages.js: ../msg/Point2f.msg
+devel/share/gennodejs/ros/rtabmap_ros/msg/RGBDImages.js: ../msg/RGBDImage.msg
+devel/share/gennodejs/ros/rtabmap_ros/msg/RGBDImages.js: /opt/ros/noetic/share/sensor_msgs/msg/RegionOfInterest.msg
+devel/share/gennodejs/ros/rtabmap_ros/msg/RGBDImages.js: /opt/ros/noetic/share/std_msgs/msg/Header.msg
+>>>>>>> 6d303045d3e51c2847e167c0708e9a1766c153df
 devel/share/gennodejs/ros/rtabmap_ros/msg/RGBDImages.js: ../msg/Point3f.msg
 devel/share/gennodejs/ros/rtabmap_ros/msg/RGBDImages.js: /opt/ros/noetic/share/sensor_msgs/msg/Image.msg
 devel/share/gennodejs/ros/rtabmap_ros/msg/RGBDImages.js: /opt/ros/noetic/share/sensor_msgs/msg/RegionOfInterest.msg
@@ -243,10 +421,29 @@ devel/share/gennodejs/ros/rtabmap_ros/msg/RGBDImages.js: ../msg/GlobalDescriptor
 devel/share/gennodejs/ros/rtabmap_ros/msg/RGBDImages.js: /opt/ros/noetic/share/std_msgs/msg/Header.msg
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/exdx/codes/catkin_rtab/src/rtabmap_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Generating Javascript code from rtabmap_ros/RGBDImages.msg"
 	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/exdx/codes/catkin_rtab/src/rtabmap_ros/msg/RGBDImages.msg -Irtabmap_ros:/home/exdx/codes/catkin_rtab/src/rtabmap_ros/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -p rtabmap_ros -o /home/exdx/codes/catkin_rtab/src/rtabmap_ros/build/devel/share/gennodejs/ros/rtabmap_ros/msg
+>>>>>>> 8dcec0a9a1f95d57487b09c6cec170bd6adbd4be
 
 devel/share/gennodejs/ros/rtabmap_ros/msg/UserData.js: /opt/ros/noetic/lib/gennodejs/gen_nodejs.py
 devel/share/gennodejs/ros/rtabmap_ros/msg/UserData.js: ../msg/UserData.msg
 devel/share/gennodejs/ros/rtabmap_ros/msg/UserData.js: /opt/ros/noetic/share/std_msgs/msg/Header.msg
+<<<<<<< HEAD
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/zy/Code/catkin_rtab/src/rtabmap_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Generating Javascript code from rtabmap_ros/UserData.msg"
+	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/zy/Code/catkin_rtab/src/rtabmap_ros/msg/UserData.msg -Irtabmap_ros:/home/zy/Code/catkin_rtab/src/rtabmap_ros/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -p rtabmap_ros -o /home/zy/Code/catkin_rtab/src/rtabmap_ros/build/devel/share/gennodejs/ros/rtabmap_ros/msg
+
+devel/share/gennodejs/ros/rtabmap_ros/msg/GPS.js: /opt/ros/noetic/lib/gennodejs/gen_nodejs.py
+devel/share/gennodejs/ros/rtabmap_ros/msg/GPS.js: ../msg/GPS.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/zy/Code/catkin_rtab/src/rtabmap_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Generating Javascript code from rtabmap_ros/GPS.msg"
+	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/zy/Code/catkin_rtab/src/rtabmap_ros/msg/GPS.msg -Irtabmap_ros:/home/zy/Code/catkin_rtab/src/rtabmap_ros/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -p rtabmap_ros -o /home/zy/Code/catkin_rtab/src/rtabmap_ros/build/devel/share/gennodejs/ros/rtabmap_ros/msg
+
+devel/share/gennodejs/ros/rtabmap_ros/msg/Path.js: /opt/ros/noetic/lib/gennodejs/gen_nodejs.py
+devel/share/gennodejs/ros/rtabmap_ros/msg/Path.js: ../msg/Path.msg
+devel/share/gennodejs/ros/rtabmap_ros/msg/Path.js: /opt/ros/noetic/share/std_msgs/msg/Header.msg
+devel/share/gennodejs/ros/rtabmap_ros/msg/Path.js: /opt/ros/noetic/share/geometry_msgs/msg/Pose.msg
+devel/share/gennodejs/ros/rtabmap_ros/msg/Path.js: /opt/ros/noetic/share/geometry_msgs/msg/Point.msg
+devel/share/gennodejs/ros/rtabmap_ros/msg/Path.js: /opt/ros/noetic/share/geometry_msgs/msg/Quaternion.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/zy/Code/catkin_rtab/src/rtabmap_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Generating Javascript code from rtabmap_ros/Path.msg"
+	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/zy/Code/catkin_rtab/src/rtabmap_ros/msg/Path.msg -Irtabmap_ros:/home/zy/Code/catkin_rtab/src/rtabmap_ros/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -p rtabmap_ros -o /home/zy/Code/catkin_rtab/src/rtabmap_ros/build/devel/share/gennodejs/ros/rtabmap_ros/msg
+=======
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/exdx/codes/catkin_rtab/src/rtabmap_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Generating Javascript code from rtabmap_ros/UserData.msg"
 	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/exdx/codes/catkin_rtab/src/rtabmap_ros/msg/UserData.msg -Irtabmap_ros:/home/exdx/codes/catkin_rtab/src/rtabmap_ros/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -p rtabmap_ros -o /home/exdx/codes/catkin_rtab/src/rtabmap_ros/build/devel/share/gennodejs/ros/rtabmap_ros/msg
 
@@ -263,10 +460,156 @@ devel/share/gennodejs/ros/rtabmap_ros/msg/Path.js: /opt/ros/noetic/share/geometr
 devel/share/gennodejs/ros/rtabmap_ros/msg/Path.js: /opt/ros/noetic/share/geometry_msgs/msg/Pose.msg
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/exdx/codes/catkin_rtab/src/rtabmap_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Generating Javascript code from rtabmap_ros/Path.msg"
 	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/exdx/codes/catkin_rtab/src/rtabmap_ros/msg/Path.msg -Irtabmap_ros:/home/exdx/codes/catkin_rtab/src/rtabmap_ros/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -p rtabmap_ros -o /home/exdx/codes/catkin_rtab/src/rtabmap_ros/build/devel/share/gennodejs/ros/rtabmap_ros/msg
+>>>>>>> 8dcec0a9a1f95d57487b09c6cec170bd6adbd4be
 
 devel/share/gennodejs/ros/rtabmap_ros/msg/EnvSensor.js: /opt/ros/noetic/lib/gennodejs/gen_nodejs.py
 devel/share/gennodejs/ros/rtabmap_ros/msg/EnvSensor.js: ../msg/EnvSensor.msg
 devel/share/gennodejs/ros/rtabmap_ros/msg/EnvSensor.js: /opt/ros/noetic/share/std_msgs/msg/Header.msg
+<<<<<<< HEAD
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/zy/Code/catkin_rtab/src/rtabmap_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Generating Javascript code from rtabmap_ros/EnvSensor.msg"
+	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/zy/Code/catkin_rtab/src/rtabmap_ros/msg/EnvSensor.msg -Irtabmap_ros:/home/zy/Code/catkin_rtab/src/rtabmap_ros/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -p rtabmap_ros -o /home/zy/Code/catkin_rtab/src/rtabmap_ros/build/devel/share/gennodejs/ros/rtabmap_ros/msg
+
+devel/share/gennodejs/ros/rtabmap_ros/srv/GetMap.js: /opt/ros/noetic/lib/gennodejs/gen_nodejs.py
+devel/share/gennodejs/ros/rtabmap_ros/srv/GetMap.js: ../srv/GetMap.srv
+devel/share/gennodejs/ros/rtabmap_ros/srv/GetMap.js: ../msg/GlobalDescriptor.msg
+devel/share/gennodejs/ros/rtabmap_ros/srv/GetMap.js: ../msg/EnvSensor.msg
+devel/share/gennodejs/ros/rtabmap_ros/srv/GetMap.js: /opt/ros/noetic/share/geometry_msgs/msg/Point.msg
+devel/share/gennodejs/ros/rtabmap_ros/srv/GetMap.js: ../msg/Point3f.msg
+devel/share/gennodejs/ros/rtabmap_ros/srv/GetMap.js: /opt/ros/noetic/share/geometry_msgs/msg/Transform.msg
+devel/share/gennodejs/ros/rtabmap_ros/srv/GetMap.js: ../msg/MapGraph.msg
+devel/share/gennodejs/ros/rtabmap_ros/srv/GetMap.js: ../msg/NodeData.msg
+devel/share/gennodejs/ros/rtabmap_ros/srv/GetMap.js: ../msg/KeyPoint.msg
+devel/share/gennodejs/ros/rtabmap_ros/srv/GetMap.js: ../msg/Point2f.msg
+devel/share/gennodejs/ros/rtabmap_ros/srv/GetMap.js: ../msg/GPS.msg
+devel/share/gennodejs/ros/rtabmap_ros/srv/GetMap.js: /opt/ros/noetic/share/std_msgs/msg/Header.msg
+devel/share/gennodejs/ros/rtabmap_ros/srv/GetMap.js: /opt/ros/noetic/share/geometry_msgs/msg/Pose.msg
+devel/share/gennodejs/ros/rtabmap_ros/srv/GetMap.js: ../msg/MapData.msg
+devel/share/gennodejs/ros/rtabmap_ros/srv/GetMap.js: ../msg/Link.msg
+devel/share/gennodejs/ros/rtabmap_ros/srv/GetMap.js: /opt/ros/noetic/share/geometry_msgs/msg/Vector3.msg
+devel/share/gennodejs/ros/rtabmap_ros/srv/GetMap.js: /opt/ros/noetic/share/geometry_msgs/msg/Quaternion.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/zy/Code/catkin_rtab/src/rtabmap_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Generating Javascript code from rtabmap_ros/GetMap.srv"
+	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/zy/Code/catkin_rtab/src/rtabmap_ros/srv/GetMap.srv -Irtabmap_ros:/home/zy/Code/catkin_rtab/src/rtabmap_ros/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -p rtabmap_ros -o /home/zy/Code/catkin_rtab/src/rtabmap_ros/build/devel/share/gennodejs/ros/rtabmap_ros/srv
+
+devel/share/gennodejs/ros/rtabmap_ros/srv/GetMap2.js: /opt/ros/noetic/lib/gennodejs/gen_nodejs.py
+devel/share/gennodejs/ros/rtabmap_ros/srv/GetMap2.js: ../srv/GetMap2.srv
+devel/share/gennodejs/ros/rtabmap_ros/srv/GetMap2.js: ../msg/GlobalDescriptor.msg
+devel/share/gennodejs/ros/rtabmap_ros/srv/GetMap2.js: ../msg/EnvSensor.msg
+devel/share/gennodejs/ros/rtabmap_ros/srv/GetMap2.js: /opt/ros/noetic/share/geometry_msgs/msg/Point.msg
+devel/share/gennodejs/ros/rtabmap_ros/srv/GetMap2.js: ../msg/Point3f.msg
+devel/share/gennodejs/ros/rtabmap_ros/srv/GetMap2.js: /opt/ros/noetic/share/geometry_msgs/msg/Transform.msg
+devel/share/gennodejs/ros/rtabmap_ros/srv/GetMap2.js: ../msg/MapGraph.msg
+devel/share/gennodejs/ros/rtabmap_ros/srv/GetMap2.js: ../msg/NodeData.msg
+devel/share/gennodejs/ros/rtabmap_ros/srv/GetMap2.js: ../msg/KeyPoint.msg
+devel/share/gennodejs/ros/rtabmap_ros/srv/GetMap2.js: ../msg/Point2f.msg
+devel/share/gennodejs/ros/rtabmap_ros/srv/GetMap2.js: ../msg/GPS.msg
+devel/share/gennodejs/ros/rtabmap_ros/srv/GetMap2.js: /opt/ros/noetic/share/std_msgs/msg/Header.msg
+devel/share/gennodejs/ros/rtabmap_ros/srv/GetMap2.js: /opt/ros/noetic/share/geometry_msgs/msg/Pose.msg
+devel/share/gennodejs/ros/rtabmap_ros/srv/GetMap2.js: ../msg/MapData.msg
+devel/share/gennodejs/ros/rtabmap_ros/srv/GetMap2.js: ../msg/Link.msg
+devel/share/gennodejs/ros/rtabmap_ros/srv/GetMap2.js: /opt/ros/noetic/share/geometry_msgs/msg/Vector3.msg
+devel/share/gennodejs/ros/rtabmap_ros/srv/GetMap2.js: /opt/ros/noetic/share/geometry_msgs/msg/Quaternion.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/zy/Code/catkin_rtab/src/rtabmap_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Generating Javascript code from rtabmap_ros/GetMap2.srv"
+	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/zy/Code/catkin_rtab/src/rtabmap_ros/srv/GetMap2.srv -Irtabmap_ros:/home/zy/Code/catkin_rtab/src/rtabmap_ros/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -p rtabmap_ros -o /home/zy/Code/catkin_rtab/src/rtabmap_ros/build/devel/share/gennodejs/ros/rtabmap_ros/srv
+
+devel/share/gennodejs/ros/rtabmap_ros/srv/ListLabels.js: /opt/ros/noetic/lib/gennodejs/gen_nodejs.py
+devel/share/gennodejs/ros/rtabmap_ros/srv/ListLabels.js: ../srv/ListLabels.srv
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/zy/Code/catkin_rtab/src/rtabmap_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Generating Javascript code from rtabmap_ros/ListLabels.srv"
+	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/zy/Code/catkin_rtab/src/rtabmap_ros/srv/ListLabels.srv -Irtabmap_ros:/home/zy/Code/catkin_rtab/src/rtabmap_ros/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -p rtabmap_ros -o /home/zy/Code/catkin_rtab/src/rtabmap_ros/build/devel/share/gennodejs/ros/rtabmap_ros/srv
+
+devel/share/gennodejs/ros/rtabmap_ros/srv/PublishMap.js: /opt/ros/noetic/lib/gennodejs/gen_nodejs.py
+devel/share/gennodejs/ros/rtabmap_ros/srv/PublishMap.js: ../srv/PublishMap.srv
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/zy/Code/catkin_rtab/src/rtabmap_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Generating Javascript code from rtabmap_ros/PublishMap.srv"
+	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/zy/Code/catkin_rtab/src/rtabmap_ros/srv/PublishMap.srv -Irtabmap_ros:/home/zy/Code/catkin_rtab/src/rtabmap_ros/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -p rtabmap_ros -o /home/zy/Code/catkin_rtab/src/rtabmap_ros/build/devel/share/gennodejs/ros/rtabmap_ros/srv
+
+devel/share/gennodejs/ros/rtabmap_ros/srv/ResetPose.js: /opt/ros/noetic/lib/gennodejs/gen_nodejs.py
+devel/share/gennodejs/ros/rtabmap_ros/srv/ResetPose.js: ../srv/ResetPose.srv
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/zy/Code/catkin_rtab/src/rtabmap_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Generating Javascript code from rtabmap_ros/ResetPose.srv"
+	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/zy/Code/catkin_rtab/src/rtabmap_ros/srv/ResetPose.srv -Irtabmap_ros:/home/zy/Code/catkin_rtab/src/rtabmap_ros/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -p rtabmap_ros -o /home/zy/Code/catkin_rtab/src/rtabmap_ros/build/devel/share/gennodejs/ros/rtabmap_ros/srv
+
+devel/share/gennodejs/ros/rtabmap_ros/srv/SetGoal.js: /opt/ros/noetic/lib/gennodejs/gen_nodejs.py
+devel/share/gennodejs/ros/rtabmap_ros/srv/SetGoal.js: ../srv/SetGoal.srv
+devel/share/gennodejs/ros/rtabmap_ros/srv/SetGoal.js: /opt/ros/noetic/share/geometry_msgs/msg/Pose.msg
+devel/share/gennodejs/ros/rtabmap_ros/srv/SetGoal.js: /opt/ros/noetic/share/geometry_msgs/msg/Point.msg
+devel/share/gennodejs/ros/rtabmap_ros/srv/SetGoal.js: /opt/ros/noetic/share/geometry_msgs/msg/Quaternion.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/zy/Code/catkin_rtab/src/rtabmap_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Generating Javascript code from rtabmap_ros/SetGoal.srv"
+	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/zy/Code/catkin_rtab/src/rtabmap_ros/srv/SetGoal.srv -Irtabmap_ros:/home/zy/Code/catkin_rtab/src/rtabmap_ros/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -p rtabmap_ros -o /home/zy/Code/catkin_rtab/src/rtabmap_ros/build/devel/share/gennodejs/ros/rtabmap_ros/srv
+
+devel/share/gennodejs/ros/rtabmap_ros/srv/SetLabel.js: /opt/ros/noetic/lib/gennodejs/gen_nodejs.py
+devel/share/gennodejs/ros/rtabmap_ros/srv/SetLabel.js: ../srv/SetLabel.srv
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/zy/Code/catkin_rtab/src/rtabmap_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Generating Javascript code from rtabmap_ros/SetLabel.srv"
+	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/zy/Code/catkin_rtab/src/rtabmap_ros/srv/SetLabel.srv -Irtabmap_ros:/home/zy/Code/catkin_rtab/src/rtabmap_ros/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -p rtabmap_ros -o /home/zy/Code/catkin_rtab/src/rtabmap_ros/build/devel/share/gennodejs/ros/rtabmap_ros/srv
+
+devel/share/gennodejs/ros/rtabmap_ros/srv/RemoveLabel.js: /opt/ros/noetic/lib/gennodejs/gen_nodejs.py
+devel/share/gennodejs/ros/rtabmap_ros/srv/RemoveLabel.js: ../srv/RemoveLabel.srv
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/zy/Code/catkin_rtab/src/rtabmap_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Generating Javascript code from rtabmap_ros/RemoveLabel.srv"
+	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/zy/Code/catkin_rtab/src/rtabmap_ros/srv/RemoveLabel.srv -Irtabmap_ros:/home/zy/Code/catkin_rtab/src/rtabmap_ros/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -p rtabmap_ros -o /home/zy/Code/catkin_rtab/src/rtabmap_ros/build/devel/share/gennodejs/ros/rtabmap_ros/srv
+
+devel/share/gennodejs/ros/rtabmap_ros/srv/GetPlan.js: /opt/ros/noetic/lib/gennodejs/gen_nodejs.py
+devel/share/gennodejs/ros/rtabmap_ros/srv/GetPlan.js: ../srv/GetPlan.srv
+devel/share/gennodejs/ros/rtabmap_ros/srv/GetPlan.js: /opt/ros/noetic/share/geometry_msgs/msg/Point.msg
+devel/share/gennodejs/ros/rtabmap_ros/srv/GetPlan.js: ../msg/Path.msg
+devel/share/gennodejs/ros/rtabmap_ros/srv/GetPlan.js: /opt/ros/noetic/share/geometry_msgs/msg/PoseStamped.msg
+devel/share/gennodejs/ros/rtabmap_ros/srv/GetPlan.js: /opt/ros/noetic/share/std_msgs/msg/Header.msg
+devel/share/gennodejs/ros/rtabmap_ros/srv/GetPlan.js: /opt/ros/noetic/share/geometry_msgs/msg/Pose.msg
+devel/share/gennodejs/ros/rtabmap_ros/srv/GetPlan.js: /opt/ros/noetic/share/geometry_msgs/msg/Quaternion.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/zy/Code/catkin_rtab/src/rtabmap_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Generating Javascript code from rtabmap_ros/GetPlan.srv"
+	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/zy/Code/catkin_rtab/src/rtabmap_ros/srv/GetPlan.srv -Irtabmap_ros:/home/zy/Code/catkin_rtab/src/rtabmap_ros/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -p rtabmap_ros -o /home/zy/Code/catkin_rtab/src/rtabmap_ros/build/devel/share/gennodejs/ros/rtabmap_ros/srv
+
+devel/share/gennodejs/ros/rtabmap_ros/srv/AddLink.js: /opt/ros/noetic/lib/gennodejs/gen_nodejs.py
+devel/share/gennodejs/ros/rtabmap_ros/srv/AddLink.js: ../srv/AddLink.srv
+devel/share/gennodejs/ros/rtabmap_ros/srv/AddLink.js: /opt/ros/noetic/share/geometry_msgs/msg/Vector3.msg
+devel/share/gennodejs/ros/rtabmap_ros/srv/AddLink.js: /opt/ros/noetic/share/geometry_msgs/msg/Transform.msg
+devel/share/gennodejs/ros/rtabmap_ros/srv/AddLink.js: ../msg/Link.msg
+devel/share/gennodejs/ros/rtabmap_ros/srv/AddLink.js: /opt/ros/noetic/share/geometry_msgs/msg/Quaternion.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/zy/Code/catkin_rtab/src/rtabmap_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Generating Javascript code from rtabmap_ros/AddLink.srv"
+	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/zy/Code/catkin_rtab/src/rtabmap_ros/srv/AddLink.srv -Irtabmap_ros:/home/zy/Code/catkin_rtab/src/rtabmap_ros/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -p rtabmap_ros -o /home/zy/Code/catkin_rtab/src/rtabmap_ros/build/devel/share/gennodejs/ros/rtabmap_ros/srv
+
+devel/share/gennodejs/ros/rtabmap_ros/srv/GetNodeData.js: /opt/ros/noetic/lib/gennodejs/gen_nodejs.py
+devel/share/gennodejs/ros/rtabmap_ros/srv/GetNodeData.js: ../srv/GetNodeData.srv
+devel/share/gennodejs/ros/rtabmap_ros/srv/GetNodeData.js: ../msg/GlobalDescriptor.msg
+devel/share/gennodejs/ros/rtabmap_ros/srv/GetNodeData.js: ../msg/EnvSensor.msg
+devel/share/gennodejs/ros/rtabmap_ros/srv/GetNodeData.js: /opt/ros/noetic/share/geometry_msgs/msg/Point.msg
+devel/share/gennodejs/ros/rtabmap_ros/srv/GetNodeData.js: ../msg/Point3f.msg
+devel/share/gennodejs/ros/rtabmap_ros/srv/GetNodeData.js: /opt/ros/noetic/share/geometry_msgs/msg/Transform.msg
+devel/share/gennodejs/ros/rtabmap_ros/srv/GetNodeData.js: ../msg/NodeData.msg
+devel/share/gennodejs/ros/rtabmap_ros/srv/GetNodeData.js: ../msg/KeyPoint.msg
+devel/share/gennodejs/ros/rtabmap_ros/srv/GetNodeData.js: ../msg/Point2f.msg
+devel/share/gennodejs/ros/rtabmap_ros/srv/GetNodeData.js: ../msg/GPS.msg
+devel/share/gennodejs/ros/rtabmap_ros/srv/GetNodeData.js: /opt/ros/noetic/share/std_msgs/msg/Header.msg
+devel/share/gennodejs/ros/rtabmap_ros/srv/GetNodeData.js: /opt/ros/noetic/share/geometry_msgs/msg/Pose.msg
+devel/share/gennodejs/ros/rtabmap_ros/srv/GetNodeData.js: /opt/ros/noetic/share/geometry_msgs/msg/Vector3.msg
+devel/share/gennodejs/ros/rtabmap_ros/srv/GetNodeData.js: /opt/ros/noetic/share/geometry_msgs/msg/Quaternion.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/zy/Code/catkin_rtab/src/rtabmap_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Generating Javascript code from rtabmap_ros/GetNodeData.srv"
+	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/zy/Code/catkin_rtab/src/rtabmap_ros/srv/GetNodeData.srv -Irtabmap_ros:/home/zy/Code/catkin_rtab/src/rtabmap_ros/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -p rtabmap_ros -o /home/zy/Code/catkin_rtab/src/rtabmap_ros/build/devel/share/gennodejs/ros/rtabmap_ros/srv
+
+devel/share/gennodejs/ros/rtabmap_ros/srv/GetNodesInRadius.js: /opt/ros/noetic/lib/gennodejs/gen_nodejs.py
+devel/share/gennodejs/ros/rtabmap_ros/srv/GetNodesInRadius.js: ../srv/GetNodesInRadius.srv
+devel/share/gennodejs/ros/rtabmap_ros/srv/GetNodesInRadius.js: /opt/ros/noetic/share/geometry_msgs/msg/Pose.msg
+devel/share/gennodejs/ros/rtabmap_ros/srv/GetNodesInRadius.js: /opt/ros/noetic/share/geometry_msgs/msg/Point.msg
+devel/share/gennodejs/ros/rtabmap_ros/srv/GetNodesInRadius.js: /opt/ros/noetic/share/geometry_msgs/msg/Quaternion.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/zy/Code/catkin_rtab/src/rtabmap_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Generating Javascript code from rtabmap_ros/GetNodesInRadius.srv"
+	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/zy/Code/catkin_rtab/src/rtabmap_ros/srv/GetNodesInRadius.srv -Irtabmap_ros:/home/zy/Code/catkin_rtab/src/rtabmap_ros/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -p rtabmap_ros -o /home/zy/Code/catkin_rtab/src/rtabmap_ros/build/devel/share/gennodejs/ros/rtabmap_ros/srv
+
+devel/share/gennodejs/ros/rtabmap_ros/srv/LoadDatabase.js: /opt/ros/noetic/lib/gennodejs/gen_nodejs.py
+devel/share/gennodejs/ros/rtabmap_ros/srv/LoadDatabase.js: ../srv/LoadDatabase.srv
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/zy/Code/catkin_rtab/src/rtabmap_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Generating Javascript code from rtabmap_ros/LoadDatabase.srv"
+	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/zy/Code/catkin_rtab/src/rtabmap_ros/srv/LoadDatabase.srv -Irtabmap_ros:/home/zy/Code/catkin_rtab/src/rtabmap_ros/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -p rtabmap_ros -o /home/zy/Code/catkin_rtab/src/rtabmap_ros/build/devel/share/gennodejs/ros/rtabmap_ros/srv
+
+devel/share/gennodejs/ros/rtabmap_ros/srv/DetectMoreLoopClosures.js: /opt/ros/noetic/lib/gennodejs/gen_nodejs.py
+devel/share/gennodejs/ros/rtabmap_ros/srv/DetectMoreLoopClosures.js: ../srv/DetectMoreLoopClosures.srv
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/zy/Code/catkin_rtab/src/rtabmap_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Generating Javascript code from rtabmap_ros/DetectMoreLoopClosures.srv"
+	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/zy/Code/catkin_rtab/src/rtabmap_ros/srv/DetectMoreLoopClosures.srv -Irtabmap_ros:/home/zy/Code/catkin_rtab/src/rtabmap_ros/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -p rtabmap_ros -o /home/zy/Code/catkin_rtab/src/rtabmap_ros/build/devel/share/gennodejs/ros/rtabmap_ros/srv
+
+devel/share/gennodejs/ros/rtabmap_ros/srv/GlobalBundleAdjustment.js: /opt/ros/noetic/lib/gennodejs/gen_nodejs.py
+devel/share/gennodejs/ros/rtabmap_ros/srv/GlobalBundleAdjustment.js: ../srv/GlobalBundleAdjustment.srv
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/zy/Code/catkin_rtab/src/rtabmap_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Generating Javascript code from rtabmap_ros/GlobalBundleAdjustment.srv"
+	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/zy/Code/catkin_rtab/src/rtabmap_ros/srv/GlobalBundleAdjustment.srv -Irtabmap_ros:/home/zy/Code/catkin_rtab/src/rtabmap_ros/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -p rtabmap_ros -o /home/zy/Code/catkin_rtab/src/rtabmap_ros/build/devel/share/gennodejs/ros/rtabmap_ros/srv
+
+devel/share/gennodejs/ros/rtabmap_ros/srv/CleanupLocalGrids.js: /opt/ros/noetic/lib/gennodejs/gen_nodejs.py
+devel/share/gennodejs/ros/rtabmap_ros/srv/CleanupLocalGrids.js: ../srv/CleanupLocalGrids.srv
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/zy/Code/catkin_rtab/src/rtabmap_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Generating Javascript code from rtabmap_ros/CleanupLocalGrids.srv"
+	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/zy/Code/catkin_rtab/src/rtabmap_ros/srv/CleanupLocalGrids.srv -Irtabmap_ros:/home/zy/Code/catkin_rtab/src/rtabmap_ros/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -p rtabmap_ros -o /home/zy/Code/catkin_rtab/src/rtabmap_ros/build/devel/share/gennodejs/ros/rtabmap_ros/srv
+=======
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/exdx/codes/catkin_rtab/src/rtabmap_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Generating Javascript code from rtabmap_ros/EnvSensor.msg"
 	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/exdx/codes/catkin_rtab/src/rtabmap_ros/msg/EnvSensor.msg -Irtabmap_ros:/home/exdx/codes/catkin_rtab/src/rtabmap_ros/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -p rtabmap_ros -o /home/exdx/codes/catkin_rtab/src/rtabmap_ros/build/devel/share/gennodejs/ros/rtabmap_ros/msg
 
@@ -410,6 +753,7 @@ devel/share/gennodejs/ros/rtabmap_ros/srv/CleanupLocalGrids.js: /opt/ros/noetic/
 devel/share/gennodejs/ros/rtabmap_ros/srv/CleanupLocalGrids.js: ../srv/CleanupLocalGrids.srv
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/exdx/codes/catkin_rtab/src/rtabmap_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Generating Javascript code from rtabmap_ros/CleanupLocalGrids.srv"
 	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/exdx/codes/catkin_rtab/src/rtabmap_ros/srv/CleanupLocalGrids.srv -Irtabmap_ros:/home/exdx/codes/catkin_rtab/src/rtabmap_ros/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -p rtabmap_ros -o /home/exdx/codes/catkin_rtab/src/rtabmap_ros/build/devel/share/gennodejs/ros/rtabmap_ros/srv
+>>>>>>> 8dcec0a9a1f95d57487b09c6cec170bd6adbd4be
 
 rtabmap_ros_generate_messages_nodejs: CMakeFiles/rtabmap_ros_generate_messages_nodejs
 rtabmap_ros_generate_messages_nodejs: devel/share/gennodejs/ros/rtabmap_ros/msg/Info.js
@@ -460,6 +804,10 @@ CMakeFiles/rtabmap_ros_generate_messages_nodejs.dir/clean:
 .PHONY : CMakeFiles/rtabmap_ros_generate_messages_nodejs.dir/clean
 
 CMakeFiles/rtabmap_ros_generate_messages_nodejs.dir/depend:
+<<<<<<< HEAD
+	cd /home/zy/Code/catkin_rtab/src/rtabmap_ros/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/zy/Code/catkin_rtab/src/rtabmap_ros /home/zy/Code/catkin_rtab/src/rtabmap_ros /home/zy/Code/catkin_rtab/src/rtabmap_ros/build /home/zy/Code/catkin_rtab/src/rtabmap_ros/build /home/zy/Code/catkin_rtab/src/rtabmap_ros/build/CMakeFiles/rtabmap_ros_generate_messages_nodejs.dir/DependInfo.cmake --color=$(COLOR)
+=======
 	cd /home/exdx/codes/catkin_rtab/src/rtabmap_ros/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/exdx/codes/catkin_rtab/src/rtabmap_ros /home/exdx/codes/catkin_rtab/src/rtabmap_ros /home/exdx/codes/catkin_rtab/src/rtabmap_ros/build /home/exdx/codes/catkin_rtab/src/rtabmap_ros/build /home/exdx/codes/catkin_rtab/src/rtabmap_ros/build/CMakeFiles/rtabmap_ros_generate_messages_nodejs.dir/DependInfo.cmake --color=$(COLOR)
+>>>>>>> 8dcec0a9a1f95d57487b09c6cec170bd6adbd4be
 .PHONY : CMakeFiles/rtabmap_ros_generate_messages_nodejs.dir/depend
 
