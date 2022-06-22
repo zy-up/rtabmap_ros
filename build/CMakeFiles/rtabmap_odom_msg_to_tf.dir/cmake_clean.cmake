@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/rtabmap_odom_msg_to_tf.dir/src/OdomMsgToTFNode.cpp.o"
-  "devel/lib/rtabmap_ros/odom_msg_to_tf"
-  "devel/lib/rtabmap_ros/odom_msg_to_tf.pdb"
+  "devel/lib/rtabmap_ros/======odom_msg_to_tf"
+  "devel/lib/rtabmap_ros/======odom_msg_to_tf.pdb"
 )
 
 # Per-language clean rules from dependency scanning.

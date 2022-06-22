@@ -43,17 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-<<<<<<< HEAD
-CMAKE_SOURCE_DIR = /home/zy/Code/catkin_rtab/src/rtabmap_ros
-
-# The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/zy/Code/catkin_rtab/src/rtabmap_ros/build
-=======
 CMAKE_SOURCE_DIR = /home/exdx/codes/catkin_rtab/src/rtabmap_ros
 
 # The top-level build directory on which CMake was run.
 CMAKE_BINARY_DIR = /home/exdx/codes/catkin_rtab/src/rtabmap_ros/build
->>>>>>> 8dcec0a9a1f95d57487b09c6cec170bd6adbd4be
 
 # Include any dependencies generated for this target.
 include CMakeFiles/rtabmap_sync.dir/depend.make
@@ -66,122 +59,6 @@ include CMakeFiles/rtabmap_sync.dir/flags.make
 
 CMakeFiles/rtabmap_sync.dir/src/CommonDataSubscriber.cpp.o: CMakeFiles/rtabmap_sync.dir/flags.make
 CMakeFiles/rtabmap_sync.dir/src/CommonDataSubscriber.cpp.o: ../src/CommonDataSubscriber.cpp
-<<<<<<< HEAD
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zy/Code/catkin_rtab/src/rtabmap_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/rtabmap_sync.dir/src/CommonDataSubscriber.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/rtabmap_sync.dir/src/CommonDataSubscriber.cpp.o -c /home/zy/Code/catkin_rtab/src/rtabmap_ros/src/CommonDataSubscriber.cpp
-
-CMakeFiles/rtabmap_sync.dir/src/CommonDataSubscriber.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/rtabmap_sync.dir/src/CommonDataSubscriber.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zy/Code/catkin_rtab/src/rtabmap_ros/src/CommonDataSubscriber.cpp > CMakeFiles/rtabmap_sync.dir/src/CommonDataSubscriber.cpp.i
-
-CMakeFiles/rtabmap_sync.dir/src/CommonDataSubscriber.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/rtabmap_sync.dir/src/CommonDataSubscriber.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zy/Code/catkin_rtab/src/rtabmap_ros/src/CommonDataSubscriber.cpp -o CMakeFiles/rtabmap_sync.dir/src/CommonDataSubscriber.cpp.s
-
-CMakeFiles/rtabmap_sync.dir/src/impl/CommonDataSubscriberDepth.cpp.o: CMakeFiles/rtabmap_sync.dir/flags.make
-CMakeFiles/rtabmap_sync.dir/src/impl/CommonDataSubscriberDepth.cpp.o: ../src/impl/CommonDataSubscriberDepth.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zy/Code/catkin_rtab/src/rtabmap_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/rtabmap_sync.dir/src/impl/CommonDataSubscriberDepth.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/rtabmap_sync.dir/src/impl/CommonDataSubscriberDepth.cpp.o -c /home/zy/Code/catkin_rtab/src/rtabmap_ros/src/impl/CommonDataSubscriberDepth.cpp
-
-CMakeFiles/rtabmap_sync.dir/src/impl/CommonDataSubscriberDepth.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/rtabmap_sync.dir/src/impl/CommonDataSubscriberDepth.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zy/Code/catkin_rtab/src/rtabmap_ros/src/impl/CommonDataSubscriberDepth.cpp > CMakeFiles/rtabmap_sync.dir/src/impl/CommonDataSubscriberDepth.cpp.i
-
-CMakeFiles/rtabmap_sync.dir/src/impl/CommonDataSubscriberDepth.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/rtabmap_sync.dir/src/impl/CommonDataSubscriberDepth.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zy/Code/catkin_rtab/src/rtabmap_ros/src/impl/CommonDataSubscriberDepth.cpp -o CMakeFiles/rtabmap_sync.dir/src/impl/CommonDataSubscriberDepth.cpp.s
-
-CMakeFiles/rtabmap_sync.dir/src/impl/CommonDataSubscriberStereo.cpp.o: CMakeFiles/rtabmap_sync.dir/flags.make
-CMakeFiles/rtabmap_sync.dir/src/impl/CommonDataSubscriberStereo.cpp.o: ../src/impl/CommonDataSubscriberStereo.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zy/Code/catkin_rtab/src/rtabmap_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/rtabmap_sync.dir/src/impl/CommonDataSubscriberStereo.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/rtabmap_sync.dir/src/impl/CommonDataSubscriberStereo.cpp.o -c /home/zy/Code/catkin_rtab/src/rtabmap_ros/src/impl/CommonDataSubscriberStereo.cpp
-
-CMakeFiles/rtabmap_sync.dir/src/impl/CommonDataSubscriberStereo.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/rtabmap_sync.dir/src/impl/CommonDataSubscriberStereo.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zy/Code/catkin_rtab/src/rtabmap_ros/src/impl/CommonDataSubscriberStereo.cpp > CMakeFiles/rtabmap_sync.dir/src/impl/CommonDataSubscriberStereo.cpp.i
-
-CMakeFiles/rtabmap_sync.dir/src/impl/CommonDataSubscriberStereo.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/rtabmap_sync.dir/src/impl/CommonDataSubscriberStereo.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zy/Code/catkin_rtab/src/rtabmap_ros/src/impl/CommonDataSubscriberStereo.cpp -o CMakeFiles/rtabmap_sync.dir/src/impl/CommonDataSubscriberStereo.cpp.s
-
-CMakeFiles/rtabmap_sync.dir/src/impl/CommonDataSubscriberRGB.cpp.o: CMakeFiles/rtabmap_sync.dir/flags.make
-CMakeFiles/rtabmap_sync.dir/src/impl/CommonDataSubscriberRGB.cpp.o: ../src/impl/CommonDataSubscriberRGB.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zy/Code/catkin_rtab/src/rtabmap_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/rtabmap_sync.dir/src/impl/CommonDataSubscriberRGB.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/rtabmap_sync.dir/src/impl/CommonDataSubscriberRGB.cpp.o -c /home/zy/Code/catkin_rtab/src/rtabmap_ros/src/impl/CommonDataSubscriberRGB.cpp
-
-CMakeFiles/rtabmap_sync.dir/src/impl/CommonDataSubscriberRGB.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/rtabmap_sync.dir/src/impl/CommonDataSubscriberRGB.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zy/Code/catkin_rtab/src/rtabmap_ros/src/impl/CommonDataSubscriberRGB.cpp > CMakeFiles/rtabmap_sync.dir/src/impl/CommonDataSubscriberRGB.cpp.i
-
-CMakeFiles/rtabmap_sync.dir/src/impl/CommonDataSubscriberRGB.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/rtabmap_sync.dir/src/impl/CommonDataSubscriberRGB.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zy/Code/catkin_rtab/src/rtabmap_ros/src/impl/CommonDataSubscriberRGB.cpp -o CMakeFiles/rtabmap_sync.dir/src/impl/CommonDataSubscriberRGB.cpp.s
-
-CMakeFiles/rtabmap_sync.dir/src/impl/CommonDataSubscriberRGBD.cpp.o: CMakeFiles/rtabmap_sync.dir/flags.make
-CMakeFiles/rtabmap_sync.dir/src/impl/CommonDataSubscriberRGBD.cpp.o: ../src/impl/CommonDataSubscriberRGBD.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zy/Code/catkin_rtab/src/rtabmap_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/rtabmap_sync.dir/src/impl/CommonDataSubscriberRGBD.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/rtabmap_sync.dir/src/impl/CommonDataSubscriberRGBD.cpp.o -c /home/zy/Code/catkin_rtab/src/rtabmap_ros/src/impl/CommonDataSubscriberRGBD.cpp
-
-CMakeFiles/rtabmap_sync.dir/src/impl/CommonDataSubscriberRGBD.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/rtabmap_sync.dir/src/impl/CommonDataSubscriberRGBD.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zy/Code/catkin_rtab/src/rtabmap_ros/src/impl/CommonDataSubscriberRGBD.cpp > CMakeFiles/rtabmap_sync.dir/src/impl/CommonDataSubscriberRGBD.cpp.i
-
-CMakeFiles/rtabmap_sync.dir/src/impl/CommonDataSubscriberRGBD.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/rtabmap_sync.dir/src/impl/CommonDataSubscriberRGBD.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zy/Code/catkin_rtab/src/rtabmap_ros/src/impl/CommonDataSubscriberRGBD.cpp -o CMakeFiles/rtabmap_sync.dir/src/impl/CommonDataSubscriberRGBD.cpp.s
-
-CMakeFiles/rtabmap_sync.dir/src/impl/CommonDataSubscriberRGBDX.cpp.o: CMakeFiles/rtabmap_sync.dir/flags.make
-CMakeFiles/rtabmap_sync.dir/src/impl/CommonDataSubscriberRGBDX.cpp.o: ../src/impl/CommonDataSubscriberRGBDX.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zy/Code/catkin_rtab/src/rtabmap_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/rtabmap_sync.dir/src/impl/CommonDataSubscriberRGBDX.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/rtabmap_sync.dir/src/impl/CommonDataSubscriberRGBDX.cpp.o -c /home/zy/Code/catkin_rtab/src/rtabmap_ros/src/impl/CommonDataSubscriberRGBDX.cpp
-
-CMakeFiles/rtabmap_sync.dir/src/impl/CommonDataSubscriberRGBDX.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/rtabmap_sync.dir/src/impl/CommonDataSubscriberRGBDX.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zy/Code/catkin_rtab/src/rtabmap_ros/src/impl/CommonDataSubscriberRGBDX.cpp > CMakeFiles/rtabmap_sync.dir/src/impl/CommonDataSubscriberRGBDX.cpp.i
-
-CMakeFiles/rtabmap_sync.dir/src/impl/CommonDataSubscriberRGBDX.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/rtabmap_sync.dir/src/impl/CommonDataSubscriberRGBDX.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zy/Code/catkin_rtab/src/rtabmap_ros/src/impl/CommonDataSubscriberRGBDX.cpp -o CMakeFiles/rtabmap_sync.dir/src/impl/CommonDataSubscriberRGBDX.cpp.s
-
-CMakeFiles/rtabmap_sync.dir/src/impl/CommonDataSubscriberScan.cpp.o: CMakeFiles/rtabmap_sync.dir/flags.make
-CMakeFiles/rtabmap_sync.dir/src/impl/CommonDataSubscriberScan.cpp.o: ../src/impl/CommonDataSubscriberScan.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zy/Code/catkin_rtab/src/rtabmap_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/rtabmap_sync.dir/src/impl/CommonDataSubscriberScan.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/rtabmap_sync.dir/src/impl/CommonDataSubscriberScan.cpp.o -c /home/zy/Code/catkin_rtab/src/rtabmap_ros/src/impl/CommonDataSubscriberScan.cpp
-
-CMakeFiles/rtabmap_sync.dir/src/impl/CommonDataSubscriberScan.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/rtabmap_sync.dir/src/impl/CommonDataSubscriberScan.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zy/Code/catkin_rtab/src/rtabmap_ros/src/impl/CommonDataSubscriberScan.cpp > CMakeFiles/rtabmap_sync.dir/src/impl/CommonDataSubscriberScan.cpp.i
-
-CMakeFiles/rtabmap_sync.dir/src/impl/CommonDataSubscriberScan.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/rtabmap_sync.dir/src/impl/CommonDataSubscriberScan.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zy/Code/catkin_rtab/src/rtabmap_ros/src/impl/CommonDataSubscriberScan.cpp -o CMakeFiles/rtabmap_sync.dir/src/impl/CommonDataSubscriberScan.cpp.s
-
-CMakeFiles/rtabmap_sync.dir/src/impl/CommonDataSubscriberOdom.cpp.o: CMakeFiles/rtabmap_sync.dir/flags.make
-CMakeFiles/rtabmap_sync.dir/src/impl/CommonDataSubscriberOdom.cpp.o: ../src/impl/CommonDataSubscriberOdom.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zy/Code/catkin_rtab/src/rtabmap_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/rtabmap_sync.dir/src/impl/CommonDataSubscriberOdom.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/rtabmap_sync.dir/src/impl/CommonDataSubscriberOdom.cpp.o -c /home/zy/Code/catkin_rtab/src/rtabmap_ros/src/impl/CommonDataSubscriberOdom.cpp
-
-CMakeFiles/rtabmap_sync.dir/src/impl/CommonDataSubscriberOdom.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/rtabmap_sync.dir/src/impl/CommonDataSubscriberOdom.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zy/Code/catkin_rtab/src/rtabmap_ros/src/impl/CommonDataSubscriberOdom.cpp > CMakeFiles/rtabmap_sync.dir/src/impl/CommonDataSubscriberOdom.cpp.i
-
-CMakeFiles/rtabmap_sync.dir/src/impl/CommonDataSubscriberOdom.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/rtabmap_sync.dir/src/impl/CommonDataSubscriberOdom.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zy/Code/catkin_rtab/src/rtabmap_ros/src/impl/CommonDataSubscriberOdom.cpp -o CMakeFiles/rtabmap_sync.dir/src/impl/CommonDataSubscriberOdom.cpp.s
-
-CMakeFiles/rtabmap_sync.dir/src/CoreWrapper.cpp.o: CMakeFiles/rtabmap_sync.dir/flags.make
-CMakeFiles/rtabmap_sync.dir/src/CoreWrapper.cpp.o: ../src/CoreWrapper.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/zy/Code/catkin_rtab/src/rtabmap_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/rtabmap_sync.dir/src/CoreWrapper.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/rtabmap_sync.dir/src/CoreWrapper.cpp.o -c /home/zy/Code/catkin_rtab/src/rtabmap_ros/src/CoreWrapper.cpp
-
-CMakeFiles/rtabmap_sync.dir/src/CoreWrapper.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/rtabmap_sync.dir/src/CoreWrapper.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/zy/Code/catkin_rtab/src/rtabmap_ros/src/CoreWrapper.cpp > CMakeFiles/rtabmap_sync.dir/src/CoreWrapper.cpp.i
-
-CMakeFiles/rtabmap_sync.dir/src/CoreWrapper.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/rtabmap_sync.dir/src/CoreWrapper.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/zy/Code/catkin_rtab/src/rtabmap_ros/src/CoreWrapper.cpp -o CMakeFiles/rtabmap_sync.dir/src/CoreWrapper.cpp.s
-=======
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/exdx/codes/catkin_rtab/src/rtabmap_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/rtabmap_sync.dir/src/CommonDataSubscriber.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/rtabmap_sync.dir/src/CommonDataSubscriber.cpp.o -c /home/exdx/codes/catkin_rtab/src/rtabmap_ros/src/CommonDataSubscriber.cpp
 
@@ -296,7 +173,6 @@ CMakeFiles/rtabmap_sync.dir/src/CoreWrapper.cpp.i: cmake_force
 CMakeFiles/rtabmap_sync.dir/src/CoreWrapper.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/rtabmap_sync.dir/src/CoreWrapper.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/exdx/codes/catkin_rtab/src/rtabmap_ros/src/CoreWrapper.cpp -o CMakeFiles/rtabmap_sync.dir/src/CoreWrapper.cpp.s
->>>>>>> 8dcec0a9a1f95d57487b09c6cec170bd6adbd4be
 
 # Object files for target rtabmap_sync
 rtabmap_sync_OBJECTS = \
@@ -775,11 +651,7 @@ devel/lib/librtabmap_sync.so: /usr/lib/x86_64-linux-gnu/libQt5Widgets.so.5.12.8
 devel/lib/librtabmap_sync.so: /usr/lib/x86_64-linux-gnu/libQt5Gui.so.5.12.8
 devel/lib/librtabmap_sync.so: /usr/lib/x86_64-linux-gnu/libQt5Core.so.5.12.8
 devel/lib/librtabmap_sync.so: CMakeFiles/rtabmap_sync.dir/link.txt
-<<<<<<< HEAD
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/zy/Code/catkin_rtab/src/rtabmap_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX shared library devel/lib/librtabmap_sync.so"
-=======
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/exdx/codes/catkin_rtab/src/rtabmap_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX shared library devel/lib/librtabmap_sync.so"
->>>>>>> 8dcec0a9a1f95d57487b09c6cec170bd6adbd4be
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/rtabmap_sync.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -792,10 +664,6 @@ CMakeFiles/rtabmap_sync.dir/clean:
 .PHONY : CMakeFiles/rtabmap_sync.dir/clean
 
 CMakeFiles/rtabmap_sync.dir/depend:
-<<<<<<< HEAD
-	cd /home/zy/Code/catkin_rtab/src/rtabmap_ros/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/zy/Code/catkin_rtab/src/rtabmap_ros /home/zy/Code/catkin_rtab/src/rtabmap_ros /home/zy/Code/catkin_rtab/src/rtabmap_ros/build /home/zy/Code/catkin_rtab/src/rtabmap_ros/build /home/zy/Code/catkin_rtab/src/rtabmap_ros/build/CMakeFiles/rtabmap_sync.dir/DependInfo.cmake --color=$(COLOR)
-=======
 	cd /home/exdx/codes/catkin_rtab/src/rtabmap_ros/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/exdx/codes/catkin_rtab/src/rtabmap_ros /home/exdx/codes/catkin_rtab/src/rtabmap_ros /home/exdx/codes/catkin_rtab/src/rtabmap_ros/build /home/exdx/codes/catkin_rtab/src/rtabmap_ros/build /home/exdx/codes/catkin_rtab/src/rtabmap_ros/build/CMakeFiles/rtabmap_sync.dir/DependInfo.cmake --color=$(COLOR)
->>>>>>> 8dcec0a9a1f95d57487b09c6cec170bd6adbd4be
 .PHONY : CMakeFiles/rtabmap_sync.dir/depend
 

@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/rtabmap_rgbd_odometry.dir/src/RGBDOdometryNode.cpp.o"
-  "devel/lib/rtabmap_ros/rgbd_odometry"
-  "devel/lib/rtabmap_ros/rgbd_odometry.pdb"
+  "devel/lib/rtabmap_ros/======rgbd_odometry"
+  "devel/lib/rtabmap_ros/======rgbd_odometry.pdb"
 )
 
 # Per-language clean rules from dependency scanning.

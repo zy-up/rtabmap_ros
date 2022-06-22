@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/rtabmap_imu_to_tf.dir/src/ImuToTFNode.cpp.o"
-  "devel/lib/rtabmap_ros/imu_to_tf"
-  "devel/lib/rtabmap_ros/imu_to_tf.pdb"
+  "devel/lib/rtabmap_ros/======imu_to_tf"
+  "devel/lib/rtabmap_ros/======imu_to_tf.pdb"
 )
 
 # Per-language clean rules from dependency scanning.

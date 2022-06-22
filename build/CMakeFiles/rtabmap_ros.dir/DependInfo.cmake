@@ -4,17 +4,10 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-<<<<<<< HEAD
-  "/home/zy/Code/catkin_rtab/src/rtabmap_ros/src/MapsManager.cpp" "/home/zy/Code/catkin_rtab/src/rtabmap_ros/build/CMakeFiles/rtabmap_ros.dir/src/MapsManager.cpp.o"
-  "/home/zy/Code/catkin_rtab/src/rtabmap_ros/src/MsgConversion.cpp" "/home/zy/Code/catkin_rtab/src/rtabmap_ros/build/CMakeFiles/rtabmap_ros.dir/src/MsgConversion.cpp.o"
-  "/home/zy/Code/catkin_rtab/src/rtabmap_ros/src/OdometryROS.cpp" "/home/zy/Code/catkin_rtab/src/rtabmap_ros/build/CMakeFiles/rtabmap_ros.dir/src/OdometryROS.cpp.o"
-  "/home/zy/Code/catkin_rtab/src/rtabmap_ros/src/PluginInterface.cpp" "/home/zy/Code/catkin_rtab/src/rtabmap_ros/build/CMakeFiles/rtabmap_ros.dir/src/PluginInterface.cpp.o"
-=======
   "/home/exdx/codes/catkin_rtab/src/rtabmap_ros/src/MapsManager.cpp" "/home/exdx/codes/catkin_rtab/src/rtabmap_ros/build/CMakeFiles/rtabmap_ros.dir/src/MapsManager.cpp.o"
   "/home/exdx/codes/catkin_rtab/src/rtabmap_ros/src/MsgConversion.cpp" "/home/exdx/codes/catkin_rtab/src/rtabmap_ros/build/CMakeFiles/rtabmap_ros.dir/src/MsgConversion.cpp.o"
   "/home/exdx/codes/catkin_rtab/src/rtabmap_ros/src/OdometryROS.cpp" "/home/exdx/codes/catkin_rtab/src/rtabmap_ros/build/CMakeFiles/rtabmap_ros.dir/src/OdometryROS.cpp.o"
   "/home/exdx/codes/catkin_rtab/src/rtabmap_ros/src/PluginInterface.cpp" "/home/exdx/codes/catkin_rtab/src/rtabmap_ros/build/CMakeFiles/rtabmap_ros.dir/src/PluginInterface.cpp.o"
->>>>>>> 8dcec0a9a1f95d57487b09c6cec170bd6adbd4be
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

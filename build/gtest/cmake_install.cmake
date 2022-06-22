@@ -39,11 +39,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-<<<<<<< HEAD
-  include("/home/zy/Code/catkin_rtab/src/rtabmap_ros/build/gtest/googlemock/cmake_install.cmake")
-=======
   include("/home/exdx/codes/catkin_rtab/src/rtabmap_ros/build/gtest/googlemock/cmake_install.cmake")
->>>>>>> 8dcec0a9a1f95d57487b09c6cec170bd6adbd4be
 
 endif()
 

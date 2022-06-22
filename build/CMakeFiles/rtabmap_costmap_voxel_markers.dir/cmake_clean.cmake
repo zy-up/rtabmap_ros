@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/rtabmap_costmap_voxel_markers.dir/src/costmap_2d/voxel_markers.cpp.o"
-  "devel/lib/rtabmap_ros/voxel_markers"
-  "devel/lib/rtabmap_ros/voxel_markers.pdb"
+  "devel/lib/rtabmap_ros/======voxel_markers"
+  "devel/lib/rtabmap_ros/======voxel_markers.pdb"
 )
 
 # Per-language clean rules from dependency scanning.

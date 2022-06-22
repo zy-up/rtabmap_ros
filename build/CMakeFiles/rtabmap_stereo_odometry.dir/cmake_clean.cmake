@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/rtabmap_stereo_odometry.dir/src/StereoOdometryNode.cpp.o"
-  "devel/lib/rtabmap_ros/stereo_odometry"
-  "devel/lib/rtabmap_ros/stereo_odometry.pdb"
+  "devel/lib/rtabmap_ros/======stereo_odometry"
+  "devel/lib/rtabmap_ros/======stereo_odometry.pdb"
 )
 
 # Per-language clean rules from dependency scanning.

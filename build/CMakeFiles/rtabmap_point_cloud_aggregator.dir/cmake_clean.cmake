@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/rtabmap_point_cloud_aggregator.dir/src/PointCloudAggregatorNode.cpp.o"
-  "devel/lib/rtabmap_ros/rtabmap_point_cloud_aggregator"
-  "devel/lib/rtabmap_ros/rtabmap_point_cloud_aggregator.pdb"
+  "devel/lib/rtabmap_ros/======rtabmap_point_cloud_aggregator"
+  "devel/lib/rtabmap_ros/======rtabmap_point_cloud_aggregator.pdb"
 )
 
 # Per-language clean rules from dependency scanning.

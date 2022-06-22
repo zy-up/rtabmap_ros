@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/rtabmap_map_optimizer.dir/src/MapOptimizerNode.cpp.o"
-  "devel/lib/rtabmap_ros/map_optimizer"
-  "devel/lib/rtabmap_ros/map_optimizer.pdb"
+  "devel/lib/rtabmap_ros/======map_optimizer"
+  "devel/lib/rtabmap_ros/======map_optimizer.pdb"
 )
 
 # Per-language clean rules from dependency scanning.

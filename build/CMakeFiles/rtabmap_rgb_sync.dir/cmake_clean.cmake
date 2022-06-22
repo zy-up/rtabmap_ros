@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/rtabmap_rgb_sync.dir/src/RGBSyncNode.cpp.o"
-  "devel/lib/rtabmap_ros/rgb_sync"
-  "devel/lib/rtabmap_ros/rgb_sync.pdb"
+  "devel/lib/rtabmap_ros/======rgb_sync"
+  "devel/lib/rtabmap_ros/======rgb_sync.pdb"
 )
 
 # Per-language clean rules from dependency scanning.

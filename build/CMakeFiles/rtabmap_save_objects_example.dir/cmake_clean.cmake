@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/rtabmap_save_objects_example.dir/src/SaveObjectsExample.cpp.o"
-  "devel/lib/rtabmap_ros/save_objects_example"
-  "devel/lib/rtabmap_ros/save_objects_example.pdb"
+  "devel/lib/rtabmap_ros/======save_objects_example"
+  "devel/lib/rtabmap_ros/======save_objects_example.pdb"
 )
 
 # Per-language clean rules from dependency scanning.

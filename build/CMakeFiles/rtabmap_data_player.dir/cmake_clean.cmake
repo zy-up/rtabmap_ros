@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/rtabmap_data_player.dir/src/DbPlayerNode.cpp.o"
-  "devel/lib/rtabmap_ros/data_player"
-  "devel/lib/rtabmap_ros/data_player.pdb"
+  "devel/lib/rtabmap_ros/======data_player"
+  "devel/lib/rtabmap_ros/======data_player.pdb"
 )
 
 # Per-language clean rules from dependency scanning.

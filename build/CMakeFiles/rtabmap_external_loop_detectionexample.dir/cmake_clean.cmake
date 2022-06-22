@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/rtabmap_external_loop_detectionexample.dir/src/ExternalLoopDetectionExample.cpp.o"
-  "devel/lib/rtabmap_ros/external_loop_detection_example"
-  "devel/lib/rtabmap_ros/external_loop_detection_example.pdb"
+  "devel/lib/rtabmap_ros/======external_loop_detection_example"
+  "devel/lib/rtabmap_ros/======external_loop_detection_example.pdb"
 )
 
 # Per-language clean rules from dependency scanning.

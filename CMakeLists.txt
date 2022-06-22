@@ -237,7 +237,7 @@ SET(rtabmap_ros_lib_src
    src/PluginInterface.cpp
 )
   
-# 插件模块集合
+# nodelet插件模块集合
 SET(rtabmap_plugins_lib_src
    src/nodelets/rgbd_odometry.cpp
    src/nodelets/stereo_odometry.cpp
