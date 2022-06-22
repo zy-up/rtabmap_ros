@@ -1,0 +1,43 @@
+<launch>
+  <!-- 直接从深度图中产生点云,用于对相机姿态的精细调整（ICP调整） -->
+<!-- 
+  <group ns="H_k4a" >
+    <node pkg="nodelet" type="nodelet" name="gen_H_cloud" args="load rtabmap_ros/point_cloud_xyz manager_H">
+      <remap from="depth/camera_info" to="/H_k4a/depth/camera_info"/>
+      <remap from="depth/image"       to="/H_k4a/depth/image_rect"/>
+      <remap from="cloud"             to="H_cloud" />
+
+      <param name="max_depth"  type="double" value="3.0"/>
+      <param name="voxel_size"  type="double" value="0.02"/>
+      <param name="approx_sync" type="bool"   value="false"/>
+      <param name="noise_filter_min_neighbors"  type="int" value="100"/>
+    </node>
+  </group> -->
+
+  <group ns="M_k4a" >
+    <node pkg="nodelet" type="nodelet" name="gen_M_cloud" args="load rtabmap_ros/point_cloud_xyz manager_M">
+      <remap from="depth/image"       to="/M_k4a/depth/image_rect"/>
+      <remap from="depth/camera_info" to="/M_k4a/depth/camera_info"/>
+      <remap from="cloud"             to="M_cloud" />
+
+      <param name="max_depth"  type="double" value="4.0"/>
+      <param name="voxel_size"  type="double" value="0.02"/>
+      <param name="approx_sync" type="bool"   value="false"/>
+      <param name="noise_filter_min_neighbors"  type="int" value="100"/>
+    </node>
+  </group>
+
+  <!-- <group ns="L_k4a" >
+    <node pkg="nodelet" type="nodelet" name="gen_L_cloud" args="load rtabmap_ros/point_cloud_xyz manager_L">
+      <remap from="depth/image"       to="/L_k4a/depth/image_rect"/>
+      <remap from="depth/camera_info" to="/L_k4a/depth/camera_info"/>
+      <remap from="cloud"             to="L_cloud" />
+
+      <param name="max_depth"  type="double" value="4.0"/>
+      <param name="voxel_size"  type="double" value="0.02"/>
+      <param name="approx_sync" type="bool"   value="false"/>
+      <param name="noise_filter_min_neighbors"  type="int" value="100"/>
+    </node>
+  </group> -->
+
+</launch>

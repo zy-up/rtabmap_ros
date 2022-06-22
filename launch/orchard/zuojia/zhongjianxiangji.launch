@@ -1,0 +1,70 @@
+<launch>
+  <group ns="M_k4a" >
+    <!-- 生成一个 nodelet 管理器 -->
+    <node pkg="nodelet" type="nodelet" name="manager_M" args="manager" output="screen">
+      <param name="num_worker_threads" value="16" />
+    </node>
+
+    <!-- 生成一个 image_proc/rectify nodelet 来校正 RGB 图像 -->
+    <node pkg="nodelet" type="nodelet" name="rectify_rgb_to_depth_M"
+          args="load image_proc/rectify manager_M --no-bond"
+          respawn="true">
+      <!-- image_mono：未矫正的的图像  image_rect经过校正后的图像  -->
+      <remap from="image_mono"  to="rgb_to_depth/image_raw" />
+      <param name="interpolation"  value="0" />
+      <param name="queue_size"  value="2" />
+      <!-- <remap from="camera_info"  to="rgb_to_depth/camera_info" /> -->
+      <remap from="image_rect"  to="rgb_to_depth/image_rect" />
+    </node>
+
+    <!-- 生成一个 image_proc/rectify nodelet 来校正 RGB 图像 -->
+    <node pkg="nodelet" type="nodelet" name="rectify_rgb_M"
+          args="load image_proc/rectify manager_M --no-bond"
+          respawn="true">
+      <!-- image_mono：未矫正的的图像  image_rect经过校正后的图像  -->
+      <remap from="image_mono"  to="rgb/image_raw" />
+      <param name="interpolation"  value="0" />
+      <param name="queue_size"  value="2" />
+      <!-- <remap from="camera_info"  to="rgb_to_depth/camera_info" /> -->
+      <remap from="image_rect"  to="rgb/image_rect" />
+    </node>
+
+    <!-- 生成一个 image_proc/rectify nodelet 来校正深度图像 -->
+    <node pkg="nodelet" type="nodelet" name="rectify_depth_M"
+          args="load image_proc/rectify manager_M --no-bond"
+          respawn="true">
+      <!-- image_mono：未矫正的的图像  image_rect经过校正后的图像  -->
+      <remap from="image_mono"  to="depth/image_raw" />
+      <param name="interpolation"  value="0" />
+      <param name="queue_size"  value="2" />
+      <!-- <remap from="camera_info"  to="depth/camera_info" /> -->
+      <remap from="image_rect"  to="depth/image_rect" />
+    </node>
+
+    <!-- 加载相机并开始发布RGBD消息，并关闭了原始的点云输出（质量低），将由image_proc先处理数据后，再将RGBD合成点云 -->
+    <!-- 加载的是单独开发的Nodelet节点K4AROSBridgeNodelet -->
+    <node pkg="nodelet" type="nodelet" name="k4a_ros_bridge_M"
+          args="load Azure_Kinect_ROS_Driver/K4AROSBridgeNodelet manager_M --no-bond"
+          respawn="true">
+      <param name="depth_enabled"     value="true" />
+      <param name="depth_mode"        value="NFOV_UNBINNED" />
+      <param name="color_enabled"     value="true" />
+      <param name="color_resolution"  value="1536P" />
+      <param name="fps"               value="15" />
+      <param name="point_cloud"       value="ture" />
+      <param name="rgb_point_cloud"   value="ture" />
+      <param name="required"          value="true" />
+      <!-- 设置相机串口号 000470313012(high) 000481112312(mid)  000475513012(low) -->  
+      <param name="sensor_sn"  type="string"  value="000481112312" />   
+      <param name="tf_prefix"         value="M_" />
+    </node>
+
+    <node pkg="nodelet" type="nodelet" name="rgbd_sync_M" args="load rtabmap_ros/rgbd_sync manager_M">
+      <remap from="rgb/image"         to="rgb_to_depth/image_rect"/>
+      <remap from="depth/image"       to="depth/image_rect"/>
+      <remap from="rgb/camera_info"   to="depth/camera_info"/>
+    </node>
+
+  </group>
+
+</launch>

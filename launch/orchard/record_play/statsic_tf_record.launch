@@ -1,0 +1,41 @@
+<launch>
+<!-- 最上面相机的tf -->
+  <param name="robot_description_H"
+            command="xacro $(find azure_kinect_ros_driver)launch/record_play/azure_kinect_record.urdf.xacro tf_prefix:=H_" />
+  <!-- 用于读取相机的robot_description关节坐标系与位姿 -->
+  <node name="robot_state_publisher_H" pkg="robot_state_publisher" type="robot_state_publisher" args="robot_description:=robot_description_H">
+      <param name="publish_frequency" value="200" />
+      <param name="use_tf_static" value="false" />
+  </node>
+
+  <!-- 将相机与世界坐标系连接起来 -->
+  <node pkg="tf" type="static_transform_publisher" name="base_to_cameraH_tf"
+      args="-0.009700 0.006012 0.335653 -0.000528 0.072805 -0.002621 0.997343 /M_camera_base /H_camera_base 200" />
+
+<!-- 中间相机的tf -->
+  <param name="robot_description_M"
+            command="xacro $(find azure_kinect_ros_driver)launch/record_play/azure_kinect_record.urdf.xacro tf_prefix:=M_" />
+  <!-- 用于读取相机的robot_description关节坐标系与位姿 -->
+  <node name="robot_state_publisher_M" pkg="robot_state_publisher" type="robot_state_publisher" args="robot_description:=robot_description_M">
+      <param name="publish_frequency" value="200" />
+      <param name="use_tf_static" value="false" />
+  </node>
+
+  <!-- 将相机与世界坐标系连接起来 --> 
+  <node pkg="tf" type="static_transform_publisher" name="base_to_cameraM_tf"
+      args="-0.015494 0.015076 0.451459 -0.000004 -0.016427 -0.003821 0.999858  /L_camera_base /M_camera_base 200" />
+
+<!-- 最下面相机的tf -->
+  <param name="robot_description_L"
+            command="xacro $(find azure_kinect_ros_driver)launch/record_play/azure_kinect_record.urdf.xacro tf_prefix:=L_" />
+  <!-- 用于读取相机的robot_description关节坐标系与位姿 -->
+  <node name="robot_state_publisher_L" pkg="robot_state_publisher" type="robot_state_publisher" args="robot_description:=robot_description_L">
+      <param name="publish_frequency" value="200" />
+      <param name="use_tf_static" value="false" />
+  </node>
+
+  <!-- 将相机与世界坐标系连接起来 -->
+  <node pkg="tf" type="static_transform_publisher" name="base_to_cameraL_tf"
+      args="0 0 0 0 0 0 /base_frame /L_camera_base 200" />
+
+</launch>

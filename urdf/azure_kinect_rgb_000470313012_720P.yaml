@@ -1,0 +1,26 @@
+image_width: 1280
+image_height: 720
+camera_name: azure_kinect_rgb_000470313012_720P
+camera_matrix:
+  rows: 3
+  cols: 3
+  data: [619.30938,   0.     , 634.25113,
+           0.     , 622.6241 , 375.34826,
+           0.     ,   0.     ,   1.     ]
+distortion_model: plumb_bob
+distortion_coefficients:
+  rows: 1
+  cols: 5
+  data: [0.077482, -0.043144, 0.002442, -0.002819, 0.000000]
+rectification_matrix:
+  rows: 3
+  cols: 3
+  data: [1., 0., 0.,
+         0., 1., 0.,
+         0., 0., 1.]
+projection_matrix:
+  rows: 3
+  cols: 4
+  data: [640.24683,   0.     , 628.18678,   0.     ,
+           0.     , 645.62732, 377.00671,   0.     ,
+           0.     ,   0.     ,   1.     ,   0.     ]

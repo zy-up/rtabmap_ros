@@ -1,0 +1,76 @@
+<launch>
+  <!-- 导入相机的关节坐标系与相机的位姿 -->
+  <param name="robot_description"
+    command="xacro $(find azure_kinect_ros_driver)/urdf/azure_kinect.urdf.xacro" />
+
+  <!-- 用于读取相机的robot_description关节坐标系与位姿 -->
+  <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />
+
+  <!-- Start the K4A sensor driver -->
+  <group ns="k4a" >
+    <!-- 生成一个 nodelet 管理器 -->
+    <node pkg="nodelet" type="nodelet" name="manager" args="manager" output="screen">
+      <param name="num_worker_threads" value="16" />
+    </node>
+ 
+    <!-- 生成一个 image_proc/rectify nodelet 来校正 RGB 图像 -->
+    <node pkg="nodelet" type="nodelet" name="rectify_rgb"
+          args="load image_proc/rectify manager --no-bond"
+          respawn="true">
+      <!-- image_mono：未矫正的的图像  image_rect经过校正后的图像  -->
+      <remap from="image_mono"  to="rgb_to_depth/image_raw" />
+      <param name="interpolation"  value="0" />
+      <!-- <remap from="camera_info"  to="rgb_to_depth/camera_info" /> -->
+      <remap from="image_rect"  to="rgb_to_depth/image_rect" />
+    </node>
+
+    <!-- 生成一个 image_proc/rectify nodelet 来校正深度图像 -->
+    <node pkg="nodelet" type="nodelet" name="rectify_depth"
+          args="load image_proc/rectify manager --no-bond"
+          respawn="true">
+      <!-- image_mono：未矫正的的图像  image_rect经过校正后的图像  -->
+      <remap from="image_mono"  to="depth/image_raw" />
+      <param name="interpolation"  value="0" />
+      <!-- <remap from="camera_info"  to="depth/camera_info" /> -->
+      <remap from="image_rect"  to="depth/image_rect" />
+    </node>
+
+    <!-- 加载相机并开始发布RGBD消息，并关闭了原始的点云输出（质量低），将由image_proc先处理数据后，再将RGBD合成点云 -->
+    <!-- 加载的是单独开发的Nodelet节点K4AROSBridgeNodelet -->
+    <node pkg="nodelet" type="nodelet" name="k4a_ros_bridge"
+          args="load Azure_Kinect_ROS_Driver/K4AROSBridgeNodelet manager --no-bond"
+          respawn="true">
+      <param name="depth_enabled"     value="true" />
+      <param name="depth_mode"        value="NFOV_UNBINNED" />
+      <param name="color_enabled"     value="true" />
+      <param name="color_resolution"  value="720P" />
+      <param name="fps"               value="30" />
+      <param name="point_cloud"       value="false" />
+      <param name="rgb_point_cloud"   value="false" />
+      <param name="required"          value="true" />
+      <param name="imu_rate_target"   value="100" />
+
+    </node>
+
+  </group>
+
+  <!-- 计算IMU的四元数 -->
+  <node pkg="imu_filter_madgwick" type="imu_filter_node" name="imu_filter_node">
+    <param name="use_mag" value="false" />
+    <param name="publish_tf" value="false" />
+    <param name="world_frame" value="enu" />
+    <remap from="/imu/data_raw" to="/k4a/imu" />
+  </node> 
+
+  <!-- Start rtabmap_ros node 开启RtabMap -->
+  <include file="$(find rtabmap_ros)/launch/rtabmap.launch" ns="rtabmap" >
+    <arg name="rgb_topic"          value="/k4a/rgb_to_depth/image_rect" />
+    <arg name="depth_topic"        value="/k4a/depth/image_rect" />
+    <arg name="camera_info_topic"  value="/k4a/depth/camera_info" />
+    <arg name="approx_sync"        value="true" />
+    <arg name="frame_id"           value="camera_base" />
+    <arg name="args"               value="--delete_db_on_start --Odom/ResetCountdown 2" />
+    <!-- <arg name="wait_imu_to_init"   value="true"/> -->
+  </include>
+
+</launch>

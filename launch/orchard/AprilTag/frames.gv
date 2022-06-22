@@ -1,0 +1,10 @@
+digraph G {
+"L_camera_base" -> "L_depth_camera_link"[label=" Broadcaster: /L_k4a/manager_L\nAverage rate: 10000.0\nBuffer length: 0.0\nMost recent transform: 0.0\nOldest transform: 0.0\n"];
+"L_depth_camera_link" -> "L_imu_link"[label=" Broadcaster: /L_k4a/manager_L\nAverage rate: 10000.0\nBuffer length: 0.0\nMost recent transform: 0.0\nOldest transform: 0.0\n"];
+"L_depth_camera_link" -> "L_rgb_camera_link"[label=" Broadcaster: /L_k4a/manager_L\nAverage rate: 10000.0\nBuffer length: 0.0\nMost recent transform: 0.0\nOldest transform: 0.0\n"];
+"L_rgb_camera_link" -> "L_t5"[label=" Broadcaster: /L_marker/apriltag_ros_continuous_node_L\nAverage rate: 9.73\nBuffer length: 4.933\nMost recent transform: 1649307858.844\nOldest transform: 1649307853.911\n"];
+edge [style=invis];
+ subgraph cluster_legend { style=bold; color=black; label ="view_frames Result";
+"Recorded at time: 1649307859.0839484"[ shape=plaintext ] ;
+}->"L_camera_base";
+}

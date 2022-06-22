@@ -1,0 +1,20 @@
+<launch>
+
+    <node name="Hremapper" pkg="tf" type="tf_remap" output="screen"> 
+        <rosparam param="mappings">[{old: H_depth_camera_link_record, new: /H_depth_camera_link},
+        {old: H_imu_link_record, new: /H_imu_link},
+        {old: H_rgb_camera_link_record, new: /H_rgb_camera_link},
+        {old: M_depth_camera_link_record, new: /M_depth_camera_link},
+        {old: M_imu_link_record, new: /M_imu_link},
+        {old: M_rgb_camera_link_record, new: /M_rgb_camera_link},
+        {old: L_depth_camera_link_record, new: /L_depth_camera_link},
+        {old: L_imu_link_record, new: /L_imu_link},
+        {old: L_rgb_camera_link_record, new: /L_rgb_camera_link}
+        ]</rosparam>
+    </node>
+
+    <node pkg="rosbag" type="play" name="player" args="/home/sbdx/Documents/2022_03_04_16_33_48.bag" output="screen">
+        <remap from="tf" to="tf_old" />
+    </node>
+
+</launch>

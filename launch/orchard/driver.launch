@@ -1,0 +1,98 @@
+<!--
+发布未经校准和出厂矫正的图像
+-->
+
+<launch>
+  <!-- 添加tf前缀,如果多相机还是需要的 -->
+  <arg name="tf_prefix"         default="" />                       <!-- Prefix added to tf frame IDs. It typically contains a trailing '_' unless empty. -->
+  <!-- 是否使用名为azure_description的URDF的tf描述符 -->
+  <arg name="overwrite_robot_description" default="true" />         <!-- Flag to publish a standalone azure_description instead of the default robot_descrition parameter-->
+
+  <!-- 正常情况下joint_state_publisher订阅的是robot_description,但是如果使用azure_description则需要更改转发 -->
+  <!-- 正常是joint_state_publisher和robot_state_publisher就够了,两者并存会报错 -->
+  <group if="$(arg overwrite_robot_description)">
+    <param name="robot_description"
+      command="xacro $(find azure_kinect_ros_driver)/urdf/azure_kinect.urdf.xacro tf_prefix:=$(arg tf_prefix)" />
+    <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
+  </group>
+
+  <group unless="$(arg overwrite_robot_description)">
+    <param name="azure_description"
+      command="xacro $(find azure_kinect_ros_driver)/urdf/azure_kinect.urdf.xacro tf_prefix:=$(arg tf_prefix)" />
+    <node name="joint_state_publisher_azure" pkg="joint_state_publisher" type="joint_state_publisher">
+      <remap from="robot_description" to="azure_description" />
+    </node>  
+    <node name="robot_state_publisher_azure" pkg="robot_state_publisher" type="robot_state_publisher">
+      <remap from="robot_description" to="azure_description" />
+    </node>
+  </group>
+
+  <!-- 是否开启深度相机 -->
+  <arg name="depth_enabled"           default="true" />           
+  <!-- 设置深度相机的模式 NFOV_UNBINNED, NFOV_2X2BINNED, WFOV_UNBINNED, WFOV_2X2BINNED, and PASSIVE_IR-->
+  <arg name="depth_mode"              default="WFOV_UNBINNED" />  
+  <!-- 设置距离的单位可设置为32位的float的米,和16位的int的毫米 -->
+  <arg name="depth_unit"              default="16UC1" />   
+  <!-- 是否开启RGB相机 -->
+  <arg name="color_enabled"           default="true" />          
+  <!-- RGB的输出格式 bgra, jpeg -->
+  <arg name="color_format"            default="bgra" />          
+  <!-- 设置RGB的分辨率 720P, 1080P, 1440P, 1536P, 2160P, 3072P -->
+  <arg name="color_resolution"        default="1536P" />          
+  <!-- 设置fps值 5,15,30 -->
+  <arg name="fps"                     default="5" />             
+  <!-- 是否输出无色点云,必须打开深度相机 -->
+  <arg name="point_cloud"             default="true" />          
+  <!-- 是否输出渲染好的RGB点云,必须打开RGBD相机 -->
+  <arg name="rgb_point_cloud"         default="true" />           <!-- Colorize the point cloud using the RBG camera. Requires color_enabled and depth_enabled -->
+  <!-- 是将深度图对齐到RGB还是相反，false是D->RGB，true是RGB->D -->
+  <arg name="point_cloud_in_depth_frame" default="false" />        <!-- Whether the RGB pointcloud is rendered in the depth frame (true) or RGB frame (false). Will either match the resolution of the depth camera (true) or the RGB camera (false). -->
+  <!-- 在节点死亡时整个启动文件是否应终止 -->
+  <arg name="required"                default="false" />          <!-- Argument which specified if the entire launch file should terminate if the node dies -->
+  <!-- 是否提供串口号，如果没有提供则选择第一个 -->
+  <arg name="sensor_sn"               default="" />               <!-- Sensor serial number. If none provided, the first sensor will be selected -->
+  <!-- 提供绝对地址来保存mkv视频 -->
+  <arg name="recording_file"          default="" />               <!-- Absolute path to a mkv recording file which will be used with the playback api instead of opening a device -->
+  <!-- 循环播放视频 -->
+  <arg name="recording_loop_enabled"  default="false" />          <!-- If set to true the recording file will rewind the beginning once end of file is reached -->
+  <!-- 人体检测开启 -->
+  <arg name="body_tracking_enabled"           default="false" />  <!-- If set to true the joint positions will be published as marker arrays -->
+  <!-- 平滑人体检测过程 -->
+  <arg name="body_tracking_smoothing_factor"  default="0.0" />    <!-- Set between 0 for no smoothing and 1 for full smoothing -->
+  <!-- 是否将ir图像转码位mono8以方便后续处理 -->
+  <arg name="rescale_ir_to_mono8"  default="false" />    <!-- Whether to rescale the IR image to an 8-bit monochrome image for visualization and further processing. A scaling factor (ir_mono8_scaling_factor) is applied. -->
+  <!-- ir转码的参数 -->
+  <arg name="ir_mono8_scaling_factor"  default="1.0" />    <!-- Scaling factor to apply when converting IR to mono8 (see rescale_ir_to_mono8). If using illumination, use the value 0.5-1. If using passive IR, use 10. -->
+  <!-- 设置IMU的发布频率，最高位1.6Khz -->
+  <arg name="imu_rate_target" default="0"/>                       <!-- Desired output rate of IMU messages. Set to 0 (default) for full rate (1.6 kHz). --> 
+  <!-- 设置同步相机的状态为master或者subordinate -->
+  <arg name="wired_sync_mode" default="0"/>                       <!-- Wired sync mode. 0: OFF, 1: MASTER, 2: SUBORDINATE. --> 
+  <!-- 设置从机的延时，以秒为单位 -->
+  <arg name="subordinate_delay_off_master_usec" default="0"/>     <!-- Delay subordinate camera off master camera by specified amount in usec. --> 
+
+  <!-- 调用可执行文件node，节点名称为azure_kinect_ros_driver，并将运行日志输出到屏幕 -->
+  <node pkg="azure_kinect_ros_driver" type="node" name="azure_kinect_ros_driver" output="screen" required="$(arg required)">
+    <param name="depth_enabled"     type="bool"   value="$(arg depth_enabled)" />
+    <param name="depth_mode"        type="string" value="$(arg depth_mode)" />
+    <param name="depth_unit"        type="string" value="$(arg depth_unit)" />
+    <param name="color_enabled"     type="bool"   value="$(arg color_enabled)" />
+    <param name="color_format"      type="string" value="$(arg color_format)" />
+    <param name="color_resolution"  type="string" value="$(arg color_resolution)" />
+    <param name="fps"               type="int"    value="$(arg fps)" />
+    <param name="point_cloud"       type="bool"   value="$(arg point_cloud)" />
+    <param name="rgb_point_cloud"   type="bool"   value="$(arg rgb_point_cloud)" />
+    <param name="point_cloud_in_depth_frame"   type="bool"   value="$(arg point_cloud_in_depth_frame)" />
+    <param name="sensor_sn"         type="string" value="$(arg sensor_sn)" />
+    <param name="tf_prefix"         type="string" value="$(arg tf_prefix)" />
+    <param name="recording_file"          type="string" value="$(arg recording_file)" />
+    <param name="recording_loop_enabled"  type="bool"   value="$(arg recording_loop_enabled)" />
+    <param name="body_tracking_enabled"           type="bool"   value="$(arg body_tracking_enabled)" />
+    <param name="body_tracking_smoothing_factor"  type="double" value="$(arg body_tracking_smoothing_factor)" />
+    <param name="rescale_ir_to_mono8" type="bool" value="$(arg rescale_ir_to_mono8)" />
+    <param name="ir_mono8_scaling_factor" type="double" value="$(arg ir_mono8_scaling_factor)" />
+    <param name="imu_rate_target" type="int" value="$(arg imu_rate_target)"/>
+    <param name="wired_sync_mode" type="int" value="$(arg wired_sync_mode)"/>
+    <param name="subordinate_delay_off_master_usec" type="int" value="$(arg subordinate_delay_off_master_usec)"/>
+  </node>
+</launch>
