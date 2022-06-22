@@ -56,7 +56,7 @@ ELSEIF(COMPILER_SUPPORTS_CXX11)
 ENDIF()
 endif()
 
-# 是否选择编译多相机与用户信息
+# 是否选择编译多相机与用户信息(wifi强度信息)
 option(RTABMAP_SYNC_MULTI_RGBD "Build with multi RGBD camera synchronization support"  OFF)
 option(RTABMAP_SYNC_USER_DATA "Build with input user data support"  OFF)
 MESSAGE(STATUS "RTABMAP_SYNC_MULTI_RGBD = ${RTABMAP_SYNC_MULTI_RGBD}")
@@ -204,7 +204,7 @@ SET(Libraries
    ${catkin_LIBRARIES}
    ${RTABMap_LIBRARIES}
 )
- 
+
 # 传感器信息同步模块集合
 SET(rtabmap_sync_lib_src
    src/CommonDataSubscriber.cpp

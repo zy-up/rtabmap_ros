@@ -1,6 +1,6 @@
 <library path="lib/librtabmap_plugins"> 
 
-  <class name="rtabmap_ros/rgbd_odometry" 
+  <class name="rtabmap_ros/data_throttle" 
          type="rtabmap_ros::RGBDOdometry" 
          base_class_type="nodelet::Nodelet">
     <description>
