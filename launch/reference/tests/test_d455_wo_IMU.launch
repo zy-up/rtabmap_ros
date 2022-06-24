@@ -1,12 +1,7 @@
 <launch>
 
-<!-- Example usage of RTAB-Map with VINS-Fusion support for realsense D435i.
-     Make sure to disable the IR emitter or put a tape on the IR emitter to 
-     avoid VINS tracking the fixed IR points (that would cause large drifts) -->
-
 <arg name="rtabmapviz" default="true"/>
 <arg name="rviz"       default="false"/>
-
 
 <include file="$(find realsense2_camera)/launch/rs_camera.launch">
    <arg name="align_depth"   value="true"/>
@@ -16,26 +11,12 @@
 
 </include>
 
-
-<!-- RTAB-Map: depth mode -->
-<!-- We have to launch stereo_odometry externally from rtabmap.launch so that rtabmap can use RGB-D input -->
-<group ns="rtabmap">
-<node pkg="rtabmap_ros" type="rgbd_odometry" name="rgbd_odometry" output="screen">
-
-   <remap from="rgb/image" to="/camera/color/image_raw"/>
-   <remap from="depth/image" to="/camera/aligned_depth_to_color/image_raw"/>
-   <remap from="rgb/camera_info" to="/camera/color/camera_info"/>
-
-   <param name="frame_id"          value="camera_link"/>
-   <param name="wait_imu_to_init"  value="false"/>
-</node>
-</group>
 <include  file="$(find rtabmap_ros)/launch/rtabmap.launch">
    <arg name="rtabmap_args"      value="--delete_db_on_start"/>
    <arg name="rgb_topic"         value="/camera/color/image_raw"/>
    <arg name="depth_topic"       value="/camera/aligned_depth_to_color/image_raw"/>
    <arg name="camera_info_topic" value="/camera/color/camera_info"/>
-   <arg name="visual_odometry"   value="false"/>
+   <arg name="visual_odometry"   value="True"/>
    <arg name="approx_sync"       value="false"/>
    <arg name="frame_id"          value="camera_link"/>
    <arg name="rtabmapviz"        value="$(arg rtabmapviz)"/>
