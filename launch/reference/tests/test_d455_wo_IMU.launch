@@ -11,9 +11,6 @@
 
 <include file="$(find realsense2_camera)/launch/rs_camera.launch">
    <arg name="align_depth"   value="$(arg depth_mode)"/>
-   <arg name="enable_accel"  value="true"/>
-   <arg name="enable_infra1" value="true"/>
-   <arg name="enable_infra2" value="true"/>
 </include>
 
 
