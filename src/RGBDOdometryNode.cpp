@@ -37,6 +37,7 @@ int main(int argc, char **argv)
 
 	// RGBD特征点里程计
 	ros::init(argc, argv, "rgbd_odometry");
+	ROS_INFO("Start the rgbd_odometry node!!!!!!!!");
 
 	// process "--params" argument
 	nodelet::V_string nargv;
