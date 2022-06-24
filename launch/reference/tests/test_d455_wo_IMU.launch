@@ -6,11 +6,14 @@
 
 <arg name="rtabmapviz" default="true"/>
 <arg name="rviz"       default="false"/>
-<arg name="depth_mode" default="true"/>
 
 
 <include file="$(find realsense2_camera)/launch/rs_camera.launch">
-   <arg name="align_depth"   value="$(arg depth_mode)"/>
+   <arg name="align_depth"   value="true"/>
+   <arg name="enable_sync"   value="true"/>
+   <arg name="depth_fps"     value="5"/>
+   <arg name="color_fps"     value="5"/>
+
 </include>
 
 
