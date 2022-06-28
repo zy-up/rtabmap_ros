@@ -9,8 +9,7 @@
 
 <!-- 校正RGB图像 -->
 <node pkg="nodelet" type="nodelet" name="rectify_rgb_H"
-      args="load image_proc/rectify manager --no-bond"
-      respawn="true">
+      args="load image_proc/rectify manager --no-bond" respawn="true">
    <remap from="image_mono"  to="/camera/color/image_raw" />
    <param name="interpolation"  value="0" />
    <param name="queue_size"  value="2" />
@@ -20,8 +19,7 @@
 
 <!-- 校正depth图像 -->
 <node pkg="nodelet" type="nodelet" name="rectify_depth_H"
-      args="load image_proc/rectify manager --no-bond"
-      respawn="true">
+      args="load image_proc/rectify manager --no-bond" respawn="true">
    <remap from="image_mono"  to="/camera/aligned_depth_to_color/image_raw" />
    <param name="interpolation"  value="0" />
    <param name="queue_size"  value="2" />
@@ -48,10 +46,13 @@
 <!-- 将图片导入rtbmap中开始重建 -->
 <include  file="$(find rtabmap_ros)/launch/rtabmap_rgbd.launch">
    <arg name="rtabmap_args"      value="--delete_db_on_start"/>
+
+   <arg name="subscribe_rgbd"  default="true"/>
+   <arg name="subscribe_rgb"  default="false"/>
    <arg name="rgbd_topic"         value="/rgbd_image"/>
+   
    <arg name="visual_odometry"   value="True"/>
    <arg name="rgbd_sync"       value="false"/>
-   <arg name="depth"       value="false"/>
    <arg name="frame_id"          value="camera_link"/>
    <arg name="rtabmapviz"        value="$(arg rtabmapviz)"/>
    <arg name="rviz"              value="$(arg rviz)"/>

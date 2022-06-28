@@ -156,13 +156,13 @@
       <group if="$(arg visual_odometry)">
         <!-- RGB-D Odometry -->
         <node pkg="rtabmap_ros" type="rgbd_odometry" name="rgbd_odometry" clear_params="$(arg clear_params)" output="$(arg output)" args="$(arg rtabmap_args) $(arg odom_args)" launch-prefix="$(arg launch_prefix)">
-          <param name="subscribe_rgbd"        type="bool"   value="$(arg subscribe_rgb)"/>
-          <remap from="rgbd_image"      to="$(arg rgbd_topic_relay)"/>
+          <param name="subscribe_rgbd"        type="bool"   value="$(arg subscribe_rgbd)"/>
+          <remap if="$(arg subscribe_rgbd)" from="rgbd_image"      to="$(arg rgbd_topic_relay)"/>
 
-          <param name="subscribe_rgb"              type="bool"   value="$(arg subscribe_rgbd)"/>
-          <remap from="rgb/image"       to="$(arg rgb_topic_relay)"/>
-          <remap from="depth/image"     to="$(arg depth_topic_relay)"/>
-          <remap from="rgb/camera_info" to="$(arg camera_info_topic)"/>
+          <param name="subscribe_rgb"              type="bool"   value="$(arg subscribe_rgb)"/>
+          <remap if="$(arg subscribe_rgb)" from="rgb/image"       to="$(arg rgb_topic_relay)"/>
+          <remap if="$(arg subscribe_rgb)" from="depth/image"     to="$(arg depth_topic_relay)"/>
+          <remap if="$(arg subscribe_rgb)" from="rgb/camera_info" to="$(arg camera_info_topic)"/>
 
           <remap from="odom"            to="$(arg odom_topic)"/>
           <remap from="imu"             to="$(arg imu_topic)"/>
@@ -326,7 +326,6 @@
       <remap from="scan_descriptor"        to="$(arg scan_descriptor_topic)"/>
       <remap from="odom"                   to="$(arg odom_topic)"/>
     </node>
-  
   </group>
   
   <!-- RVIZ中可视化 -->
