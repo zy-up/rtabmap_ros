@@ -140,61 +140,46 @@
 
   <!-- Nodes -->
   <group ns="$(arg namespace)">
-    <node if="$(arg gen_cloud)" pkg="nodelet" type="nodelet" name="gen_cloud_from_depth" args="standalone rtabmap_ros/point_cloud_xyz" clear_params="$(arg clear_params)" output="$(arg output)">
-      <remap from="depth/image"       to="$(arg depth_topic_relay)"/>
-      <remap from="depth/camera_info" to="$(arg camera_info_topic)"/>
-      <remap from="cloud"             to="$(arg scan_cloud_topic)" />
-
-      <param name="decimation"  type="double" value="$(arg gen_cloud_decimation)"/>
-      <param name="voxel_size"  type="double" value="$(arg gen_cloud_voxel)"/>
-      <param name="approx_sync" type="bool"   value="false"/>
-      <param name="approx_sync_max_interval" type="double" value="$(arg approx_sync_max_interval)"/>
-    </node>
 
     <!-- 视觉里程计 -->
-    <group unless="$(arg icp_odometry)">
-      <group if="$(arg visual_odometry)">
-        <!-- RGB-D Odometry -->
-        <node pkg="rtabmap_ros" type="rgbd_odometry" name="rgbd_odometry" clear_params="$(arg clear_params)" output="$(arg output)" args="$(arg rtabmap_args) $(arg odom_args)" launch-prefix="$(arg launch_prefix)">
-          <param name="subscribe_rgbd"        type="bool"   value="$(arg subscribe_rgbd)"/>
-          <remap if="$(arg subscribe_rgbd)" from="rgbd_image"      to="$(arg rgbd_topic_relay)"/>
+    <node if="$(arg visual_odometry)" pkg="rtabmap_ros" type="rgbd_odometry" name="rgbd_odometry" clear_params="$(arg clear_params)" output="$(arg output)" args="$(arg rtabmap_args) $(arg odom_args)" launch-prefix="$(arg launch_prefix)">
+      <param name="subscribe_rgbd"        type="bool"   value="$(arg subscribe_rgbd)"/>
+      <remap if="$(arg subscribe_rgbd)" from="rgbd_image"      to="$(arg rgbd_topic_relay)"/>
 
-          <param name="subscribe_rgb"              type="bool"   value="$(arg subscribe_rgb)"/>
-          <remap if="$(arg subscribe_rgb)" from="rgb/image"       to="$(arg rgb_topic_relay)"/>
-          <remap if="$(arg subscribe_rgb)" from="depth/image"     to="$(arg depth_topic_relay)"/>
-          <remap if="$(arg subscribe_rgb)" from="rgb/camera_info" to="$(arg camera_info_topic)"/>
+      <param name="subscribe_rgb"              type="bool"   value="$(arg subscribe_rgb)"/>
+      <remap if="$(arg subscribe_rgb)" from="rgb/image"       to="$(arg rgb_topic_relay)"/>
+      <remap if="$(arg subscribe_rgb)" from="depth/image"     to="$(arg depth_topic_relay)"/>
+      <remap if="$(arg subscribe_rgb)" from="rgb/camera_info" to="$(arg camera_info_topic)"/>
 
-          <remap from="odom"            to="$(arg odom_topic)"/>
-          <remap from="imu"             to="$(arg imu_topic)"/>
-          
-          <param name="Odom/Strategy"            type="string" value="$(arg strategy)"/> 
-          <param name="Vis/FeatureType"         type="string" value="$(arg feature)"/> 
-          <param name="Vis/CorNNType"           type="string" value="$(arg nn)"/>
-          <param name="Vis/MaxDepth"            type="string" value="$(arg max_depth)"/>  
-          <param name="Vis/MinInliers"          type="string" value="$(arg min_inliers)"/> 
-          <param name="Vis/InlierDistance"      type="string" value="$(arg inlier_distance)"/>   
+      <remap from="odom"            to="$(arg odom_topic)"/>
+      <remap from="imu"             to="$(arg imu_topic)"/>
+      
+      <param name="Odom/Strategy"            type="string" value="$(arg strategy)"/> 
+      <param name="Vis/FeatureType"         type="string" value="$(arg feature)"/> 
+      <param name="Vis/CorNNType"           type="string" value="$(arg nn)"/>
+      <param name="Vis/MaxDepth"            type="string" value="$(arg max_depth)"/>  
+      <param name="Vis/MinInliers"          type="string" value="$(arg min_inliers)"/> 
+      <param name="Vis/InlierDistance"      type="string" value="$(arg inlier_distance)"/>   
 
-          <param name="frame_id"                    type="string" value="$(arg frame_id)"/>
-          <param name="odom_frame_id"               type="string" value="$(arg vo_frame_id)"/>
-          <param name="publish_tf"                  type="bool"   value="$(arg publish_tf_odom)"/>
-          <param name="ground_truth_frame_id"       type="string" value="$(arg ground_truth_frame_id)"/>
-          <param name="ground_truth_base_frame_id"  type="string" value="$(arg ground_truth_base_frame_id)"/>
-          <param name="wait_for_transform_duration" type="double" value="$(arg wait_for_transform)"/>
-          <param name="wait_imu_to_init"            type="bool"   value="$(arg wait_imu_to_init)"/>
-          <param name="approx_sync"                 type="bool"   value="$(arg approx_sync)"/>
-          <param name="approx_sync_max_interval"    type="double" value="$(arg approx_sync_max_interval)"/>
-          <param name="config_path"                 type="string" value="$(arg cfg)"/>
-          <param name="queue_size"                  type="int"    value="$(arg queue_size)"/>
+      <param name="frame_id"                    type="string" value="$(arg frame_id)"/>
+      <param name="odom_frame_id"               type="string" value="$(arg vo_frame_id)"/>
+      <param name="publish_tf"                  type="bool"   value="$(arg publish_tf_odom)"/>
+      <param name="ground_truth_frame_id"       type="string" value="$(arg ground_truth_frame_id)"/>
+      <param name="ground_truth_base_frame_id"  type="string" value="$(arg ground_truth_base_frame_id)"/>
+      <param name="wait_for_transform_duration" type="double" value="$(arg wait_for_transform)"/>
+      <param name="wait_imu_to_init"            type="bool"   value="$(arg wait_imu_to_init)"/>
+      <param name="approx_sync"                 type="bool"   value="$(arg approx_sync)"/>
+      <param name="approx_sync_max_interval"    type="double" value="$(arg approx_sync_max_interval)"/>
+      <param name="config_path"                 type="string" value="$(arg cfg)"/>
+      <param name="queue_size"                  type="int"    value="$(arg queue_size)"/>
 
-          <param name="guess_frame_id"              type="string" value="$(arg odom_guess_frame_id)"/>
-          <param name="guess_min_translation"       type="double" value="$(arg odom_guess_min_translation)"/>
-          <param name="guess_min_rotation"          type="double" value="$(arg odom_guess_min_rotation)"/>
-          <param name="expected_update_rate"        type="double" value="$(arg odom_expected_rate)"/>
-          <param name="max_update_rate"             type="double" value="$(arg odom_max_rate)"/>
-          <param name="keep_color"                  type="bool"   value="$(arg use_odom_features)"/>
-        </node>
-      </group>
-    </group>
+      <param name="guess_frame_id"              type="string" value="$(arg odom_guess_frame_id)"/>
+      <param name="guess_min_translation"       type="double" value="$(arg odom_guess_min_translation)"/>
+      <param name="guess_min_rotation"          type="double" value="$(arg odom_guess_min_rotation)"/>
+      <param name="expected_update_rate"        type="double" value="$(arg odom_expected_rate)"/>
+      <param name="max_update_rate"             type="double" value="$(arg odom_max_rate)"/>
+      <param name="keep_color"                  type="bool"   value="$(arg use_odom_features)"/>
+    </node>
     
     <!-- ICP 里程计 -->
     <node if="$(arg icp_odometry)" pkg="rtabmap_ros" type="icp_odometry" name="icp_odometry" clear_params="$(arg clear_params)" output="$(arg output)" args="$(arg rtabmap_args) $(arg odom_args)" launch-prefix="$(arg launch_prefix)">
