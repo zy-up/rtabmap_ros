@@ -150,7 +150,7 @@
       <remap if="$(arg subscribe_rgb)" from="rgb/image"       to="$(arg rgb_topic_relay)"/>
       <remap if="$(arg subscribe_rgb)" from="depth/image"     to="$(arg depth_topic_relay)"/>
       <remap if="$(arg subscribe_rgb)" from="rgb/camera_info" to="$(arg camera_info_topic)"/>
-
+      
       <remap from="odom"            to="$(arg odom_topic)"/>
       <remap from="imu"             to="$(arg imu_topic)"/>
       
