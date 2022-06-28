@@ -1,6 +1,7 @@
 <launch>
   <arg name="depth"  default="true"/>
-  <arg name="subscribe_rgb"  default="true"/>
+  <arg name="subscribe_rgbd"  default="true"/>
+  <arg name="subscribe_rgb"  default="false"/>
  
   <!-- 选择可视化方式 -->
   <arg name="rtabmapviz"              default="true" /> 
@@ -38,7 +39,7 @@
   <arg name="publish_tf_map"          default="true"/>
 
   <!-- 信息同步 -->
-  <arg name="approx_sync"  default="$(arg depth)"/>     
+  <arg name="approx_sync"  default="True"/>     
   <arg name="approx_sync_max_interval"  default="0"/> <!-- (sec) 0 means infinite interval duration (used with approx_sync=true) -->
    
   <!-- RGB-D related topics -->
@@ -50,7 +51,6 @@
   <!-- Already synchronized RGB-D related topic, with rtabmap_ros/rgbd_sync nodelet -->
   <arg name="rgbd_sync"               default="false"/>         <!-- pre-sync rgb_topic, depth_topic, camera_info_topic -->
   <arg name="approx_rgbd_sync"        default="true"/>          <!-- false=exact synchronization -->
-  <arg name="subscribe_rgbd"          default="$(arg rgbd_sync)"/>
   <arg name="rgbd_topic"              default="rgbd_image" />
   <arg name="depth_scale"             default="1.0" />         <!-- Deprecated, use rgbd_depth_scale instead -->
   <arg name="rgbd_depth_scale"        default="$(arg depth_scale)" />
@@ -136,14 +136,13 @@
   <!-- These arguments should not be modified directly, see referred topics without "_relay" suffix above -->
   <arg name="rgb_topic_relay"           default="$(arg rgb_topic)"/>
   <arg name="depth_topic_relay"         default="$(arg depth_topic)"/>
-  <arg if="$(arg rgbd_sync)"      name="rgbd_topic_relay"          default="$(arg rgbd_topic)"/>
-  <arg unless="$(arg rgbd_sync)"  name="rgbd_topic_relay"          default="$(arg rgbd_topic)_relay"/>
+  <arg name="rgbd_topic_relay"          default="$(arg rgbd_topic)"/>
 
   <!-- Nodes -->
   <group ns="$(arg namespace)">
     
     <!-- relays -->
-    <group if="$(arg depth)">
+    <!-- <group if="$(arg depth)">
       <group if="$(arg rgbd_sync)">
         <node pkg="nodelet" type="nodelet" name="rgbd_sync" args="standalone rtabmap_ros/rgbd_sync" clear_params="$(arg clear_params)" output="$(arg output)">
           <remap from="rgb/image"       to="$(arg rgb_topic_relay)"/>
@@ -165,7 +164,7 @@
            <remap from="rgbd_image" to="$(arg rgbd_topic)"/>
          </node>
       </group>
-    </group>
+    </group> -->
     
     <node if="$(arg gen_cloud)" pkg="nodelet" type="nodelet" name="gen_cloud_from_depth" args="standalone rtabmap_ros/point_cloud_xyz" clear_params="$(arg clear_params)" output="$(arg output)">
       <remap from="depth/image"       to="$(arg depth_topic_relay)"/>
@@ -183,13 +182,17 @@
       <group if="$(arg visual_odometry)">
         <!-- RGB-D Odometry -->
         <node pkg="rtabmap_ros" type="rgbd_odometry" name="rgbd_odometry" clear_params="$(arg clear_params)" output="$(arg output)" args="$(arg rtabmap_args) $(arg odom_args)" launch-prefix="$(arg launch_prefix)">
+          <param name="subscribe_rgbd"        type="bool"   value="$(arg subscribe_rgb)"/>
+          <remap from="rgbd_image"      to="$(arg rgbd_topic_relay)"/>
+
+          <param name="subscribe_rgb"              type="bool"   value="$(arg subscribe_rgbd)"/>
           <remap from="rgb/image"       to="$(arg rgb_topic_relay)"/>
           <remap from="depth/image"     to="$(arg depth_topic_relay)"/>
           <remap from="rgb/camera_info" to="$(arg camera_info_topic)"/>
-          <remap from="rgbd_image"      to="$(arg rgbd_topic_relay)"/>
+
           <remap from="odom"            to="$(arg odom_topic)"/>
           <remap from="imu"             to="$(arg imu_topic)"/>
-      
+          
           <param name="Odom/Strategy"            type="string" value="$(arg strategy)"/> 
           <param name="Vis/FeatureType"         type="string" value="$(arg feature)"/> 
           <param name="Vis/CorNNType"           type="string" value="$(arg nn)"/>
@@ -208,7 +211,7 @@
           <param name="approx_sync_max_interval"    type="double" value="$(arg approx_sync_max_interval)"/>
           <param name="config_path"                 type="string" value="$(arg cfg)"/>
           <param name="queue_size"                  type="int"    value="$(arg queue_size)"/>
-          <param name="subscribe_rgbd"              type="bool"   value="$(arg subscribe_rgbd)"/>
+
           <param name="guess_frame_id"              type="string" value="$(arg odom_guess_frame_id)"/>
           <param name="guess_min_translation"       type="double" value="$(arg odom_guess_min_translation)"/>
           <param name="guess_min_rotation"          type="double" value="$(arg odom_guess_min_rotation)"/>

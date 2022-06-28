@@ -3,13 +3,13 @@
 <arg name="rtabmapviz" default="true"/>
 <arg name="rviz"       default="false"/>
 
-<node pkg="nodelet" type="nodelet" name="manager_H" args="manager" output="screen">
+<node pkg="nodelet" type="nodelet" name="manager" args="manager" output="screen">
    <param name="num_worker_threads" value="16" />
 </node>
 
 <!-- 校正RGB图像 -->
 <node pkg="nodelet" type="nodelet" name="rectify_rgb_H"
-      args="load image_proc/rectify manager_H --no-bond"
+      args="load image_proc/rectify manager --no-bond"
       respawn="true">
    <remap from="image_mono"  to="/camera/color/image_raw" />
    <param name="interpolation"  value="0" />
@@ -18,9 +18,9 @@
    <remap from="image_rect"  to="/camera/color/image_rect" />
 </node>
 
-<!-- 校正深度图像 -->
+<!-- 校正depth图像 -->
 <node pkg="nodelet" type="nodelet" name="rectify_depth_H"
-      args="load image_proc/rectify manager_H --no-bond"
+      args="load image_proc/rectify manager --no-bond"
       respawn="true">
    <remap from="image_mono"  to="/camera/aligned_depth_to_color/image_raw" />
    <param name="interpolation"  value="0" />
@@ -35,17 +35,23 @@
    <arg name="enable_sync"   value="true"/>
    <arg name="depth_fps"     value="5"/>
    <arg name="color_fps"     value="5"/>
-   <arg name="manager"     value="manager_H"/>
+   <arg name="manager"     value="manager"/>
 </include>
+
+<!-- RGBD同步 -->
+<node pkg="nodelet" type="nodelet" name="rgbd_sync" args="load rtabmap_ros/rgbd_sync manager">
+   <remap from="rgb/image"         to="/camera/color/image_rect"/>
+   <remap from="depth/image"       to="/camera/aligned_depth_to_color/image_rect"/>
+   <remap from="rgb/camera_info"   to="/camera/color/camera_info"/>
+</node>
 
 <!-- 将图片导入rtbmap中开始重建 -->
 <include  file="$(find rtabmap_ros)/launch/rtabmap_rgbd.launch">
    <arg name="rtabmap_args"      value="--delete_db_on_start"/>
-   <arg name="rgb_topic"         value="/camera/color/image_rect"/>
-   <arg name="depth_topic"       value="/camera/aligned_depth_to_color/image_rect"/>
-   <arg name="camera_info_topic" value="/camera/color/camera_info"/>
+   <arg name="rgbd_topic"         value="/rgbd_image"/>
    <arg name="visual_odometry"   value="True"/>
-   <arg name="approx_sync"       value="false"/>
+   <arg name="rgbd_sync"       value="false"/>
+   <arg name="depth"       value="false"/>
    <arg name="frame_id"          value="camera_link"/>
    <arg name="rtabmapviz"        value="$(arg rtabmapviz)"/>
    <arg name="rviz"              value="$(arg rviz)"/>
