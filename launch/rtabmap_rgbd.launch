@@ -95,6 +95,23 @@
   <arg name="odom_expected_rate"       default="0"/>
   <arg name="use_odom_features"        default="false"/>
 
+  <!-- 视觉里程计参数
+    -"strategy"        : Strategy: 0=Frame-to-Map 1=Frame-to-Frame
+    -"feature"         : Feature type: 0=SURF 1=SIFT 2=ORB 3=FAST/FREAK 4=FAST/BRIEF 5=GFTT/FREAK 6=GFTT/BRIEF 7=BRISK
+    -"nn"              : Nearest neighbor strategy : 0=Linear, 1=FLANN_KDTREE, 2=FLANN_LSH, 3=BRUTEFORCE 
+                          Set to 1 for float descriptor like SIFT/SURF                  
+                          Set to 3 for binary descriptor like ORB/FREAK/BRIEF/BRISK  
+    -"max_depth"       : Maximum features depth (m)  
+    -"min_inliers"     : Minimum visual correspondences to accept a transformation (m)  
+    -"inlier_distance" : RANSAC maximum inliers distance (m)  
+   -->
+  <arg name="strategy"        default="0" />
+  <arg name="feature"         default="2" />
+  <arg name="nn"              default="3" />
+  <arg name="max_depth"       default="3.0" />
+  <arg name="min_inliers"     default="20" />
+  <arg name="inlier_distance" default="0.02" />
+
   <!-- IMU -->
   <arg name="imu_topic"                default="/imu/data"/>          <!-- only used with VIO approaches -->
   <arg name="wait_imu_to_init"         default="false"/>
@@ -161,7 +178,7 @@
       <param name="approx_sync_max_interval" type="double" value="$(arg approx_sync_max_interval)"/>
     </node>
 
-    <!-- Visual odometry -->
+    <!-- 视觉里程计 -->
     <group unless="$(arg icp_odometry)">
       <group if="$(arg visual_odometry)">
         <!-- RGB-D Odometry -->
@@ -173,6 +190,13 @@
           <remap from="odom"            to="$(arg odom_topic)"/>
           <remap from="imu"             to="$(arg imu_topic)"/>
       
+          <param name="Odom/Strategy"            type="string" value="$(arg strategy)"/> 
+          <param name="Vis/FeatureType"         type="string" value="$(arg feature)"/> 
+          <param name="Vis/CorNNType"           type="string" value="$(arg nn)"/>
+          <param name="Vis/MaxDepth"            type="string" value="$(arg max_depth)"/>  
+          <param name="Vis/MinInliers"          type="string" value="$(arg min_inliers)"/> 
+          <param name="Vis/InlierDistance"      type="string" value="$(arg inlier_distance)"/>   
+
           <param name="frame_id"                    type="string" value="$(arg frame_id)"/>
           <param name="odom_frame_id"               type="string" value="$(arg vo_frame_id)"/>
           <param name="publish_tf"                  type="bool"   value="$(arg publish_tf_odom)"/>
@@ -195,7 +219,7 @@
       </group>
     </group>
     
-    <!-- ICP Odometry -->
+    <!-- ICP 里程计 -->
     <node if="$(arg icp_odometry)" pkg="rtabmap_ros" type="icp_odometry" name="icp_odometry" clear_params="$(arg clear_params)" output="$(arg output)" args="$(arg rtabmap_args) $(arg odom_args)" launch-prefix="$(arg launch_prefix)">
       <remap from="scan"                   to="$(arg scan_topic)"/>
       <remap from="scan_cloud"             to="$(arg scan_cloud_topic)"/>
@@ -219,6 +243,7 @@
       <param name="max_update_rate"             type="double" value="$(arg odom_max_rate)"/>
     </node>
     
+    <!-- 进行点云的组装 -->
     <node if="$(arg scan_cloud_assembling)" pkg="rtabmap_ros" type="point_cloud_assembler" name="point_cloud_assembler" clear_params="$(arg clear_params)" output="$(arg output)">
       <remap     if="$(arg scan_cloud_filtered)" from="cloud" to="odom_filtered_input_scan"/>
       <remap unless="$(arg scan_cloud_filtered)" from="cloud" to="$(arg scan_cloud_topic)"/>
@@ -235,7 +260,7 @@
       <param name="wait_for_transform_duration" type="double" value="$(arg wait_for_transform)"/>
     </node>
   
-    <!-- Visual SLAM (robot side) -->
+    <!-- 主要进行SLAM的后端优化工作 -->
     <!-- args: "delete_db_on_start" and "udebug" -->
     <node name="rtabmap" pkg="rtabmap_ros" type="rtabmap" clear_params="$(arg clear_params)" output="$(arg output)" args="$(arg rtabmap_args)" launch-prefix="$(arg launch_prefix)">
       <param name="subscribe_depth"  type="bool" value="$(arg depth)"/>
@@ -288,13 +313,13 @@
       <remap from="odom"                   to="$(arg odom_topic)"/>
       <remap from="imu"                    to="$(arg imu_topic)"/>
       
-      <!-- localization mode -->
+      <!-- 开启定位模式 -->
       <param     if="$(arg localization)" name="Mem/IncrementalMemory" type="string" value="false"/>
       <param unless="$(arg localization)" name="Mem/IncrementalMemory" type="string" value="true"/>
       <param name="Mem/InitWMWithAllNodes" type="string" value="$(arg localization)"/>
     </node>
   
-    <!-- Visualisation RTAB-Map -->
+    <!-- rtabmapviz中可视化 -->
     <node if="$(arg rtabmapviz)" pkg="rtabmap_ros" type="rtabmapviz" name="rtabmapviz" args="-d $(arg gui_cfg)" clear_params="$(arg clear_params)" output="$(arg output)" launch-prefix="$(arg launch_prefix)">
       <param name="subscribe_depth"  type="bool" value="$(arg depth)"/>
       <param name="subscribe_rgb"        type="bool"   value="$(arg subscribe_rgb)"/>
@@ -327,7 +352,7 @@
   
   </group>
   
-  <!-- Visualization RVIZ -->
+  <!-- RVIZ中可视化 -->
   <node if="$(arg rviz)" pkg="rviz" type="rviz" name="rviz" args="-d $(arg rviz_cfg)"/>
   <node if="$(arg rviz)" pkg="nodelet" type="nodelet" name="points_xyzrgb" args="standalone rtabmap_ros/point_cloud_xyzrgb" clear_params="$(arg clear_params)" output="$(arg output)">
     <remap unless="$(arg subscribe_rgbd)" from="rgb/image"         to="$(arg rgb_topic_relay)"/>
