@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = /home/exdx/codes/catkin_rtab/src/rtabmap_ros/build
 include CMakeFiles/_rtabmap_ros_generate_messages_check_deps_SetGoal.dir/progress.make
 
 CMakeFiles/_rtabmap_ros_generate_messages_check_deps_SetGoal:
-	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py rtabmap_ros /home/exdx/codes/catkin_rtab/src/rtabmap_ros/srv/SetGoal.srv geometry_msgs/Pose:geometry_msgs/Point:geometry_msgs/Quaternion
+	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py rtabmap_ros /home/exdx/codes/catkin_rtab/src/rtabmap_ros/srv/SetGoal.srv geometry_msgs/Pose:geometry_msgs/Quaternion:geometry_msgs/Point
 
 _rtabmap_ros_generate_messages_check_deps_SetGoal: CMakeFiles/_rtabmap_ros_generate_messages_check_deps_SetGoal
 _rtabmap_ros_generate_messages_check_deps_SetGoal: CMakeFiles/_rtabmap_ros_generate_messages_check_deps_SetGoal.dir/build.make
