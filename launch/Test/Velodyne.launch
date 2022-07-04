@@ -5,57 +5,32 @@
   $ Show TF and /rtabmap/cloud_map topics
 -->
 
-<arg name="rtabmapviz"    default="true"/>
-<arg name="use_imu"       default="false"/> <!-- Assuming IMU fixed to lidar with /velodyne -> /imu_link TF -->
-<arg name="imu_topic"     default="/imu/data"/>
-<arg name="organize_cloud" default="false"/>
-<arg name="scan_topic"    default="/velodyne_points"/>
-<arg name="use_sim_time"  default="false"/>
-<param if="$(arg use_sim_time)" name="use_sim_time" value="true"/>
-
+<arg name="rtabmapviz" default="true"/>
+<arg name="rviz"       default="false"/>
 <arg name="frame_id"        default="velodyne"/>
-<arg name="queue_size"      default="10"/> <!-- Set to 100 for kitti dataset to make sure all scans are processed -->
-<arg name="queue_size_odom" default="1"/>  <!-- Set to 100 for kitti dataset to make sure all scans are processed -->
-<arg name="loop_ratio"      default="0.2"/>
+<arg name="scan_topic"    default="/velodyne_points"/>
+<arg name="organize_cloud" default="true"/>
 
-<arg name="resolution"         default="0.1"/> <!-- set 0.1-0.3 for indoor, set 0.3-0.5 for outdoor (0.4 for kitti) -->
-<arg name="iterations"         default="10"/>
+<!-- 开启雷达 -->
+<include file="$(find velodyne_pointcloud)/launch/VLP16_points.launch">
+  <arg name="organize_cloud" value="$(arg organize_cloud)"/>
+</include>  
 
-<!-- Grid parameters -->
-<arg name="ground_is_obstacle" default="true"/>
-<arg name="grid_max_range"     default="20"/>
-
-<!-- For F2M Odometry -->
-<arg name="ground_normals_up" default="false"/> <!-- set to true when velodyne is always horizontal to ground (ground robot, car, kitti) -->
-<arg name="local_map_size"    default="15000"/>
-<arg name="key_frame_thr"     default="0.8"/>
-
-<!-- For FLOAM Odometry -->
-<arg name="floam"    default="false"/> <!-- RTAB-Map should be built with FLOAM http://official-rtab-map-forum.206.s1.nabble.com/icp-odometry-with-LOAM-crash-tp8261p8563.html -->
-<arg name="floam_sensor" default="0"/> <!-- 0=16 rings (VLP16), 1=32 rings, 2=64 rings (kitti dataset) -->
-    
-<include unless="$(arg use_sim_time)" file="$(find velodyne_pointcloud)/launch/VLP16_points.launch">
-    <arg name="organize_cloud" value="$(arg organize_cloud)"/>
-</include>
-
+<!-- 开启SLAM -->
 <include  file="$(find rtabmap_ros)/launch/rtabmap_rgbd.launch">
-   <arg name="rtabmap_args"      value="--delete_db_on_start"/>
+  <arg name="rtabmap_args"      value="--delete_db_on_start"/>
 
-   <arg name="subscribe_rgbd"  value="true"/>
-   <arg name="rgbd_topic"         value="/rgbd_image"/>
-   <arg name="subscribe_rgb"  value="false"/>
-   
-   <arg name="depth_topic"  value="/camera/aligned_depth_to_color/image_rect"/>
-   <arg name="depth_camera_info_topic"  value="/camera/color/camera_info"/>
-   <arg name="gen_cloud"  value="true"/>
+  <arg name="subscribe_rgbd"    value="false"/>
+  <arg name="subscribe_rgb"     value="false"/>
+  <arg name="subscribe_scan"    value="true"/>
+  <arg name="scan_cloud_topic"  value="$(arg scan_topic)"/>
+  
+  <arg name="icp_odometry"  value="true"/>
+  <arg name="visual_odometry"   value="false"/>
 
-   <arg name="icp_odometry"  value="true"/>
-   <arg name="visual_odometry"   value="false"/>
-
-   <arg name="rgbd_sync"       value="false"/>
-   <arg name="frame_id"          value="camera_link"/>
-   <arg name="rtabmapviz"        value="$(arg rtabmapviz)"/>
-   <arg name="rviz"              value="$(arg rviz)"/>
+  <arg name="frame_id"          value="$(arg frame_id)"/>
+  <arg name="rtabmapviz"        value="$(arg rtabmapviz)"/>
+  <arg name="rviz"              value="$(arg rviz)"/>
 </include>
 
 </launch>

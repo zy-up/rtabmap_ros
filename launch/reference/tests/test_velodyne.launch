@@ -14,7 +14,7 @@
     <arg name="use_imu"       default="false"/> <!-- Assuming IMU fixed to lidar with /velodyne -> /imu_link TF -->
     <arg name="imu_topic"     default="/imu/data"/>
     <arg name="scan_20_hz"    default="false"/> <!-- If we launch the velodyne with "rpm:=1200" argument -->
-    <arg name="organize_cloud" default="false"/>
+    <arg name="organize_cloud" default="true"/>
     <arg name="scan_topic"    default="/velodyne_points"/>
     <arg name="use_sim_time"  default="false"/>
     <param if="$(arg use_sim_time)" name="use_sim_time" value="true"/>

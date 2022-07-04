@@ -1,8 +1,7 @@
 <launch>
   <!-- Choose between depth and stereo, set both to false to do only scan -->      
-  <arg name="stereo"                    default="false"/>
-  <arg     if="$(arg stereo)" name="depth"  default="false"/>
-  <arg unless="$(arg stereo)" name="depth"  default="true"/>
+  <arg name="stereo" default="false"/>
+  <arg name="depth"  default="false"/>
   <arg name="subscribe_rgb"  default="$(arg depth)"/>
  
   <!-- Choose visualization -->
