@@ -12,6 +12,7 @@
 <!-- 开启雷达 -->
 <include file="$(find velodyne_pointcloud)/launch/VLP16_points.launch">
   <arg name="organize_cloud" value="$(arg organize_cloud)"/>
+  <!-- <arg name="cut_angle" value="5.24" /> -->
 </include>  
 
 <!-- 开启SLAM -->
