@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = /home/exdx/codes/catkin_rtab/src/rtabmap_ros/build
 include CMakeFiles/_rtabmap_ros_generate_messages_check_deps_RGBDImage.dir/progress.make
 
 CMakeFiles/_rtabmap_ros_generate_messages_check_deps_RGBDImage:
-	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py rtabmap_ros /home/exdx/codes/catkin_rtab/src/rtabmap_ros/msg/RGBDImage.msg rtabmap_ros/KeyPoint:rtabmap_ros/Point3f:rtabmap_ros/Point2f:std_msgs/Header:sensor_msgs/RegionOfInterest:rtabmap_ros/GlobalDescriptor:sensor_msgs/CameraInfo:sensor_msgs/CompressedImage:sensor_msgs/Image
+	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py rtabmap_ros /home/exdx/codes/catkin_rtab/src/rtabmap_ros/msg/RGBDImage.msg std_msgs/Header:rtabmap_ros/GlobalDescriptor:rtabmap_ros/KeyPoint:rtabmap_ros/Point3f:sensor_msgs/CompressedImage:sensor_msgs/RegionOfInterest:rtabmap_ros/Point2f:sensor_msgs/Image:sensor_msgs/CameraInfo
 
 _rtabmap_ros_generate_messages_check_deps_RGBDImage: CMakeFiles/_rtabmap_ros_generate_messages_check_deps_RGBDImage
 _rtabmap_ros_generate_messages_check_deps_RGBDImage: CMakeFiles/_rtabmap_ros_generate_messages_check_deps_RGBDImage.dir/build.make
