@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = /home/exdx/codes/catkin_rtab/src/rtabmap_ros/build
 include CMakeFiles/_rtabmap_ros_generate_messages_check_deps_GetPlan.dir/progress.make
 
 CMakeFiles/_rtabmap_ros_generate_messages_check_deps_GetPlan:
-	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py rtabmap_ros /home/exdx/codes/catkin_rtab/src/rtabmap_ros/srv/GetPlan.srv std_msgs/Header:geometry_msgs/Pose:rtabmap_ros/Path:geometry_msgs/PoseStamped:geometry_msgs/Point:geometry_msgs/Quaternion
+	catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py rtabmap_ros /home/exdx/codes/catkin_rtab/src/rtabmap_ros/srv/GetPlan.srv geometry_msgs/Point:rtabmap_ros/Path:std_msgs/Header:geometry_msgs/PoseStamped:geometry_msgs/Quaternion:geometry_msgs/Pose
 
 _rtabmap_ros_generate_messages_check_deps_GetPlan: CMakeFiles/_rtabmap_ros_generate_messages_check_deps_GetPlan
 _rtabmap_ros_generate_messages_check_deps_GetPlan: CMakeFiles/_rtabmap_ros_generate_messages_check_deps_GetPlan.dir/build.make
