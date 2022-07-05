@@ -5,8 +5,6 @@
   $ Show TF and /rtabmap/cloud_map topics
 -->
 
-<arg name="rtabmapviz" default="true"/>
-<arg name="rviz"       default="false"/>
 <arg name="frame_id"        default="velodyne"/>
 <arg name="scan_topic"    default="/velodyne_points"/>
 <arg name="organize_cloud" default="true"/>
@@ -17,20 +15,17 @@
 </include>  
 
 <!-- 开启SLAM -->
-<include  file="$(find rtabmap_ros)/launch/rtabmap_rgbd.launch">
+<include  file="$(find rtabmap_ros)/launch/rtabmap_lidar.launch">
   <arg name="rtabmap_args"      value="--delete_db_on_start"/>
 
-  <arg name="subscribe_rgbd"    value="false"/>
-  <arg name="subscribe_rgb"     value="false"/>
-  <arg name="subscribe_scan"    value="true"/>
+  <arg name="gen_depth"    value="true"/>
+  <arg name="subscribe_scan_cloud"    value="true"/>
   <arg name="scan_cloud_topic"  value="$(arg scan_topic)"/>
   
   <arg name="icp_odometry"  value="true"/>
   <arg name="visual_odometry"   value="false"/>
 
   <arg name="frame_id"          value="$(arg frame_id)"/>
-  <arg name="rtabmapviz"        value="$(arg rtabmapviz)"/>
-  <arg name="rviz"              value="$(arg rviz)"/>
 </include>
 
 </launch>
