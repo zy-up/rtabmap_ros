@@ -1,4 +1,9 @@
 <launch>
+
+  <arg name="iterations"         default="15"/>
+  <arg name="resolution"         default="0.1"/>
+  <arg name="ground_normals_up" default="false"/>
+
   <!-- Choose visualization -->
   <arg name="rtabmapviz"              default="true" /> 
   
@@ -108,6 +113,18 @@
       <param name="scan_cloud_max_points"       type="int"    value="$(arg scan_cloud_max_points)"/>
       <param name="expected_update_rate"        type="double" value="$(arg odom_expected_rate)"/>
       <param name="max_update_rate"             type="double" value="$(arg odom_max_rate)"/>
+
+      <param name="Icp/PointToPlane"        type="string" value="true"/>
+      <param name="Icp/Iterations"          type="string" value="$(arg iterations)"/>
+      <param name="Icp/Epsilon"             type="string" value="0.001"/>
+      <param name="Icp/PointToPlaneRadius"  type="string" value="0"/>
+      <param name="Icp/MaxTranslation"      type="string" value="2"/>
+      <param name="Icp/MaxCorrespondenceDistance" type="string" value="$(eval resolution*10)"/>
+      <param name="Icp/Strategy"                  type="string" value="1"/> 
+      <param name="Icp/OutlierRatio"      type="string" value="0.85"/>
+      <param name="Icp/CorrespondenceRatio" type="string" value="0.01"/> 
+      <param if="$(arg ground_normals_up)" name="Icp/PointToPlaneGroundNormalsUp"  type="string" value="0.8"/>
+
     </node>
     
     <node if="$(arg scan_cloud_assembling)" pkg="rtabmap_ros" type="point_cloud_assembler" name="point_cloud_assembler" clear_params="$(arg clear_params)" output="$(arg output)">
