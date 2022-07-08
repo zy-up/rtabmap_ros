@@ -38,6 +38,15 @@ This section shows how to install RTAB-Map ros-pkg on **ROS Hydro/Indigo/Jade/Ki
     $ make -j6
     $ sudo make install
     ```
+if you meet this problem:
+    ```bash
+    rtabmap: error while loading shared libraries: librtabmap_gui.so.0.20: cannot open shared object file: No such file or directory
+    ```
+Run:
+    ```bash
+    sudo ldconfig
+    ```bash
+
 
 3. Install RTAB-Map ros-pkg in your src folder of your Catkin workspace.
  
