@@ -56,9 +56,10 @@ using namespace rtabmap;
 
 namespace rtabmap_ros
 {
-
+// 公共继承 rtabmap_ros::OdometryROS 类，其中包含了里程计的通用成员
 class RGBDOdometry : public rtabmap_ros::OdometryROS
 {
+// 公共成员，构造与析构函数
 public:
 	RGBDOdometry() :
 		OdometryROS(false, true, false),
@@ -116,12 +117,13 @@ public:
 	}
 
 private:
-
+	// 针对RGBD相机里程计的初始化
 	virtual void onOdomInit()
 	{
 		ros::NodeHandle & nh = getNodeHandle();
 		ros::NodeHandle & pnh = getPrivateNodeHandle();
 
+		// 参数传递
 		int rgbdCameras = 1;
 		bool approxSync = true;
 		bool subscribeRGBD = false;
@@ -153,6 +155,8 @@ private:
 		NODELET_INFO("RGBDOdometry: rgbd_cameras   = %d", rgbdCameras);
 		NODELET_INFO("RGBDOdometry: keep_color     = %s", keepColor_?"true":"false");
 
+		// 读取的是RGBD整合好的消息,还是分开的.如果是多相机,就仅支持RGBD输入
+		// 如果是单相机为:rgbd_image   多相机是rgbd_image0 到 rgbd_image4
 		std::string subscribedTopicsMsg;
 		if(subscribeRGBD)
 		{
@@ -175,6 +179,7 @@ private:
 
 				if(rgbdCameras == 2)
 				{
+					// 多相机的近似同步还是精确同步
 					if(approxSync)
 					{
 						approxSync2_ = new message_filters::Synchronizer<MyApproxSync2Policy>(
@@ -359,6 +364,8 @@ private:
 		this->startWarningThread(subscribedTopicsMsg, approxSync);
 	}
 
+	// 对特殊设置进行纠正,RGBD里程计使用视觉注册
+	// 多相机的运动估计算法为 3D->3D     0:3D->3D, 1:3D->2D (PnP), 2:2D->2D 
 	virtual void updateParameters(ParametersMap & parameters)
 	{
 		//make sure we are using Reg/Strategy=0

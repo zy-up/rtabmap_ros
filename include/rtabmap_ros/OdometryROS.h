@@ -49,25 +49,32 @@ class Odometry;
 }
 
 namespace rtabmap_ros {
-
+// 创建一个 nodelet 里程计节点
 class OdometryROS : public nodelet::Nodelet
 {
 
 public:
+	// 构造函数与析构函数
 	OdometryROS(bool stereoParams, bool visParams, bool icpParams);
 	virtual ~OdometryROS();
 
+	// 核心数据处理函数
 	void processData(rtabmap::SensorData & data, const std_msgs::Header & header);
-
+	
+	// 重置里程计
 	bool reset(std_srvs::Empty::Request&, std_srvs::Empty::Response&);
 	bool resetToPose(rtabmap_ros::ResetPose::Request&, rtabmap_ros::ResetPose::Response&);
+	// 暂停里程计
 	bool pause(std_srvs::Empty::Request&, std_srvs::Empty::Response&);
+	// 重启里程计
 	bool resume(std_srvs::Empty::Request&, std_srvs::Empty::Response&);
+	// 开启日志
 	bool setLogDebug(std_srvs::Empty::Request&, std_srvs::Empty::Response&);
 	bool setLogInfo(std_srvs::Empty::Request&, std_srvs::Empty::Response&);
 	bool setLogWarn(std_srvs::Empty::Request&, std_srvs::Empty::Response&);
 	bool setLogError(std_srvs::Empty::Request&, std_srvs::Empty::Response&);
 
+	// 获取帧信息
 	const std::string & frameId() const {return frameId_;}
 	const std::string & odomFrameId() const {return odomFrameId_;}
 	const rtabmap::ParametersMap & parameters() const {return parameters_;}
@@ -75,19 +82,25 @@ public:
 	rtabmap::Transform getTransform(const std::string & fromFrameId, const std::string & toFrameId, const ros::Time & stamp) const;
 
 protected:
+	// 警报功能，如果没有收到订阅的信息，则出现警报
 	void startWarningThread(const std::string & subscribedTopicsMsg, bool approxSync);
+	// 开启订阅信息接收，并开启警报
 	void callbackCalled() {callbackCalled_ = true;}
 
+	// 定义纯虚函数，用于传感器信息的同步
 	virtual void flushCallbacks() = 0;
 	tf::TransformListener & tfListener() {return tfListener_;}
 	virtual void postProcessData(const rtabmap::SensorData & data, const std_msgs::Header & header) const {}
 
 private:
+	// 警报输出
 	void warningLoop(const std::string & subscribedTopicsMsg, bool approxSync);
+	// nodelet初始化函数，主要是对参数的设置，并调用 onOdomInit 纯函数以及 updateParameters 纯函数
 	virtual void onInit();
 	virtual void onOdomInit() = 0;
 	virtual void updateParameters(rtabmap::ParametersMap & parameters) {}
 
+	// 订阅IMU信息
 	void callbackIMU(const sensor_msgs::ImuConstPtr& msg);
 	void reset(const rtabmap::Transform & pose = rtabmap::Transform::getIdentity());
 

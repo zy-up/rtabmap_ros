@@ -35,11 +35,11 @@ int main(int argc, char **argv)
 	ULogger::setType(ULogger::kTypeConsole);
 	ULogger::setLevel(ULogger::kWarning);
 
-	// RGBD特征点里程计
+	// RGBD里程计
 	ros::init(argc, argv, "rgbd_odometry");
 	ROS_INFO("Start the rgbd_odometry node!!!!!!!!");
 
-	// process "--params" argument
+	// 处理传入的参数，并且将设置的参数打印出来
 	nodelet::V_string nargv;
 	for(int i=1;i<argc;++i)
 	{
@@ -73,8 +73,11 @@ int main(int argc, char **argv)
 	}
 
 	nodelet::Loader nodelet;
+	// 获取那些消息端口是转发的
 	nodelet::M_string remap(ros::names::getRemappings());
+	// 当前节点名
 	std::string nodelet_name = ros::this_node::getName();
+	// 启动里程计节点
 	nodelet.load(nodelet_name, "rtabmap_ros/rgbd_odometry", remap, nargv);
 	ros::spin();
 	return 0;
