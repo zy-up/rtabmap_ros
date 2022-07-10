@@ -135,7 +135,7 @@ CoreWrapper::CoreWrapper() :
 	globalPose_.header.stamp = ros::Time(0);
 }
 
-// 初始化函数
+// nodelet 初始化函数,主要是参数设置,订阅与发布topic/server
 void CoreWrapper::onInit()
 {
 	ros::NodeHandle & nh = getNodeHandle();
