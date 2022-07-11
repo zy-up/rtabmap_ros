@@ -43,6 +43,7 @@
    <remap from="rgb/camera_info"   to="/camera/color/camera_info"/>
 </node>
 
+<!-- 将深度图转化为点云用于ICP -->
 <node pkg="nodelet" type="nodelet" name="gen_cloud" args="load rtabmap_ros/point_cloud_xyz manager">
    <remap from="depth/image"       to="/camera/aligned_depth_to_color/image_rect"/>
    <remap from="depth/camera_info" to="/camera/aligned_depth_to_color/camera_info"/>
