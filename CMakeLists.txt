@@ -578,6 +578,9 @@ catkin_install_python(PROGRAMS
   scripts/netvlad_tf_ros.py
   scripts/wifi_signal_pub.py
   scripts/gazebo_ground_truth.py
+  launch/Test/image_circle.py
+  launch/Test/rgndimage_circle.py
+  launch/Test/check_topic.py
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
 
