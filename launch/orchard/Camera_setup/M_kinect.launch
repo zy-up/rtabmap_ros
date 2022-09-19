@@ -2,7 +2,7 @@
   <group ns="M_k4a" >
     <!-- 生成一个 nodelet 管理器 -->
     <node pkg="nodelet" type="nodelet" name="manager_M" args="manager" output="screen">
-      <param name="num_worker_threads" value="16" />
+      <param name="num_worker_threads" value="32" />
     </node>
 
     <!-- 生成一个 image_proc/rectify nodelet 来校正 RGB 图像 -->
@@ -49,11 +49,16 @@
       <param name="depth_enabled"     value="true" />
       <param name="depth_mode"        value="NFOV_UNBINNED" />
       <param name="color_enabled"     value="true" />
-      <param name="color_resolution"  value="1536P" />
-      <param name="fps"               value="15" />
+      <param name="color_resolution"  value="1080P" />
+      <param name="fps"               value="5" />
       <param name="point_cloud"       value="false" />
       <param name="rgb_point_cloud"   value="false" />
       <param name="required"          value="true" />
+
+      <!-- 设置为同步从相机 -->
+      <!-- <param name="wired_sync_mode"    type="int"      value="2" />
+      <param name="subordinate_delay_off_master_usec"    type="int"      value="160" /> -->
+
       <!-- 设置相机串口号 000470313012(high) 000481112312(mid)  000475513012(low) -->  
       <param name="sensor_sn"  type="string"  value="000481112312" />   
       <param name="tf_prefix"         value="M_" />
