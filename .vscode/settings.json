@@ -1,3 +1,10 @@
 {
-    "C_Cpp.errorSquiggles": "Disabled"
+    "C_Cpp.errorSquiggles": "Disabled",
+    "python.autoComplete.extraPaths": [
+        "/home/sbdx/Codes/catkin_rtab/devel/lib/python3/dist-packages",
+        "/home/sbdx/Codes/catkin_lidar/devel/lib/python3/dist-packages",
+        "/home/sbdx/Codes/catkin_imu/devel/lib/python3/dist-packages",
+        "/home/sbdx/Codes/catkin_test/devel/lib/python3/dist-packages",
+        "/opt/ros/noetic/lib/python3/dist-packages"
+    ]
 }
