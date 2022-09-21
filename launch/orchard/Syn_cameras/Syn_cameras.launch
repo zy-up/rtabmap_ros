@@ -1,0 +1,82 @@
+<launch>
+
+  <group ns="H_k4a" >
+    <node pkg="nodelet" type="nodelet" name="manager_H" args="manager" output="screen">
+      <param name="num_worker_threads" value="32" />
+    </node>
+
+    <node pkg="nodelet" type="nodelet" name="k4a_ros_bridge_H"
+          args="load Azure_Kinect_ROS_Driver/K4AROSBridgeNodelet manager_H --no-bond"
+          respawn="true">
+      <param name="depth_enabled"     value="true" />
+      <param name="depth_mode"        value="NFOV_UNBINNED" />
+      <param name="color_enabled"     value="true" />  
+      <param name="color_resolution"  value="720P" />
+      <param name="fps"               value="5" />
+      <param name="point_cloud"       value="false" />
+      <param name="rgb_point_cloud"   value="false" />
+
+      <param name="wired_sync_mode"    type="int"      value="2" />
+      <param name="subordinate_delay_off_master_usec"    type="int"      value="200" />
+
+      <param name="sensor_sn"  type="string"  value="000470313012" />   
+      <param name="tf_prefix"         value="H_" />
+    </node>
+  </group>
+
+  <group ns="M_k4a" >
+    <node pkg="nodelet" type="nodelet" name="manager_M" args="manager" output="screen">
+      <param name="num_worker_threads" value="32" />
+    </node>
+
+    <node pkg="nodelet" type="nodelet" name="k4a_ros_bridge_M"
+          args="load Azure_Kinect_ROS_Driver/K4AROSBridgeNodelet manager_M --no-bond"
+          respawn="true">
+      <param name="depth_enabled"     value="true" />
+      <param name="depth_mode"        value="NFOV_UNBINNED" />
+      <param name="color_enabled"     value="true" />
+      <param name="color_resolution"  value="720P" />
+      <param name="fps"               value="5" />
+      <param name="point_cloud"       value="false" />
+      <param name="rgb_point_cloud"   value="false" />
+
+      <param name="sensor_sn"  type="string"  value="000481112312" />   
+      <param name="tf_prefix"         value="M_" />
+    </node>
+  </group>
+
+
+  <group ns="L_k4a" >
+    <!-- 生成一个 nodelet 管理器 -->
+    <node pkg="nodelet" type="nodelet" name="manager_L" args="manager" output="screen">
+      <param name="num_worker_threads" value="32" />
+    </node>
+
+    <!-- 加载相机并开始发布RGBD消息，并关闭了原始的点云输出（质量低），将由image_proc先处理数据后，再将RGBD合成点云 -->
+    <!-- 加载的是单独开发的Nodelet节点K4AROSBridgeNodelet -->
+    <!-- 720P 1080P 1440P 1536P 2160P 3072P -->
+    <!-- NFOV_2X2BINNED 320x288 NFOV_UNBINNED 640x576 WFOV_2X2BINNED 512x512 WFOV_UNBINNED 1024x1024 -->
+    <node pkg="nodelet" type="nodelet" name="k4a_ros_bridge_L"
+          args="load Azure_Kinect_ROS_Driver/K4AROSBridgeNodelet manager_L --no-bond"
+          respawn="true">
+      <param name="depth_enabled"     value="true" />
+      <param name="depth_mode"        value="NFOV_UNBINNED" />
+      <param name="color_enabled"     value="true" />
+      <param name="color_resolution"  value="720P" />
+      <param name="fps"               value="5" />
+      <param name="point_cloud"       value="false" />
+      <param name="rgb_point_cloud"   value="false" />
+      <!-- <param name="required"          value="true" /> -->
+      <!-- <param name="imu_rate_target"   value="1000" /> -->
+
+      <!-- 设置为同步主相机 -->
+      <param name="wired_sync_mode"    type="int"      value="1" />
+
+      <!-- 设置相机串口号 000470313012(high) 000481112312(mid)  000475513012(low) -->  
+      <param name="sensor_sn"  type="string"  value="000475513012" />   
+      <param name="tf_prefix"         value="L_" />
+    </node>
+
+  </group>
+
+</launch>

@@ -12,7 +12,7 @@
       <!-- image_mono：未矫正的的图像  image_rect经过校正后的图像  -->
       <remap from="image_mono"  to="rgb_to_depth/image_raw" />
       <param name="interpolation"  value="0" />
-      <param name="queue_size"  value="2" />
+      <param name="queue_size"  value="1" />
       <!-- <remap from="camera_info"  to="rgb_to_depth/camera_info" /> -->
       <remap from="image_rect"  to="rgb_to_depth/image_rect" />
     </node>
@@ -24,7 +24,7 @@
       <!-- image_mono：未矫正的的图像  image_rect经过校正后的图像  -->
       <remap from="image_mono"  to="rgb/image_raw" />
       <param name="interpolation"  value="0" />
-      <param name="queue_size"  value="2" />
+      <param name="queue_size"  value="1" />
       <!-- <remap from="camera_info"  to="rgb_to_depth/camera_info" /> -->
       <remap from="image_rect"  to="rgb/image_rect" />
     </node>
@@ -36,7 +36,7 @@
       <!-- image_mono：未矫正的的图像  image_rect经过校正后的图像  -->
       <remap from="image_mono"  to="depth/image_raw" />
       <param name="interpolation"  value="0" />
-      <param name="queue_size"  value="2" />
+      <param name="queue_size"  value="1" />
       <!-- <remap from="camera_info"  to="depth/camera_info" /> -->
       <remap from="image_rect"  to="depth/image_rect" />
     </node>
@@ -51,26 +51,24 @@
       <param name="depth_enabled"     value="true" />
       <param name="depth_mode"        value="NFOV_UNBINNED" />
       <param name="color_enabled"     value="true" />
-      <param name="color_resolution"  value="1080P" />
+      <param name="color_resolution"  value="720P" />
       <param name="fps"               value="5" />
       <param name="point_cloud"       value="false" />
       <param name="rgb_point_cloud"   value="false" />
       <param name="required"          value="true" />
-      <param name="imu_rate_target"   value="100" />
+      <!-- <param name="imu_rate_target"   value="1000" /> -->
 
-      <!-- 设置为同步主相机 -->
-      <!-- <param name="wired_sync_mode"    type="int"      value="1" /> -->
 
-      <!-- 设置相机串口号 000470313012(high) 000481112312(mid)  000475513012(low) -->  
+      <!-- 设置相机串口号 000470313012(low) 000481112312(high)  000475513012(high) -->  
       <param name="sensor_sn"  type="string"  value="000475513012" />   
       <param name="tf_prefix"         value="L_" />
     </node>
 
-    <node pkg="nodelet" type="nodelet" name="rgbd_sync_L" args="load rtabmap_ros/rgbd_sync manager_L">
+    <!-- <node pkg="nodelet" type="nodelet" name="rgbd_sync_L" args="load rtabmap_ros/rgbd_sync manager_L">
       <remap from="rgb/image"         to="rgb_to_depth/image_rect"/>
       <remap from="depth/image"       to="depth/image_rect"/>
       <remap from="rgb/camera_info"   to="depth/camera_info"/>
-    </node>
+    </node> -->
 
   </group>
 
