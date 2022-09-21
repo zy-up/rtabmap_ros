@@ -66,11 +66,11 @@
       <param name="tf_prefix"         value="H_" />
     </node>
 
-    <!-- <node pkg="nodelet" type="nodelet" name="rgbd_sync_H" args="load rtabmap_ros/rgbd_sync manager_H">
+    <node pkg="nodelet" type="nodelet" name="rgbd_sync_H" args="load rtabmap_ros/rgbd_sync manager_H">
       <remap from="rgb/image"         to="rgb_to_depth/image_rect"/>
       <remap from="depth/image"       to="depth/image_rect"/>
       <remap from="rgb/camera_info"   to="depth/camera_info"/>
-    </node> -->
+    </node>
 
   </group>
 
