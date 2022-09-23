@@ -13,14 +13,16 @@ from rtabmap_ros.msg import RGBDImage
 class image_converter:
 
   def __init__(self):
-    self.image_sub = rospy.Subscriber("/camera/color/image_rect", Image,self.callback)
-    self.depth_sub = rospy.Subscriber("/camera/aligned_depth_to_color/image_rect",Image,self.depthcallback)
+    self.image_sub = rospy.Subscriber("/L_k4a/rgb_to_depth/image_rect", Image,self.callback)
+    self.depth_sub = rospy.Subscriber("/L_k4a/depth/image_rect",Image,self.depthcallback)
 
   def depthcallback(self,data):
-    print("depth:"+ str(data.encoding))
+    print("depth height:"+ str(data.height))
+    print("depth width:"+ str(data.width))
 
   def callback(self,data):
-    print("rgb:"+ str(data.encoding))
+    print("rgb height:"+ str(data.height))
+    print("rgb width:"+ str(data.width))
 
 
 def main(args):

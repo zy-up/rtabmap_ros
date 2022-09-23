@@ -184,9 +184,7 @@ if __name__ == '__main__':
                 m_t = listener.fromTranslationRotation(trans_t,rot_t)
                 source_cloud_num_points = np.asarray(source_cloud_o3d.points).shape[0]
                 target_cloud_num_points = np.asarray(target_cloud_o3d.points).shape[0]
-                # rospy.loginfo("source_cloud: {}: target_cloud: {} .".format(source_cloud_num_points, target_cloud_num_points))
-                
-                # saveCurrentRGBD(source_cloud_o3d, target_cloud_o3d)
+
                 if Init_times:
                     source_fpfh, target_fpfh = icp.data_preprocessing(source_cloud_o3d, target_cloud_o3d, 0.045)
                     result_ransac = icp.execute_global_registration(source_cloud_o3d, target_cloud_o3d,source_fpfh, target_fpfh, 0.045)
