@@ -62,7 +62,7 @@
       <param name="subordinate_delay_off_master_usec"    type="int"      value="200" />
 
       <!-- 设置相机串口号 000470313012(low) 000481112312(high)  000475513012(high) -->  
-      <param name="sensor_sn"  type="string"  value="000481112312" />   
+      <param name="sensor_sn"  type="string"  value="000470313012" />   
       <param name="tf_prefix"         value="H_" />
     </node>
 
