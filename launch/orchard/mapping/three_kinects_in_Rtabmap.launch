@@ -18,7 +18,7 @@
    <arg name="strategy"        default="0" />
    <arg name="feature"         default="5" />
    <arg name="nn"              default="3" />
-   <arg name="max_depth"       default="1.0" />
+   <arg name="max_depth"       default="3.0" />
    <arg name="min_inliers"     default="20" />
    <arg name="inlier_distance" default="0.15" />
    <arg name="local_map"       default="1000" />
