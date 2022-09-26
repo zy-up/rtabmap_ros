@@ -19,7 +19,7 @@
   <arg name="gui_cfg"                 default="~/.ros/rtabmap_gui.ini" />
   <arg name="rviz_cfg"                default="$(find rtabmap_ros)/launch/config/rgbd.rviz" />
   
-  <arg name="frame_id"                default="camera_link"/>     <!-- Fixed frame id, you may set "base_link" or "base_footprint" if they are published -->
+  <arg name="frame_id"                default="L_camera_base"/>     <!-- Fixed frame id, you may set "base_link" or "base_footprint" if they are published -->
   <arg name="odom_frame_id"           default=""/>                <!-- If set, TF is used to get odometry instead of the topic -->
   <arg name="odom_frame_id_init"      default=""/>                <!-- If set, TF map->odom is published even if no odometry topic has been received yet. The frame id should match the one in the topic. -->
   <arg name="map_frame_id"            default="map"/>
@@ -44,8 +44,8 @@
    
   <!-- RGB-D related topics -->
   <arg name="rgb_topic"               default="/camera/rgb/image_rect_color" />
-  <arg name="depth_topic"             default="/camera/depth_registered/image_raw" />
-  <arg name="camera_info_topic"       default="/camera/rgb/camera_info" />
+  <arg name="depth_topic"             default="/L_k4a/depth/image_rect" />
+  <arg name="camera_info_topic"       default="/L_k4a/depth/camera_info" />
   <arg name="depth_camera_info_topic" default="$(arg camera_info_topic)" />
   
   <!-- Already synchronized RGB-D related topic, with rtabmap_ros/rgbd_sync nodelet -->
@@ -57,7 +57,7 @@
   <arg name="rgbd_decimation"         default="1" />
   
   <!-- 从深度图中产生点云 -->
-  <arg name="gen_cloud"               default="false"/> <!-- only works with depth image and if not subscribing to scan_cloud topic-->
+  <arg name="gen_cloud"               default="true"/> <!-- only works with depth image and if not subscribing to scan_cloud topic-->
   <arg name="gen_cloud_decimation"    default="4"/>
   <arg name="gen_cloud_voxel"         default="0.05"/>
    
@@ -79,8 +79,8 @@
   <arg name="gen_depth_fill_holes_error" default="0.1" />
    
   <!-- 里程计参数设置 -->
-  <arg name="visual_odometry"          default="true"/>          <!-- Launch rtabmap visual odometry node -->
-  <arg name="icp_odometry"             default="false"/>         <!-- Launch rtabmap icp odometry node -->
+  <arg name="visual_odometry"          default="false"/>          <!-- Launch rtabmap visual odometry node -->
+  <arg name="icp_odometry"             default="true"/>         <!-- Launch rtabmap icp odometry node -->
   <arg name="odom_topic"               default="odom"/>          <!-- Odometry topic name -->
   <arg name="vo_frame_id"              default="$(arg odom_topic)"/> <!-- Visual/Icp odometry frame ID for TF -->
   <arg name="publish_tf_odom"          default="true"/>
@@ -206,7 +206,7 @@
     </node>
     
     <!-- 进行点云的组装 -->
-    <node if="$(arg scan_cloud_assembling)" pkg="rtabmap_ros" type="point_cloud_assembler" name="point_cloud_assembler" clear_params="$(arg clear_params)" output="$(arg output)">
+    <!-- <node if="$(arg scan_cloud_assembling)" pkg="rtabmap_ros" type="point_cloud_assembler" name="point_cloud_assembler" clear_params="$(arg clear_params)" output="$(arg output)">
       <remap     if="$(arg scan_cloud_filtered)" from="cloud" to="odom_filtered_input_scan"/>
       <remap unless="$(arg scan_cloud_filtered)" from="cloud" to="$(arg scan_cloud_topic)"/>
 
@@ -220,7 +220,7 @@
       <param name="noise_radius"        type="double" value="$(arg scan_cloud_assembling_noise_radius)"/>
       <param name="noise_min_neighbors" type="int"    value="$(arg scan_cloud_assembling_noise_min_neighbors)"/>
       <param name="wait_for_transform_duration" type="double" value="$(arg wait_for_transform)"/>
-    </node>
+    </node> -->
   
     <!-- 主要进行SLAM的后端优化工作 -->
     <!-- args: "delete_db_on_start" and "udebug" -->
@@ -258,12 +258,10 @@
       <param name="gen_depth_fill_iterations"  type="int"    value="$(arg gen_depth_fill_iterations)" />
       <param name="gen_depth_fill_holes_error" type="double" value="$(arg gen_depth_fill_holes_error)" />
       
-      <remap from="rgb/image"       to="$(arg rgb_topic_relay)"/>
-      <remap from="depth/image"     to="$(arg depth_topic_relay)"/>
-      <remap from="rgb/camera_info" to="$(arg camera_info_topic)"/>
-      
-      <remap     if="$(arg use_odom_features)" from="rgbd_image" to="odom_rgbd_image"/>
-      <remap unless="$(arg use_odom_features)" from="rgbd_image" to="$(arg rgbd_topic_relay)"/>
+      <param name="rgbd_cameras"       type="int"    value="3"/>
+      <remap from="rgbd_image0"       to="/H_k4a/rgbd_image"/>
+      <remap from="rgbd_image1"       to="/M_k4a/rgbd_image"/>
+      <remap from="rgbd_image2"       to="/L_k4a/rgbd_image"/>
       
       <remap from="scan"                   to="$(arg scan_topic)"/>
       <remap if="$(eval scan_cloud_assembling)" from="scan_cloud" to="assembled_cloud"/>
@@ -275,6 +273,11 @@
       <remap from="odom"                   to="$(arg odom_topic)"/>
       <remap from="imu"                    to="$(arg imu_topic)"/>
       
+      <!-- Marker的检测 -->
+      <param name="landmark_linear_variance"   type="double" value="0.01"/>
+      <param name="landmark_angular_variance"  type="double" value="0.04"/> 
+      <remap from="tag_detections"         to="/L_marker/tag_detections"/>
+
       <!-- 开启定位模式 -->
       <param     if="$(arg localization)" name="Mem/IncrementalMemory" type="string" value="false"/>
       <param unless="$(arg localization)" name="Mem/IncrementalMemory" type="string" value="true"/>
@@ -298,12 +301,10 @@
       <param name="queue_size"           type="int"    value="$(arg queue_size)"/>
       <param name="approx_sync"          type="bool"   value="$(eval approx_sync and not use_odom_features)"/>
     
-      <remap from="rgb/image"       to="$(arg rgb_topic_relay)"/>
-      <remap from="depth/image"     to="$(arg depth_topic_relay)"/>
-      <remap from="rgb/camera_info" to="$(arg camera_info_topic)"/>
-      
-      <remap     if="$(arg use_odom_features)" from="rgbd_image" to="odom_rgbd_image"/>
-      <remap unless="$(arg use_odom_features)" from="rgbd_image" to="$(arg rgbd_topic_relay)"/>
+      <param name="rgbd_cameras"       type="int"    value="3"/>
+      <remap from="rgbd_image0"       to="/H_k4a/rgbd_image"/>
+      <remap from="rgbd_image1"       to="/M_k4a/rgbd_image"/>
+      <remap from="rgbd_image2"       to="/L_k4a/rgbd_image"/>
       
       <remap unless="$(arg icp_odometry)" from="scan" to="$(arg scan_topic)"/>
       <remap     if="$(arg icp_odometry)" from="scan_cloud" to="odom_filtered_input_scan"/>
@@ -312,20 +313,5 @@
       <remap from="odom"                   to="$(arg odom_topic)"/>
     </node>
   </group>
-  
-  <!-- RVIZ中可视化 -->
-  <node if="$(arg rviz)" pkg="rviz" type="rviz" name="rviz" args="-d $(arg rviz_cfg)"/>
-  <node if="$(arg rviz)" pkg="nodelet" type="nodelet" name="points_xyzrgb" args="standalone rtabmap_ros/point_cloud_xyzrgb" clear_params="$(arg clear_params)" output="$(arg output)">
-    <remap unless="$(arg subscribe_rgbd)" from="rgb/image"         to="$(arg rgb_topic_relay)"/>
-    <remap unless="$(arg subscribe_rgbd)" from="depth/image"       to="$(arg depth_topic_relay)"/>
-    <remap unless="$(arg subscribe_rgbd)" from="rgb/camera_info"   to="$(arg camera_info_topic)"/>
-    <remap from="rgbd_image"        to="$(arg rgbd_topic_relay)"/>
-    <remap from="cloud"             to="voxel_cloud" />
-
-    <param name="decimation"  type="double" value="4"/>
-    <param name="voxel_size"  type="double" value="0.0"/>
-    <param name="approx_sync" type="bool"   value="$(arg approx_sync)"/>
-    <param name="approx_sync_max_interval" type="double" value="$(arg approx_sync_max_interval)"/>
-  </node>
 
 </launch>

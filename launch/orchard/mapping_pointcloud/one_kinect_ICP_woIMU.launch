@@ -1,0 +1,107 @@
+<launch>
+
+<arg name="rtabmapviz" default="true"/>
+<arg name="rviz"       default="false"/>
+
+<node pkg="nodelet" type="nodelet" name="manager" args="manager" output="screen">
+   <param name="num_worker_threads" value="32" />
+</node>
+
+<param name="robot_description_H" command="xacro $(find azure_kinect_ros_driver)/urdf/azure_kinect.urdf.xacro tf_prefix:=H_" />
+   <!-- 用于读取相机的robot_description关节坐标系与位姿 -->
+   <node name="robot_state_publisher_H" pkg="robot_state_publisher" type="robot_state_publisher" args="robot_description:=robot_description_H">
+</node>
+
+
+<!-- 加载相机并开始发布RGBD消息，并关闭了原始的点云输出（质量低），将由image_proc先处理数据后，再将RGBD合成点云 -->
+<!-- 加载的是单独开发的Nodelet节点K4AROSBridgeNodelet -->
+<!-- 720P 1080P 1440P 1536P 2160P 3072P -->
+<!-- NFOV_2X2BINNED 320x288 NFOV_UNBINNED 640x576 WFOV_2X2BINNED 512x512 WFOV_UNBINNED 1024x1024 -->
+<node pkg="nodelet" type="nodelet" name="k4a_ros_bridge_H" args="load Azure_Kinect_ROS_Driver/K4AROSBridgeNodelet manager --no-bond" respawn="true">
+   <param name="depth_enabled"     value="true" />
+   <param name="depth_mode"        value="NFOV_UNBINNED" />
+   <param name="color_enabled"     value="true" />  
+   <param name="color_resolution"  value="720P" />
+   <param name="fps"               value="5" />
+   <param name="point_cloud"       value="false" />
+   <param name="rgb_point_cloud"   value="false" />
+   <param name="required"          value="true" />
+
+   <!-- 设置相机串口号 000470313012(low) 000481112312(high)  000475513012(high) -->  
+   <!-- <param name="sensor_sn"  type="string"  value="000470313012" />    -->
+   <param name="tf_prefix"         value="H_" />
+</node>
+
+
+<!-- 生成一个 image_proc/rectify nodelet 来校正 RGB 图像 -->
+<node pkg="nodelet" type="nodelet" name="rectify_rgb_to_depth_H" args="load image_proc/rectify manager --no-bond" respawn="true">
+   <!-- image_mono：未矫正的的图像  image_rect经过校正后的图像  -->
+   <remap from="image_mono"  to="rgb_to_depth/image_raw" />
+   <param name="interpolation"  value="0" />
+   <param name="queue_size"  value="1" />
+   <remap from="camera_info"  to="rgb_to_depth/camera_info" />
+   <remap from="image_rect"  to="rgb_to_depth/image_rect" />
+</node>
+
+<!-- 生成一个 image_proc/rectify nodelet 来校正 RGB 图像 -->
+<node pkg="nodelet" type="nodelet" name="rectify_rgb_H" args="load image_proc/rectify manager --no-bond" respawn="true">
+   <!-- image_mono：未矫正的的图像  image_rect经过校正后的图像  -->
+   <remap from="image_mono"  to="rgb/image_raw" />
+   <param name="interpolation"  value="0" />
+   <param name="queue_size"  value="1" />
+   <remap from="camera_info"  to="rgb/camera_info" />
+   <remap from="image_rect"  to="rgb/image_rect" />
+</node>
+
+<!-- 生成一个 image_proc/rectify nodelet 来校正深度图像 -->
+<node pkg="nodelet" type="nodelet" name="rectify_depth_H" args="load image_proc/rectify manager --no-bond" respawn="true">
+   <!-- image_mono：未矫正的的图像  image_rect经过校正后的图像  -->
+   <remap from="image_mono"  to="depth/image_raw" />
+   <param name="interpolation"  value="0" />
+   <param name="queue_size"  value="1" />
+   <!-- <remap from="camera_info"  to="depth/camera_info" /> -->
+   <remap from="image_rect"  to="depth/image_rect" />
+</node>
+
+<node pkg="nodelet" type="nodelet" name="rgbd_sync_H" args="load rtabmap_ros/rgbd_sync manager">
+   <remap from="rgb/image"         to="/rgb_to_depth/image_rect"/>
+   <remap from="depth/image"       to="/depth/image_rect"/>
+   <remap from="rgb/camera_info"   to="/depth/camera_info"/>
+</node>
+
+
+<!-- 将深度图转化为点云用于ICP -->
+<node pkg="nodelet" type="nodelet" name="gen_cloud" args="load rtabmap_ros/point_cloud_xyz manager">
+   <remap from="depth/image"       to="/depth/image_rect"/>
+   <remap from="depth/camera_info" to="/depth/camera_info"/>
+   <remap from="cloud"             to="/scan_cloud" />
+
+   <param name="max_depth"  type="double" value="4.0"/>
+   <param name="decimation"  type="double" value="4"/>
+   <param name="voxel_size"  type="double" value="0.009"/>
+   <param name="noise_filter_min_neighbors"  type="int" value="100"/>
+   <!-- <param name="approx_sync" type="bool"   value="false"/>
+   <param name="approx_sync_max_interval" type="double" value="0"/> -->
+</node>
+
+
+<!-- 将图片导入rtbmap中开始重建 -->
+<include  file="$(find rtabmap_ros)/launch/rtabmap_rgbd.launch">
+   <arg name="subscribe_rgbd"  value="true"/>
+   <arg name="rgbd_topic"         value="/rgbd_image"/>
+   <arg name="subscribe_rgb"  value="false"/>
+   
+   <arg name="depth_topic"  value="/depth/image_rect"/>
+   <arg name="depth_camera_info_topic"  value="/depth/camera_info"/>
+   <arg name="gen_cloud"  value="true"/>
+
+   <arg name="icp_odometry"  value="true"/>
+   <arg name="visual_odometry"   value="false"/>
+
+   <arg name="rgbd_sync"       value="false"/>
+   <arg name="frame_id"          value="H_camera_base"/>
+   <arg name="rtabmapviz"        value="$(arg rtabmapviz)"/>
+   <arg name="rviz"              value="$(arg rviz)"/>
+</include>
+
+</launch>
