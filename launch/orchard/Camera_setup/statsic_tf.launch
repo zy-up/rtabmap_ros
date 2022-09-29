@@ -3,7 +3,7 @@
   <param name="robot_description_H"
             command="xacro $(find azure_kinect_ros_driver)/urdf/azure_kinect.urdf.xacro tf_prefix:=H_" />
   <!-- 用于读取相机的robot_description关节坐标系与位姿 -->
-  <node name="robot_state_publisher_H" pkg="robot_state_publisher" type="robot_state_publisher" args="robot_description:=robot_description_L">
+  <node name="robot_state_publisher_H" pkg="robot_state_publisher" type="robot_state_publisher" args="robot_description:=robot_description_H">
   </node>
 
   <!-- 将相机与世界坐标系连接起来 -->
@@ -14,7 +14,7 @@
   <param name="robot_description_M"
             command="xacro $(find azure_kinect_ros_driver)/urdf/azure_kinect.urdf.xacro tf_prefix:=M_" />
   <!-- 用于读取相机的robot_description关节坐标系与位姿 -->
-  <node name="robot_state_publisher_M" pkg="robot_state_publisher" type="robot_state_publisher" args="robot_description:=robot_description_L">
+  <node name="robot_state_publisher_M" pkg="robot_state_publisher" type="robot_state_publisher" args="robot_description:=robot_description_M">
   </node>
 
   <!-- 将相机与世界坐标系连接起来 --> 
