@@ -64,5 +64,5 @@ def flowercluster(pcd):
     o3d.visualization.draw_geometries([pcd])
 
 
-pcd = o3d.io.read_point_cloud("/home/sbdx/Codes/catkin_kin/src/Azure_Kinect_ROS_Driver/launch/zuojia/pcd/M_camera_base_2022_04_25_13_49_08.pcd")
+pcd = o3d.io.read_point_cloud("/home/sbdx/Codes/catkin_rtab/src/rtabmap_ros/launch/orchard/zuojia/pcd/M_camera_base_2022_04_25_13_49_08.pcd")
 flowercluster(pcd)

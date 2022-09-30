@@ -5,15 +5,20 @@
   $ Show TF and /rtabmap/cloud_map topics
 -->
 
-<arg name="frame_id"        default="velodyne"/>
+<arg name="frame_id"        default="base_frame"/>
 <arg name="scan_topic"    default="/velodyne_points"/>
 <arg name="organize_cloud" default="true"/>
+<arg name="database_path"           default="~/.ros/rtabmap.db"/>
+
+<!-- 将雷达与世界坐标系连接起来 -->
+<node pkg="tf" type="static_transform_publisher" name="base_to_velodyne"
+      args="0 0 1 0 0 0 /base_frame /velodyne 100" />
 
 <!-- 开启雷达 -->
 <include file="$(find velodyne_pointcloud)/launch/VLP16_points.launch">
   <arg name="organize_cloud" value="$(arg organize_cloud)"/>
-  <arg name="max_range" value="130.0" />
-  <arg name="min_range" value="1.5" />
+  <arg name="max_range" value="100.0" />
+  <arg name="min_range" value="2.5" />
 </include>  
 
 <!-- 开启SLAM -->
@@ -23,7 +28,8 @@
   <arg name="gen_depth"    value="true"/>
   <arg name="subscribe_scan_cloud"    value="true"/>
   <arg name="scan_cloud_topic"  value="$(arg scan_topic)"/>
-  
+  <arg name="database_path"           default="$(arg database_path)"/>
+
   <arg name="icp_odometry"  value="true"/>
   <arg name="visual_odometry"   value="false"/>
 

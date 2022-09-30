@@ -30,6 +30,6 @@
 
   <!-- 将相机与世界坐标系连接起来 -->
   <node pkg="tf" type="static_transform_publisher" name="base_to_cameraL_tf"
-      args="0 0 0 0 0 0 /base_frame /L_camera_base 100" />
+      args="0 0 0 0.01263216  0.11878728 -0.00151136  0.99283822 /base_frame /L_camera_base 100" />
 
 </launch>
