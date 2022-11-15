@@ -25,8 +25,13 @@ gnome-terminal --tab --active -e "rosbag record -O $database_path.bag /tf /H_k4a
 
 
 # 开启rviz可视化
+<<<<<<< HEAD
 # echo "run rviz"
 # gnome-terminal --tab --active -e "rviz -d /home/sbdx/Codes/catkin_rtab/src/rtabmap_ros/launch/orchard/record_play/rviz_para_record.rviz & sleep 2"
+=======
+echo "run rviz"
+gnome-terminal --tab --active -e "rviz -d /home/zy/Code/catkin_rtab/src/rtabmap_ros/launch/orchard/record_play/rviz_para_record.rviz & sleep 2"
+>>>>>>> 82432a5137ab0640b4b2a235c3146f12d3840f4e
 
 wait
 exit 0

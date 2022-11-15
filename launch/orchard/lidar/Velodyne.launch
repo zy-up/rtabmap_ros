@@ -23,8 +23,6 @@
 
 <!-- 开启SLAM -->
 <include  file="$(find rtabmap_ros)/launch/rtabmap_lidar.launch">
-  <arg name="rtabmap_args"      value="--delete_db_on_start"/>
-
   <arg name="gen_depth"    value="true"/>
   <arg name="subscribe_scan_cloud"    value="true"/>
   <arg name="scan_cloud_topic"  value="$(arg scan_topic)"/>
