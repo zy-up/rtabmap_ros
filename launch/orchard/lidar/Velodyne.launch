@@ -17,8 +17,8 @@
 <!-- 开启雷达 -->
 <include file="$(find velodyne_pointcloud)/launch/VLP16_points.launch">
   <arg name="organize_cloud" value="$(arg organize_cloud)"/>
-  <arg name="max_range" value="100.0" />
-  <arg name="min_range" value="2.5" />
+  <arg name="max_range" value="50.0" />
+  <arg name="min_range" value="0.5" />
 </include>  
 
 <!-- 开启SLAM -->

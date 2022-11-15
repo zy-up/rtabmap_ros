@@ -19,14 +19,14 @@
 #   ]
 standalone_tags:
   [
-    {id: 0, size: 0.1545, name: H_t0},
-    {id: 1, size: 0.1545, name: H_t1},
-    {id: 2, size: 0.1545, name: H_t2},
-    {id: 3, size: 0.1545, name: H_t3},
-    {id: 4, size: 0.1545, name: H_t4},
-    {id: 5, size: 0.1545, name: H_t5},
-    {id: 6, size: 0.1545, name: H_t6},
-    {id: 7, size: 0.1545, name: H_t7},
+    {id: 0, size: 0.16, name: H_t0},
+    {id: 1, size: 0.16, name: H_t1},
+    {id: 2, size: 0.16, name: H_t2},
+    {id: 3, size: 0.16, name: H_t3},
+    {id: 4, size: 0.16, name: H_t4},
+    {id: 5, size: 0.16, name: H_t5},
+    {id: 6, size: 0.16, name: H_t6},
+    {id: 7, size: 0.16, name: H_t7},
   ]
 # ## Tag bundle definitions
 # ### Remarks

@@ -6,5 +6,6 @@
         "/home/sbdx/Codes/catkin_imu/devel/lib/python3/dist-packages",
         "/home/sbdx/Codes/catkin_test/devel/lib/python3/dist-packages",
         "/opt/ros/noetic/lib/python3/dist-packages"
-    ]
+    ],
+    "editor.fontSize": 22
 }

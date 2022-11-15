@@ -1,35 +1,35 @@
 <launch>
-<!-- 最上面相机的tf -->
-  <param name="robot_description_H"
-            command="xacro $(find azure_kinect_ros_driver)/urdf/azure_kinect.urdf.xacro tf_prefix:=H_" />
-  <!-- 用于读取相机的robot_description关节坐标系与位姿 -->
-  <node name="robot_state_publisher_H" pkg="robot_state_publisher" type="robot_state_publisher" args="robot_description:=robot_description_H">
+
+<arg name="HM" value="-0.187898 0.031639 0.648380 0.000671 0.068105 -0.010769 0.997620" />
+<arg name="ML" value="-0.112980 0.031196 0.492533 0.014599 0.022841 -0.014998 0.999520" />
+<arg name="LB" value="0 0 0.565 0.01096046  0.1018774  -0.00112253  0.99473595" />
+
+<!-- H_k4a -->
+  <param name="robot_description_H" command="xacro $(find azure_kinect_ros_driver)/urdf/azure_kinect.urdf.xacro tf_prefix:=H_" />
+  <!-- read the robot_description file -->
+    <node name="robot_state_publisher_H" pkg="robot_state_publisher" type="robot_state_publisher" args="robot_description:=robot_description_H">
   </node>
 
-  <!-- 将相机与世界坐标系连接起来 -->
+  <!-- H_k4a -> M_k4a -->
   <node pkg="tf" type="static_transform_publisher" name="base_to_cameraH_tf"
-      args="-0.126607 0.007881 0.529317 -0.007674 -0.008390 -0.002399 0.999932 /M_camera_base /H_camera_base 100" />
+      args="$(arg HM) /M_camera_base /H_camera_base 100" />
 
-<!-- 中间相机的tf -->
-  <param name="robot_description_M"
-            command="xacro $(find azure_kinect_ros_driver)/urdf/azure_kinect.urdf.xacro tf_prefix:=M_" />
-  <!-- 用于读取相机的robot_description关节坐标系与位姿 -->
-  <node name="robot_state_publisher_M" pkg="robot_state_publisher" type="robot_state_publisher" args="robot_description:=robot_description_M">
+<!-- M_k4a -->
+  <param name="robot_description_M" command="xacro $(find azure_kinect_ros_driver)/urdf/azure_kinect.urdf.xacro tf_prefix:=M_" />
+    <node name="robot_state_publisher_M" pkg="robot_state_publisher" type="robot_state_publisher" args="robot_description:=robot_description_M">
   </node>
 
-  <!-- 将相机与世界坐标系连接起来 --> 
+  <!-- L_k4a -> H_k4a -->
   <node pkg="tf" type="static_transform_publisher" name="base_to_cameraM_tf"
-      args="-0.123225 -0.009253 0.469290 0.010936 -0.015362 0.003399 0.999816  /L_camera_base /M_camera_base 100" />
+      args="$(arg ML)  /L_camera_base /M_camera_base 100" />
 
-<!-- 最下面相机的tf -->
-  <param name="robot_description_L"
-            command="xacro $(find azure_kinect_ros_driver)/urdf/azure_kinect.urdf.xacro tf_prefix:=L_" />
-  <!-- 用于读取相机的robot_description关节坐标系与位姿 -->
-  <node name="robot_state_publisher_L" pkg="robot_state_publisher" type="robot_state_publisher" args="robot_description:=robot_description_L">
+<!-- L_k4a -->
+  <param name="robot_description_L" command="xacro $(find azure_kinect_ros_driver)/urdf/azure_kinect.urdf.xacro tf_prefix:=L_" />
+    <node name="robot_state_publisher_L" pkg="robot_state_publisher" type="robot_state_publisher" args="robot_description:=robot_description_L">
   </node>
 
-  <!-- 将相机与世界坐标系连接起来 -->
+  <!-- base_frame -> L_k4a -->
   <node pkg="tf" type="static_transform_publisher" name="base_to_cameraL_tf"
-      args="0 0 0 0.01263216  0.11878728 -0.00151136  0.99283822 /base_frame /L_camera_base 100" />
+      args="$(arg LB) /base_frame /L_camera_base 100" />
 
 </launch>

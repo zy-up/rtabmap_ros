@@ -5,7 +5,7 @@
       <remap from="depth/camera_info" to="/L_k4a/depth/camera_info"/>
       <remap from="cloud"             to="/scan_cloud" />
 
-      <param name="max_depth"  type="double" value="4.0"/>
+      <param name="max_depth"  type="double" value="3.0"/>
       <param name="decimation"  type="double" value="4"/>
       <param name="voxel_size"  type="double" value="0.009"/>
       <param name="noise_filter_min_neighbors"  type="int" value="100"/>

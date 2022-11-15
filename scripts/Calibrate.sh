@@ -30,6 +30,10 @@ gnome-terminal --tab --active -e "rosrun rtabmap_ros Calibrate.py -s '/M' -t '/H
 echo -e "\033[41;32mrun Calibrate.py\033[0m"
 gnome-terminal --tab --active -e "rosrun rtabmap_ros Calibrate.py -s '/L' -t '/M' "
 
+# 开启IMU重力轴矫正
+echo -e "\033[41;32mrun imu_init.py\033[0m"
+gnome-terminal --tab --active -e "python /home/sbdx/Codes/catkin_rtab/src/rtabmap_ros/scripts/imu_init.py"
+
 # 开启rviz可视化
 echo "run rviz"
 gnome-terminal --tab --active -e "rviz -d /home/sbdx/Codes/catkin_rtab/src/rtabmap_ros/scripts/rviz_para.rviz & sleep 2"
