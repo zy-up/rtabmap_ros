@@ -58,6 +58,7 @@
       <param name="required"          value="true" />
       <!-- <param name="imu_rate_target"   value="1000" /> -->
 
+      <!-- 同步模式：跟从模式，曝光时间延长200ms -->
       <param name="wired_sync_mode"    type="int"      value="2" />
       <param name="subordinate_delay_off_master_usec"    type="int"      value="200" />
 

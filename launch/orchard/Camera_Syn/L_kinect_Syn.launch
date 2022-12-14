@@ -58,6 +58,7 @@
       <param name="required"          value="true" />
       <!-- <param name="imu_rate_target"   value="1000" /> -->
 
+      <!-- 同步模式：主动模式 -->
       <param name="wired_sync_mode"    type="int"      value="1" />
 
       <!-- 设置相机串口号 000470313012(low) 000481112312(high)  000475513012(high) -->  
