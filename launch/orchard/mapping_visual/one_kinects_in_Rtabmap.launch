@@ -6,7 +6,7 @@
 
  -->
 
-  <launch>
+<launch>
   <!-- Choose visualization -->
    <arg name="rviz"       default="false" />
    <arg name="rtabmapviz" default="true" /> 
@@ -34,30 +34,98 @@
    <arg name="local_map"       default="1000" />
    <arg name="odom_info_data"  default="true" />
    <arg name="wait_for_transform"  default="true" />
-      
-  <!-- RGBD帧转发 -->
-  <remap from="/rtabmap/rgbd_image"       to="/L_k4a/rgbd_image"/>
+
+  <group ns="k4a" >
+    <!-- 生成一个 nodelet 管理器 -->
+    <node pkg="nodelet" type="nodelet" name="manager" args="manager" output="screen">
+      <param name="num_worker_threads" value="12" />
+    </node>
+
+    <param name="robot_description" command="xacro $(find azure_kinect_ros_driver)/urdf/azure_kinect.urdf.xacro" />
+      <!-- 用于读取相机的robot_description关节坐标系与位姿 -->
+      <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" args="robot_description:=robot_description">
+    </node>
+
+    <!-- 生成一个 image_proc/rectify nodelet 来校正 RGB 图像 -->
+    <node pkg="nodelet" type="nodelet" name="rectify_rgb_to_depth"
+          args="load image_proc/rectify manager --no-bond"
+          respawn="true">
+      <remap from="image_mono"  to="rgb_to_depth/image_raw" />
+      <param name="interpolation"  value="0" />
+      <param name="queue_size"  value="1" />
+      <!-- <remap from="camera_info"  to="rgb_to_depth/camera_info" /> -->
+      <remap from="image_rect"  to="rgb_to_depth/image_rect" />
+    </node>
+
+    <!-- 生成一个 image_proc/rectify nodelet 来校正 RGB 图像 -->
+    <node pkg="nodelet" type="nodelet" name="rectify_rgb"
+          args="load image_proc/rectify manager --no-bond"
+          respawn="true">
+      <remap from="image_mono"  to="rgb/image_raw" />
+      <param name="interpolation"  value="0" />
+      <param name="queue_size"  value="1" />
+      <!-- <remap from="camera_info"  to="rgb_to_depth/camera_info" /> -->
+      <remap from="image_rect"  to="rgb/image_rect" />
+    </node>
+
+    <!-- 生成一个 image_proc/rectify nodelet 来校正深度图像 -->
+    <node pkg="nodelet" type="nodelet" name="rectify_depth"
+          args="load image_proc/rectify manager --no-bond"
+          respawn="true">
+      <remap from="image_mono"  to="depth/image_raw" />
+      <param name="interpolation"  value="0" />
+      <param name="queue_size"  value="1" />
+      <!-- <remap from="camera_info"  to="depth/camera_info" /> -->
+      <remap from="image_rect"  to="depth/image_rect" />
+    </node>
+
+    <!-- 720P 1080P 1440P 1536P 2160P 3072P -->
+    <!-- NFOV_2X2BINNED 320x288 NFOV_UNBINNED 640x576 WFOV_2X2BINNED 512x512 WFOV_UNBINNED 1024x1024 -->
+    <node pkg="nodelet" type="nodelet" name="k4a_ros_bridge"
+          args="load Azure_Kinect_ROS_Driver/K4AROSBridgeNodelet manager --no-bond"
+          respawn="true">
+      <param name="depth_enabled"     value="true" />
+      <param name="depth_mode"        value="NFOV_UNBINNED" />
+      <param name="color_enabled"     value="true" />
+      <param name="color_resolution"  value="720P" />
+      <param name="fps"               value="5" />
+      <param name="point_cloud"       value="false" />
+      <param name="rgb_point_cloud"   value="false" />
+      <param name="required"          value="true" />
+      <!-- <param name="imu_rate_target"   value="1000" /> -->
+    </node>
+
+    <node pkg="nodelet" type="nodelet" name="rgbd_sync" args="load rtabmap_ros/rgbd_sync manager">
+      <remap from="rgb/image"         to="rgb_to_depth/image_rect"/>
+      <remap from="depth/image"       to="depth/image_rect"/>
+      <remap from="rgb/camera_info"   to="depth/camera_info"/>
+    </node>
+  </group>
+
+
 
   <group ns="rtabmap">
-  
+    <arg name="frame_id"          default="camera_base"/>
+    <!-- RGBD帧转发 -->
+    <remap from="/rtabmap/rgbd_image"       to="/k4a/rgbd_image"/>
+
     <!-- Odometry -->
     <node pkg="rtabmap_ros" type="rgbd_odometry" name="rgbd_odometry" output="screen">
-
-	  <param name="subscribe_rgbd"           type="bool"   value="true"/>
-	  <param name="frame_id"                 type="string" value="base_frame"/>
-	  <param name="rgbd_cameras"             type="int"    value="1"/>
-	  <param name="wait_for_transform"       type="bool"   value="$(arg wait_for_transform)"/>
-	  <param name="Odom/Strategy"            type="string" value="$(arg strategy)"/> 
-	  <param name="OdomF2M/BundleAdjustment" type="string" value="0"/> <!-- should be 0 for multi-cameras -->
-	  <param name="Vis/EstimationType"      type="string" value="0"/> <!-- should be 0 for multi-cameras -->
-	  <param name="Vis/FeatureType"         type="string" value="$(arg feature)"/> 
-	  <param name="Vis/CorGuessWinSize"     type="string" value="0"/> 
-	  <param name="Vis/CorNNType"           type="string" value="$(arg nn)"/>
-	  <param name="Vis/MaxDepth"            type="string" value="$(arg max_depth)"/>  
-	  <param name="Vis/MinInliers"          type="string" value="$(arg min_inliers)"/> 
-	  <param name="Vis/InlierDistance"      type="string" value="$(arg inlier_distance)"/>       
-    <param name="OdomF2M/MaxSize" type="string" value="$(arg local_map)"/> 
-    <param name="Odom/FillInfoData"        type="string" value="$(arg odom_info_data)"/>   
+      <param name="subscribe_rgbd"           type="bool"   value="true"/>
+      <param name="frame_id"                 type="string" value="camera_base"/>
+      <param name="rgbd_cameras"             type="int"    value="1"/>
+      <param name="wait_for_transform"       type="bool"   value="$(arg wait_for_transform)"/>
+      <param name="Odom/Strategy"            type="string" value="$(arg strategy)"/> 
+      <param name="OdomF2M/BundleAdjustment" type="string" value="0"/> <!-- should be 0 for multi-cameras -->
+      <param name="Vis/EstimationType"      type="string" value="0"/> <!-- should be 0 for multi-cameras -->
+      <param name="Vis/FeatureType"         type="string" value="$(arg feature)"/> 
+      <param name="Vis/CorGuessWinSize"     type="string" value="0"/> 
+      <param name="Vis/CorNNType"           type="string" value="$(arg nn)"/>
+      <param name="Vis/MaxDepth"            type="string" value="$(arg max_depth)"/>  
+      <param name="Vis/MinInliers"          type="string" value="$(arg min_inliers)"/> 
+      <param name="Vis/InlierDistance"      type="string" value="$(arg inlier_distance)"/>       
+      <param name="OdomF2M/MaxSize" type="string" value="$(arg local_map)"/> 
+      <param name="Odom/FillInfoData"        type="string" value="$(arg odom_info_data)"/>   
     </node>
   
     <!-- Visual SLAM (robot side) -->
@@ -68,7 +136,7 @@
       <param name="subscribe_depth"  type="bool"   value="false"/>
       <param name="subscribe_rgbd"   type="bool"   value="true"/>
       <param name="rgbd_cameras"    type="int"    value="1"/>
-      <param name="frame_id"         type="string" value="base_frame"/>
+      <param name="frame_id"         type="string" value="camera_base"/>
       <param name="gen_scan"         type="bool"   value="false"/>
       <param name="wait_for_transform" type="bool"   value="$(arg wait_for_transform)"/>
       <param name="map_always_update" type="bool"   value="false"/>        <!-- refresh grid map even if we are not moving-->
@@ -79,9 +147,9 @@
       <param name="Vis/MinInliers"     type="string" value="10"/>
       <param name="Vis/InlierDistance" type="string" value="$(arg inlier_distance)"/>
       <!-- Marker的检测 -->
-      <param name="landmark_linear_variance"   type="double" value="0.0001"/>
+      <!-- <param name="landmark_linear_variance"   type="double" value="0.0001"/>
       <param name="landmark_angular_variance"  type="double" value="9999"/> 
-      <remap from="tag_detections"         to="/L_marker/tag_detections"/>
+      <remap from="tag_detections"         to="/L_marker/tag_detections"/> -->
     </node>
   
     <!-- Visualisation RTAB-Map -->
@@ -90,7 +158,7 @@
       <param name="subscribe_depth"  type="bool"   value="false"/>
       <param name="subscribe_rgbd"   type="bool"   value="true"/>
       <param name="subscribe_odom_info" type="bool"   value="$(arg odom_info_data)"/>
-      <param name="frame_id"            type="string" value="base_frame"/>
+      <param name="frame_id"            type="string" value="camera_base"/>
       <param name="rgbd_cameras"       type="int"    value="1"/>
       <param name="wait_for_transform"  type="bool"   value="$(arg wait_for_transform)"/>
     

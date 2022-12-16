@@ -14,8 +14,8 @@
   
   <group ns="M_marker">
     <!-- Set parameters -->
-    <rosparam command="load" file="/home/sbdx/Codes/catkin_rtab/src/rtabmap_ros/launch/orchard/AprilTag/tag_settings.yaml" ns="apriltag_ros_continuous_node_M" />
-    <rosparam command="load" file="/home/sbdx/Codes/catkin_rtab/src/rtabmap_ros/launch/orchard/AprilTag/M_tags.yaml" ns="apriltag_ros_continuous_node_M" />
+    <rosparam command="load" file="$(find rtabmap_ros)/launch/orchard/AprilTag/tag_settings.yaml" ns="apriltag_ros_continuous_node_M" />
+    <rosparam command="load" file="$(find rtabmap_ros)/launch/orchard/AprilTag/M_tags.yaml" ns="apriltag_ros_continuous_node_M" />
     
     <node pkg="apriltag_ros" type="apriltag_ros_continuous_node" name="apriltag_ros_continuous_node_M" clear_params="true" output="screen">
       <remap from="image_rect" to="$(arg rgb_topic)" />
