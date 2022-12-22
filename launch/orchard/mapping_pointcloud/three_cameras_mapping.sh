@@ -18,7 +18,7 @@ roslaunch rtabmap_ros L_gen_pointcloud.launch & sleep 3
 
 # current date
 timestamp=$(date +%Y_%m_%d_%H_%M_%S)
-database_path="/home/sbdx/Documents/"$timestamp".db"
+database_path="~/Documents/"$timestamp".db"
 echo $database_path
 
 echo -e "\033[41;32mrun three_kinects_in_Rtabmap.launch\033[0m"
