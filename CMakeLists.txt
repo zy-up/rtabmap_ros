@@ -581,6 +581,7 @@ catkin_install_python(PROGRAMS
   launch/Test/image_circle.py
   launch/Test/rgbdimage_circle.py
   launch/Test/check_topic.py
+  scripts/imu_init.py
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
 

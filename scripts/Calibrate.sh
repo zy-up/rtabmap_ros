@@ -1,12 +1,12 @@
 # 开启顺序开启相机，注意加延时
-echo -e "\033[41;32mrun H_kinect.launch\033[0m"
-roslaunch rtabmap_ros H_kinect.launch & sleep 3
+echo -e "\033[41;32mrun H_kinect_Syn.launch\033[0m"
+roslaunch rtabmap_ros H_kinect_Syn.launch & sleep 3
 
-echo -e "\033[41;32mrun M_kinect.launch\033[0m"
-roslaunch rtabmap_ros M_kinect.launch & sleep 3
+echo -e "\033[41;32mrun M_kinect_Syn.launch\033[0m"
+roslaunch rtabmap_ros M_kinect_Syn.launch & sleep 3
 
-echo -e "\033[41;32mrun L_kinect.launch\033[0m"
-roslaunch rtabmap_ros L_kinect.launch & sleep 3
+echo -e "\033[41;32mrun L_kinect_Syn.launch\033[0m"
+roslaunch rtabmap_ros L_kinect_Syn.launch & sleep 3
 
 # 开启Apriltag marker的检测
 # echo -e "\033[41;32mrun H_apriltag_detect.launch\033[0m"
@@ -32,11 +32,11 @@ gnome-terminal --tab --active -e "rosrun rtabmap_ros Calibrate.py -s '/L' -t '/M
 
 # 开启IMU重力轴矫正
 echo -e "\033[41;32mrun imu_init.py\033[0m"
-gnome-terminal --tab --active -e "python /home/sbdx/Codes/catkin_rtab/src/rtabmap_ros/scripts/imu_init.py"
+gnome-terminal --tab --active -e "rosrun rtabmap_ros imu_init.py"
 
 # 开启rviz可视化
 echo "run rviz"
-gnome-terminal --tab --active -e "rviz -d /home/sbdx/Codes/catkin_rtab/src/rtabmap_ros/scripts/rviz_para.rviz & sleep 2"
+gnome-terminal --tab --active -e "rviz -d ~/Codes/catkin_rtab/src/rtabmap_ros/scripts/rviz_para.rviz & sleep 2"
 
 wait
 exit 0
