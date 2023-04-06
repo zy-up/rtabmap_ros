@@ -17,24 +17,131 @@
 #     {id: ID, size: SIZE, name: NAME},
 #     ...
 #   ]
-standalone_tags:
+# standalone_tags:
+#   [
+#     {id: 0, size: 0.16, name: L_t0},
+#     {id: 1, size: 0.16, name: L_t1},
+#     {id: 2, size: 0.16, name: L_t2},
+#     {id: 3, size: 0.16, name: L_t3},
+#     {id: 4, size: 0.16, name: L_t4},
+#     {id: 5, size: 0.16, name: L_t5},
+#     {id: 6, size: 0.16, name: L_t6},
+#     {id: 7, size: 0.16, name: L_t7},
+#     {id: 8, size: 0.16, name: L_t8},
+#     {id: 9, size: 0.16, name: L_t9},
+#     {id: 10, size: 0.16, name: L_t10},
+#     {id: 11, size: 0.16, name: L_t11},
+#     {id: 12, size: 0.16, name: L_t12},
+#     {id: 13, size: 0.16, name: L_t13},
+#     {id: 14, size: 0.16, name: L_t14},
+#   ]
+
+tag_bundles:
   [
-    {id: 0, size: 0.16, name: L_t0},
-    {id: 1, size: 0.16, name: L_t1},
-    {id: 2, size: 0.16, name: L_t2},
-    {id: 3, size: 0.16, name: L_t3},
-    {id: 4, size: 0.16, name: L_t4},
-    {id: 5, size: 0.16, name: L_t5},
-    {id: 6, size: 0.16, name: L_t6},
-    {id: 7, size: 0.16, name: L_t7},
-    {id: 8, size: 0.16, name: L_t8},
-    {id: 9, size: 0.16, name: L_t9},
-    {id: 10, size: 0.16, name: L_t10},
-    {id: 11, size: 0.16, name: L_t11},
-    {id: 12, size: 0.16, name: L_t12},
-    {id: 13, size: 0.16, name: L_t13},
-    {id: 14, size: 0.16, name: L_t14},
+    {
+      name: 'T1',
+      layout:
+        [
+           {id: 1,   size: 0.076, x: 0.0000, y:  0.0000, z: 0, qw: 1, qx: 0, qy: 0, qz: 0},
+           {id: 2,   size: 0.076, x: 0.08, y:  0.0000, z: 0, qw: 1, qx: 0, qy: 0, qz: 0},
+           {id: 3,  size: 0.076, x: 0.0000, y: -0.08, z: 0, qw: 1, qx: 0, qy: 0, qz: 0},
+           {id: 4,  size: 0.076, x: 0.08, y: -0.08, z: 0, qw: 1, qx: 0, qy: 0, qz: 0},
+        ]
+    },
+    {
+      name: 'T2',
+      layout:
+        [
+           {id: 5,   size: 0.076, x: 0.0000, y:  0.0000, z: 0, qw: 1, qx: 0, qy: 0, qz: 0},
+           {id: 6,   size: 0.076, x: 0.08, y:  0.0000, z: 0, qw: 1, qx: 0, qy: 0, qz: 0},
+           {id: 7,  size: 0.076, x: 0.0000, y: -0.08, z: 0, qw: 1, qx: 0, qy: 0, qz: 0},
+           {id: 8,  size: 0.076, x: 0.08, y: -0.08, z: 0, qw: 1, qx: 0, qy: 0, qz: 0},
+        ]
+    },
+        {
+      name: 'T3',
+      layout:
+        [
+           {id: 9,   size: 0.076, x: 0.0000, y:  0.0000, z: 0, qw: 1, qx: 0, qy: 0, qz: 0},
+           {id: 10,   size: 0.076, x: 0.08, y:  0.0000, z: 0, qw: 1, qx: 0, qy: 0, qz: 0},
+           {id: 11,  size: 0.076, x: 0.0000, y: -0.08, z: 0, qw: 1, qx: 0, qy: 0, qz: 0},
+           {id: 12,  size: 0.076, x: 0.08, y: -0.08, z: 0, qw: 1, qx: 0, qy: 0, qz: 0},
+        ]
+    },
+        {
+      name: 'T4',
+      layout:
+        [
+           {id: 13,   size: 0.076, x: 0.0000, y:  0.0000, z: 0, qw: 1, qx: 0, qy: 0, qz: 0},
+           {id: 14,   size: 0.076, x: 0.08, y:  0.0000, z: 0, qw: 1, qx: 0, qy: 0, qz: 0},
+           {id: 15,  size: 0.076, x: 0.0000, y: -0.08, z: 0, qw: 1, qx: 0, qy: 0, qz: 0},
+           {id: 16,  size: 0.076, x: 0.08, y: -0.08, z: 0, qw: 1, qx: 0, qy: 0, qz: 0},
+        ]
+    },
+        {
+      name: 'T5',
+      layout:
+        [
+           {id: 17,   size: 0.076, x: 0.0000, y:  0.0000, z: 0, qw: 1, qx: 0, qy: 0, qz: 0},
+           {id: 18,   size: 0.076, x: 0.08, y:  0.0000, z: 0, qw: 1, qx: 0, qy: 0, qz: 0},
+           {id: 19,  size: 0.076, x: 0.0000, y: -0.08, z: 0, qw: 1, qx: 0, qy: 0, qz: 0},
+           {id: 20,  size: 0.076, x: 0.08, y: -0.08, z: 0, qw: 1, qx: 0, qy: 0, qz: 0},
+        ]
+    },
+        {
+      name: 'T6',
+      layout:
+        [
+           {id: 21,   size: 0.076, x: 0.0000, y:  0.0000, z: 0, qw: 1, qx: 0, qy: 0, qz: 0},
+           {id: 22,   size: 0.076, x: 0.08, y:  0.0000, z: 0, qw: 1, qx: 0, qy: 0, qz: 0},
+           {id: 23,  size: 0.076, x: 0.0000, y: -0.08, z: 0, qw: 1, qx: 0, qy: 0, qz: 0},
+           {id: 24,  size: 0.076, x: 0.08, y: -0.08, z: 0, qw: 1, qx: 0, qy: 0, qz: 0},
+        ]
+    },
+        {
+      name: 'T7',
+      layout:
+        [
+           {id: 25,   size: 0.076, x: 0.0000, y:  0.0000, z: 0, qw: 1, qx: 0, qy: 0, qz: 0},
+           {id: 26,   size: 0.076, x: 0.08, y:  0.0000, z: 0, qw: 1, qx: 0, qy: 0, qz: 0},
+           {id: 27,  size: 0.076, x: 0.0000, y: -0.08, z: 0, qw: 1, qx: 0, qy: 0, qz: 0},
+           {id: 28,  size: 0.076, x: 0.08, y: -0.08, z: 0, qw: 1, qx: 0, qy: 0, qz: 0},
+        ]
+    },
+        {
+      name: 'T8',
+      layout:
+        [
+           {id: 29,   size: 0.076, x: 0.0000, y:  0.0000, z: 0, qw: 1, qx: 0, qy: 0, qz: 0},
+           {id: 30,   size: 0.076, x: 0.08, y:  0.0000, z: 0, qw: 1, qx: 0, qy: 0, qz: 0},
+           {id: 31,  size: 0.076, x: 0.0000, y: -0.08, z: 0, qw: 1, qx: 0, qy: 0, qz: 0},
+           {id: 32,  size: 0.076, x: 0.08, y: -0.08, z: 0, qw: 1, qx: 0, qy: 0, qz: 0},
+        ]
+    },
+        {
+      name: 'T9',
+      layout:
+        [
+           {id: 33,   size: 0.076, x: 0.0000, y:  0.0000, z: 0, qw: 1, qx: 0, qy: 0, qz: 0},
+           {id: 34,   size: 0.076, x: 0.08, y:  0.0000, z: 0, qw: 1, qx: 0, qy: 0, qz: 0},
+           {id: 35,  size: 0.076, x: 0.0000, y: -0.08, z: 0, qw: 1, qx: 0, qy: 0, qz: 0},
+           {id: 36,  size: 0.076, x: 0.08, y: -0.08, z: 0, qw: 1, qx: 0, qy: 0, qz: 0},
+        ]
+    },
+        {
+      name: 'T10',
+      layout:
+        [
+           {id: 37,   size: 0.076, x: 0.0000, y:  0.0000, z: 0, qw: 1, qx: 0, qy: 0, qz: 0},
+           {id: 38,   size: 0.076, x: 0.08, y:  0.0000, z: 0, qw: 1, qx: 0, qy: 0, qz: 0},
+           {id: 39,  size: 0.076, x: 0.0000, y: -0.08, z: 0, qw: 1, qx: 0, qy: 0, qz: 0},
+           {id: 40,  size: 0.076, x: 0.08, y: -0.08, z: 0, qw: 1, qx: 0, qy: 0, qz: 0},
+        ]
+    },
   ]
+
+
+
 # ## Tag bundle definitions
 # ### Remarks
 #
