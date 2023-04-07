@@ -1,12 +1,12 @@
 # 开启顺序开启相机，注意加延时
 echo -e "\033[41;32mrun H_kinect_Syn.launch\033[0m"
-roslaunch rtabmap_ros H_kinect_Syn.launch & sleep 3
+roslaunch rtabmap_ros H_kinect_Syn.launch & sleep 5
 
 echo -e "\033[41;32mrun M_kinect_Syn.launch\033[0m"
-roslaunch rtabmap_ros M_kinect_Syn.launch & sleep 3
+roslaunch rtabmap_ros M_kinect_Syn.launch & sleep 5
 
 echo -e "\033[41;32mrun L_kinect_Syn.launch\033[0m"
-roslaunch rtabmap_ros L_kinect_Syn.launch & sleep 3
+roslaunch rtabmap_ros L_kinect_Syn.launch & sleep 5
 
 # 开启Apriltag marker的检测
 # echo -e "\033[41;32mrun H_apriltag_detect.launch\033[0m"
