@@ -12,7 +12,7 @@ roslaunch rtabmap_ros H_kinect.launch & sleep 3
 
 # current date
 timestamp="2022_03_07_14_15_37"
-database_path="/home/sbdx/Documents/"$timestamp".db"
+database_path="~/Documents/"$timestamp".db"
 
 echo -e "\033[41;32mrun three_kinects_location.launch\033[0m"
 gnome-terminal --tab --active -e "roslaunch rtabmap_ros three_kinects_localization.launch database_path:=$database_path"
