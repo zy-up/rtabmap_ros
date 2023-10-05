@@ -62,8 +62,8 @@
       <param name="wired_sync_mode"    type="int"      value="2" />
       <param name="subordinate_delay_off_master_usec"    type="int"      value="160" />
 
-      <!-- 设置相机串口号 000470313012(low) 000481112312(high)  000475513012(high) -->  
-      <param name="sensor_sn"  type="string"  value="000481112312" />   
+      <!-- 设置相机串口号 000470313012(low) 000514413012(high)  000475513012(high) -->  
+      <param name="sensor_sn"  type="string"  value="000514413012" />   
       <param name="tf_prefix"         value="M_" />
     </node>
 

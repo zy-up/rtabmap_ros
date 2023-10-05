@@ -61,8 +61,8 @@
       <!-- 同步模式：主动模式 -->
       <param name="wired_sync_mode"    type="int"      value="1" />
 
-      <!-- 设置相机串口号 000470313012(low) 000481112312(high)  000475513012(high) -->  
-      <param name="sensor_sn"  type="string"  value="000475513012" />   
+      <!-- 设置相机串口号 000027922612(low) 000481112312(high)  000475513012(high) -->  
+      <param name="sensor_sn"  type="string"  value="000027922612" />   
       <param name="tf_prefix"         value="L_" />
     </node>
 
