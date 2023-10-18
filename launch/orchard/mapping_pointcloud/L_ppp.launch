@@ -1,0 +1,13 @@
+<launch>
+
+  <!-- Load the nodelet manager -->
+  <node pkg="nodelet" type="nodelet" name="nodelet_manager" args="manager" />
+
+  <!-- Run point_cloud_xyz nodelet -->
+  <node pkg="nodelet" type="nodelet" name="point_cloud_xyz" args="load depth_image_proc/point_cloud_xyz nodelet_manager">
+    <remap from="depth_registered/image_rect" to="/L_k4a/depth/image_rect"/>
+    <remap from="depth_registered/camera_info" to="/L_k4a/depth/camera_info"/>
+    <remap from="points" to="/L_k4a/point_cloud"/>
+  </node>
+
+</launch>

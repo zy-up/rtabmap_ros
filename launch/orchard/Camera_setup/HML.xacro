@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<!--
+ Copyright (c) Microsoft Corporation. All rights reserved.
+ Licensed under the MIT License.
+ -->
+
+<robot name="azure-kinects" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <material name="white">
+    <color rgba="0.9 0.9 0.9 1" />
+  </material>
+
+  <link name="/H_camera_base">
+    <visual>
+      <origin xyz="0. 0. 0." />
+      <geometry>
+        <box size="0.0994 0.0996 0.023" />
+      </geometry>
+      <material name="white" />
+    </visual>
+  </link>
+
+  <link name="/M_camera_base">
+    <visual>
+      <origin xyz="0. 0. 0." />
+      <geometry>
+        <box size="0.0994 0.0996 0.023" />
+      </geometry>
+      <material name="white" />
+    </visual>
+  </link>
+  
+  <link name="/L_camera_base">
+    <visual>
+      <origin xyz="0. 0. 0." />
+      <geometry>
+        <box size="0.0994 0.0996 0.023" />
+      </geometry>
+      <material name="white" />
+    </visual>
+  </link>
+
+  <link name="/base_frame">
+    <visual>
+      <origin xyz="0. 0. 0." />
+      <geometry>
+        <box size="0.0994 0.0996 0.023" />
+      </geometry>
+      <material name="white" />
+    </visual>
+  </link>
+
+  <joint name="base_to_cameraH_tf" type="fixed">
+    <parent link="/M_camera_base" />
+    <child link="/H_camera_base" />
+<origin xyz="0.089114 0.002120 0.203885" rpy="3.131217 -3.028817 3.141392" />
+  </joint>
+
+  <joint name="base_to_cameraM_tf" type="fixed">
+    <parent link="/L_camera_base" />
+    <child link="/M_camera_base" />
+<origin xyz="0.201731 0.006230 0.235697" rpy="3.137621 2.883057 3.137947" />
+  </joint>
+
+  <joint name="base_to_cameraL_tf" type="fixed">
+    <parent link="/base_frame" />
+    <child link="/L_camera_base" />
+    <origin xyz="0 0 0.300" rpy="3.1357474659609688 -0.7177994043808186 0" />
+  </joint>
+
+
+</robot>

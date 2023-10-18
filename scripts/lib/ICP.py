@@ -77,8 +77,8 @@ if __name__ == "__main__":
                   [ 0.  ,        0.       ,   0.         , 1.        ]]
 
 
-    source = o3d.io.read_point_cloud("/home/sbdx/Codes/catkin_kin/src/Azure_Kinect_ROS_Driver/scripts/pcd/source_cloud_2022_02_16_18_11_31.pcd")
-    target = o3d.io.read_point_cloud("/home/sbdx/Codes/catkin_kin/src/Azure_Kinect_ROS_Driver/scripts/pcd/target_cloud_2022_02_16_18_11_31.pcd")
+    source = o3d.io.read_point_cloud("/home/sibl/Codes/MultiKinectCalib/build/output0.ply")
+    target = o3d.io.read_point_cloud("/home/sibl/Codes/MultiKinectCalib/build/output1.ply")
     
     draw_registration_result(source, target, trans_identity)
 

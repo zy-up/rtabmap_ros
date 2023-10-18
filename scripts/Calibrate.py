@@ -83,7 +83,7 @@ def tf_transform(trans):
     # 将计算后的四元数归一化，否则将出错，注意这里的四元数为（w,x,y,z）
     rot_n = Quaternion(rot_c[3],rot_c[0],rot_c[1],rot_c[2])
     rot_n = rot_n.normalised
-    
+     
     # 跟新tf位姿信息
     t.transform.translation.x = trans_c[0]
     t.transform.translation.y = trans_c[1]
@@ -95,6 +95,14 @@ def tf_transform(trans):
 
     rospy.loginfo('%s to %s 的平移与四元数（x,y,z,x,y,z,w）: %f %f %f %f %f %f %f',
         source_camera,target_camera,trans_c[0],trans_c[1],trans_c[2],rot_n[1],rot_n[2],rot_n[3],rot_n[0])
+
+    # 从四元数中提取欧拉角 (Yaw, Pitch, Roll)
+    euler = tf.transformations.euler_from_quaternion([rot_n[1], rot_n[2], rot_n[3], rot_n[0]])
+    yaw, pitch, roll = euler
+
+    rospy.loginfo('<origin xyz="%f %f %f" rpy="%f %f %f" />', trans_c[0],trans_c[1],trans_c[2], yaw, pitch, roll)
+
+
 
 if __name__ == '__main__':  
     # 初始化tf广播

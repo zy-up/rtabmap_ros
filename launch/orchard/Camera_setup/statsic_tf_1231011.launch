@@ -1,24 +1,35 @@
 <launch>
 
+<arg name="HM" value="-0.008380 0.611342 -0.004063 0.000792 0.006426 -0.001839 0.999977" />
+<arg name="ML" value="-0.216217 0.469846 0.006585 0.006280 -0.000186 0.200768 0.979619" />
+<arg name="LB" value="0 0 0.30 0.6894885990642693 -0.12417375359815044 -0.12176873566591061 0.7031064824705164" />
+
 <!-- H_k4a -->
   <param name="robot_description_H" command="xacro $(find azure_kinect_ros_driver)/urdf/azure_kinect.urdf.xacro tf_prefix:=H_" />
   <!-- read the robot_description file -->
     <node name="robot_state_publisher_H" pkg="robot_state_publisher" type="robot_state_publisher" args="robot_description:=robot_description_H">
   </node>
 
+  <!-- H_k4a -> M_k4a -->
+  <node pkg="tf" type="static_transform_publisher" name="base_to_cameraH_tf"
+      args="$(arg HM) /M_camera_base /H_camera_base 100" />
+
 <!-- M_k4a -->
   <param name="robot_description_M" command="xacro $(find azure_kinect_ros_driver)/urdf/azure_kinect.urdf.xacro tf_prefix:=M_" />
     <node name="robot_state_publisher_M" pkg="robot_state_publisher" type="robot_state_publisher" args="robot_description:=robot_description_M">
   </node>
+
+  <!-- L_k4a -> H_k4a -->
+  <node pkg="tf" type="static_transform_publisher" name="base_to_cameraM_tf"
+      args="$(arg ML)  /L_camera_base /M_camera_base 100" />
 
 <!-- L_k4a -->
   <param name="robot_description_L" command="xacro $(find azure_kinect_ros_driver)/urdf/azure_kinect.urdf.xacro tf_prefix:=L_" />
     <node name="robot_state_publisher_L" pkg="robot_state_publisher" type="robot_state_publisher" args="robot_description:=robot_description_L">
   </node>
 
-<!-- C_k4a -->
-  <param name="robot_description_C" command="xacro /home/sibl/Codes/catkin_rtab/src/rtabmap_ros/launch/orchard/Camera_setup/HML.xacro" />
-    <node name="robot_state_publisher_C" pkg="robot_state_publisher" type="robot_state_publisher" args="robot_description:=robot_description_C">
-  </node>
+  <!-- base_frame -> L_k4a -->
+  <node pkg="tf" type="static_transform_publisher" name="base_to_cameraL_tf"
+      args="$(arg LB) /base_frame /L_camera_base 100" />
 
 </launch>
