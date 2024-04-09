@@ -1,0 +1,34 @@
+<launch>
+<!-- 
+  $ roslaunch rtabmap_ros test_velodyne.launch
+  $ rosrun rviz rviz -f map
+  $ Show TF and /rtabmap/cloud_map topics
+-->
+
+<arg name="frame_id"        default="/os_sensor"/>
+<arg name="scan_topic"    default="/ouster/points"/>
+<arg name="database_path"           default="~/.ros/rtabmap.db"/>
+
+<!-- 将雷达与世界坐标系连接起来 -->
+<!-- <node pkg="tf" type="static_transform_publisher" name="base_to_velodyne"
+      args="0 0 1 0 0 0 /base_frame /os_sensor 200" /> -->
+
+<!-- 开启雷达 -->
+<!-- <include file="$(find ouster_ros)/launch/driver.launch">
+  <arg name="sensor_hostname" value="192.168.1.191"/>
+</include>   -->
+
+<!-- 开启SLAM -->
+<include  file="$(find rtabmap_ros)/launch/orchard/lidar/rtabmap_lidar.launch">
+  <arg name="gen_depth"    value="true"/>
+  <arg name="subscribe_scan_cloud"    value="true"/>
+  <arg name="scan_cloud_topic"  value="$(arg scan_topic)"/>
+  <arg name="database_path"           default="$(arg database_path)"/>
+
+  <arg name="icp_odometry"  value="true"/>
+  <arg name="visual_odometry"   value="false"/>
+
+  <arg name="frame_id"          value="$(arg frame_id)"/>
+</include>
+
+</launch>
